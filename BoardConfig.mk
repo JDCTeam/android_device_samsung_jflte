@@ -20,14 +20,12 @@
 # definition file).
 #
 
-# inherit from common JF
--include device/samsung/jf-common/BoardConfigCommon.mk
+# inherit from common jf
+include device/samsung/jf-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
 -include vendor/samsung/jfltetmo/BoardConfigVendor.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := jfltetmo
+TARGET_OTA_ASSERT_DEVICE := jfltetmo,jflte
 
-# Kernel
-TARGET_KERNEL_CONFIG         := jf_tmo_defconfig
