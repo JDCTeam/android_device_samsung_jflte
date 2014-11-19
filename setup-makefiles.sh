@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEVICE=jfltexx
+DEVICE=jflte
 VENDOR=samsung
 
 OUTDIR=vendor/$VENDOR/$DEVICE
