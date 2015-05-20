@@ -3,4 +3,3 @@
 # cannot take spaces
 rild.libargs=-d /dev/smd0
 rild.libpath=/system/lib/libsec-ril.so
-persist.radio.mode_pref_nv10=1
