@@ -17,6 +17,10 @@
 # Get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/jflte/jflte-vendor.mk)
 
+# OTA Updates
+PRODUCT_PACKAGES += \
+    OTAUpdates
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 

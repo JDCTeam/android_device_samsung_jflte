@@ -1,5 +1,10 @@
 # system.prop for jflte
 
+# OTA Updates
+ro.ota.romname=Optimized-CM-12.1
+ro.ota.version=
+ro.ota.manifest=http://www.antaresone.eu/ota-cm.xml
+
 # cannot take spaces
 rild.libargs=-d /dev/smd0
 rild.libpath=/system/lib/libsec-ril.so
