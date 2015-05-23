@@ -1,7 +1,7 @@
 # system.prop for jflte
 
 # OTA Updates
-ro.ota.romname=Optimized-CM121
+ro.ota.romname=Optimized-CM-121
 ro.ota.version=
 ro.ota.manifest=https://romhut.com/dashboard/roms/Optimized-CM-121/ota.xml
 
