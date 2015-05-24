@@ -1,9 +1,9 @@
 # system.prop for jflte
 
 # OTA Updates
-ro.ota.romname=Optimized-CM-121
-ro.ota.version=
-ro.ota.manifest=https://romhut.com/dashboard/roms/Optimized-CM-121/ota.xml
+ro.ota.romname=Optimized-CM-12.1
+ro.ota.version=$(shell date -u +%Y%m%d)
+ro.ota.manifest=https://romhut.com/roms/Optimized-CM-121/ota.xml
 
 # cannot take spaces
 rild.libargs=-d /dev/smd0
