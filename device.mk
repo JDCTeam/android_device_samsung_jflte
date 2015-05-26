@@ -21,6 +21,10 @@ $(call inherit-product-if-exists, vendor/samsung/jflte/jflte-vendor.mk)
 PRODUCT_PACKAGES += \
     OTAUpdates
 
+# SunBeam Wallpaper
+PRODUCT_PACKAGES += \
+    SunBeam
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
