@@ -17,10 +17,6 @@
 # Get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/jflte/jflte-vendor.mk)
 
-# OTA Updates
-PRODUCT_PACKAGES += \
-    OTAUpdates
-
 # SunBeam Wallpaper
 PRODUCT_PACKAGES += \
     SunBeam
