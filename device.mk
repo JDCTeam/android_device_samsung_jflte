@@ -17,10 +17,6 @@
 # Get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/jflte/jflte-vendor.mk)
 
-# SunBeam Wallpaper
-PRODUCT_PACKAGES += \
-    SunBeam
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
