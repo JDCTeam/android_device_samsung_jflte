@@ -28,4 +28,16 @@
     <!-- Doze: does this device support STATE_DOZE and STATE_DOZE_SUSPEND?  -->
     <bool name="doze_display_state_supported">true</bool>
 
+    <!-- Doze: when to pulse after a buzzworthy notification arrives
+    Pulse duration = 10s
+    Pulse at intervals:
+	15s after 1st pulse finishes
+	30s after 2nd
+	1min after 3rd
+    -->
+    <string name="doze_pulse_schedule" translatable="false">1s,26s,66s,136s</string>
+
+    <!-- Doze: pulse parameter - once faded in, how long does it stay visible? -->
+    <integer name="doze_pulse_duration_visible">10000</integer>
+
 </resources>
