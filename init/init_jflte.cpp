@@ -195,6 +195,7 @@ void gsm_properties()
 {
     property_set("telephony.lteOnGsmDevice", "1");
     property_set("ro.telephony.default_network", "9");
+    property_set("telephony.radioAccessFamily", "gsm");
 }
 
 void cdma_properties(char cdma_sub[])
@@ -205,6 +206,7 @@ void cdma_properties(char cdma_sub[])
     property_set("persist.radio.snapshot_enabled", "1");
     property_set("persist.radio.snapshot_timer", "22");
     property_set("telephony.lteOnCdmaDevice", "1");
+    property_set("telephony.radioAccessFamily", "cdma");
 }
 
 void r970_properties()
