@@ -103,6 +103,15 @@ void vendor_load_properties()
         property_set("ro.build.description", "jfltetmo-user 4.4.4 KTU84P M919UVUFNK2 release-keys");
         property_set("ro.product.model", "SGH-M919");
         property_set("ro.product.device", "jfltetmo");
+    } else if (strstr(bootloader, "S970")) {
+	/* jfltetfntmo */
+	gsm_properties();
+        property_set("ro.build.fingerprint", "samsung/jfltetfntmo/jfltetfntmo:4.2.2/JDQ39/S970GUDUAMH3:user/release-keys");
+        property_set("ro.build.description", "jfltetfntmo-user 4.2.2 JDQ39 S970GUDUAMH3 release-keys");
+        property_set("ro.product.model", "SGH-S970G");
+        property_set("ro.product.device", "jfltetfntmo");
+	property_set("ril.subscription.types", "NV,RUIM");
+        property_set("DEVICE_PROVISIONED", "1");
     } else if (strstr(bootloader, "R970")) {
         /* jflteusc */
         cdma_properties("0");
