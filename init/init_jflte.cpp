@@ -112,6 +112,15 @@ void vendor_load_properties()
         property_set("ro.product.device", "jfltetfntmo");
 	property_set("ril.subscription.types", "NV,RUIM");
         property_set("DEVICE_PROVISIONED", "1");
+    } else if (strstr(bootloader, "S975")) {
+	/* jfltetfnatt */
+	gsm_properties();
+        property_set("ro.build.fingerprint", "samsung/jflteud/jfltetfnatt:4.3/JSS15J/S975LUDUANB1:user/release-keys");
+        property_set("ro.build.description", "jflteud-user 4.3 JSS15J S975LUDUANB1 release-keys");
+        property_set("ro.product.model", "SM-S975L");
+        property_set("ro.product.device", "jfltetfnatt");
+	property_set("ril.subscription.types", "NV,RUIM");
+        property_set("DEVICE_PROVISIONED", "1");
     } else if (strstr(bootloader, "R970")) {
         /* jflteusc */
         cdma_properties("0");
