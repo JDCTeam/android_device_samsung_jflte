@@ -62,7 +62,7 @@ void vendor_load_properties()
         /* jflteatt */
         gsm_properties();
         property_set("ro.product.device", "jflteatt");
-        property_set("ro.product.model", "SAMSUNG-SGH-I337");
+        property_set("ro.product.model", "SGH-I337");
         property_set("ro.build.fingerprint", "samsung/jflteuc/jflteatt:5.0.1/LRX22C/I337UCUGOC3:user/release-keys");
         property_set("ro.build.description", "jflteuc-user 5.0.1 LRX22C I337UCUGOC3 release-keys");
     } else if (strstr(bootloader, "R970C")) {
