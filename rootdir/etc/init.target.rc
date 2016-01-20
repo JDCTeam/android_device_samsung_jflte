@@ -271,6 +271,10 @@ on post-fs-data
     chmod 0660 /sys/class/lcd/panel/panel_colors
     chown system system /sys/class/lcd/panel/panel_colors
 
+# Remount /system as read-only for security
+on property:sys.boot_completed=1
+     exec /system/bin/mount -o ro,remount /system
+
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
