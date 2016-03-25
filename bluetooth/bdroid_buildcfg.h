@@ -22,8 +22,4 @@
 
 #define BTA_DISABLE_DELAY 100 /* in milliseconds */
 
-#define SC_MODE_INCLUDED FALSE
-#define HCI_RAW_CMD_INCLUDED FALSE
-#define BTSNOOP_MEM FALSE
-
 #endif
