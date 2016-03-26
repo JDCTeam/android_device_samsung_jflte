@@ -1,12 +1,12 @@
 # Bins
 bin/mpdecision
 bin/radish
+bin/thermal-engine
+lib/libthermalclient.so
 vendor/lib/libqti-perfd-client.so
 
 # Bluetooth firmware
-vendor/firmware/bcm4335.hcd
-vendor/firmware/bcm4335_murata.hcd
-vendor/firmware/bcm4335_semco.hcd
+vendor/firmware/bcm4335_V0343.0353.hcd
 
 # Audio
 lib/libacdbloader.so
@@ -151,7 +151,7 @@ lib/hw/sensors.msm8960.so
 lib/hw/sensorhubs.msm8960.so
 
 # Time services
--app/TimeService/TimeService.apk
+app/TimeService/TimeService.apk
 bin/time_daemon
 lib/libTimeService.so
 vendor/lib/libtime_genoff.so
