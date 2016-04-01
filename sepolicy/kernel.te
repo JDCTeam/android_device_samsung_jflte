@@ -1,3 +1,5 @@
 allow kernel keypad_dev:file relabelto;
 allow kernel panel_dev:file relabelto;
 allow kernel vibe_dev:file relabelto;
+allow kernel kernel:keystore_key { add_auth };
+allow kernel keystore_service:service_manager { find };
