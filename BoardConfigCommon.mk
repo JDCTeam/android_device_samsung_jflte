@@ -120,6 +120,11 @@ DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 # Legacy
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
+# Filesystem
+BOARD_ROOT_EXTRA_FOLDERS := efs firmware firmware-mdm
+BOARD_ROOT_EXTRA_SYMLINKS := /data/tombstones:/tombstones
+TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := f2fs

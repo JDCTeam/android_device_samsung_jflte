@@ -30,14 +30,8 @@ import init.qcom.usb.rc
 import init.target.rc
 
 on early-init
-    symlink /data/tombstones /tombstones
-
-    mkdir /firmware 0771 system system
-    mkdir /firmware-mdm 0771 system system
-
     mount debugfs debugfs /sys/kernel/debug
     chown system system /sys/kernel/debug/kgsl/proc
-    mkdir /efs 0771 system radio
     chmod 644 /proc/cmdline
 
 on init
