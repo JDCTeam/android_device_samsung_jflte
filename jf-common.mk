@@ -223,7 +223,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=true \
     use.dedicated.device.for.voip=true \
-    persist.audio.speaker.location=high 
+    audio.offload.disable=1 \
+    qcom.hw.aac.encoder=true \
+    media.aac_51_output_enable=true
 
 # charging mode
 PRODUCT_PROPERTY_OVERRIDES += \
