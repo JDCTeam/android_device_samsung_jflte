@@ -529,7 +529,7 @@
         <ctl name="DEC3 MUX" value="ADC4" />
         <ctl name="ADC4 Volume" value="13" />
         <ctl name="DEC3 Volume" value="90" />
-        <ctl name="SLIM TX8 MUX" value="1" />
+        <ctl name="SLIM TX8 MUX" value="DEC3" />
         <ctl name="DEC2 MUX" value="ADC5" />
         <ctl name="ADC5 Volume" value="13" />
         <ctl name="DEC2 Volume" value="90" />
