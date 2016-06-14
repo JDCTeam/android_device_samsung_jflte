@@ -350,7 +350,7 @@
         <ctl name="RX1 MIX1 INP2" value="RX6" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="DAC1 Switch" value="1" />
-        <ctl name="RX1 Digital Volume" value="74" />
+        <ctl name="RX1 Digital Volume" value="88" />
         <ctl name="ES325 RX2 Enable" value="1" />
         <ctl name="VEQ Enable" value="0" />
     </path>
@@ -372,7 +372,7 @@
 
     <path name="voice-speaker-mic">
         <path name="adc4" />
-        <ctl name="ADC4 Volume" value="14" />
+        <ctl name="ADC4 Volume" value="88" />
         <ctl name="DEC3 Volume" value="90" />
     </path>
 
@@ -503,11 +503,11 @@
         <ctl name="SLIM_0_TX Channels" value="Two" />
         <ctl name="SLIM TX7 MUX" value="DEC3" />
         <ctl name="DEC3 MUX" value="ADC4" />
-        <ctl name="ADC4 Volume" value="19" />
+        <ctl name="ADC4 Volume" value="88" />
         <ctl name="DEC3 Volume" value="90" />
         <ctl name="SLIM TX8 MUX" value="DEC4" />
         <ctl name="DEC4 MUX" value="ADC3" />
-        <ctl name="ADC3 Volume" value="19" />
+        <ctl name="ADC3 Volume" value="88" />
         <ctl name="DEC4 Volume" value="90" />
         <ctl name="MICBIAS1 CAPLESS Switch" value="1" />
         <ctl name="MICBIAS3 CAPLESS Switch" value="1" />
