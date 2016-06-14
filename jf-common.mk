@@ -218,14 +218,12 @@ PRODUCT_COPY_FILES += \
 
 # audio
 PRODUCT_PROPERTY_OVERRIDES += \
+    audio.offload.disable=1 \
     ro.qc.sdk.audio.fluencetype=fluence \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=true \
-    use.dedicated.device.for.voip=true \
-    audio.offload.disable=1 \
-    qcom.hw.aac.encoder=true \
-    media.aac_51_output_enable=true
+    use.dedicated.device.for.voip=true
 
 # charging mode
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -24,7 +24,7 @@
     <ctl name="DEC3 MUX" value="ZERO" />
     <ctl name="DEC4 MUX" value="ZERO" />
     <ctl name="DEC5 MUX" value="ZERO" />
-    <ctl name="EAR PA Gain" value="POS_6_DB" />
+    <ctl name="EAR PA Gain" value="ZERO" />
     <ctl name="ES325 RX2 Enable" value="ZERO" />
     <ctl name="ES325 TX1 Enable" value="ZERO" />
     <ctl name="ES325-AP Tx Channels" value="One" />
@@ -34,7 +34,7 @@
     <ctl name="HDMI_RX_Voice Mixer Voice Stub" value="0" />
     <ctl name="HPHL DAC Switch" value="0" />
     <ctl name="HPHR DAC Switch" value="0" />
-    <ctl name="Internal Route Config" value="5" />
+    <ctl name="Internal Route Config" value="6" />
     <ctl name="MICBIAS1 CAPLESS Switch" value="0" />
     <ctl name="MICBIAS2 CAPLESS Switch" value="0" />
     <ctl name="MICBIAS3 CAPLESS Switch" value="0" />
@@ -281,7 +281,7 @@
         <ctl name="SLIM_0_TX Channels" value="One" />
         <ctl name="SLIM TX7 MUX" value="DEC3" />
         <ctl name="DEC3 MUX" value="ADC4" />
-		<ctl name="MICBIAS3 CAPLESS Switch" value="1" />
+        <ctl name="MICBIAS3 CAPLESS Switch" value="1" />
     </path>
 
     <path name="spk">
@@ -295,7 +295,7 @@
         <path name="spk" />
         <ctl name="LINEOUT2 Volume" value="83" />
         <ctl name="LINEOUT4 Volume" value="83" />
-        <ctl name="RX5 Digital Volume" value="84" />
+        <ctl name="RX5 Digital Volume" value="88" />
     </path>
 
     <path name="speaker-mic">
@@ -352,10 +352,14 @@
         <ctl name="DAC1 Switch" value="1" />
         <ctl name="RX1 Digital Volume" value="74" />
         <ctl name="ES325 RX2 Enable" value="1" />
+        <ctl name="VEQ Enable" value="0" />
     </path>
 
     <path name="voice-speaker">
-        <path name="spk" />
+        <ctl name="SLIM_0_RX Channels" value="Two" />
+        <ctl name="RX5 MIX1 INP1" value="RX1" />
+        <ctl name="RX5 MIX1 INP2" value="RX6" />
+        <ctl name="RX6 DSM MUX" value="DSM_INV" />
         <ctl name="RX4 MIX1 INP1" value="RX2" />
         <ctl name="RX4 MIX1 INP2" value="RX7" />
         <ctl name="RX4 DSM MUX" value="CIC_OUT" />
@@ -619,6 +623,7 @@
 
     <path name="voice-tty-hco-handset">
         <ctl name="TTY Mode" value="HCO" />
+        <ctl name="EAR PA Gain" value="POS_2_DB" />
         <path name="handset" />
     </path>
 
@@ -627,7 +632,7 @@
         <ctl name="ES325-AP Tx Channels" value="One" />
         <ctl name="Internal Route Config" value="12" />
         <ctl name="ES325 TX1 Enable" value="1" />
-	</path>
+    </path>
 
     <path name="voice-tty-hco-headset-mic">
         <path name="voice-tty-full-headset-mic" />
