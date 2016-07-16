@@ -127,13 +127,10 @@ etc/sec_config
 
 # Media
 bin/qseecomd
-lib/libDivxDrm.so
 lib/libdrmfs.so
 lib/libdrmtime.so
 lib/libI420colorconvert.so
 lib/libmm-color-convertor.so
-lib/libmmosal.so
-lib/libSHIMDivxDrm.so
 lib/libQSEEComAPI.so
 
 # NFC firmware
