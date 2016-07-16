@@ -359,7 +359,7 @@
         <path name="spk" />
         <ctl name="LINEOUT2 Volume" value="8" />
         <ctl name="LINEOUT4 Volume" value="8" />
-        <ctl name="RX5 Digital Volume" value="78" />
+        <ctl name="RX5 Digital Volume" value="85" />
     </path>
 
     <path name="speaker-mic">
@@ -410,8 +410,8 @@
         <ctl name="HPHR DAC Switch" value="1" />
         <ctl name="HPHL Volume" value="12" />
         <ctl name="HPHR Volume" value="12" />
-        <ctl name="RX1 Digital Volume" value="75" />
-        <ctl name="RX2 Digital Volume" value="75" />
+        <ctl name="RX1 Digital Volume" value="80" />
+        <ctl name="RX2 Digital Volume" value="80" />
         <ctl name="COMP1 Switch" value="1" />
     </path>
 
@@ -466,6 +466,7 @@
         <ctl name="LINEOUT4 Volume" value="12" />
         <ctl name="RX5 Digital Volume" value="84" />
         <ctl name="ES325 RX2 Enable" value="1" />
+		<ctl name="VEQ Enable" value="0" />
     </path>
 
     <path name="voice-speaker-mic">
