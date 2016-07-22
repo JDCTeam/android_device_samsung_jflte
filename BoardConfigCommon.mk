@@ -125,6 +125,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
+# Properties (reset them here, include more in device if needed)
+TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
+
 # Recovery
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 BOARD_USES_MMCUTILS := true
