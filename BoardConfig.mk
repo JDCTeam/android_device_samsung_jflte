@@ -29,3 +29,5 @@ include device/samsung/jf-common/BoardConfigCommon.mk
 # Assert
 TARGET_OTA_ASSERT_DEVICE := jfltetmo,jflte
 
+# Properties
+TARGET_SYSTEM_PROP += device/samsung/jfltetmo/system.prop
