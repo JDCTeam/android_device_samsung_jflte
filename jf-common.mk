@@ -201,6 +201,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/samsung/jf-common/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
 
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
+
 # Wifi
 PRODUCT_PACKAGES += \
     libnetcmdiface \
