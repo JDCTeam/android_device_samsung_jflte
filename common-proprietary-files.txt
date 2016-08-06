@@ -13,6 +13,9 @@ lib/libacdbloader.so
 lib/libaudcal.so
 lib/libcsd-client.so
 
+# Bluetooth firmware
+vendor/firmware/bcm4335_V0343.0353.hcd
+
 # Camera
 bin/mm-qcamera-daemon
 cameradata/datapattern_420sp.yuv
