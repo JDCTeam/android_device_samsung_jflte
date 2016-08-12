@@ -138,8 +138,7 @@ on enable-low-power
 
     write /dev/cpuctl/cpu.notify_on_migrate 1
     
-    rm /data/system/perfd/default_values
-    start mpdecision
+  
 
 on boot
     trigger enable-low-power
@@ -161,3 +160,6 @@ on property:recovery.perf.mode=0
 
 on property:dev.bootcomplete=1
     setprop sys.io.scheduler bfq
+
+    rm /data/system/perfd/default_values
+    start mpdecision
