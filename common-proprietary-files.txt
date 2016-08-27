@@ -159,8 +159,7 @@ bin/time_daemon
 lib/libTimeService.so
 vendor/lib/libtime_genoff.so
 
-<<<<<<< HEAD
-=======
+
 # Widevine
 lib/libdrmdecrypt.so|00678a3048b9bbf3b341bc90d141656245983135
 vendor/lib/drm/libdrmwvmplugin.so|61129047f9bb5b0dc95534226b7039594cefac35
@@ -169,7 +168,6 @@ vendor/lib/libwvm.so|ff1414b6001061cb737611a5fb2d23b22e7bb304
 vendor/lib/libWVStreamControlAPI_L1.so|6b28492ac55b9a3d86993343cf2c8b55240b3420
 vendor/lib/mediadrm/libwvdrmengine.so|e285482c7fd9421608c1d40cf37b5b7b283243e4
 
->>>>>>> 0f2f59b... jf: Add sha1sums for pinned blobs
 # Wi-Fi
 etc/wifi/bcmdhd_apsta.bin
 etc/wifi/bcmdhd_ibss.bin
