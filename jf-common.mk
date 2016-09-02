@@ -192,9 +192,9 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 
-# Samsung symbols
+# RIL
 PRODUCT_PACKAGES += \
-    libsamsung_symbols
+    libshim_ril
 
 # SPN override
 PRODUCT_COPY_FILES += \
