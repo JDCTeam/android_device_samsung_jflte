@@ -22,3 +22,13 @@
 /sys/devices/virtual/timed_output/vibrator/pwm_value				u:object_r:vibe_dev:s0
 
 /system/bin/macloader								u:object_r:macloader_exec:s0
+
+/sys/devices/virtual/graphics/fb0/rgb						u:object_r:display_sysfs:s0
+
+# LEDify file context
+/system/bin/ledify								u:object_r:system_file:s0
+
+# Alucard kernel
+/sbin/bb/busybox								u:object_r:rootfs:s0
+/system/xbin/wget								u:object_r:system_file:s0
+/system/xbin/zip								u:object_r:system_file:s0
