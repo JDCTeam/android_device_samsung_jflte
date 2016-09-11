@@ -107,9 +107,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:/system/etc/gps.conf \
     $(LOCAL_PATH)/configs/sap.conf:/system/etc/sap.conf \
-    $(LOCAL_PATH)/configs/izat.conf:/system/etc/izat.conf
-    
-#Gello
+
+# Gello
 PRODUCT_PACKAGES += \
     Gello
 
