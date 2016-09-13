@@ -427,8 +427,9 @@ service insthk /system/bin/insthk
     user root
     disabled
     oneshot
-    seclabel u:r:insthk_exec:s0
-    
+    seclabel u:r:insthk:s0
+
+
 # LEDify
 service ledify /system/bin/ledify
      class late_start
@@ -489,6 +490,7 @@ service wpa_supplicant /system/bin/wpa_supplicant -g@android:wpa_wlan0 \
 service macloader /system/bin/macloader
     class main
     oneshot
+    seclabel u:r:macloader:s0
 
 on property:init.svc.macloader=stopped
     chown root system /data/.rev
