@@ -63,9 +63,6 @@ on post-fs-data
     mkdir /data/audio 0770 media audio
     mkdir /data/misc/audio 0770 audio audio
 
-    # Create directory for bluetooth
-    mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
-
     # Create directory for CNE
     mkdir /data/connectivity 0771 system system
 
