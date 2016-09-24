@@ -22,4 +22,6 @@
 
 #define BTA_DISABLE_DELAY 100 /* in milliseconds */
 
+/* Defined if the kernel does not have support for CLOCK_BOOTTIME_ALARM */
+#define KERNEL_MISSING_CLOCK_BOOTTIME_ALARM TRUE
 #endif
