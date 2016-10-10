@@ -428,6 +428,14 @@ service insthk /system/bin/insthk
     disabled
     oneshot
     seclabel u:r:insthk_exec:s0
+    
+# LEDify
+service ledify /system/bin/ledify
+     class late_start
+     user root
+     group shell
+     seclabel u:r:init:s0
+     oneshot
 
 on property:sys.qseecomd.enable=true
     start insthk
