@@ -48,6 +48,9 @@ persist.radio.use_se_table_only=1
 ro.telephony.mms_data_profile=5
 ro.telephony.ril_class=jflteRIL
 
+#Disabled SetupWizard
+ro.setupwizard.mode=DISABLED
+
 # Time
 persist.timed.enable=true
 
