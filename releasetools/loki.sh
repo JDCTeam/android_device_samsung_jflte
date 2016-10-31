@@ -7,36 +7,22 @@
 #
 # Run loki patch on boot.img for locked bootloaders, found in loki_bootloaders
 #
-# Update for MultiROM by Mattia "AntaresOne" D'Alleva
 
-# MultiROM environment recognition
-MROM=$(ls /tmp | grep "META-INF")
-
-# Run Loki tool
-LOKI() {
 egrep -q -f /system/etc/loki_bootloaders /proc/cmdline
-  if [ $? -eq 0 ];then
-    echo '[*] Locked bootloader version detected.'
-    export C=/tmp/loki_tmpdir
-    mkdir -p $C
-    dd if=/dev/block/platform/msm_sdcc.1/by-name/aboot of=$C/aboot.img
-    echo '[*] Patching boot.img to with loki.'
-    /system/bin/loki_tool patch boot $C/aboot.img /tmp/boot.img $C/boot.lok || exit 1
-    echo '[*] Flashing modified boot.img to device.'
-    /system/bin/loki_tool flash boot $C/boot.lok || exit 1
-    rm -rf $C
-  else
-    echo '[*] Unlocked bootloader version detected.'
-    echo '[*] Flashing unmodified boot.img to device.'
-    dd if=/tmp/boot.img of=/dev/block/platform/msm_sdcc.1/by-name/boot || exit 1
-  fi
-}
-
-# Start
-if [ "$MROM" == "" ]; then
-  echo "Installing primary ROM. Flashing kernel in boot partition..."
-  LOKI
+if [ $? -eq 0 ];then
+  echo '[*] Locked bootloader version detected.'
+  export C=/tmp/loki_tmpdir
+  mkdir -p $C
+  dd if=/dev/block/platform/msm_sdcc.1/by-name/aboot of=$C/aboot.img
+  echo '[*] Patching boot.img to with loki.'
+  /system/bin/loki_tool patch boot $C/aboot.img /tmp/boot.img $C/boot.lok || exit 1
+  echo '[*] Flashing modified boot.img to device.'
+  /system/bin/loki_tool flash boot $C/boot.lok || exit 1
+  rm -rf $C
 else
-  echo "Installing ROM in MultiROM. Skipping kernel flash..."
-  exit 0
+  echo '[*] Unlocked bootloader version detected.'
+  echo '[*] Flashing unmodified boot.img to device.'
+  dd if=/tmp/boot.img of=/dev/block/platform/msm_sdcc.1/by-name/boot || exit 1
 fi
+
+exit 0
