@@ -64,6 +64,10 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 # Camera
 TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+BOARD_GLOBAL_CFLAGS += -DMETADATA_CAMERA_SOURCE
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
 
 # Charger
 BOARD_CHARGING_CMDLINE_NAME := "androidboot.bootchg"
