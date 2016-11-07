@@ -37,7 +37,7 @@
 #include "util.h"
 
 void gsm_properties();
-void cdma_properties(char const cdma_sub[]);
+void cdma_properties(const char cdma_sub[]);
 void r970_properties();
 
 void vendor_load_properties()
@@ -201,7 +201,7 @@ void gsm_properties()
     property_set("telephony.radioAccessFamily", "gsm");
 }
 
-void cdma_properties(char const cdma_sub[])
+void cdma_properties(const char cdma_sub[])
 {
     property_set("rild.libpath", "/system/lib/libsec-ril.so");
     property_set("ro.telephony.default_cdma_sub", cdma_sub);
