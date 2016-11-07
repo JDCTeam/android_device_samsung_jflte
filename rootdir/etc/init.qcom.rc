@@ -429,6 +429,7 @@ service insthk /system/bin/insthk
     oneshot
     seclabel u:r:insthk:s0
 
+
 # LEDify
 service ledify /system/bin/ledify
      class late_start
