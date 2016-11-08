@@ -145,6 +145,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 BOARD_RIL_CLASS := ../../../$(COMMON_PATH)/ril
 USE_DEVICE_SPECIFIC_DATASERVICES := true
 
+# SDClang
+TARGET_USE_SDCLANG := true
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
