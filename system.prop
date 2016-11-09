@@ -51,6 +51,9 @@ persist.radio.use_se_table_only=1
 ro.telephony.mms_data_profile=5
 ro.telephony.ril_class=jflteRIL
 
+# SDcard fs
+ro.sdcardfs.enable=true
+
 #Disabled SetupWizard
 ro.setupwizard.mode=DISABLED
 
