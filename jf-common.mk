@@ -145,9 +145,6 @@ PRODUCT_PACKAGES += \
     loki.sh \
     loki_bootloaders \
     recovery-transform.sh
-    
-PRODUCT_COPY_FILES += \
-	device/samsung/jf-common/releasetools/loki.sh:install/bin/loki.sh
 
 # Media
 PRODUCT_COPY_FILES += \
