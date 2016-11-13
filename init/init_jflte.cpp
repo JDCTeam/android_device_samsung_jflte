@@ -27,12 +27,10 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <cutils/properties.h>
 #include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
 
 #include "vendor_init.h"
+#include "property_service.h"
 #include "log.h"
 #include "util.h"
 
@@ -42,32 +40,31 @@ void r970_properties();
 
 void vendor_load_properties()
 {
-    char platform[PROP_VALUE_MAX];
-    char bootloader[PROP_VALUE_MAX];
-    char device[PROP_VALUE_MAX];
-    int rc;
+    std::string platform;
+    std::string bootloader;
+    std::string device;
 
-    rc = property_get("ro.board.platform", platform, NULL);
-    if (!rc || strncmp(platform, ANDROID_TARGET, PROP_VALUE_MAX))
+    platform = property_get("ro.board.platform");
+    if (strncmp(platform.c_str(), ANDROID_TARGET, PROP_VALUE_MAX))
         return;
 
-    property_get("ro.bootloader", bootloader,NULL);
+    bootloader = property_get("ro.bootloader");
 
-    if (strstr(bootloader, "I337M")) {
+    if (strstr(bootloader.c_str(), "I337M")) {
         /* jfltecan */
         gsm_properties();
         property_set("ro.build.fingerprint", "samsung/jfltevl/jfltecan:4.2.2/JDQ39/I337MVLUAMDJ:user/release-keys");
         property_set("ro.build.description", "jfltevl-user 4.2.2 JDQ39 I337MVLUAMDJ release-keys");
         property_set("ro.product.model", "SGH-I337M");
         property_set("ro.product.device", "jfltecan");
-    } else if (strstr(bootloader, "I337")) {
+    } else if (strstr(bootloader.c_str(), "I337")) {
         /* jflteatt */
         gsm_properties();
         property_set("ro.product.device", "jflteatt");
         property_set("ro.product.model", "SGH-I337");
         property_set("ro.build.fingerprint", "samsung/jflteuc/jflteatt:5.0.1/LRX22C/I337UCUGOC3:user/release-keys");
         property_set("ro.build.description", "jflteuc-user 5.0.1 LRX22C I337UCUGOC3 release-keys");
-    } else if (strstr(bootloader, "R970C")) {
+    } else if (strstr(bootloader.c_str(), "R970C")) {
         /* jfltecri */
         cdma_properties("0");
         r970_properties();
@@ -77,7 +74,7 @@ void vendor_load_properties()
         property_set("ro.product.device", "jfltecri");
         property_set("ro.cdma.home.operator.alpha", "Cricket");
         property_set("ro.cdma.home.operator.numeric", "310090");
-    } else if (strstr(bootloader, "R970X")) {
+    } else if (strstr(bootloader.c_str(), "R970X")) {
         /* jfltecsp */
         cdma_properties("0");
         r970_properties();
@@ -86,7 +83,7 @@ void vendor_load_properties()
         property_set("ro.product.model", "SCH-R970X");
         property_set("ro.product.device", "jfltecsp");
         property_set("telephony.sms.pseudo_multipart", "1");
-    } else if (strstr(bootloader, "L720")) {
+    } else if (strstr(bootloader.c_str(), "L720")) {
         /* jfltespr */
         cdma_properties("1");
         property_set("ro.build.fingerprint", "samsung/jfltespr/jfltespr:4.2.2/JDQ39/L720VPUAMDL:user/release-keys");
@@ -98,14 +95,14 @@ void vendor_load_properties()
         property_set("ro.telephony.default_network", "8");
         property_set("ro.telephony.get_imsi_from_sim", "true");
         property_set("telephony.sms.pseudo_multipart", "1");
-    } else if (strstr(bootloader, "M919")) {
+    } else if (strstr(bootloader.c_str(), "M919")) {
         /* jfltetmo */
         gsm_properties();
         property_set("ro.build.fingerprint", "samsung/jfltetmo/jfltetmo:4.4.4/KTU84P/M919UVUFNK2:user/release-keys");
         property_set("ro.build.description", "jfltetmo-user 4.4.4 KTU84P M919UVUFNK2 release-keys");
         property_set("ro.product.model", "SGH-M919");
         property_set("ro.product.device", "jfltetmo");
-    } else if (strstr(bootloader, "S970")) {
+    } else if (strstr(bootloader.c_str(), "S970")) {
 	/* jfltetfntmo */
 	gsm_properties();
         property_set("ro.build.fingerprint", "samsung/jfltetfntmo/jfltetfntmo:4.2.2/JDQ39/S970GUDUAMH3:user/release-keys");
@@ -114,7 +111,7 @@ void vendor_load_properties()
         property_set("ro.product.device", "jfltetfntmo");
 	property_set("ril.subscription.types", "NV,RUIM");
         property_set("DEVICE_PROVISIONED", "1");
-    } else if (strstr(bootloader, "S975")) {
+    } else if (strstr(bootloader.c_str(), "S975")) {
 	/* jfltetfnatt */
 	gsm_properties();
         property_set("ro.build.fingerprint", "samsung/jflteud/jfltetfnatt:4.3/JSS15J/S975LUDUANB1:user/release-keys");
@@ -123,7 +120,7 @@ void vendor_load_properties()
         property_set("ro.product.device", "jfltetfnatt");
 	property_set("ril.subscription.types", "NV,RUIM");
         property_set("DEVICE_PROVISIONED", "1");
-    } else if (strstr(bootloader, "R970")) {
+    } else if (strstr(bootloader.c_str(), "R970")) {
         /* jflteusc */
         cdma_properties("0");
         r970_properties();
@@ -133,7 +130,7 @@ void vendor_load_properties()
         property_set("ro.product.device", "jflteusc");
         property_set("ro.cdma.home.operator.alpha", "U.S.Cellular");
         property_set("ro.cdma.home.operator.numeric", "311580");
-    } else if (strstr(bootloader, "I545")) {
+    } else if (strstr(bootloader.c_str(), "I545")) {
         /* jfltevzw */
         cdma_properties("0");
         property_set("ro.build.fingerprint", "Verizon/jfltevzw/jfltevzw:5.0.1/LRX22C/I545VRUGOC1:user/release-keys");
@@ -149,7 +146,7 @@ void vendor_load_properties()
         property_set("ro.gsm.data_retry_config", "max_retries=infinite,5000,5000,60000,120000,480000,900000");
         property_set("DEVICE_PROVISIONED", "1");
         property_set("ro.com.google.clientidbase", "android-verizon");
-    } else if (strstr(bootloader, "I9505G")) {
+    } else if (strstr(bootloader.c_str(), "I9505G")) {
         /* jgedlte */
         gsm_properties();
         property_set("ro.build.fingerprint", "samsung/jgedlteue/jgedlte:5.1/LMY47O.S008/150802:user/release-keys");
@@ -158,28 +155,28 @@ void vendor_load_properties()
         property_set("ro.product.device", "jgedlte");
         property_set("ril.subscription.types", "NV,RUIM");
         property_set("DEVICE_PROVISIONED", "1");
-    } else if (strstr(bootloader, "I9505")) {
+    } else if (strstr(bootloader.c_str(), "I9505")) {
         /* jfltexx */
         gsm_properties();
         property_set("ro.build.fingerprint", "samsung/jfltexx/jflte:5.0.1/LRX22C/I9505XXUHOB7:user/release-keys");
         property_set("ro.build.description", "jfltexx-user 5.0.1 LRX22C I9505XXUHOB7 release-keys");
         property_set("ro.product.model", "GT-I9505");
         property_set("ro.product.device", "jfltexx");
-    } else if (strstr(bootloader, "I9507")) {
+    } else if (strstr(bootloader.c_str(), "I9507")) {
         /* jftddxx */
         gsm_properties();
         property_set("ro.build.fingerprint", "samsung/jftddxx/jftdd:4.3/JSS15J/I9507XXUENB5:user/release-keys");
         property_set("ro.build.description", "jftddxx-user 4.3 JSS15J I9507XXUENB5 release-keys");
         property_set("ro.product.model", "GT-I9507");
         property_set("ro.product.device", "jftddxx");
-    } else if (strstr(bootloader, "I9508")) {
+    } else if (strstr(bootloader.c_str(), "I9508")) {
         /* jfltezm */
         gsm_properties();
         property_set("ro.build.fingerprint", "samsung/jfltezm/jflte:4.2.2/JDQ39/I9508ZMUAMG1:user/release-keys");
         property_set("ro.build.description", "jfltezm-user 4.2.2 JDQ39 I9508ZMUAMG1 release-keys");
         property_set("ro.product.model", "GT-I9508");
         property_set("ro.product.device", "jfltezm");
-    } else if (strstr(bootloader, "I9295")) {
+    } else if (strstr(bootloader.c_str(), "I9295")) {
         /* jactivelte */
         gsm_properties();
         property_set("ro.build.fingerprint", "samsung/jactivelte/jactivelte:4.4.2/KTU84Q/I9295XXUCNE5:user/release-keys");
@@ -188,8 +185,8 @@ void vendor_load_properties()
         property_set("ro.product.device", "jactivelte");
     }
 
-    property_get("ro.product.device", device, NULL);
-    ERROR("Found bootloader id %s setting build properties for %s device\n", bootloader, device);
+    device = property_get("ro.product.device");
+    ERROR("Found bootloader id %s setting build properties for %s device\n", bootloader.c_str(), device.c_str());
 
 }
 
