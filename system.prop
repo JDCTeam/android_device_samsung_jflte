@@ -54,9 +54,6 @@ ro.telephony.ril_class=jflteRIL
 # SDcard fs
 ro.sdcardfs.enable=true
 
-#Disabled SetupWizard
-ro.setupwizard.mode=DISABLED
-
 # Time
 persist.timed.enable=true
 
