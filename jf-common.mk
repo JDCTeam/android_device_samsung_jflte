@@ -192,7 +192,8 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    libshim_ril
+    libshim_ril \
+    libwvm_jflte
 
 # SPN override
 PRODUCT_COPY_FILES += \
