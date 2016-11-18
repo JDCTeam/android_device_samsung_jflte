@@ -4,6 +4,12 @@
 # Needed by macloader
 /data/\.cid\.info                                          u:object_r:wifi_data_file:s0
 
+# Bluetooth
+/dev/btlock                                                u:object_r:bluetooth_dev:s0
+
+# Needed by NFC
+/dev/bcm2079x                                              u:object_r:nfc_device:s0
+
 # LEDify file context
 /system/bin/ledify								u:object_r:system_file:s0
 
@@ -11,7 +17,3 @@
 /sbin/bb/busybox								u:object_r:rootfs:s0
 /system/xbin/wget								u:object_r:system_file:s0
 /system/xbin/zip								u:object_r:system_file:s0
-
-# Needed by NFC
-/dev/bcm2079x                                              u:object_r:nfc_device:s0
-
