@@ -52,7 +52,7 @@ ro.telephony.mms_data_profile=5
 ro.telephony.ril_class=jflteRIL
 
 # SDcard fs
-#ro.sdcardfs.enable=true
+ro.sdcardfs.enable=true
 
 # Time
 persist.timed.enable=true
