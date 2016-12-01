@@ -1,3 +1,4 @@
+
 /*
  * Copyright (C) 2012-2015, The CyanogenMod Project
  * Copyright (C) 2016, JDCTeam
@@ -44,9 +45,13 @@ using namespace android;
 static Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
 
+static char **fixed_set_params = NULL;
+
+
 static int camera_device_open(const hw_module_t *module, const char *name,
         hw_device_t **device);
 static int camera_get_number_of_cameras(void);
+static int camera_device_close(hw_device_t* device);
 static int camera_get_camera_info(int camera_id, struct camera_info *info);
 static int camera_send_command(struct camera_device * device, int32_t cmd,
                 int32_t arg1, int32_t arg2);
@@ -93,6 +98,8 @@ typedef struct wrapper_camera_device {
 static char *camera_get_parameters(struct camera_device *device);
 static int camera_set_parameters(struct camera_device *device,
         const char *params);
+
+const static char * iso_values[] = {"auto,ISO_HJR,ISO100,ISO200,ISO400,ISO800,ISO1600,auto"};
 
 static int check_vendor_module()
 {
@@ -320,7 +327,7 @@ static int camera_cancel_picture(struct camera_device *device)
 }
 
 static int camera_set_parameters(struct camera_device *device,
-        const char *settings)
+        const char *params)
 {
     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
             (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
@@ -329,45 +336,47 @@ static int camera_set_parameters(struct camera_device *device,
         return -EINVAL;
 
     int id = CAMERA_ID(device);
-
-#ifdef LOG_PARAMETERS
-    ALOGV("Raw set_parameters");
-    __android_log_write(ANDROID_LOG_VERBOSE, LOG_TAG, settings);
-#endif
-
-    CameraParameters params;
-    params.unflatten(String8(settings));
+    CameraParameters _params;
+    _params.unflatten(android::String8(params));
+    
+    // jactive device camera doesn't seem to have recording hint param, so read it safely
+    const char* recordingHint = _params.get(android::CameraParameters::KEY_RECORDING_HINT);
+    bool isVideo = false;
+    if (recordingHint)
+        isVideo = !strcmp(recordingHint, "true");
 
     // fix params here
     // No need to fix-up ISO_HJR, it is the same for userspace and the camera lib
-    if(params.get("iso")) {
-        const char* isoMode = params.get(CameraParameters::KEY_ISO_MODE);
+    if(_params.get("iso")) {
+        const char* isoMode = _params.get(android::CameraParameters::KEY_ISO_MODE);
         if(strcmp(isoMode, "ISO100") == 0)
-            params.set(CameraParameters::KEY_ISO_MODE, "100");
+            _params.set(android::CameraParameters::KEY_ISO_MODE, "100");
         else if(strcmp(isoMode, "ISO200") == 0)
-            params.set(CameraParameters::KEY_ISO_MODE, "200");
+            _params.set(android::CameraParameters::KEY_ISO_MODE, "200");
         else if(strcmp(isoMode, "ISO400") == 0)
-            params.set(CameraParameters::KEY_ISO_MODE, "400");
+            _params.set(android::CameraParameters::KEY_ISO_MODE, "400");
         else if(strcmp(isoMode, "ISO800") == 0)
-            params.set(CameraParameters::KEY_ISO_MODE, "800");
+            _params.set(android::CameraParameters::KEY_ISO_MODE, "800");
         else if(strcmp(isoMode, "ISO1600") == 0)
-            params.set(CameraParameters::KEY_ISO_MODE, "1600");
+            _params.set(android::CameraParameters::KEY_ISO_MODE, "1600");
     }
+    
+    _params.set(android::CameraParameters::KEY_ZSL, isVideo ? "off" : "on");
+    _params.set(android::CameraParameters::KEY_CAMERA_MODE, isVideo ? "0" : "1");
 
-    // Don't send mangled ISO modes pref back to the camera firmware
-    params.remove(CameraParameters::KEY_SUPPORTED_ISO_MODES);
+	String8 strParams = _params.flatten();
+	
+	if (fixed_set_params[id])
+        free(fixed_set_params[id]);
+    fixed_set_params[id] = strdup(strParams.string());
 
-    String8 strParams = params.flatten();
+    char *tmp = fixed_set_params[id];
 
-#ifdef LOG_PARAMETERS
-    ALOGV("Fixed set_parameters");
-    __android_log_write(ANDROID_LOG_VERBOSE, LOG_TAG, strParams);
-#endif
+	int ret = VENDOR_CALL(device, set_parameters, tmp);
+    return ret;
 
-    return VENDOR_CALL(device, set_parameters, strParams);
 }
 
-const static char * iso_values[] = {"auto,ISO_HJR,ISO100,ISO200,ISO400,ISO800,ISO1600,auto"};
 
 static char *camera_get_parameters(struct camera_device *device)
 {
@@ -377,37 +386,43 @@ static char *camera_get_parameters(struct camera_device *device)
     if (!device)
         return NULL;
 
-    int id = CAMERA_ID(device);
-
-    char *parameters = VENDOR_CALL(device, get_parameters);
-
+	char* params = VENDOR_CALL(device, get_parameters);
+	int id = CAMERA_ID(device);
 #ifdef LOG_PARAMETERS
-    ALOGV("Raw get_parameters");
-    __android_log_write(ANDROID_LOG_VERBOSE, LOG_TAG, parameters);
+    __android_log_write(ANDROID_LOG_VERBOSE, LOG_TAG, params);
 #endif
-
-    wrapper_camera_device_t *wrapper = (wrapper_camera_device_t *)device;
-
-    CameraParameters params;
-    params.unflatten(String8(parameters));
-
+	//=============start of fixup
+	//char * tmp = camera_fixup_getparams(CAMERA_ID(device), params);
+    //VENDOR_CALL(device, put_parameters, params);
+    //params = tmp;
+    
+    android::CameraParameters _params;
+    _params.unflatten(android::String8(params));
+    
     // fix params here
-    params.set(CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values[id]);
-
-
-#ifdef PREVIEW_SIZE_FIXUP
-    params.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, id ? "640x480" : "800x480");
-#endif
-
-    params.set(CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
-    params.set(CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
-    params.set(CameraParameters::KEY_FACE_DETECTION, "off");
-    params.set(CameraParameters::KEY_SUPPORTED_FACE_DETECTION, "off");
-
-    char *ret = strdup(params.flatten().string());
-    VENDOR_CALL(device, put_parameters, parameters);
-
-    return ret;
+    _params.set(android::CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values[id]);
+    
+     /* Remove HDR on rear cam */
+    if (id != 1) {
+        _params.set(android::CameraParameters::KEY_SUPPORTED_SCENE_MODES, "auto,action,night,sunset,party");
+    }
+    
+     /* Enforce video-snapshot-supported to true */
+    _params.set(android::CameraParameters::KEY_VIDEO_SNAPSHOT_SUPPORTED, "true");
+    
+    String8 strParams = _params.flatten();
+    char *ret = strdup(strParams.string());
+	
+	
+    ALOGD("%s: get parameters fixed up", __FUNCTION__);
+    
+    //=============end of fixup
+    char * tmp = ret;
+    
+    VENDOR_CALL(device, put_parameters, params);
+    params  = tmp;
+    
+    return params;
 }
 
 static void camera_put_parameters(struct camera_device *device, char *params)
@@ -475,6 +490,10 @@ static int camera_device_close(hw_device_t *device)
         goto done;
     }
 
+    for (int i = 0; i < camera_get_number_of_cameras(); i++) {
+        if (fixed_set_params[i])
+            free(fixed_set_params[i]);
+    }
     
     wrapper_dev = (wrapper_camera_device_t*) device;
 
@@ -519,6 +538,14 @@ static int camera_device_open(const hw_module_t *module, const char *name,
         cameraid = atoi(name);
         num_cameras = gVendorModule->get_number_of_cameras();
 
+		fixed_set_params = (char **) malloc(sizeof(char *) * num_cameras);
+        if (!fixed_set_params) {
+            ALOGE("parameter memory allocation fail");
+            rv = -ENOMEM;
+            goto fail;
+        }
+        memset(fixed_set_params, 0, sizeof(char *) * num_cameras);
+        
         if (cameraid > num_cameras) {
             ALOGE("camera service provided cameraid out of bounds, "
                     "cameraid = %d, num supported = %d",
