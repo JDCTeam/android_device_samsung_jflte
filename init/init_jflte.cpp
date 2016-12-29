@@ -100,7 +100,6 @@ void vendor_load_properties()
         property_set("telephony.sms.pseudo_multipart", "1");
     } else if ( bootloader.find("L720") != std::string::npos) {
         /* jfltespr */
-
         cdma_properties(1,true);
         property_override("ro.build.fingerprint", "samsung/jfltespr/jfltespr:4.2.2/JDQ39/L720VPUAMDL:user/release-keys");
         property_override("ro.build.description", "jfltespr-user 4.2.2 JDQ39 L720VPUAMDL release-keys");
@@ -113,7 +112,7 @@ void vendor_load_properties()
         property_set("telephony.sms.pseudo_multipart", "1");
     } else if ( bootloader.find("M919") != std::string::npos) {
         /* jfltetmo */
-        gsm_properties();
+       gsm_properties();
        property_override("ro.build.fingerprint", "samsung/jfltetmo/jfltetmo:4.4.4/KTU84P/M919UVUFNK2:user/release-keys");
        property_override("ro.build.description", "jfltetmo-user 4.4.4 KTU84P M919UVUFNK2 release-keys");
        property_override("ro.product.model", "SGH-M919");
