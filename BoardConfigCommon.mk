@@ -31,6 +31,10 @@ COMMON_PATH := device/samsung/jf-common
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
 
+#Art
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-flags=--no-watch-dog
+
 # Architecture
 TARGET_CPU_VARIANT := krait
 
