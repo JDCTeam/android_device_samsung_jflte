@@ -361,7 +361,7 @@
         <path name="spk" />
         <ctl name="LINEOUT2 Volume" value="8" />
         <ctl name="LINEOUT4 Volume" value="8" />
-        <ctl name="RX5 Digital Volume" value="78" />
+        <ctl name="RX5 Digital Volume" value="84" />
     </path>
 
     <path name="speaker-mic">
@@ -522,7 +522,7 @@
         <ctl name="RX6 DSM MUX" value="DSM_INV" />
         <ctl name="LINEOUT2 Volume" value="10" />
         <ctl name="LINEOUT4 Volume" value="10" />
-        <ctl name="RX5 Digital Volume" value="78" />
+        <ctl name="RX5 Digital Volume" value="84" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="HPHL DAC Switch" value="1" />
