@@ -13,7 +13,11 @@
 # LEDify file context
 /system/bin/ledify								u:object_r:system_file:s0
 
+
 # Alucard kernel
 /sbin/bb/busybox								u:object_r:rootfs:s0
 /system/xbin/wget								u:object_r:system_file:s0
 /system/xbin/zip								u:object_r:system_file:s0
+
+/data/data/com.android.providers.telephony/databases(/.*)?         	u:object_r:radio_data_file:s0
+/data/data/com.android.providers.telephony/shared_prefs(/.*)?      	u:object_r:radio_data_file:s0
