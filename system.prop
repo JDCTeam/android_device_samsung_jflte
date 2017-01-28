@@ -53,6 +53,7 @@ persist.radio.fill_eons=1
 persist.radio.use_se_table_only=1
 ro.telephony.mms_data_profile=5
 ro.telephony.ril_class=jflteRIL
+ro.telephony.call_ring.delay=0
 
 # SDcard fs
 #ro.sdcardfs.enable=true
