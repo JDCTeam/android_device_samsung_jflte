@@ -1,17 +1,4 @@
-allow mediaserver camera_db_file:file r_file_perms;
-
-allow mediaserver proc_driver_camera:file rw_file_perms;
-allow mediaserver proc_driver_laf:file rw_file_perms;
-
-allow mediaserver proc_asusevtlog:file w_file_perms;
-
-allow mediaserver system_file:file execmod;
 allow mediaserver camera_prop:property_service set;
 allow mediaserver system_file:file execmod;
 allow mediaserver system_data_file:sock_file write;
 allow mediaserver audio_device:chr_file rw_file_perms;
-
-r_dir_file(mediaserver, fac_file)
-r_dir_file(mediaserver, persist_file)
-
-set_prop(mediaserver, camera_prop)
