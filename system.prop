@@ -63,6 +63,10 @@ ro.telephony.call_ring.delay=0
 # SDcard fs
 #ro.sdcardfs.enable=true
 
+#Sound steps
+ro.config.vc_call_vol_steps=14
+ro.config.media_vol_steps=30
+
 # Time
 persist.timed.enable=true
 
