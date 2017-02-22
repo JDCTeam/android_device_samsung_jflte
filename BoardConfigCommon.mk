@@ -45,6 +45,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 LZMA_RAMDISK_TARGETS := recovery
 TARGET_KERNEL_CONFIG := lineageos_jf_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/jf
+TARGET_KERNEL_HAVE_EXFAT := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
