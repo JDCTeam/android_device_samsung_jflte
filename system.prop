@@ -61,7 +61,7 @@ ro.telephony.ril_class=jflteRIL
 ro.telephony.call_ring.delay=0
 
 # SDcard fs
-#ro.sdcardfs.enable=true
+ro.sdcardfs.enable=true
 
 #Sound steps
 ro.config.media_vol_steps=30
