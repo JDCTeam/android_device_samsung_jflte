@@ -29,4 +29,25 @@
 #define BUTTON_BRIGHTNESS_NODE "/sys/class/leds/button-backlight/brightness"
 #define LED_BLINK_NODE "/sys/class/sec/led/led_blink"
 
+/*
+ * Brightness adjustment factors
+ *
+ * If one of your device's LEDs is more powerful than the others, use these
+ * values to equalise them.
+ */
+#define LED_ADJUSTMENT_R 1.0
+#define LED_ADJUSTMENT_G 0.7
+#define LED_ADJUSTMENT_B 0.7
+
+/*
+ * Light brightness factors
+ *
+ * It might make sense for all colours to be scaled down (for example, if your
+ * LED is too bright). Use these values to adjust the brightness of each
+ * light. This value is within the range 0-255.
+ */
+#define LED_BRIGHTNESS_BATTERY 20
+#define LED_BRIGHTNESS_NOTIFICATION 200
+#define LED_BRIGHTNESS_ATTENTION 200
+
 #endif // SAMSUNG_LIGHTS_H
