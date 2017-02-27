@@ -14,7 +14,17 @@ use.voice.path.for.pcm.voip=true
 
 # Bluetooth
 ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
-
+ro.qualcomm.bt.hci_transport=smd
+ro.qualcomm.bluetooth.opp=true
+ro.qualcomm.bluetooth.hfp=true
+ro.qualcomm.bluetooth.hsp=true
+ro.qualcomm.bluetooth.pbap=true
+ro.qualcomm.bluetooth.ftp=true
+ro.qualcomm.bluetooth.map=true
+ro.qualcomm.bluetooth.nap=true
+ro.bluetooth.sap=true
+ro.bluetooth.request.master=true
+bluetooth.a2dp.sink.enabled=false
 
 # Charger
 ro.enable_boot_charger_mode=1
