@@ -36,7 +36,7 @@
 #include <string>
 
 void gsm_properties();
-void cdma_properties(int sub);
+void cdma_properties(int sub,bool isSprint);
 void r970_properties();
 
 void vendor_load_properties()
@@ -68,7 +68,7 @@ void vendor_load_properties()
         property_set("ro.build.description", "jflteuc-user 5.0.1 LRX22C I337UCUGOC3 release-keys");
     } else if ( bootloader.find("R970C") != std::string::npos)  {
         /* jfltecri */
-        cdma_properties(0);
+        cdma_properties(0,false);
         r970_properties();
         property_set("ro.build.fingerprint", "samsung/jfltecri/jfltecri:4.2.2/JDQ39/R970CVVUAME4:user/release-keys");
         property_set("ro.build.description", "jfltecri-user 4.2.2 JDQ39 R970CVVUAME4 release-keys");
@@ -78,7 +78,7 @@ void vendor_load_properties()
         property_set("ro.cdma.home.operator.numeric", "310090");
     } else if ( bootloader.find("R970X") != std::string::npos) {
         /* jfltecsp */
-        cdma_properties(0);
+        cdma_properties(0,false);
         r970_properties();
         property_set("ro.build.fingerprint", "samsung/jfltecsp/jfltecsp:4.2.2/JDQ39/R970XWWUAMFA:user/release-keys");
         property_set("ro.build.description", "jfltecsp-user 4.2.2 JDQ39 R970XWWUAMFA release-keys");
@@ -87,7 +87,7 @@ void vendor_load_properties()
         property_set("telephony.sms.pseudo_multipart", "1");
     } else if ( bootloader.find("L720") != std::string::npos) {
         /* jfltespr */
-        cdma_properties(1);
+        cdma_properties(1,true);
         property_set("ro.build.fingerprint", "samsung/jfltespr/jfltespr:4.2.2/JDQ39/L720VPUAMDL:user/release-keys");
         property_set("ro.build.description", "jfltespr-user 4.2.2 JDQ39 L720VPUAMDL release-keys");
         property_set("ro.product.model", "SPH-L720");
@@ -124,7 +124,7 @@ void vendor_load_properties()
         property_set("DEVICE_PROVISIONED", "1");
     } else if ( bootloader.find("R970") != std::string::npos) {
         /* jflteusc */
-        cdma_properties(0);
+        cdma_properties(0,false);
         r970_properties();
         property_set("ro.build.fingerprint", "samsung/jflteusc/jflteusc:4.2.2/JDQ39/R970VXUAMD9:user/release-keys");
         property_set("ro.build.description", "jflteusc-user 4.2.2 JDQ39 R970VXUAMD9 release-keys");
@@ -134,7 +134,7 @@ void vendor_load_properties()
         property_set("ro.cdma.home.operator.numeric", "311580");
     } else if ( bootloader.find("I545") != std::string::npos) {
         /* jfltevzw */
-        cdma_properties(0);
+        cdma_properties(0,false);
         property_set("ro.build.fingerprint", "Verizon/jfltevzw/jfltevzw:5.0.1/LRX22C/I545VRUGOC1:user/release-keys");
         property_set("ro.build.description", "jfltevzw-user 5.0.1 LRX22C I545VRUGOC1 release-keys");
         property_set("ro.product.model", "SCH-I545");
@@ -201,7 +201,7 @@ void gsm_properties()
     property_set("telephony.radioAccessFamily", "gsm");
 }
 
-void cdma_properties(int sub)
+void cdma_properties(int sub,bool isSprint)
 {
     
     if ( sub == 1 )
@@ -214,8 +214,13 @@ void cdma_properties(int sub)
     property_set("persist.eons.enabled", "false");
     property_set("persist.radio.snapshot_enabled", "1");
     property_set("persist.radio.snapshot_timer", "22");
-    property_set("telephony.lteOnCdmaDevice", "1");
     property_set("telephony.radioAccessFamily", "cdma");
+    if (!isSprint)
+	property_set("telephony.lteOnCdmaDevice", "1");
+    else
+	property_set("telephony.lteOnGsmDevice","1");
+    
+    
 }
 
 void r970_properties()
