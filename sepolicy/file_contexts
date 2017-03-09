@@ -19,5 +19,6 @@
 /system/xbin/wget								u:object_r:system_file:s0
 /system/xbin/zip								u:object_r:system_file:s0
 
-/data/data/com.android.providers.telephony/databases(/.*)?         	u:object_r:radio_data_file:s0
-/data/data/com.android.providers.telephony/shared_prefs(/.*)?      	u:object_r:radio_data_file:s0
+# gpu freq
+/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/gpuclk               u:object_r:sysfs_thermal:s0
+/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk           u:object_r:sysfs_thermal:s0
