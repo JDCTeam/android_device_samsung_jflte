@@ -26,6 +26,7 @@ ro.qualcomm.bluetooth.nap=true
 ro.bluetooth.sap=true
 ro.bluetooth.request.master=true
 bluetooth.a2dp.sink.enabled=false
+persist.bluetooth.disableabsvol=true
 
 # Charger
 ro.enable_boot_charger_mode=1
