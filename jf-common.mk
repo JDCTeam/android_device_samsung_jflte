@@ -108,6 +108,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:/system/etc/gps.conf \
     $(LOCAL_PATH)/configs/sap.conf:/system/etc/sap.conf
 
+# Filesystem tools
+PRODUCT_PACKAGES += \
+    e2fsck_static \
+    resize2fs_static
+
 # IPv6 tethering
 PRODUCT_PACKAGES += \
     ebtables \
