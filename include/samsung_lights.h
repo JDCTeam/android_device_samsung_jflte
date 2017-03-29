@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (C) 2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,11 +34,11 @@
  * Brightness adjustment factors
  *
  * If one of your device's LEDs is more powerful than the others, use these
- * values to equalise them.
+ * values to equalise them. This value is in the range 0.0-1.0.
  */
 #define LED_ADJUSTMENT_R 1.0
-#define LED_ADJUSTMENT_G 0.7
-#define LED_ADJUSTMENT_B 0.7
+#define LED_ADJUSTMENT_G 1.0
+#define LED_ADJUSTMENT_B 1.0
 
 /*
  * Light brightness factors
@@ -46,8 +47,8 @@
  * LED is too bright). Use these values to adjust the brightness of each
  * light. This value is within the range 0-255.
  */
-#define LED_BRIGHTNESS_BATTERY 20
-#define LED_BRIGHTNESS_NOTIFICATION 200
-#define LED_BRIGHTNESS_ATTENTION 200
+#define LED_BRIGHTNESS_BATTERY 255
+#define LED_BRIGHTNESS_NOTIFICATION 255
+#define LED_BRIGHTNESS_ATTENTION 255
 
 #endif // SAMSUNG_LIGHTS_H
