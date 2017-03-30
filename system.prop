@@ -35,6 +35,9 @@ mm.enable.smoothstreaming=true
 # NFC
 ro.nfc.port=I2C
 
+# OMX properties
+persist.media.treble_omx=false
+
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
