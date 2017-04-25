@@ -602,7 +602,7 @@
 
     <path name="voice-rec-mic">
         <path name="adc3" />
-        <ctl name="ADC3 Volume" value="2" />
+        <ctl name="ADC3 Volume" value="3" />
         <ctl name="DEC4 Volume" value="84" />
     </path>
 
