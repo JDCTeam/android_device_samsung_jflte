@@ -13,7 +13,4 @@
 -->
 <resources>
 	<bool name="profile_supported_hfpclient">true</bool>
-	
-	<!-- For enabling the hfp client connection service -->
-	<bool name="hfp_client_connection_service_enabled">true</bool>
 </resources>
