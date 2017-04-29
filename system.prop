@@ -1,6 +1,9 @@
 # ART
 dalvik.vm.dex2oat-swap=false
 ro.sys.fw.dex2oat_thread_count=4
+dalvik.vm.boot-dex2oat-threads=4
+dalvik.vm.dex2oat-threads=2
+dalvik.vm.image-dex2oat-threads=4
 
 # Audio
 audio.offload.disable=1
