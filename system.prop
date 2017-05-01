@@ -57,7 +57,6 @@ ro.nfc.port=I2C
 ro.vendor.extension_library=libqti-perfd-client.so
 
 #Power
-ro.config.hw_quickpoweron=true
 ro.build.shutdown_timeout=3
 
 # Radio
