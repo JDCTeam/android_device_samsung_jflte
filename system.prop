@@ -24,7 +24,7 @@ ro.qualcomm.bluetooth.map=true
 ro.qualcomm.bluetooth.nap=true
 ro.bluetooth.sap=true
 ro.bluetooth.request.master=true
-bluetooth.a2dp.sink.enabled=false
+bluetooth.a2dp.sink.enabled=true
 persist.bluetooth.disableabsvol=true
 
 # Charger
