@@ -271,6 +271,7 @@
          (range of 18 - 21 kHz). -->
     <bool name="config_supportSpeakerNearUltrasound">false</bool>
 
+
     <!-- Support in Surfaceflinger for blur layers.
          NOTE: This requires additional hardware-specific code. -->
     <bool name="config_uiBlurEnabled">true</bool>
@@ -290,4 +291,7 @@
     <integer name="config_autoBrightnessBrighteningLightDebounce">0</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">0</integer>
 
+    <!-- If enabled, capacitive keys will only light up when pressed.
+         Otherwise, the buttons will light up whenever the user interacts with the device -->
+    <bool name="config_buttonLightOnKeypressOnly">true</bool>
 </resources>
