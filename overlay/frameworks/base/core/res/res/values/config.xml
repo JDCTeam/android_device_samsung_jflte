@@ -280,7 +280,7 @@
 
     <!-- Boolean indicating if current platform supports bluetooth wide band
           speech -->
-    <bool name="config_bluetooth_wide_band_speech">true</bool>
+    <bool name="config_bluetooth_wide_band_speech">false</bool>
     
       <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
          for debouncing the light sensor.  Different constants are used to debounce the light sensor
