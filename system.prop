@@ -1,6 +1,5 @@
 # ART
 dalvik.vm.dex2oat-swap=false
-ro.sys.fw.dex2oat_thread_count=4
 
 # Audio
 audio.offload.disable=1
