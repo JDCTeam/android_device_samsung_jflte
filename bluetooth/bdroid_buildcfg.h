@@ -18,7 +18,7 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME   "Samsung Galaxy S IV"
+#define BTM_DEF_LOCAL_NAME   "Optimized LineageOS"
 
 #define BTA_DISABLE_DELAY 100 /* in milliseconds */
 
