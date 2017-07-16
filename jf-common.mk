@@ -101,8 +101,8 @@ PRODUCT_PACKAGES += \
     libgenlock \
     memtrack.msm8960
 
-# Doze
-PRODUCT_PACKAGES += \
+# Doze (DO NOT BUILD FOR NOW)
+# PRODUCT_PACKAGES += \
     SamsungDoze
 
 PRODUCT_COPY_FILES += \
