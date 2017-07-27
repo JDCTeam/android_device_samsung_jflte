@@ -230,9 +230,10 @@ void cdma_properties(int sub,bool isSprint)
     property_set("telephony.radioAccessFamily", "cdma");
     if (!isSprint)
 	property_set("telephony.lteOnCdmaDevice", "1");
-    else
+    else {
 	property_set("telephony.lteOnGsmDevice","1");
-    
+	property_set("ro.telephony.default_network","3");
+    }
     
 }
 
