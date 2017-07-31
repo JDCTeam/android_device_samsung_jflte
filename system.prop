@@ -36,6 +36,7 @@ ro.enable_boot_charger_mode=1
 persist.camera.cpp.duplication=false
 
 # Display
+debug.hwui.use_buffer_age=false
 debug.composition.type=c2d
 ro.opengles.version=196608
 ro.sf.lcd_density=480
