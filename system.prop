@@ -10,6 +10,8 @@ ro.qc.sdk.audio.fluencetype=fluence
 use.dedicated.device.for.voip=true
 use.voice.path.for.pcm.voip=false
 
+# Display
+debug.hwui.use_buffer_age=false
 
 # Bluetooth
 ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
