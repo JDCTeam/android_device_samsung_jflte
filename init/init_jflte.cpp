@@ -107,7 +107,6 @@ void vendor_load_properties()
         property_override("ro.product.device", "jfltespr");
         property_set("ro.cdma.home.operator.numeric", "310120");
         property_set("ro.cdma.home.operator.alpha", "Sprint");
-        property_set("ro.telephony.default_network", "8");
         property_set("ro.telephony.get_imsi_from_sim", "true");
         property_set("telephony.sms.pseudo_multipart", "1");
     } else if ( bootloader.find("M919") != std::string::npos) {
