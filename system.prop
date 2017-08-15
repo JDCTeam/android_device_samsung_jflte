@@ -99,4 +99,3 @@ ro.hwui.path_cache_size=8
 ro.hwui.shape_cache_size=2
 ro.hwui.gradient_cache_size=1
 ro.hwui.drop_shadow_cache_size=4
-ro.hwui.texture_cache_flush_rate=0.5
