@@ -91,3 +91,12 @@ ro.opa.eligible_device=true
 
 # Hack for Youtube
 sys.display-size=3840x2160
+
+# Hardware UI
+ro.hwui.texture_cache_size=48
+ro.hwui.layer_cache_size=32
+ro.hwui.path_cache_size=8
+ro.hwui.shape_cache_size=2
+ro.hwui.gradient_cache_size=1
+ro.hwui.drop_shadow_cache_size=4
+ro.hwui.texture_cache_flush_rate=0.5
