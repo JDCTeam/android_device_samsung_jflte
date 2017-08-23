@@ -30,12 +30,16 @@
 #include <stdlib.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
+#include <android-base/properties.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
 #include <string>
+
+namespace android {
+namespace init {
 
 void gsm_properties();
 void cdma_properties(int sub,bool isSprint);
@@ -57,15 +61,14 @@ void vendor_load_properties()
     std::string platform;
     std::string bootloader;
 
-	
-    platform = property_get("ro.board.platform");
-	
-    if (  platform == ""  )
-	return;
-	 
-    bootloader=property_get("ro.bootloader");
+    platform = android::base::GetProperty("ro.board.platform", "");
 
-    if ( bootloader.find("I337M") != std::string::npos) {
+    if (platform == "")
+        return;
+
+    bootloader = android::base::GetProperty("ro.bootloader", "");
+
+    if (bootloader.find("I337M") != std::string::npos) {
         /* jfltecan */
         gsm_properties();
         property_override("ro.build.fingerprint", "samsung/jfltevl/jfltecan:4.2.2/JDQ39/I337MVLUAMDJ:user/release-keys");
@@ -244,4 +247,8 @@ void r970_properties()
     property_set("ro.config.combined_signal", "true");
     property_set("ro.gsm.data_retry_config", "max_retries=infinite,0,0,60000,120000,480000,900000");
     property_set("DEVICE_PROVISIONED", "1");
+
+}
+
+}
 }
