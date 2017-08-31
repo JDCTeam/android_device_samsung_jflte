@@ -77,9 +77,6 @@ on post-fs-data
     # Create directory for HDCP 2.x
     mkdir /data/system/hdcp2 0775 system system
 
-    # Create directory for hostapd
-    mkdir /data/hostapd 0770 system wifi
-
     # Create directory from IMS services
     mkdir /data/shared 0755 system system
 
@@ -491,9 +488,9 @@ on property:init.svc.macloader=stopped
     chown root system /data/.rev
     chmod 0664 /data/.rev
 
-service charger /sbin/healthd -c
+service charger /charger
     class charger
-    seclabel u:r:healthd:s0
+    seclabel u:r:charger:s0
 
 service thermal-engine /system/bin/thermal-engine
     class main
