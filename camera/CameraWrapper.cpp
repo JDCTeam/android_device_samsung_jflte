@@ -45,6 +45,12 @@
 
 using namespace android;
 
+// Camera Wrapper parameters
+
+static const char KEY_CAMERA_MODE[] = "camera-mode";
+static const char KEY_ISO_MODE[] = "iso";
+static const char KEY_SUPPORTED_ISO_MODES[] = "iso-values";
+
 static Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
 
@@ -114,6 +120,76 @@ static int check_vendor_module()
             (const hw_module_t**)&gVendorModule);
 
     return rv;
+}
+
+static char *camera_fixup_getparams(int id, const char *settings)
+{
+    CameraParameters params;
+    params.unflatten(String8(settings));
+
+    ALOGV("%s: Original parameters:", __FUNCTION__);
+    params.dump();
+
+    /* Rear photos: Remove HDR scene mode */
+    if (id == REAR_CAMERA_ID) {
+        params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES,
+                "auto,action,night,sunset,party");
+    }
+
+    /* Photos: Correct exposed ISO values */
+    params.set(KEY_SUPPORTED_ISO_MODES,
+            "auto,ISO_HJR,ISO100,ISO200,ISO400,ISO800,ISO1600");
+
+    ALOGV("%s: Fixed parameters:", __FUNCTION__);
+    params.dump();
+
+    String8 strParams = params.flatten();
+    char *ret = strdup(strParams.string());
+
+    return ret;
+}
+
+static char *camera_fixup_setparams(int id, const char *settings)
+{
+    CameraParameters params;
+    params.unflatten(String8(settings));
+
+    ALOGV("%s: Original parameters:", __FUNCTION__);
+    params.dump();
+
+    const char *recordHint = params.get(CameraParameters::KEY_RECORDING_HINT);
+    bool isVideo = recordHint && !strcmp(recordHint, "true");
+
+    /* Rear videos: Correct camera mode to 0 */
+    if (isVideo && id == REAR_CAMERA_ID) {
+        params.set(KEY_CAMERA_MODE, "0");
+    }
+
+    /* Photos: Map the corrected ISO values to the ones in the HAL */
+    const char *isoMode = params.get(KEY_ISO_MODE);
+    if (isoMode) {
+        if (!strcmp(isoMode, "ISO100"))
+            params.set(KEY_ISO_MODE, "100");
+        else if (!strcmp(isoMode, "ISO200"))
+            params.set(KEY_ISO_MODE, "200");
+        else if (!strcmp(isoMode, "ISO400"))
+            params.set(KEY_ISO_MODE, "400");
+        else if (!strcmp(isoMode, "ISO800"))
+            params.set(KEY_ISO_MODE, "800");
+        else if (!strcmp(isoMode, "ISO1600"))
+            params.set(KEY_ISO_MODE, "1600");
+    }
+
+    ALOGV("%s: Fixed parameters:", __FUNCTION__);
+    params.dump();
+
+    String8 strParams = params.flatten();
+    if (fixed_set_params[id])
+        free(fixed_set_params[id]);
+    fixed_set_params[id] = strdup(strParams.string());
+    char *ret = fixed_set_params[id];
+
+    return ret;
 }
 
 /*******************************************************************
