@@ -38,6 +38,12 @@
 
 using namespace android;
 
+// Camera Wrapper parameters
+
+static const char KEY_CAMERA_MODE[] = "camera-mode";
+static const char KEY_ISO_MODE[] = "iso";
+static const char KEY_SUPPORTED_ISO_MODES[] = "iso-values";
+
 static Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
 
@@ -118,7 +124,7 @@ static char *camera_fixup_getparams(int id, const char *settings)
     }
 
     /* Photos: Correct exposed ISO values */
-    params.set(CameraParameters::KEY_SUPPORTED_ISO_MODES,
+    params.set(KEY_SUPPORTED_ISO_MODES,
             "auto,ISO_HJR,ISO100,ISO200,ISO400,ISO800,ISO1600");
 
     ALOGV("%s: Fixed parameters:", __FUNCTION__);
@@ -143,22 +149,22 @@ static char *camera_fixup_setparams(int id, const char *settings)
 
     /* Rear videos: Correct camera mode to 0 */
     if (isVideo && id == REAR_CAMERA_ID) {
-        params.set(CameraParameters::KEY_CAMERA_MODE, "0");
+        params.set(KEY_CAMERA_MODE, "0");
     }
 
     /* Photos: Map the corrected ISO values to the ones in the HAL */
-    const char *isoMode = params.get(CameraParameters::KEY_ISO_MODE);
+    const char *isoMode = params.get(KEY_ISO_MODE);
     if (isoMode) {
         if (!strcmp(isoMode, "ISO100"))
-            params.set(CameraParameters::KEY_ISO_MODE, "100");
+            params.set(KEY_ISO_MODE, "100");
         else if (!strcmp(isoMode, "ISO200"))
-            params.set(CameraParameters::KEY_ISO_MODE, "200");
+            params.set(KEY_ISO_MODE, "200");
         else if (!strcmp(isoMode, "ISO400"))
-            params.set(CameraParameters::KEY_ISO_MODE, "400");
+            params.set(KEY_ISO_MODE, "400");
         else if (!strcmp(isoMode, "ISO800"))
-            params.set(CameraParameters::KEY_ISO_MODE, "800");
+            params.set(KEY_ISO_MODE, "800");
         else if (!strcmp(isoMode, "ISO1600"))
-            params.set(CameraParameters::KEY_ISO_MODE, "1600");
+            params.set(KEY_ISO_MODE, "1600");
     }
 
     ALOGV("%s: Fixed parameters:", __FUNCTION__);
