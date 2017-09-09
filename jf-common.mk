@@ -163,7 +163,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # NFC packages
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     libnfc-nci \
     libnfc_nci_jni \
     nfc_nci.bcm2079x.default \
