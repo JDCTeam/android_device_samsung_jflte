@@ -113,6 +113,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sap.conf:/system/etc/sap.conf
 
 # HIDL
+$(call inherit-product, $(LOCAL_PATH)/hidl.mk)
+
+# HIDL manifest
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
 
@@ -224,7 +227,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
+# MSM8960 Headers
+PRODUCT_VENDOR_KERNEL_HEADERS := hardware/qcom/msm8960/kernel-headers
+
 # Common Qualcomm
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
-# HIDL
-$(call inherit-product, $(LOCAL_PATH)/hidl.mk)
