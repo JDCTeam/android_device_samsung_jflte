@@ -384,24 +384,24 @@ on boot
 
     setprop init.svc.console stopped
 
-service qcamerasvr /vendor/bin/mm-qcamera-daemon
+service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
 
-service mpdecision /vendor/bin/mpdecision --no_sleep --avg_comp
+service vendor.mpdecision /vendor/bin/mpdecision --no_sleep --avg_comp
     class main
     user root
     group root system readproc wakelock
 
-service kickstart /vendor/bin/qcks -i /firmware-mdm/image/
+service vendor.kickstart /vendor/bin/qcks -i /firmware-mdm/image/
     user root
     group radio cache inet misc audio log system
     oneshot
     disabled
 
 on property:ro.baseband=mdm
-    start kickstart
+    start vendor.kickstart
 
 # LEDify		
 service ledify /system/vendor/bin/ledify		
@@ -412,18 +412,19 @@ service ledify /system/vendor/bin/ledify
     disabled
     oneshot
 
-service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
+
+service vendor.irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class main
     user root
     oneshot
 
 # QMUX must be in multiple groups to support external process connections
-service qmuxd /vendor/bin/qmuxd
+service vendor.qmuxd /vendor/bin/qmuxd
     class core
     user radio
     group radio audio bluetooth gps diag wakelock log
 
-service netmgrd /vendor/bin/netmgrd
+service vendor.netmgrd /vendor/bin/netmgrd
     class main
     group radio system wakelock
 
@@ -432,7 +433,7 @@ service netmgrd /vendor/bin/netmgrd
 on property:ro.data.large_tcp_window_size=true
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
-service macloader /vendor/bin/macloader
+service vendor.macloader /vendor/bin/macloader
     class main
     user system
     group system wifi
@@ -445,7 +446,7 @@ service charger /system/bin/charger
     group system
     seclabel u:r:charger:s0
 
-service thermal-engine /vendor/bin/thermal-engine
+service vendor.thermal-engine /vendor/bin/thermal-engine
    class main
    user root
    group root
