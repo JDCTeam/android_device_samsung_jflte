@@ -229,6 +229,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.jf \
     android.hardware.sensors@1.0-service.jf
 
+# Health HAL
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-service
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.samsung
