@@ -145,8 +145,8 @@ USE_DEVICE_SPECIFIC_DATASERVICES := true
 TARGET_USE_SDCLANG := true
 
 # SELinux
-#include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
 
 # Vendor Init
