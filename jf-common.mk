@@ -201,10 +201,9 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 
-# RIL
+# SHIM Libs
 PRODUCT_PACKAGES += \
-    libshim_ril \
-    libwvm_jflte
+    libshim_atomic
 
 # SPN override
 PRODUCT_COPY_FILES += \
