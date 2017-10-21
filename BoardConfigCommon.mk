@@ -23,6 +23,8 @@
 # Inherit from qcom-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
+TARGET_SPECIFIC_HEADER_PATH += device/samsung/jflte/include
+
 COMMON_PATH := device/samsung/jf-common
 
 # inherit from the proprietary version
@@ -45,7 +47,6 @@ BOARD_KERNEL_PAGESIZE := 2048
 LZMA_RAMDISK_TARGETS := recovery
 TARGET_KERNEL_CONFIG := aosp_jf_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/jf
-TARGET_KERNEL_HAVE_EXFAT := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -138,6 +139,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
 # RIL
+BOARD_PROVIDES_LIBRIL := true
 BOARD_RIL_CLASS := ../../../$(COMMON_PATH)/ril
 USE_DEVICE_SPECIFIC_DATASERVICES := true
 
