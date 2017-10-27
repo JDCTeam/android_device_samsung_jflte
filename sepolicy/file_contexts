@@ -8,9 +8,19 @@
 /dev/btlock                                                u:object_r:bluetooth_dev:s0
 
 # Needed by NFC
-/dev/bcm2079x                                              u:object_r:nfc_device:s0
-
+/dev/bcm2079x    
+                                          u:object_r:nfc_device:s0
 # Alucard kernel
 /sbin/bb/busybox                                           u:object_r:rootfs:s0
 /system/xbin/wget                                          u:object_r:system_file:s0
 /system/xbin/zip                                           u:object_r:system_file:s0
+
+/data/bcmnfc(/.*)?                                         u:object_r:nfc_data_file:s0
+
+# gpu freq
+/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/gpuclk               u:object_r:sysfs_thermal:s0
+/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk           u:object_r:sysfs_thermal:s0
+/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/reset_count          u:object_r:sysfs_thermal:s0
+
+# Camera
+/data/cam_socket[0-9]                                      u:object_r:camera_socket:s0
