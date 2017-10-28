@@ -10,7 +10,7 @@ lib/libaudcal.so
 lib/libcsd-client.so
 
 # Bluetooth firmware
-vendor/firmware/bcm4335_V0343.0353.hcd
+vendor/firmware/bcm4335.hcd
 
 # Camera
 bin/mm-qcamera-daemon
@@ -150,6 +150,7 @@ bin/radish
 # Sensors
 lib/libsam.so
 lib/libsensirion_j1.so
+lib/libgnustl_shared.so
 lib/hw/sensors.msm8960.so
 lib/hw/sensorhubs.msm8960.so
 
