@@ -14,16 +14,16 @@ MROM=$(ls /tmp | grep "META-INF")
 
 # Run Loki tool
 LOKI() {
-egrep -q -f /system/etc/loki_bootloaders /proc/cmdline
+egrep -q -f /tmp/install/etc/loki_bootloaders /proc/cmdline
   if [ $? -eq 0 ];then
     echo '[*] Locked bootloader version detected.'
     export C=/tmp/loki_tmpdir
     mkdir -p $C
     dd if=/dev/block/platform/msm_sdcc.1/by-name/aboot of=$C/aboot.img
     echo '[*] Patching boot.img to with loki.'
-    /system/bin/loki_tool patch boot $C/aboot.img /tmp/boot.img $C/boot.lok || exit 1
+    /tmp/install/bin/loki_tool patch boot $C/aboot.img /tmp/boot.img $C/boot.lok || exit 1
     echo '[*] Flashing modified boot.img to device.'
-    /system/bin/loki_tool flash boot $C/boot.lok || exit 1
+    /tmp/install/bin/loki_tool flash boot $C/boot.lok || exit 1
     rm -rf $C
   else
     echo '[*] Unlocked bootloader version detected.'

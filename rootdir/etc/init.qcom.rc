@@ -47,7 +47,10 @@ on init
 
 on fs
     mount_all fstab.qcom
-    setprop ro.product.name jgedlteue
+    setprop ro.product.name jflte
+
+    chown system radio /dev/block/platform/msm_sdcc.1/by-name
+    chmod 0775 /dev/block/platform/msm_sdcc.1/by-name
 
 on post-fs-data
     # Create directories for tombstone
@@ -260,8 +263,6 @@ on boot
     chown system system /sys/class/sec/sec_touchkey/keypad_enable
     chmod 0660 /sys/class/sec/sec_touchkey/keypad_enable
 
-    chown system radio /sys/class/sec/tsp/cmd
-
     # TCP
     chown system system /sys/kernel/ipv4/tcp_wmem_min
     chown system system /sys/kernel/ipv4/tcp_wmem_def
@@ -416,16 +417,16 @@ service insthk /system/bin/insthk
     oneshot
     seclabel u:r:insthk_exec:s0
 
-# LEDify
-service ledify /system/bin/ledify
-     class late_start
-     user root
-     group shell
-     seclabel u:r:init:s0
-     oneshot
-
 on property:sys.qseecomd.enable=true
     start insthk
+
+# LEDify
+service ledify /system/bin/ledify
+    class late_start
+    user root
+    group shell
+    seclabel u:r:init:s0
+    oneshot
 
 service irsc_util /system/bin/irsc_util "/etc/sec_config"
     class main
@@ -440,17 +441,6 @@ service qmuxd /system/bin/qmuxd
 
 service netmgrd /system/bin/netmgrd
     class main
-    user root
-    group root wifi wakelock radio inet
-
-# Start ril-daemon
-service ril-daemon /system/bin/rild
-    class main
-    socket rild stream 660 root radio
-    socket sap_uim_socket1 stream 660 bluetooth bluetooth
-    socket rild-debug stream 660 radio system
-    user root
-    group radio cache inet misc audio log readproc wakelock qcom_diag
 
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
 # but only if ro.data.large_tcp_window_size property is set.
@@ -491,6 +481,6 @@ service thermal-engine /system/bin/thermal-engine
     user root
     group root
 
-# Disable boot timeout for external modems
+# Disable boot timeout for external modems.
 on property:persist.sys.mdm.timeout_disable=1
     write /sys/module/mdm_common/parameters/disable_boot_timeout 1

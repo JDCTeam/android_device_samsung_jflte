@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2016 The JDCTeam
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,7 +21,7 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := loki_flash.c loki_patch.c loki_find.c loki_unlok.c loki_main.c
 LOCAL_MODULE := loki_tool
 LOCAL_MODULE_TAGS := eng
-LOCAL_MODULE_PATH := $(TARGET_OUT)/bin
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/install/bin
 LOCAL_STATIC_LIBRARIES := libc
 LOCAL_FORCE_STATIC_EXECUTABLE := true
 include $(BUILD_EXECUTABLE)
@@ -28,20 +29,20 @@ include $(BUILD_EXECUTABLE)
 include $(CLEAR_VARS)
 LOCAL_MODULE := loki.sh
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT)/etc
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/install/etc
 LOCAL_SRC_FILES := loki.sh
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := loki_bootloaders
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT)/etc
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/install/etc
 LOCAL_SRC_FILES := loki_bootloaders
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := recovery-transform.sh
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT)/etc
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/install/etc
 LOCAL_SRC_FILES := loki-recovery.sh
 include $(BUILD_PREBUILT)

@@ -8,39 +8,19 @@ persist.audio.fluence.voicecall=true
 qcom.hw.aac.encoder=true
 ro.qc.sdk.audio.fluencetype=fluence
 use.dedicated.device.for.voip=true
-use.voice.path.for.pcm.voip=false
-
-# Display
-debug.hwui.use_buffer_age=false
+use.voice.path.for.pcm.voip=true
 
 # Bluetooth
 ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
-ro.qualcomm.bt.hci_transport=smd
-ro.qualcomm.bluetooth.opp=true
-ro.qualcomm.bluetooth.hfp=true
-ro.bluetooth.hfp.ver=1.6
-ro.qualcomm.bluetooth.hsp=true
-ro.qualcomm.bluetooth.pbap=true
-ro.qualcomm.bluetooth.ftp=true
-ro.qualcomm.bluetooth.map=true
-ro.qualcomm.bluetooth.nap=true
-ro.bluetooth.sap=true
-ro.bluetooth.request.master=true
-bluetooth.a2dp.sink.enabled=true
-persist.bluetooth.disableabsvol=false
 
 # Charger
 ro.enable_boot_charger_mode=1
-
-# Camera
-persist.camera.cpp.duplication=false
 
 # Display
 debug.hwui.use_buffer_age=false
 debug.composition.type=c2d
 ro.opengles.version=196608
 ro.sf.lcd_density=480
-touch.pressure.scale=2
 
 # GPS
 ro.gps.agps_provider=1
@@ -56,14 +36,8 @@ mm.enable.smoothstreaming=true
 # NFC
 ro.nfc.port=I2C
 
-# OMX properties
-persist.media.treble_omx=false
-
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
-
-#Power
-ro.build.shutdown_timeout=3
 
 # Radio
 persist.data.ds_fmc_app.mode=0
@@ -76,30 +50,12 @@ persist.radio.fill_eons=1
 persist.radio.use_se_table_only=1
 ro.telephony.mms_data_profile=5
 ro.telephony.ril_class=jflteRIL
-ro.telephony.call_ring.delay=0
-
-# SDcard fs
-#ro.sdcardfs.enable=true
-
-#Sound steps
-ro.config.media_vol_steps=30
 
 # Time
 persist.timed.enable=true
 
+# Timeout failed shutdowns
+ro.build.shutdown_timeout=5
+
 # WiFi
 wifi.interface=wlan0
-
-#Google assistant
-ro.opa.eligible_device=true
-
-# Hack for Youtube
-sys.display-size=3840x2160
-
-# Hardware UI
-ro.hwui.texture_cache_size=48
-ro.hwui.layer_cache_size=32
-ro.hwui.path_cache_size=8
-ro.hwui.shape_cache_size=2
-ro.hwui.gradient_cache_size=1
-ro.hwui.drop_shadow_cache_size=4

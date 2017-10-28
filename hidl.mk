@@ -25,7 +25,7 @@ PRODUCT_PACKAGES += \
 
 # Camera HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl.legacy \
+    android.hardware.camera.provider@2.4-impl \
     camera.device@1.0-impl.legacy
 
 # Display HIDL
@@ -51,9 +51,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl
 
-# NFC HIDL interfaces
+# NFC HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0-impl-bcm
+    android.hardware.nfc@1.0-impl
 
 # Sensors HIDL
 PRODUCT_PACKAGES += \
@@ -69,4 +69,5 @@ PRODUCT_PACKAGES += \
 
 # WiFi HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service
+android.hardware.wifi@1.0-service
+
