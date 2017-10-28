@@ -26,7 +26,7 @@ PRODUCT_PACKAGES += \
 # Camera HIDL
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    camera.device@1.0-impl.legacy
+    camera.device@1.0-impl-legacy
 
 # Display HIDL
 PRODUCT_PACKAGES += \
