@@ -279,6 +279,12 @@
          (range of 18 - 21 kHz). -->
     <bool name="config_supportSpeakerNearUltrasound">false</bool>
 
+    <!-- Controls the WiFi wakeup feature.
+          0 = Not available.
+          1 = Available.
+     -->
+     <integer translatable="false" name="config_wifi_wakeup_available">1</integer>
+
     <!-- Support in Surfaceflinger for blur layers.
          NOTE: This requires additional hardware-specific code. -->
 <!--    <bool name="config_uiBlurEnabled">true</bool> -->
