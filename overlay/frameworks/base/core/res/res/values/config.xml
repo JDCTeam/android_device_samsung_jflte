@@ -289,4 +289,7 @@
          NOTE: This requires additional hardware-specific code. -->
 <!--    <bool name="config_uiBlurEnabled">true</bool> -->
 
+    <!-- Keep chosen default camera app pinned in memory for faster launching -->
+    <bool name="config_pinnerCameraApp">true</bool>
+
 </resources>
