@@ -132,10 +132,6 @@ PRODUCT_PACKAGES += \
 # IR
 PRODUCT_PACKAGES += \
     consumerir.msm8960
-
-# Voice processing 
-PRODUCT_PACKAGES += \
-    libqcomvoiceprocessing
     
 # Keylayouts
 PRODUCT_COPY_FILES += \
