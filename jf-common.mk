@@ -110,8 +110,8 @@ PRODUCT_PACKAGES += \
     libqdMetaData
 
 # Doze 
-#PRODUCT_PACKAGES += \
-#    SamsungDoze
+PRODUCT_PACKAGES += \
+    SamsungDoze
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:/system/etc/gps.conf \
