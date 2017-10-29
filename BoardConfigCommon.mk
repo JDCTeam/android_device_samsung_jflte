@@ -113,6 +113,19 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 9961455616
 BOARD_CACHEIMAGE_PARTITION_SIZE := 2147483648
 BOARD_FLASH_BLOCK_SIZE := 131072
 
+#Dex preopt
+ifeq ($(HOST_OS),linux)
+  ifeq ($(WITH_DEXPREOPT),)
+    WITH_DEXPREOPT := true
+    WITH_DEXPREOPT_PIC := true
+    ifneq ($(TARGET_BUILD_VARIANT),user)
+      # Retain classes.dex in APK's for non-user builds
+      DEX_PREOPT_DEFAULT := nostripping
+    endif
+  endif
+endif
+
+
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
