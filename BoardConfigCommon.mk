@@ -24,6 +24,8 @@
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
 TARGET_SPECIFIC_HEADER_PATH += device/samsung/jf-common/include
+# ADB
+TARGET_USES_LEGACY_ADB_INTERFACE := true
 
 COMMON_PATH := device/samsung/jf-common
 
