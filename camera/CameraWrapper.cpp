@@ -403,11 +403,6 @@ static char *camera_get_parameters(struct camera_device *device)
 
     char *params = VENDOR_CALL(device, get_parameters);
 
-    CameraParameters _params;
-    const char *pf = _params.get(android::CameraParameters::KEY_PREVIEW_FORMAT);
-    if (pf && strcmp(pf, "nv12-venus") == 0) {
-        _params.set(android::CameraParameters::KEY_PREVIEW_FORMAT, "yuv420sp");
-    }
     char *tmp = camera_fixup_getparams(CAMERA_ID(device), params);
     VENDOR_CALL(device, put_parameters, params);
     params = tmp;
