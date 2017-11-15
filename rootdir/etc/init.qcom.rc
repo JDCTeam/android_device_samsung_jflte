@@ -38,7 +38,7 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
 on init
-    export LD_SHIM_LIBS "/system/bin/mpdecision|libshim_atomic.so"
+    export LD_PRELOAD libshim_atomic.so
 
     # Set permissions for efs partition
     mkdir /efs 0771 system radio
@@ -96,7 +96,7 @@ on post-fs-data
     mkdir /data/fota 0771 system system
 
     # Create directory for time-services
-    mkdir /data/time 0700 system system
+    mkdir /data/vendor/time 0700 system system
 
     # Create directories for WiFi
     mkdir /data/misc/wifi 0770 wifi wifi
