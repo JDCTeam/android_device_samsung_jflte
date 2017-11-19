@@ -32,6 +32,7 @@ persist.gps.qc_nlp_in_use=0
 media.stagefright.legacyencoder=true
 media.stagefright.less-secure=true
 mm.enable.smoothstreaming=true
+camera.disable_treble=true
 
 # NFC
 ro.nfc.port=I2C
