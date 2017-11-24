@@ -144,6 +144,12 @@ on post-fs-data
     mkdir /data/misc/perfd 2755 root system
     mkdir /data/system/perfd 2770 root system
 
+    restorecon_recursive /efs
+    restorecon_recursive /efs/bluetooth
+    restorecon_recursive /efs/imei
+    restorecon_recursive /efs/FactoryApp
+    restorecon_recursive /efs/wifi
+
     setprop vold.post_fs_data_done 1
 
 on early-boot
