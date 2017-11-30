@@ -38,8 +38,6 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
 on init
-    export LD_PRELOAD libshim_atomic.so
-
     # Set permissions for efs partition
     mkdir /efs 0771 system radio
 
