@@ -416,7 +416,7 @@ service ledify /system/bin/ledify
     seclabel u:r:init:s0
     oneshot
 
-service irsc_util /system/vendor/bin/irsc_util "/etc/sec_config"
+service irsc_util /system/vendor/bin/irsc_util "/system/vendor/etc/sec_config"
     class main
     user root
     oneshot
