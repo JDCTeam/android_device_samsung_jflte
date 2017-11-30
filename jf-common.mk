@@ -216,8 +216,8 @@ PRODUCT_COPY_FILES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf \
-    $(LOCAL_PATH)/configs/thermal-engine-8064ab.conf:system/etc/thermal-engine-8064ab.conf
+    $(LOCAL_PATH)/configs/thermald-8064.conf:system/vendor/etc/thermald-8064.conf \
+    $(LOCAL_PATH)/configs/thermald-8064ab.conf:system/vendor/etc/thermald-8064ab.conf
 
 # Qualcomm
 PRODUCT_PACKAGES += \

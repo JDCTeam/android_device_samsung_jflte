@@ -464,7 +464,7 @@ service charger /charger
     class charger
     seclabel u:r:charger:s0
 
-service thermal-engine /system/vendor/bin/thermal-engine
+service thermald /system/bin/thermald
     class main
     user root
     group root
