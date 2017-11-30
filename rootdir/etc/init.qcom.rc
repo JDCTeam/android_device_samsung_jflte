@@ -97,9 +97,6 @@ on post-fs-data
     # Create directory for FOTA
     mkdir /data/fota 0771 system system
 
-    # Create directory for time-services
-    mkdir /data/vendor/time 0700 system system
-
     # Create directories for WiFi
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
@@ -406,11 +403,6 @@ service qseecomd /system/bin/qseecomd
     class late_start
     user system
     group system
-
-service time_daemon /system/bin/time_daemon
-    class late_start
-    user root
-    group root
 
 service insthk /system/bin/insthk
     class main
