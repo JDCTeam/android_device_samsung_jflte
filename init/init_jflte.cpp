@@ -207,7 +207,6 @@ void vendor_load_properties()
 
 void gsm_properties()
 {
-    property_set("rild.libpath", "/system/lib/libril-qc-qmi-1.so");
     property_set("telephony.lteOnGsmDevice", "1");
     property_set("ro.telephony.default_network", "9");
     property_set("telephony.radioAccessFamily", "gsm");
@@ -220,7 +219,6 @@ void cdma_properties(int sub)
     else
         property_set("ro.telephony.default_cdma_sub", "0");
 
-    property_set("rild.libpath", "/system/lib/libsec-ril.so");
     property_set("ro.gps.set_privacy", "1");
     property_set("persist.eons.enabled", "false");
     property_set("persist.radio.snapshot_enabled", "1");
