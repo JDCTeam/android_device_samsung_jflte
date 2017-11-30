@@ -65,7 +65,6 @@ on post-fs-data
     mkdir /tombstones/mdm2 0771 system system
 
     # Create directories for audio
-    mkdir /data/audio 0770 media audio
     mkdir /data/misc/audio 0770 audio audio
 
     # Create directory for CNE
@@ -79,9 +78,6 @@ on post-fs-data
     # Create directory for HDCP 2.x
     mkdir /data/system/hdcp2 0775 system system
 
-    # Create directory from IMS services
-    mkdir /data/shared 0755 system system
-
     # Create directory for location services
     mkdir /data/misc/location 0770 gps gps
     mkdir /data/misc/location/mq 0770 gps gps
@@ -93,9 +89,6 @@ on post-fs-data
     # Create directories for NFC
     mkdir /data/nfc 0700 nfc nfc
     mkdir /data/nfc/param 0700 nfc nfc
-
-    # Create directory for FOTA
-    mkdir /data/fota 0771 system system
 
     # Create directories for WiFi
     mkdir /data/misc/wifi 0770 wifi wifi
@@ -379,18 +372,18 @@ on boot
     # Wifi firmware reload path
     chown wifi wifi /sys/module/dhd/parameters/firmware_path
 
-service qcamerasvr /system/bin/mm-qcamera-daemon
+service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
 
-service mpdecision /system/bin/mpdecision --avg_comp
+service mpdecision /system/vendor/bin/mpdecision --avg_comp
     class main
     user root
     group system readproc
     disabled
 
-service kickstart /system/bin/qcks -i /firmware-mdm/image/
+service kickstart /system/vendor/bin/qcks -i /firmware-mdm/image/
     user root
     group radio cache inet misc audio sdcard_rw log system
     oneshot
@@ -399,12 +392,12 @@ service kickstart /system/bin/qcks -i /firmware-mdm/image/
 on property:ro.baseband=mdm
     start kickstart
 
-service qseecomd /system/bin/qseecomd
+service qseecomd /system/vendor/bin/qseecomd
     class late_start
     user system
     group system
 
-service insthk /system/bin/insthk
+service insthk /system/vendor/bin/insthk
     class main
     user root
     disabled
@@ -422,18 +415,18 @@ service ledify /system/bin/ledify
     seclabel u:r:init:s0
     oneshot
 
-service irsc_util /system/bin/irsc_util "/etc/sec_config"
+service irsc_util /system/vendor/bin/irsc_util "/etc/sec_config"
     class main
     user root
     oneshot
 
 # QMUX must be in multiple groups to support external process connections
-service qmuxd /system/bin/qmuxd
+service qmuxd /system/vendor/bin/qmuxd
     class main
     user root
     group radio audio bluetooth gps diag log
 
-service netmgrd /system/bin/netmgrd
+service netmgrd /system/vendor/bin/netmgrd
     class main
     user root
     group root wifi wakelock radio inet
@@ -472,7 +465,7 @@ service charger /charger
     class charger
     seclabel u:r:charger:s0
 
-service thermal-engine /system/bin/thermal-engine
+service thermal-engine /system/vendor/bin/thermal-engine
     class main
     user root
     group root
