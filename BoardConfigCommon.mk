@@ -141,7 +141,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
-BOARD_RIL_CLASS := ../../../$(COMMON_PATH)/ril
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
