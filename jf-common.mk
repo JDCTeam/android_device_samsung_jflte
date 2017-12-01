@@ -148,7 +148,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     lights.MSM8960
-    
+
+# LEDify
+PRODUCT_COPY_FILES += \
+    vendor/jdc/prebuilt/common/bin/ledify:$(TARGET_COPY_OUT_VENDOR)/bin/ledify
+
+
 # Loki
 PRODUCT_PACKAGES += \
     loki_tool \

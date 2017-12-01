@@ -10,9 +10,6 @@
 # Needed by NFC
 /dev/bcm2079x                                              u:object_r:nfc_device:s0
 
-# LEDify file context
-/system/bin/ledify                                         u:object_r:system_file:s0
-
 # Alucard kernel
 /sbin/bb/busybox                                           u:object_r:rootfs:s0
 /system/xbin/wget                                          u:object_r:system_file:s0

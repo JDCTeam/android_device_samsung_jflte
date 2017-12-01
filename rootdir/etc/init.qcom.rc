@@ -409,7 +409,7 @@ on property:sys.qseecomd.enable=true
     start insthk
 
 # LEDify
-service ledify /system/bin/ledify
+service ledify /system/vendor/bin/ledify
     class late_start
     user root
     group shell
