@@ -7,5 +7,5 @@ LOCAL_C_INCLUDES := system/core/init
 LOCAL_CFLAGS := -Wall -DANDROID_TARGET=\"$(TARGET_BOARD_PLATFORM)\"
 LOCAL_SRC_FILES := init_jflte.cpp
 LOCAL_MODULE := libinit_jflte
-LOCAL_STATIC_LIBRARIES := libbase
+LOCAL_STATIC_LIBRARIES := libbase libselinux
 include $(BUILD_STATIC_LIBRARY)
