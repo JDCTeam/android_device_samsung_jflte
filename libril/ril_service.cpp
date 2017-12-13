@@ -8646,4 +8646,3 @@ pthread_rwlock_t * radio::getRadioServiceRwlock(int slotId) {
 
     return radioServiceRwlockPtr;
 }
-
