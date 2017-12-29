@@ -38,6 +38,9 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
 on init
+
+    export LD_SHIM_LIBS "/system/bin/mm-qcamera-daemon|libshim_camera.so"
+
     # Set permissions for efs partition
     mkdir /efs 0771 system radio
 
