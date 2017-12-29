@@ -468,7 +468,7 @@ service charger /charger
     class charger
     seclabel u:r:charger:s0
 
-service thermald /system/bin/thermald
+service thermald /system/vendor/bin/thermald
     class main
     user root
     group radio system
