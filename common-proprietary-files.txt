@@ -8,6 +8,7 @@ lib/libadsprpc.so
 lib/libacdbloader.so
 lib/libaudcal.so
 lib/libcsd-client.so
+vendor/lib/libaptX_encoder.so
 
 # Bluetooth firmware
 vendor/firmware/bcm4335.hcd
