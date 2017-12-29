@@ -224,6 +224,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/samsung/jf-common/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
 
+# Shim
+PRODUCT_PACKAGES += \
+    libshim_camera 
+
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermald-8064.conf:system/vendor/etc/thermald-8064.conf \
