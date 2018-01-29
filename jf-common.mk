@@ -193,10 +193,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/samsung/jf-common/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
 
-# Stlport
-PRODUCT_PACKAGES += \
-    libstlport
-
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-8064ab.conf:system/etc/thermal-engine-8064ab.conf
