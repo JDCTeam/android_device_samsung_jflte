@@ -483,9 +483,9 @@ on property:init.svc.macloader=stopped
     chown root system /data/.rev
     chmod 0664 /data/.rev
 
-service charger /sbin/healthd -c
+service charger /sbin/charger
     class charger
-    seclabel u:r:healthd:s0
+    seclabel u:r:charger:s0
 
 service thermal-engine /system/bin/thermal-engine
     class main
