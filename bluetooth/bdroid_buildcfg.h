@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 The Android Open Source Project
  * Copyright (C) 2012 The CyanogenMod Project <http://www.cyanogenmod.org>
- * Copyright (C) 2017 LineageOS
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,11 +19,9 @@
 #define _BDROID_BUILDCFG_H
 
 #define BTM_DEF_LOCAL_NAME   "Samsung Galaxy S IV"
-#define BT_HOST_IPC_ENABLED
-#define BTA_DISABLE_DELAY 500 /* in milliseconds */
 
-#define BTM_WBS_INCLUDED TRUE       /* Enable WBS */
-#define BTIF_HF_WBS_PREFERRED FALSE  /* Do not prefer WBS */
+#define BTA_SKIP_BLE_READ_REMOTE_FEAT TRUE
+#define BTA_DISABLE_DELAY 1000 /* in milliseconds */
 
 /* Defined if the kernel does not have support for CLOCK_BOOTTIME_ALARM */
 #define KERNEL_MISSING_CLOCK_BOOTTIME_ALARM TRUE
