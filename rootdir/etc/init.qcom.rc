@@ -443,7 +443,7 @@ service irsc_util /system/bin/irsc_util "/etc/sec_config"
 service qmuxd /system/bin/qmuxd
     class main
     user root
-    group radio audio bluetooth gps qcom_diag log
+    group radio audio bluetooth gps diag log
 
 service netmgrd /system/bin/netmgrd
     class main
