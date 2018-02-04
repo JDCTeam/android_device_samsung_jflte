@@ -1,6 +1,4 @@
 on charger
-    wait /dev/block/platform/msm_sdcc.1/by-name/system
-    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system ro barrier=1
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
@@ -56,30 +54,6 @@ on enable-low-power
     write /sys/module/pm_8x60/modes/cpu2/standalone_power_collapse/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu3/standalone_power_collapse/idle_enabled 1
 
-    write /sys/module/msm_thermal/core_control/enabled 0
-
-    write /sys/devices/system/cpu/cpu0/online 1
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor interactive
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
-
-    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 29000
-    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 98
-    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
-    write /sys/devices/system/cpu/cpufreq/interactive/timer_slack -1
-    write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "85 1458000:90 1782000:95"
-    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 60000
-    write /sys/devices/system/cpu/cpufreq/interactive/boost 0
-    write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 79000
-    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
-    write /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration 0
-
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1890000
@@ -89,24 +63,17 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
-    write /sys/module/cpu_boost/parameters/boost_ms 30
-    write /sys/module/cpu_boost/parameters/input_boost_ms 30
-    write /sys/module/cpu_boost/parameters/sync_threshold 0
-    write /sys/module/cpu_boost/parameters/input_boost_freq 1026000
-    write /sys/module/cpu_boost/parameters/load_based_syncs 0
-
-    write /sys/module/msm_thermal/core_control/enabled 1
+    write /dev/cpuctl/cpu.notify_on_migrate 1
 
     write /sys/devices/platform/msm_sdcc.3/idle_timeout 10
 
 on boot
     chown system system /sys/kernel/cpufreq_limit/limited_max_freq
     chown system system /sys/kernel/cpufreq_limit/limited_min_freq
-    chown system system /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis
-    chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis
-    trigger enable-low-power
 
     setprop sys.usb.ffs.aio_compat 1
+
+    trigger enable-low-power
 
 on property:init.svc.recovery=running
     trigger enable-low-power
