@@ -1,3 +1,6 @@
+NOTE: To get Halium to build, you need to comment out TimeService in the jf-gsm-common vendor makefile
+
+
 Copyright 2013 - The CyanogenMod Project
 
 Copyright 2017 - The LineageOS Project
