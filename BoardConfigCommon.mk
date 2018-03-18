@@ -68,7 +68,12 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 # Camera
 TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-#Legacy hacks
+
+# dexpreopt
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+
+# Legacy hacks
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 MALLOC_SVELTE := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
@@ -89,19 +94,6 @@ SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
-
-#Dexpreopt
-ifeq ($(HOST_OS),linux)
-  ifeq ($(WITH_DEXPREOPT),)
-    WITH_DEXPREOPT := true
-    WITH_DEXPREOPT_PIC := true
-    ifneq ($(TARGET_BUILD_VARIANT),user)
-      # Retain classes.dex in APK's for non-user builds
-      DEX_PREOPT_DEFAULT := nostripping
-    endif
-  endif
-endif
-
 
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
@@ -127,19 +119,6 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2894069760
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 9961455616
 BOARD_CACHEIMAGE_PARTITION_SIZE := 2147483648
 BOARD_FLASH_BLOCK_SIZE := 131072
-
-#Dex preopt
-ifeq ($(HOST_OS),linux)
-  ifeq ($(WITH_DEXPREOPT),)
-    WITH_DEXPREOPT := true
-    WITH_DEXPREOPT_PIC := true
-    ifneq ($(TARGET_BUILD_VARIANT),user)
-      # Retain classes.dex in APK's for non-user builds
-      DEX_PREOPT_DEFAULT := nostripping
-    endif
-  endif
-endif
-
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
