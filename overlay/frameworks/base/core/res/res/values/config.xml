@@ -273,13 +273,6 @@
      -->
      <integer translatable="false" name="config_wifi_wakeup_available">1</integer>
 
-    <!-- Support in Surfaceflinger for blur layers.
-         NOTE: This requires additional hardware-specific code. -->
-<!--    <bool name="config_uiBlurEnabled">true</bool> -->
-
-    <!-- Keep chosen default camera app pinned in memory for faster launching -->
-    <bool name="config_pinnerCameraApp">true</bool>
-
     <!-- If this is true, the screen will fade off. -->
     <bool name="config_animateScreenLights">true</bool>
     
