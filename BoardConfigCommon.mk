@@ -108,7 +108,6 @@ TARGET_NO_RPC := true
 TARGET_SPECIFIC_HEADER_PATH += $(COMMON_PATH)/include
 
 # Manifests
-DEVICE_FRAMEWORK_MANIFEST_FILE := system/libhidl/vintfdata/manifest_healthd_exclude.xml
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
