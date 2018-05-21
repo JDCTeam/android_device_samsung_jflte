@@ -42,7 +42,10 @@ on init
     # Set permissions for efs partition
     mkdir /efs 0771 system radio
 
-    symlink /sdcard /storage/sdcard0
+    # Support legacy paths
+    symlink /sdcard /mnt/sdcard
+
+    export EXTERNAL_STORAGE /sdcard
 
 on fs
     wait /dev/block/platform/${ro.boot.bootdevice}
