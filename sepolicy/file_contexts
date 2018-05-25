@@ -8,8 +8,7 @@
 /dev/btlock                                                u:object_r:bluetooth_dev:s0
 
 # Needed by NFC
-/dev/bcm2079x    
-                                          u:object_r:nfc_device:s0
+/dev/bcm2079x   					   u:object_r:nfc_device:s0
 # Alucard kernel
 /sbin/bb/busybox                                           u:object_r:rootfs:s0
 /system/xbin/wget                                          u:object_r:system_file:s0
