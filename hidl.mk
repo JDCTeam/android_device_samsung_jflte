@@ -59,7 +59,8 @@ PRODUCT_PACKAGES += \
 
 # NFC HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0-impl-bcm
+    android.hardware.nfc@1.0-impl-bcm \
+    android.hardware.nfc@1.0-service \
 
 # Sensors HIDL
 PRODUCT_PACKAGES += \
