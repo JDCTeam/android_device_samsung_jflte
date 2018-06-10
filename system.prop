@@ -17,6 +17,7 @@ ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
 ro.enable_boot_charger_mode=1
 
 # Display
+debug.hwui.use_buffer_age=false
 debug.composition.type=c2d
 ro.opengles.version=196608
 ro.sf.lcd_density=480
