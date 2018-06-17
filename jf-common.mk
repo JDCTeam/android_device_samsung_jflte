@@ -193,7 +193,7 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/vendor/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/configs/libnfc-brcm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/configs/nfcee_access.xml:system/vendor/etc/nfcee_access.xml
 
 # OMX
@@ -210,8 +210,8 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Default OMX service to non-Treble		
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.media.treble_omx=false
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    persist.media.treble_omx=false
 
 # Power
 PRODUCT_PACKAGES += \
