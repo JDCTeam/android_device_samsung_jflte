@@ -40,6 +40,7 @@ using namespace android;
 static const char KEY_CAMERA_MODE[] = "camera-mode";
 static const char KEY_ISO_MODE[] = "iso";
 static const char KEY_SUPPORTED_ISO_MODES[] = "iso-values";
+static const char KEY_ZOOM_RATIOS[]= "zoom-ratios";
 
 static Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
@@ -124,6 +125,8 @@ static char *camera_fixup_getparams(int id, const char *settings)
     params.set(KEY_SUPPORTED_ISO_MODES,
             "auto,ISO_HJR,ISO100,ISO200,ISO400,ISO800,ISO1600");
 
+    
+
     ALOGV("%s: Fixed parameters:", __FUNCTION__);
     params.dump();
 
@@ -163,6 +166,9 @@ static char *camera_fixup_setparams(int id, const char *settings)
         else if (!strcmp(isoMode, "ISO1600"))
             params.set(KEY_ISO_MODE, "1600");
     }
+
+    params.set(KEY_ZOOM_RATIOS,
+	    "100,150");
 
     ALOGV("%s: Fixed parameters:", __FUNCTION__);
     params.dump();
