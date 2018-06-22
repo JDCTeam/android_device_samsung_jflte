@@ -132,8 +132,7 @@ $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
 
 # HIDL manifest
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml \
-    $(LOCAL_PATH)/compatibility_matrix.xml:system/vendor/compatibility_matrix.xml	
+    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \

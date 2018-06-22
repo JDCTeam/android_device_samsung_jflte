@@ -29,10 +29,6 @@ TARGET_USES_LEGACY_ADB_INTERFACE := true
 
 COMMON_PATH := device/samsung/jf-common
 
-# HIDL
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
-
 # inherit from the proprietary version
 -include vendor/samsung/jf-common/BoardConfigVendor.mk
 
