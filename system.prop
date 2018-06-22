@@ -58,7 +58,7 @@ net.tethering.noprovisioning=true
 ro.build.shutdown_timeout=5
 
 # Vendor security patch level - guessed at build date for I9505XXUHQK1
-ro.lineage.build.vendor_security_patch=2017-011-09
+ro.lineage.build.vendor_security_patch=2017-11-09
 
 # WiFi
 wifi.interface=wlan0
