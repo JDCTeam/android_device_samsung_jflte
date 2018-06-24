@@ -94,11 +94,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:system/vendor/firmware/prepatch/bcm4335_prepatch.hcd
 
-# Bluetooth HAL		
-PRODUCT_PACKAGES += \
-    libbt-vendor \
-    android.hardware.bluetooth@1.0-impl
-
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
@@ -120,7 +115,7 @@ PRODUCT_PACKAGES += \
 
 # GPS HAL
 PRODUCT_PACKAGES += \
-    gps.msm8960 \
+    gps.msm8960
 
 # GPS configs
 PRODUCT_COPY_FILES += \
@@ -156,7 +151,6 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
     lights.MSM8960
 
 # LEDify
@@ -215,7 +209,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl
+    power.msm8960
 
 # Ramdisk
 PRODUCT_PACKAGES += \
