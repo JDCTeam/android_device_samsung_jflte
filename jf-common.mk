@@ -109,7 +109,7 @@ PRODUCT_PACKAGES += \
     libqdutils \
     libqdMetaData
 
-# Doze 
+# Doze
 PRODUCT_PACKAGES += \
     SamsungDoze
 
@@ -128,7 +128,7 @@ $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
 # HIDL manifest
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml \
-    $(LOCAL_PATH)/compatibility_matrix.xml:system/vendor/compatibility_matrix.xml	
+    $(LOCAL_PATH)/compatibility_matrix.xml:system/vendor/compatibility_matrix.xml
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
@@ -138,7 +138,7 @@ PRODUCT_PACKAGES += \
 # IR
 PRODUCT_PACKAGES += \
     consumerir.msm8960
-    
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
@@ -205,7 +205,7 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libstagefrighthw
 
-# Default OMX service to non-Treble		
+# Default OMX service to non-Treble
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.media.treble_omx=false
 
@@ -220,6 +220,8 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
+    init.spectrum.rc \
+    init.spectrum.sh \
     ueventd.qcom.rc
 
 # SPN override
@@ -228,7 +230,7 @@ PRODUCT_COPY_FILES += \
 
 # Shim
 PRODUCT_PACKAGES += \
-    libshim_camera 
+    libshim_camera
 
 # Thermal
 PRODUCT_COPY_FILES += \
@@ -238,7 +240,7 @@ PRODUCT_COPY_FILES += \
 # Qualcomm
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
-    
+
 # Wifi
 PRODUCT_PACKAGES += \
     libnetcmdiface \
