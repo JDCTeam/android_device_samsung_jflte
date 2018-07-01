@@ -278,7 +278,7 @@
 
     <!-- If this is true, the screen will fade off. -->
     <bool name="config_animateScreenLights">true</bool>
-    
+
      <!-- Default list of files pinned by the Pinner Service -->
      <string-array translatable="false" name="config_defaultPinnerServiceFiles">
         <item>"/system/framework/arm/boot-framework.oat"</item>
@@ -301,5 +301,8 @@
     <!-- Boolean indicating whether or not to revert to default country code when cellular
     radio is unable to find any MCC information to infer wifi country code from -->
     <bool translatable="false" name="config_wifi_revert_country_code_on_cellular_loss">true</bool>
+
+    <!-- Boolean indicating if current platform supports HFP inband ringing -->
+    <bool name="config_bluetooth_hfp_inband_ringing_support">true</bool>
 
 </resources>
