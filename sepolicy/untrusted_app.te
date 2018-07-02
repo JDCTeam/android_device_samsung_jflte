@@ -1,0 +1,8 @@
+allow untrusted_app cgroup:dir read;
+allow untrusted_app configfs:dir read;
+allow untrusted_app debugfs:dir read;
+allow untrusted_app device:dir read;
+allow untrusted_app rootfs:file read;
+allow untrusted_app sysfs:file { read getattr open };
+get_prop(untrusted_app, camera_prop)
+

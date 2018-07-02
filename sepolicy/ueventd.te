@@ -1,0 +1,1 @@
+allow ueventd camera_socket:chr_file { create setattr };
