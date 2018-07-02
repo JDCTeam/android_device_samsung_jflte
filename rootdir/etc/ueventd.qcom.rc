@@ -110,8 +110,10 @@
 /dev/msm_vidc_dec         0660   system     camera
 /dev/msm_vidc_dec_sec     0660   system     camera
 /dev/msm_vidc_enc         0660   system     camera
-/dev/msm_rotator          0660   system     graphics
+/dev/msm_vidc_enc_sec     0660   system     camera
+/dev/msm_rotator          0660   system     system
 /dev/hw_random            0660   root       root
+/dev/graphics/*           0660   system     system
 
 # Audio
 /dev/msm_qcelp            0660   system     audio
@@ -120,6 +122,7 @@
 /dev/msm_wmapro           0660   system     audio
 /dev/msm_amrnb            0660   system     audio
 /dev/msm_amrwb            0660   system     audio
+/dev/msm_amrwb_in         0660   system     audio
 /dev/msm_amrwbplus        0660   system     audio
 /dev/msm_aac              0660   system     audio
 /dev/msm_multi_aac        0660   system     audio
@@ -136,6 +139,7 @@
 /dev/msm_pcm_lp_dec       0660   system     audio
 /dev/msm_preproc_ctl      0660   system     audio
 /dev/msm_rtac             0660   system     audio
+/dev/msm_sps              0660   system     audio
 /dev/msm_voicememo        0660   system     audio
 /dev/smd3                 0660   bluetooth  bluetooth
 /dev/smd2                 0660   bluetooth  bluetooth

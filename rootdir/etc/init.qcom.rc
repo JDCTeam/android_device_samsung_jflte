@@ -175,7 +175,7 @@ on boot
     chmod 0400 /sys/class/graphics/fb2/msm_fb_fps_level
 
     # YUV to RGB Conversion
-    chown system graphics /sys/class/graphics/fb0/csc_cfg
+    chown system camera /sys/class/graphics/fb0/csc_cfg
     chmod 0660 /sys/class/graphics/fb0/csc_cfg
 
     chown system graphics /sys/class/graphics/fb1/hpd

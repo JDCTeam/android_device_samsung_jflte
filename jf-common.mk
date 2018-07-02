@@ -104,10 +104,11 @@ PRODUCT_PACKAGES += \
     copybit.msm8960 \
     gralloc.msm8960 \
     hwcomposer.msm8960 \
-    libgenlock \
-    memtrack.msm8960 \
-    libqdutils \
-    libqdMetaData
+    memtrack.msm8960
+
+#    libgenlock \
+#    libqdutils \
+#    libqdMetaData
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -206,8 +207,8 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Default OMX service to non-Treble
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.media.treble_omx=false
+# PRODUCT_PROPERTY_OVERRIDES += \
+#    persist.media.treble_omx=false
 
 # Power
 PRODUCT_PACKAGES += \
