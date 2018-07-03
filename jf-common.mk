@@ -240,8 +240,9 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermald-8064.conf:system/vendor/etc/thermald-8064.conf \
-    $(LOCAL_PATH)/configs/thermald-8064ab.conf:system/vendor/etc/thermald-8064ab.conf
+    $(LOCAL_PATH)/configs/thermald-8064.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermald-8064.conf \
+    $(LOCAL_PATH)/configs/thermald-8064ab.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermald-8064ab.conf \
+    $(LOCAL_PATH)/configs/thermald-8064ab.conf:$(TARGET_COPY_OUT_VENDOR)/thermald.conf
 
 # Qualcomm
 PRODUCT_PACKAGES += \
