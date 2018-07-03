@@ -361,13 +361,13 @@
         <path name="spk" />
         <ctl name="LINEOUT2 Volume" value="8" />
         <ctl name="LINEOUT4 Volume" value="8" />
-        <ctl name="RX5 Digital Volume" value="78" />
+        <ctl name="RX5 Digital Volume" value="82" />
     </path>
 
     <path name="speaker-mic">
         <path name="adc4" />
         <ctl name="ADC4 Volume" value="3" />
-        <ctl name="DEC3 Volume" value="84" />
+        <ctl name="DEC3 Volume" value="88" />
         <ctl name="MICBIAS3 CAPLESS Switch" value="1" />
     </path>
 
@@ -377,14 +377,14 @@
         <ctl name="RX1 MIX1 INP2" value="RX6" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="DAC1 Switch" value="1" />
-        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="88" />
     </path>
 
     <path name="handset-mic">
         <ctl name="Main Mic Delay" value="4" />
         <path name="adc3" />
         <ctl name="ADC3 Volume" value="3" />
-        <ctl name="DEC4 Volume" value="84" />
+        <ctl name="DEC4 Volume" value="88" />
         <ctl name="MICBIAS1 CAPLESS Switch" value="1" />
     </path>
 
@@ -393,11 +393,11 @@
         <ctl name="SLIM TX7 MUX" value="DEC4" />
         <ctl name="DEC4 MUX" value="ADC3" />
         <ctl name="ADC3 Volume" value="3" />
-        <ctl name="DEC4 Volume" value="84" />
+        <ctl name="DEC4 Volume" value="88" />
         <ctl name="SLIM TX8 MUX" value="DEC3" />
         <ctl name="DEC3 MUX" value="ADC4" />
         <ctl name="ADC4 Volume" value="3" />
-        <ctl name="DEC3 Volume" value="84" />
+        <ctl name="DEC3 Volume" value="88" />
         <ctl name="MICBIAS3 CAPLESS Switch" value="1" />
         <ctl name="TX3 HPF cut off" value="MIN_3DB_150Hz" />
         <ctl name="TX4 HPF cut off" value="MIN_3DB_150Hz" />
@@ -412,15 +412,15 @@
         <ctl name="HPHR DAC Switch" value="1" />
         <ctl name="HPHL Volume" value="12" />
         <ctl name="HPHR Volume" value="12" />
-        <ctl name="RX1 Digital Volume" value="80" />
-        <ctl name="RX2 Digital Volume" value="80" />
+        <ctl name="RX1 Digital Volume" value="88" />
+        <ctl name="RX2 Digital Volume" value="88" />
         <ctl name="COMP1 Switch" value="1" />
     </path>
 
     <path name="headset-mic">
         <path name="adc2" />
         <ctl name="ADC2 Volume" value="3" />
-        <ctl name="DEC5 Volume" value="84" />
+        <ctl name="DEC5 Volume" value="88" />
     </path>
 
     <path name="voice-handset">
@@ -429,7 +429,7 @@
         <ctl name="RX1 MIX1 INP2" value="RX6" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="DAC1 Switch" value="1" />
-        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="88" />
         <ctl name="ES325 RX2 Enable" value="1" />
     </path>
 
@@ -438,11 +438,11 @@
         <ctl name="SLIM TX7 MUX" value="DEC4" />
         <ctl name="DEC4 MUX" value="ADC3" />
         <ctl name="ADC3 Volume" value="3" />
-        <ctl name="DEC4 Volume" value="84" />
+        <ctl name="DEC4 Volume" value="88" />
         <ctl name="SLIM TX8 MUX" value="DEC3" />
         <ctl name="DEC3 MUX" value="ADC4" />
         <ctl name="ADC4 Volume" value="3" />
-        <ctl name="DEC3 Volume" value="84" />
+        <ctl name="DEC3 Volume" value="88" />
         <ctl name="MICBIAS3 CAPLESS Switch" value="1" />
         <ctl name="TX3 HPF cut off" value="MIN_3DB_150Hz" />
         <ctl name="TX4 HPF cut off" value="MIN_3DB_150Hz" />
@@ -462,7 +462,7 @@
         <ctl name="RX4 DSM MUX" value="CIC_OUT" />
         <ctl name="LINEOUT2 Volume" value="12" />
         <ctl name="LINEOUT4 Volume" value="12" />
-        <ctl name="RX5 Digital Volume" value="84" />
+        <ctl name="RX5 Digital Volume" value="88" />
         <ctl name="ES325 RX2 Enable" value="1" />
     </path>
 
@@ -471,11 +471,11 @@
         <ctl name="SLIM TX7 MUX" value="DEC2" />
         <ctl name="DEC3 MUX" value="ADC4" />
         <ctl name="ADC4 Volume" value="3" />
-        <ctl name="DEC3 Volume" value="84" />
+        <ctl name="DEC3 Volume" value="88" />
         <ctl name="SLIM TX8 MUX" value="DEC3" />
         <ctl name="DEC2 MUX" value="ADC5" />
         <ctl name="ADC5 Volume" value="3" />
-        <ctl name="DEC2 Volume" value="84" />
+        <ctl name="DEC2 Volume" value="88" />
         <ctl name="MICBIAS3 CAPLESS Switch" value="1" />
         <ctl name="MICBIAS4 CAPLESS Switch" value="1" />
         <ctl name="TX3 HPF cut off" value="MIN_3DB_150Hz" />
@@ -494,10 +494,10 @@
         <ctl name="RX2 MIX1 INP2" value="RX7" />
         <ctl name="HPHL DAC Switch" value="1" />
         <ctl name="HPHR DAC Switch" value="1" />
-        <ctl name="HPHL Volume" value="9" />
-        <ctl name="HPHR Volume" value="9" />
-        <ctl name="RX1 Digital Volume" value="84" />
-        <ctl name="RX2 Digital Volume" value="84" />
+        <ctl name="HPHL Volume" value="12" />
+        <ctl name="HPHR Volume" value="12" />
+        <ctl name="RX1 Digital Volume" value="88" />
+        <ctl name="RX2 Digital Volume" value="88" />
         <ctl name="ES325 RX2 Enable" value="1" />
     </path>
 
@@ -507,7 +507,7 @@
         <ctl name="SLIM TX7 MUX" value="DEC5" />
         <ctl name="DEC5 MUX" value="ADC2" />
         <ctl name="ADC2 Volume" value="3" />
-        <ctl name="DEC5 Volume" value="84" />
+        <ctl name="DEC5 Volume" value="88" />
         <ctl name="Internal Route Config" value="0" />
         <ctl name="TX3 HPF cut off" value="MIN_3DB_150Hz" />
         <ctl name="TX4 HPF cut off" value="MIN_3DB_150Hz" />
@@ -522,15 +522,15 @@
         <ctl name="RX6 DSM MUX" value="DSM_INV" />
         <ctl name="LINEOUT2 Volume" value="10" />
         <ctl name="LINEOUT4 Volume" value="10" />
-        <ctl name="RX5 Digital Volume" value="78" />
+        <ctl name="RX5 Digital Volume" value="88" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="HPHL DAC Switch" value="1" />
         <ctl name="HPHR DAC Switch" value="1" />
         <ctl name="HPHL Volume" value="0" />
         <ctl name="HPHR Volume" value="0" />
-        <ctl name="RX1 Digital Volume" value="70" />
-        <ctl name="RX2 Digital Volume" value="70" />
+        <ctl name="RX1 Digital Volume" value="88" />
+        <ctl name="RX2 Digital Volume" value="88" />
         <ctl name="COMP1 Switch" value="1" />
     </path>
 
@@ -540,14 +540,14 @@
         <ctl name="RX1 MIX1 INP2" value="RX6" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="DAC1 Switch" value="1" />
-        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="92" />
     </path>
 
     <path name="voip-speaker-comm">
         <path name="spk" />
         <ctl name="LINEOUT2 Volume" value="12" />
         <ctl name="LINEOUT4 Volume" value="12" />
-        <ctl name="RX5 Digital Volume" value="84" />
+        <ctl name="RX5 Digital Volume" value="88" />
     </path>
 
     <path name="voip-headset-comm">
@@ -556,8 +556,8 @@
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="HPHL DAC Switch" value="1" />
         <ctl name="HPHR DAC Switch" value="1" />
-        <ctl name="RX1 Digital Volume" value="84" />
-        <ctl name="RX2 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="88" />
+        <ctl name="RX2 Digital Volume" value="88" />
         <ctl name="HPHL Volume" value="12" />
         <ctl name="HPHR Volume" value="12" />
     </path>
@@ -565,20 +565,20 @@
     <path name="voip-main-mic-comm">
         <path name="adc3" />
         <ctl name="ADC3 Volume" value="3" />
-        <ctl name="DEC4 Volume" value="84" />
+        <ctl name="DEC4 Volume" value="88" />
     </path>
 
     <path name="voip-sub-mic-comm">
         <path name="adc4" />
         <ctl name="ADC4 Volume" value="3" />
-        <ctl name="DEC3 Volume" value="84" />
+        <ctl name="DEC3 Volume" value="88" />
         <ctl name="MICBIAS3 CAPLESS Switch" value="1" />
     </path>
 
     <path name="voip-headset-mic-comm">
         <path name="adc2" />
         <ctl name="ADC2 Volume" value="3" />
-        <ctl name="DEC5 Volume" value="84" />
+        <ctl name="DEC5 Volume" value="88" />
     </path>
 
     <path name="hdmi">
@@ -602,8 +602,8 @@
 
     <path name="voice-rec-mic">
         <path name="adc3" />
-        <ctl name="ADC3 Volume" value="2" />
-        <ctl name="DEC4 Volume" value="84" />
+        <ctl name="ADC3 Volume" value="3" />
+        <ctl name="DEC4 Volume" value="88" />
     </path>
 
     <path name="camcorder-mic">
@@ -612,11 +612,11 @@
         <ctl name="SLIM TX7 MUX" value="DEC3" />
         <ctl name="DEC3 MUX" value="ADC4" />
         <ctl name="ADC4 Volume" value="3" />
-        <ctl name="DEC3 Volume" value="98" />
+        <ctl name="DEC3 Volume" value="105" />
         <ctl name="SLIM TX8 MUX" value="DEC4" />
         <ctl name="DEC4 MUX" value="ADC3" />
         <ctl name="ADC3 Volume" value="3" />
-        <ctl name="DEC4 Volume" value="98" />
+        <ctl name="DEC4 Volume" value="105" />
         <ctl name="MICBIAS1 CAPLESS Switch" value="1" />
         <ctl name="MICBIAS3 CAPLESS Switch" value="1" />
     </path>
