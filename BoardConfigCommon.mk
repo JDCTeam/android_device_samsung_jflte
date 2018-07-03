@@ -160,7 +160,9 @@ BOARD_PROVIDES_LIBRIL := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy/legacy-sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
+BOARD_SECCOMP_POLICY += $(BOARD_PATH)/seccomp
 
 # SU
 WITH_SU := true
