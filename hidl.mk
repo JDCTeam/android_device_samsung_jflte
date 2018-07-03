@@ -22,7 +22,8 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth HIDL interfaces
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service
 
 # Camera HIDL
 PRODUCT_PACKAGES += \
@@ -31,7 +32,8 @@ PRODUCT_PACKAGES += \
 
 # Configstore
 PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.0-impl
+    android.hardware.configstore@1.0-impl \
+    android.hardware.configstore@1.0-service
 
 # Display HIDL
 PRODUCT_PACKAGES += \
@@ -47,19 +49,23 @@ PRODUCT_PACKAGES += \
 
 # GPS HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service
 
 # IR HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-impl
+    android.hardware.ir@1.0-impl \
+    android.hardware.ir@1.0-service
 
 # Keymaster HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
 
 # Lights HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl
+    android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-service
 
 # NFC HIDL
 PRODUCT_PACKAGES += \
@@ -68,7 +74,8 @@ PRODUCT_PACKAGES += \
 
 # Power HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl
+    android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-service
 
 # Radio
 PRODUCT_PACKAGES += \
@@ -85,9 +92,11 @@ PRODUCT_PACKAGES += \
 
 # Vibrator HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
 
 # WiFi HIDL
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-impl \
     android.hardware.wifi@1.0-service
 
