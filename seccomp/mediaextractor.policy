@@ -1,0 +1,7 @@
+# device specific syscalls.
+# extension of services/mediaextractor/seccomp_policy/mediaextractor-arm.policy
+readlinkat: 1
+pread64: 1
+getsockopt: 1
+# ffmpeg needs this
+nanosleep: 1
