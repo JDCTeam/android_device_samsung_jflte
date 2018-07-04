@@ -2,19 +2,23 @@
 vendor/lib/libstlport.so
 
 # ADSP
-lib/libadsprpc.so
+vendor/lib/libadsprpc.so
 
 # Audio
-lib/libacdbloader.so
-lib/libaudcal.so
-lib/libcsd-client.so
+vendor/lib/libacdbloader.so
+vendor/lib/libaudcal.so
+vendor/lib/libcsd-client.so
+# AptX
+lib/libaptX_encoder.so
+lib/libaptXHD_encoder.so
 vendor/lib/libaptX_encoder.so
+vendor/lib/libaptXHD_encoder.so
 
 # Bluetooth firmware
 vendor/firmware/bcm4335.hcd
 
 # Camera
-bin/mm-qcamera-daemon
+
 cameradata/datapattern_420sp.yuv
 cameradata/datapattern_front_420sp.yuv
 cameradata/M10MO_SFW.bin
@@ -22,78 +26,79 @@ cameradata/RS_M10MO_OL.bin
 cameradata/RS_M10MO_OS.bin
 cameradata/RS_M10MO_SL.bin
 cameradata/RS_M10MO_SS.bin
-lib/hw/camera.msm8960.so:lib/hw/camera.vendor.msm8960.so
-lib/libgemini.so
-lib/libimage-jpeg-enc-omx-comp.so
-lib/libimage-omx-common.so
-lib/libmercury.so
-lib/libmmcamera_faceproc.so
-lib/libmmcamera_frameproc.so
-lib/libmmcamera_hdr_lib.so
-lib/libmmcamera_image_stab.so
-lib/libmmcamera_imx091.so
-lib/libmmcamera_interface.so
-lib/libmmcamera_interface2.so
-lib/libmmcamera_plugin.so
-lib/libmmcamera_statsproc31.so
-lib/libmmcamera_wavelet_lib.so
-lib/libmmjpeg.so
-lib/libmmjpeg_interface.so
-lib/libmmmpod.so
-lib/libmmstillomx.so
-lib/liboemcamera.so
-lib/libsecnativefeature.so
-lib/libvdis.so
+vendor/bin/mm-qcamera-daemon
+vendor/lib/hw/camera.msm8960.so:lib/hw/camera.vendor.msm8960.so
+vendor/lib/libgemini.so
+vendor/lib/libimage-jpeg-enc-omx-comp.so
+vendor/lib/libimage-omx-common.so
+vendor/lib/libmercury.so
+vendor/lib/libmmcamera_faceproc.so
+vendor/lib/libmmcamera_frameproc.so
+vendor/lib/libmmcamera_hdr_lib.so
+vendor/lib/libmmcamera_image_stab.so
+vendor/lib/libmmcamera_imx091.so
+vendor/lib/libmmcamera_interface.so
+vendor/lib/libmmcamera_interface2.so
+vendor/lib/libmmcamera_plugin.so
+vendor/lib/libmmcamera_statsproc31.so
+vendor/lib/libmmcamera_wavelet_lib.so
+vendor/lib/libmmjpeg.so
+vendor/lib/libmmjpeg_interface.so
+vendor/lib/libmmmpod.so
+vendor/lib/libmmstillomx.so
+vendor/lib/liboemcamera.so
+vendor/lib/libsecnativefeature.so
+vendor/lib/libvdis.so
 
 # Camera chromatix
-lib/libchromatix_imx074_default_video.so
-lib/libchromatix_imx074_preview.so
-lib/libchromatix_imx074_video_hd.so
-lib/libchromatix_imx074_zsl.so
-lib/libchromatix_imx091_default_video.so
-lib/libchromatix_imx091_preview.so
-lib/libchromatix_imx091_video_hd.so
-lib/libchromatix_mt9e013_default_video.so
-lib/libchromatix_mt9e013_preview.so
-lib/libchromatix_mt9e013_video_hfr.so
-lib/libchromatix_ov2720_default_video.so
-lib/libchromatix_ov2720_hfr.so
-lib/libchromatix_ov2720_preview.so
-lib/libchromatix_ov2720_zsl.so
-lib/libchromatix_ov5647_default_video.so
-lib/libchromatix_ov5647_preview.so
-lib/libchromatix_ov8825_default_video.so
-lib/libchromatix_ov8825_preview.so
-lib/libchromatix_ov9726_default_video.so
-lib/libchromatix_ov9726_preview.so
-lib/libchromatix_s5k3l1yx_default_video.so
-lib/libchromatix_s5k3l1yx_hfr_120fps.so
-lib/libchromatix_s5k3l1yx_hfr_60fps.so
-lib/libchromatix_s5k3l1yx_hfr_90fps.so
-lib/libchromatix_s5k3l1yx_preview.so
-lib/libchromatix_s5k3l1yx_video_hd.so
-lib/libchromatix_s5k3l1yx_zsl.so
-lib/libchromatix_s5k4e1_default_video.so
-lib/libchromatix_s5k4e1_preview.so
-lib/libchromatix_s5k6b2yx_pip.so
-lib/libchromatix_s5k6b2yx_preview.so
-lib/libchromatix_s5k6b2yx_smartstay.so
-lib/libchromatix_s5k6b2yx_video.so
-lib/libchromatix_s5k6b2yx_vt.so
-lib/libchromatix_s5k6b2yx_vt_hd.so
+vendor/lib/libchromatix_imx074_default_video.so
+vendor/lib/libchromatix_imx074_preview.so
+vendor/lib/libchromatix_imx074_video_hd.so
+vendor/lib/libchromatix_imx074_zsl.so
+vendor/lib/libchromatix_imx091_default_video.so
+vendor/lib/libchromatix_imx091_preview.so
+vendor/lib/libchromatix_imx091_video_hd.so
+vendor/lib/libchromatix_mt9e013_default_video.so
+vendor/lib/libchromatix_mt9e013_preview.so
+vendor/lib/libchromatix_mt9e013_video_hfr.so
+vendor/lib/libchromatix_ov2720_default_video.so
+vendor/lib/libchromatix_ov2720_hfr.so
+vendor/lib/libchromatix_ov2720_preview.so
+vendor/lib/libchromatix_ov2720_zsl.so
+vendor/lib/libchromatix_ov5647_default_video.so
+vendor/lib/libchromatix_ov5647_preview.so
+vendor/lib/libchromatix_ov8825_default_video.so
+vendor/lib/libchromatix_ov8825_preview.so
+vendor/lib/libchromatix_ov9726_default_video.so
+vendor/lib/libchromatix_ov9726_preview.so
+vendor/lib/libchromatix_s5k3l1yx_default_video.so
+vendor/lib/libchromatix_s5k3l1yx_hfr_120fps.so
+vendor/lib/libchromatix_s5k3l1yx_hfr_60fps.so
+vendor/lib/libchromatix_s5k3l1yx_hfr_90fps.so
+vendor/lib/libchromatix_s5k3l1yx_preview.so
+vendor/lib/libchromatix_s5k3l1yx_video_hd.so
+vendor/lib/libchromatix_s5k3l1yx_zsl.so
+vendor/lib/libchromatix_s5k4e1_default_video.so
+vendor/lib/libchromatix_s5k4e1_preview.so
+vendor/lib/libchromatix_s5k6b2yx_pip.so
+vendor/lib/libchromatix_s5k6b2yx_preview.so
+vendor/lib/libchromatix_s5k6b2yx_smartstay.so
+vendor/lib/libchromatix_s5k6b2yx_video.so
+vendor/lib/libchromatix_s5k6b2yx_vt.so
+vendor/lib/libchromatix_s5k6b2yx_vt_hd.so
 
 # DRM
-bin/qseecomd
-lib/libdrmfs.so
-lib/libdrmtime.so
-lib/libQSEEComAPI.so
+vendor/bin/qseecomd
+vendor/lib/libdrmfs.so
+vendor/lib/libdrmtime.so
+vendor/lib/libQSEEComAPI.so
 
 # GPS
-lib/hw/gps.default.so
-lib/libgps.utils.so
-lib/libloc_api_v02.so
-lib/libloc_eng.so
-lib/libloc_core.so
+vendor/lib/hw/gps.default.so
+vendor/lib/libgps.utils.so
+vendor/lib/libloc_api_v02.so
+vendor/lib/libloc_eng.so
+vendor/lib/libloc_core.so
 vendor/lib/libgeofence.so
 vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
@@ -125,20 +130,20 @@ etc/firmware/a300_pm4.fw
 etc/firmware/vidc_1080p.fw
 
 # HDCP
-bin/insthk
+vendor/bin/insthk
 etc/srm.bin
-lib/libhdcp2.so
+vendor/lib/libhdcp2.so
 
 # Media
-lib/libI420colorconvert.so
-lib/libmm-color-convertor.so
+vendor/lib/libI420colorconvert.so
+vendor/lib/libmm-color-convertor.so
 
 # NFC firmware
 vendor/firmware/bcm2079xB4_firmware.ncd
 vendor/firmware/bcm2079xB4_pre_firmware.ncd
 
 # Perf
-bin/mpdecision
+vendor/bin/mpdecision
 vendor/lib/libqti-perfd-client.so
 
 # Qualcomm framework
@@ -149,15 +154,15 @@ etc/sec_config
 bin/radish
 
 # Sensors
-lib/libsam.so
-lib/libsensirion_j1.so
-lib/libgnustl_shared.so
-lib/hw/sensors.msm8960.so
-lib/hw/sensorhubs.msm8960.so
+vendor/lib/libsam.so
+vendor/lib/libsensirion_j1.so
+vendor/lib/libgnustl_shared.so
+vendor/lib/hw/sensors.msm8960.so
+vendor/lib/hw/sensorhubs.msm8960.so
 
 # Thermal
-bin/thermald
-lib/libthermalclient.so
+vendor/bin/thermald
+vendor/lib/libthermalclient.so
 
 # Time services
 -app/TimeService/TimeService.apk|6b9a70083c7e7144d56a08e5fc2d927a0f357dce
