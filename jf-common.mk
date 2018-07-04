@@ -209,12 +209,6 @@ PRODUCT_PACKAGES += \
 # PRODUCT_PROPERTY_OVERRIDES += \
 #    persist.media.treble_omx=false
 
-# Seccomp policy
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
-    $(LOCAL_PATH)/seccomp/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
-
 # Power
 PRODUCT_PACKAGES += \
     power.msm8960
