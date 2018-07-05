@@ -24,6 +24,35 @@ $(call inherit-product-if-exists, vendor/samsung/jf-common/jf-common-vendor.mk)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/jf-common/overlay
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    pm.dexopt.first-boot=quicken \
+    pm.dexopt.boot=quicken \
+    pm.dexopt.install=quicken \
+    pm.dexopt.nsys-library=quicken \
+    pm.dexopt.shared-apk=quicken \
+    pm.dexopt.forced-dexopt=quicken \
+    pm.dexopt.core-app=quicken \
+    dalvik.vm.image-dex2oat-Xms=64m \
+    dalvik.vm.image-dex2oat-Xmx=64m \
+    dalvik.vm.dex2oat-Xms=64m \
+    dalvik.vm.dex2oat-Xmx=512m \
+    dalvik.vm.dex2oat-swap=false \
+    dalvik.vm.dex2oat-filter=quicken \
+    dalvik.vm.usejit=true \
+    dalvik.vm.usejitprofiles=true \
+    dalvik.vm.execution-mode=int:fast \
+    dalvik.vm.appimageformat=lz4 \
+    dalvik.vm.image-dex2oat-filter=quicken \
+    dalvik.vm.heapstartsize=16m \
+    dalvik.vm.heapgrowthlimit=256m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=4m \
+    dalvik.vm.heapmaxfree=8m \
+    debug.atrace.tags.enableflags=0 \
+    ro.dalvik.vm.native.bridge=0 \
+    ro.kernel.android.checkjni=0
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
