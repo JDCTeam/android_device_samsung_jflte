@@ -56,6 +56,9 @@ rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
 # Tethering
 net.tethering.noprovisioning=true
 
+# Time
+persist.timed.enable=true
+
 # Timeout failed shutdowns
 ro.build.shutdown_timeout=5
 
