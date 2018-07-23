@@ -483,6 +483,10 @@ service thermald /system/vendor/bin/thermald
     user root
     group radio system
 
+on property:wlan.driver.status=ok		
+    # Wifi firmware reload path		
+    chown wifi wifi /sys/module/dhd/parameters/firmware_path
+
 # Disable boot timeout for external modems.
 on property:persist.sys.mdm.timeout_disable=1
     write /sys/module/mdm_common/parameters/disable_boot_timeout 1
