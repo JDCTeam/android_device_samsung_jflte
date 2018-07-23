@@ -1,6 +1,3 @@
-# STLport
-vendor/lib/libstlport.so
-
 # ADSP
 vendor/lib/libadsprpc.so
 
@@ -8,6 +5,7 @@ vendor/lib/libadsprpc.so
 vendor/lib/libacdbloader.so
 vendor/lib/libaudcal.so
 vendor/lib/libcsd-client.so
+
 # AptX
 lib/libaptX_encoder.so
 lib/libaptXHD_encoder.so
@@ -18,7 +16,6 @@ vendor/lib/libaptXHD_encoder.so
 vendor/firmware/bcm4335.hcd
 
 # Camera
-
 cameradata/datapattern_420sp.yuv
 cameradata/datapattern_front_420sp.yuv
 cameradata/M10MO_SFW.bin
@@ -27,7 +24,7 @@ cameradata/RS_M10MO_OS.bin
 cameradata/RS_M10MO_SL.bin
 cameradata/RS_M10MO_SS.bin
 vendor/bin/mm-qcamera-daemon
-vendor/lib/hw/camera.msm8960.so:lib/hw/camera.vendor.msm8960.so
+vendor/lib/hw/camera.vendor.msm8960.so
 vendor/lib/libgemini.so
 vendor/lib/libimage-jpeg-enc-omx-comp.so
 vendor/lib/libimage-omx-common.so
@@ -37,17 +34,16 @@ vendor/lib/libmmcamera_frameproc.so
 vendor/lib/libmmcamera_hdr_lib.so
 vendor/lib/libmmcamera_image_stab.so
 vendor/lib/libmmcamera_imx091.so
-vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmcamera_interface2.so
+vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmcamera_plugin.so
 vendor/lib/libmmcamera_statsproc31.so
 vendor/lib/libmmcamera_wavelet_lib.so
-vendor/lib/libmmjpeg.so
 vendor/lib/libmmjpeg_interface.so
+vendor/lib/libmmjpeg.so
 vendor/lib/libmmmpod.so
 vendor/lib/libmmstillomx.so
 vendor/lib/liboemcamera.so
-vendor/lib/libsecnativefeature.so
 vendor/lib/libvdis.so
 
 # Camera chromatix
@@ -84,8 +80,8 @@ vendor/lib/libchromatix_s5k6b2yx_pip.so
 vendor/lib/libchromatix_s5k6b2yx_preview.so
 vendor/lib/libchromatix_s5k6b2yx_smartstay.so
 vendor/lib/libchromatix_s5k6b2yx_video.so
-vendor/lib/libchromatix_s5k6b2yx_vt.so
 vendor/lib/libchromatix_s5k6b2yx_vt_hd.so
+vendor/lib/libchromatix_s5k6b2yx_vt.so
 
 # DRM
 vendor/bin/qseecomd
@@ -94,14 +90,10 @@ vendor/lib/libdrmtime.so
 vendor/lib/libQSEEComAPI.so
 
 # GPS
-vendor/lib/hw/gps.default.so
-vendor/lib/libgps.utils.so
-vendor/lib/libloc_api_v02.so
-vendor/lib/libloc_eng.so
-vendor/lib/libloc_core.so
 vendor/lib/libgeofence.so
 vendor/lib/libizat_core.so
-vendor/lib/liblbs_core.so
+vendor/lib/libloc_ds_api.so
+vendor//libloc_api_v02.so
 
 # Graphics
 vendor/lib/egl/eglsubAndroid.so
@@ -109,17 +101,17 @@ vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
-vendor/lib/libC2D2.so
-vendor/lib/libCB.so
-vendor/lib/libOpenCL.so
-vendor/lib/libRSDriver_adreno.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
+vendor/lib/libC2D2.so
 vendor/lib/libc2d30-a3xx.so
+vendor/lib/libCB.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-qcom.so
-vendor/lib/librs_adreno.so
+vendor/lib/libOpenCL.so
 vendor/lib/librs_adreno_sha1.so
+vendor/lib/librs_adreno.so
+vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsc-a3xx.so
 vendor/lib/libscale.so
 vendor/lib/libuiblur.so
@@ -130,9 +122,13 @@ etc/firmware/a300_pm4.fw
 etc/firmware/vidc_1080p.fw
 
 # HDCP
-vendor/bin/insthk
 etc/srm.bin
+vendor/bin/insthk
 vendor/lib/libhdcp2.so
+
+# Ldac
+lib/libldacBT_enc.so
+vendor/lib/libldacBT_enc.so
 
 # Media
 vendor/lib/libI420colorconvert.so
@@ -147,26 +143,25 @@ vendor/bin/mpdecision
 vendor/lib/libqti-perfd-client.so
 
 # Qualcomm framework
-bin/irsc_util
-etc/sec_config
+vendor/bin/irsc_util
+vendor/etc/sec_config
 
 # Radio
-bin/radish
+vendor/bin/radish
 
 # Sensors
+vendor/lib/hw/sensorhubs.msm8960.so
+vendor/lib/hw/sensors.msm8960.so
+vendor/lib/libgnustl_shared.so
 vendor/lib/libsam.so
 vendor/lib/libsensirion_j1.so
-vendor/lib/libgnustl_shared.so
-vendor/lib/hw/sensors.msm8960.so
-vendor/lib/hw/sensorhubs.msm8960.so
+
+# STLPort
+vendor/lib/libstlport.so
 
 # Thermal
 vendor/bin/thermald
 vendor/lib/libthermalclient.so
-
-# Time services
--app/TimeService/TimeService.apk|6b9a70083c7e7144d56a08e5fc2d927a0f357dce
-lib/libTimeService.so|7200435a98567bdb589034ab110fff73d2773c3d
 
 # Widevine
 vendor/lib/drm/libdrmwvmplugin.so|3bee766222895f524421eb996ca6a08bcf95f19f
@@ -183,3 +178,4 @@ etc/wifi/bcmdhd_sta.bin
 etc/wifi/cred.conf
 etc/wifi/nvram_mfg.txt
 etc/wifi/nvram_net.txt
+
