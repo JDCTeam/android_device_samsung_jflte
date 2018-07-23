@@ -21,6 +21,9 @@
 
 #define BTM_DEF_LOCAL_NAME   "Samsung Galaxy S IV"
 
-#define BTA_DISABLE_DELAY 100 /* in milliseconds */
+#define BTA_DISABLE_DELAY 1000 /* in milliseconds */
+
+#define BTM_WBS_INCLUDED TRUE       /* Enable WBS */
+#define BTIF_HF_WBS_PREFERRED FALSE  /* Use WBS    */
 
 #endif
