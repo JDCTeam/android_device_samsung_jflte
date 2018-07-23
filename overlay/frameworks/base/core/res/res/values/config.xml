@@ -296,6 +296,8 @@
         <item>XTRA_SERVER_1=https://xtrapath1.izatcloud.net/xtra3grc.bin</item>
         <item>XTRA_SERVER_2=https://xtrapath2.izatcloud.net/xtra3grc.bin</item>
         <item>XTRA_SERVER_3=https://xtrapath3.izatcloud.net/xtra3grc.bin</item>
+        <item>XTRA_SERVER_4=https://ssl.gpsonextra.net/xtra3grc.bin</item>
+        <item>XTRA_SERVER_5=https://ssl.izatcloud.net/xtra3grc.bin</item>
     </string-array>
 
     <!-- Boolean indicating whether or not to revert to default country code when cellular
@@ -307,7 +309,7 @@
 
     <!-- Enable Night display, which requires HWC 2.0. -->
     <bool name="config_nightDisplayAvailable">true</bool>
-    
+
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
