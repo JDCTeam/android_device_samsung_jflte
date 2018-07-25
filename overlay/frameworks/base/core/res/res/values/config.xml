@@ -186,9 +186,6 @@
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
 
-    <!-- Boolean indicating whether or not wifi firmware debugging is enabled -->
-    <bool translatable="false" name="config_wifi_enable_wifi_firmware_debugging">false</bool>
-
     <!-- Configure mobile tcp buffer sizes in the form:
          rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
          If no value is found for the rat-name in use, the system default will be applied.
