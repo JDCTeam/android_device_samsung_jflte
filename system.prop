@@ -33,6 +33,10 @@ persist.gps.qc_nlp_in_use=1
 camera2.portability.force_api=1
 mm.enable.smoothstreaming=true
 persist.media.treble_omx=false
+media.stagefright.enable-player=true
+media.stagefright.enable-meta=true
+media.stagefright.enable-scan=false
+media.stagefright.enable-http=true
 
 # NFC
 ro.nfc.port=I2C
