@@ -19,5 +19,6 @@
 <resources>
     <bool name="def_screen_brightness_automatic_mode">true</bool>
     <bool name="def_bluetooth_on">false</bool>
+    <integer name="def_wifi_sleep_policy">0</integer>
 </resources>
 
