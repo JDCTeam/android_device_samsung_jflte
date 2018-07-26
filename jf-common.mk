@@ -51,7 +51,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapmaxfree=8m \
     debug.atrace.tags.enableflags=0 \
     ro.dalvik.vm.native.bridge=0 \
-    ro.kernel.android.checkjni=0
+    ro.kernel.android.checkjni=0 \
+    ro.kernel.checkjni=0
 
 # Permissions
 PRODUCT_COPY_FILES += \
