@@ -13,6 +13,10 @@ use.voice.path.for.pcm.voip=false
 # Bluetooth
 ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
 
+# Calls
+ro.telephony.call_ring.delay=0
+ring.delay=0	
+
 # Charger
 ro.enable_boot_charger_mode=1
 
