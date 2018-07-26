@@ -37,6 +37,7 @@ media.stagefright.enable-player=true
 media.stagefright.enable-meta=true
 media.stagefright.enable-scan=false
 media.stagefright.enable-http=true
+video.accelerate.hw=1
 
 # NFC
 ro.nfc.port=I2C
