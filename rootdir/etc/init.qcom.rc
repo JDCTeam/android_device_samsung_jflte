@@ -391,6 +391,12 @@ service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     user camera
     group camera system inet input graphics
 
+on property:init.svc.media=restarting
+    restart qcamerasvr
+
+on property:init.svc.servicemanager=restarting
+    restart qcamerasvr
+
 service mpdecision /system/vendor/bin/mpdecision --avg_comp
     class main
     user root
