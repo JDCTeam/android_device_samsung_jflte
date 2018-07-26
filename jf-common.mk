@@ -140,6 +140,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SamsungDoze
 
+# FlipFlap
+PRODUCT_PACKAGES += \
+    FlipFlap
+
 # GPS HAL
 PRODUCT_PACKAGES += \
     gps.msm8960
