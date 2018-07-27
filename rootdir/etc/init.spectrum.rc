@@ -247,4 +247,3 @@ on property:persist.spectrum.profile=3
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/min_pwrlevel 3
 
     setprop sys.io.scheduler fiops
-
