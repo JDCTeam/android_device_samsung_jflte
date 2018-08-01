@@ -2,4 +2,4 @@
 
 # cannot take spaces
 rild.libargs=-d /dev/smd0
-ro.vendor.build.security_patch=2017-11-09
+ro.vendor.build.security_patch=WeDontCare
