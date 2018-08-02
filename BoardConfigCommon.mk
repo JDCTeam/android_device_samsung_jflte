@@ -20,21 +20,18 @@
 # definition file).
 #
 
+COMMON_PATH := device/samsung/jf-common
+
 # Inherit from qcom-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
-TARGET_SPECIFIC_HEADER_PATH += device/samsung/jf-common/include
+TARGET_SPECIFIC_HEADER_PATH += $(COMMON_PATH)/include
 # ADB
 TARGET_USES_LEGACY_ADB_INTERFACE := true
-
-COMMON_PATH := device/samsung/jf-common
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
-
-# inherit from the proprietary version
--include vendor/samsung/jf-common/BoardConfigVendor.mk
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
@@ -80,6 +77,15 @@ USE_XML_AUDIO_POLICY_CONF := true
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
+# Device uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
+TARGET_BOOTANIMATION_HALF_RES := true
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
@@ -90,7 +96,6 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 # Camera
 TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-# TARGET_LD_SHIM_LIBS := /system/vendor/bin/mm-qcamera-daemon|libshim_camera.so
 
 # dexpreopt
 WITH_DEXPREOPT := true
@@ -98,10 +103,7 @@ WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
 
 # Legacy hacks
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
-# MALLOC_SVELTE := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
-# TARGET_NEEDS_GCC_LIBC := true
-# TARGET_USES_MEDIA_EXTENSIONS := true
 
 # Charger
 BOARD_BATTERY_DEVICE_NAME := "battery"
@@ -113,7 +115,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_HARDWARE_CLASS += $(COMMON_PATH)/lineagehw
 
 # Display
-# SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
@@ -137,16 +138,12 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
 BOARD_CACHEIMAGE_PARTITION_SIZE := 2170552320
-#BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1181114368
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 28651290624
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
-
-# Properties (reset them here, include more in device if needed)
-TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
 
 # Recovery
 TARGET_RECOVERY_DENSITY := hdpi
@@ -165,10 +162,18 @@ TARGET_USE_SDCLANG := true
 include device/qcom/sepolicy/sepolicy.mk
 include device/qcom/sepolicy/legacy-sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
-BOARD_SECCOMP_POLICY += $(BOARD_PATH)/seccomp
 
 # SU
 WITH_SU := true
+
+# HIDL
+$(call inherit-product, $(LOCAL_PATH)/hidl.mk)
+
+# HIDL manifest
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml \
+    $(LOCAL_PATH)/compatibility_matrix.xml:system/vendor/compatibility_matrix.xml
+
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_jflte
 TARGET_LIBINIT_DEFINES_FILE := $(COMMON_PATH)/init/init_jflte.cpp
