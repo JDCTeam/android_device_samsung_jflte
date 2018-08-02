@@ -110,7 +110,7 @@ PRODUCT_COPY_FILES += \
 
 # SPN override
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
+    $(LOCAL_PATH)/configs/selective-spn-conf.xml:system/vendor/etc/selective-spn-conf.xml
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
