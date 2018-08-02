@@ -129,6 +129,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
    wifi.supplicant_scan_interval=300 \
    debug.kill_allocating_task=0
 
+# Google's DNS
+PRODUCT_PROPERTY_OVERRIDES += \
+   net.dns1=8.8.8.8 \
+   net.dns2=8.8.4.4 \
+   dhcp.wlan0.dns1=8.8.8.8 \
+   dhcp.wlan0.dns2=8.8.4.4 \
+   net.ppp0.dns1=8.8.8.8 \
+   net.ppp0.dns2=8.8.4.4 \
+   net.rmnet0.dns1=8.8.8.8 \
+   net.rmnet0.dns2=8.8.4.4 \
+   net.pdpbr1.dns1=8.8.8.8 \
+   net.pdpbr1.dns2=8.8.4.4
+
 # Tethering
 PRODUCT_PROPERTY_OVERRIDES += \
    net.tethering.noprovisioning=true
