@@ -122,6 +122,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
    pm.sleep_mode=1 \
    rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
    
+# Sleeping props
+PRODUCT_PROPERTY_OVERRIDES += \
+   ro.config.hw_power_saving=true \
+   ro.ril.sensor.sleep.control=1 \
+   wifi.supplicant_scan_interval=300 \
+   debug.kill_allocating_task=0
+
 # Tethering
 PRODUCT_PROPERTY_OVERRIDES += \
    net.tethering.noprovisioning=true
