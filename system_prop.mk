@@ -117,7 +117,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
    persist.radio.fill_eons=1 \
    persist.radio.use_se_table_only=1 \
    ro.telephony.mms_data_profile=5 \
-   persist.radio.add_power_save=1 \
    persist.radio.apm_sim_not_pwdn=1 \
    ro.ril.disable.power.collapse=0 \
    pm.sleep_mode=1 \
