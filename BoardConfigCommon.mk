@@ -167,14 +167,6 @@ BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 # SU
 WITH_SU := true
 
-# HIDL
-$(call inherit-product, $(LOCAL_PATH)/hidl.mk)
-
-# HIDL manifest
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml \
-    $(LOCAL_PATH)/compatibility_matrix.xml:system/vendor/compatibility_matrix.xml
-
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_jflte
 TARGET_LIBINIT_DEFINES_FILE := $(COMMON_PATH)/init/init_jflte.cpp

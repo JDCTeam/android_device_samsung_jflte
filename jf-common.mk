@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-$(LOCAL_PATH) := device/samsung/jf-common
+LOCAL_PATH := device/samsung/jf-common
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
@@ -24,8 +24,13 @@ $(call inherit-product-if-exists, vendor/samsung/jf-common/jf-common-vendor-blob
 # Dalvik heap
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 
+# HIDL
+$(call inherit-product, device/samsung/jf-common/hidl.mk)
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
+
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -107,6 +112,11 @@ PRODUCT_COPY_FILES += \
 # Bluetooth firmware
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335_prepatch.hcd
+
+# HIDL manifest
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml \
+    $(LOCAL_PATH)/compatibility_matrix.xml:system/vendor/compatibility_matrix.xml
 
 # SPN override
 PRODUCT_COPY_FILES += \

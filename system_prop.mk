@@ -18,12 +18,12 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.disable=1 \
-   persist.audio.fluence.speaker=true \
-   persist.audio.fluence.voicecall=true \
-   qcom.hw.aac.encoder=true \
-   ro.qc.sdk.audio.fluencetype=fluence \
-   use.dedicated.device.for.voip=true \
-   use.voice.path.for.pcm.voip=false
+    persist.audio.fluence.speaker=true \
+    persist.audio.fluence.voicecall=true \
+    qcom.hw.aac.encoder=true \
+    ro.qc.sdk.audio.fluencetype=fluence \
+    use.dedicated.device.for.voip=true \
+    use.voice.path.for.pcm.voip=false
    
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
