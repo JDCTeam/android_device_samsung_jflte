@@ -316,5 +316,8 @@
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
+    
+     <!-- Enable doze powersaving -->
+    <bool name="config_enableAutoPowerModes">true</bool>
 
 </resources>
