@@ -47,7 +47,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Dex
 PRODUCT_PROPERTY_OVERRIDES += \
     pm.dexopt.first-boot=quicken \
-    pm.dexopt.boot=quicken \
+    pm.dexopt.boot=verify \
     pm.dexopt.install=quicken \
     pm.dexopt.nsys-library=quicken \
     pm.dexopt.shared-apk=quicken \
