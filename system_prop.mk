@@ -59,6 +59,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-Xmx=512m \
     dalvik.vm.dex2oat-swap=false \
     dalvik.vm.dex2oat-filter=quicken \
+    dalvik.vm.image-dex2oat-threads=4 \
     dalvik.vm.usejit=true \
     dalvik.vm.usejitprofiles=true \
     dalvik.vm.execution-mode=int:fast \
