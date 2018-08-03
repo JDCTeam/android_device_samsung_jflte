@@ -236,6 +236,7 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     init.spectrum.rc \
     init.spectrum.sh \
+    init.doze.sh \
     ueventd.qcom.rc
 
 # Shim

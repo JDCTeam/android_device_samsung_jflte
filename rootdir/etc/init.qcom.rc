@@ -407,6 +407,11 @@ service mpdecision /system/vendor/bin/mpdecision --avg_comp
     group system readproc wakelock
     disabled
 
+service dozer /system/bin/sh /init.doze.sh
+    class late_start
+    disabled
+    oneshot
+
 service kickstart /system/vendor/bin/qcks -i /firmware-mdm/image/
     user root
     group radio cache inet misc audio sdcard_rw log system
@@ -496,3 +501,9 @@ service thermald /system/vendor/bin/thermald
 # Disable boot timeout for external modems.
 on property:persist.sys.mdm.timeout_disable=1
     write /sys/module/mdm_common/parameters/disable_boot_timeout 1
+
+on property:sys.boot_completed=1
+    start dozer
+    exec u:r:init:s0 root root -- /init.doze.sh
+    exec u:r:su:s0 root root -- /init.doze.sh
+   
