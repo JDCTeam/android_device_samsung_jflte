@@ -191,7 +191,7 @@ on property:recovery.perf.mode=0
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
 
-on property:dev.bootcomplete=1
+on property:sys.boot_complete=1
     setprop sys.io.scheduler fiops
 #    write /sys/devices/system/cpu/sched_mc_power_savings 2
     rm /data/system/perfd/default_values
