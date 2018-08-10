@@ -157,7 +157,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 BOARD_PROVIDES_LIBRIL := true
 
 # SDClang
-TARGET_USE_SDCLANG := true
+#TARGET_USE_SDCLANG := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
