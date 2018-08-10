@@ -239,6 +239,10 @@ PRODUCT_PACKAGES += \
     init.doze.sh \
     ueventd.qcom.rc
 
+# Sensors
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
+
 # Shim
 PRODUCT_PACKAGES += \
     libshim_camera

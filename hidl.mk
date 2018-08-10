@@ -84,7 +84,8 @@ PRODUCT_PACKAGES += \
 
 # Sensors HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl
+    android.hardware.sensors@1.0-impl \
+    sensors.msm8960
 
 # USB HIDL
 PRODUCT_PACKAGES += \
