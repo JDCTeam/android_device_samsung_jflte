@@ -147,7 +147,10 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libqcomvoiceprocessing \
     libtinycompress \
-    tinymix
+    tinyplay \
+    tinycap \
+    tinymix \
+    tinypcminfo
 
 # Bluetooth
 PRODUCT_PACKAGES += \
