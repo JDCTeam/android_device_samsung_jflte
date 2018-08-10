@@ -7,8 +7,6 @@ vendor/lib/libaudcal.so
 vendor/lib/libcsd-client.so
 
 # AptX
-lib/libaptX_encoder.so
-lib/libaptXHD_encoder.so
 vendor/lib/libaptX_encoder.so
 vendor/lib/libaptXHD_encoder.so
 
@@ -127,7 +125,6 @@ vendor/bin/insthk
 vendor/lib/libhdcp2.so
 
 # Ldac
-lib/libldacBT_enc.so
 vendor/lib/libldacBT_enc.so
 
 # Media
