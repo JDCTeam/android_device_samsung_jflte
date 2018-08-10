@@ -268,6 +268,7 @@ PRODUCT_PACKAGES += \
     macloader \
     hostapd \
     wificond \
+    libwpa_client \
     wifilogd \
     wpa_supplicant \
     wpa_supplicant.conf
