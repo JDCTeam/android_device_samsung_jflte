@@ -77,7 +77,7 @@ void nfc_hal_nv_co_read(uint8_t* p_buf, uint16_t nbytes, uint8_t block) {
   ALOGD("%s: buffer len=%u; file=%s", __func__, nbytes, filename);
   int fileStream = open(filename, O_RDONLY);
   if (fileStream >= 0) {
-    unsigned short checksum = 0;
+    uint16_t checksum = 0;
     size_t actualReadCrc = read(fileStream, &checksum, sizeof(checksum));
     size_t actualReadData = read(fileStream, p_buf, nbytes);
     close(fileStream);
@@ -130,7 +130,7 @@ void nfc_hal_nv_co_write(const uint8_t* p_buf, uint16_t nbytes, uint8_t block) {
 
   fileStream = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
   if (fileStream >= 0) {
-    unsigned short checksum = crcChecksumCompute(p_buf, nbytes);
+    uint16_t checksum = crcChecksumCompute(p_buf, nbytes);
     size_t actualWrittenCrc = write(fileStream, &checksum, sizeof(checksum));
     size_t actualWrittenData = write(fileStream, p_buf, nbytes);
     ALOGD("%s: %zu bytes written", __func__, actualWrittenData);
