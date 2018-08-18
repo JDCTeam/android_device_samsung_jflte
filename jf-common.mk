@@ -92,6 +92,7 @@ PRODUCT_COPY_FILES += \
 # GPS configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps.conf:system/vendor/etc/gps.conf \
     $(LOCAL_PATH)/configs/sap.conf:system/etc/sap.conf
 
 # Keylayouts
