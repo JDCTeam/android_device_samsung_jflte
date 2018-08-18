@@ -150,6 +150,7 @@ TARGET_POWERHAL_VARIANT := qcom
 ANDROID_NO_TEST_CHECK := true # Don't try to build and run all tests by default. 
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 
 # Recovery
 TARGET_RECOVERY_DENSITY := hdpi
