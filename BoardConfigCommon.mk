@@ -148,6 +148,7 @@ TARGET_POWERHAL_VARIANT := qcom
 
 # Runtime
 ANDROID_NO_TEST_CHECK := true # Don't try to build and run all tests by default. 
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Recovery
 TARGET_RECOVERY_DENSITY := hdpi
