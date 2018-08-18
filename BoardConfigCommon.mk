@@ -146,6 +146,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
+# Runtime
+ANDROID_NO_TEST_CHECK := true # Don't try to build and run all tests by default. 
+
 # Recovery
 TARGET_RECOVERY_DENSITY := hdpi
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
