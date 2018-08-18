@@ -20,6 +20,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.speaker=true \
     persist.audio.fluence.voicecall=true \
     qcom.hw.aac.encoder=true \
+    media.aac_51_output_enable=true \
     ro.qc.sdk.audio.fluencetype=fluence \
     use.dedicated.device.for.voip=true \
     use.voice.path.for.pcm.voip=false
