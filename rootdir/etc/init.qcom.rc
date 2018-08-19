@@ -386,10 +386,6 @@ on boot
     # Wifi firmware reload path
     chown wifi wifi /sys/module/dhd/parameters/firmware_path
 
-    # Force dumpsys to enable idle state
-    dumpsys deviceidle enable
-    dumpsys deviceidle force-inactive
-
 service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
