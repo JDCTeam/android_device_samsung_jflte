@@ -65,10 +65,10 @@ on charger
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor powersave
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor powersave
 
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 270000
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 270000
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 270000
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 270000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
     write /sys/module/msm_thermal/core_control/enabled 1
 
@@ -131,10 +131,10 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1890000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 270000
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 270000
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 270000
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 270000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
     write /sys/module/cpu_boost/parameters/cpu_boost N
     write /sys/module/cpu_boost/parameters/cpuboost_enable N
@@ -192,6 +192,7 @@ on late-fs
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 1890000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 1890000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 1890000
+    setprop sys.io.scheduler bfq
 
     
 on recovery-power
