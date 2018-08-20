@@ -318,4 +318,7 @@
      <!-- Enable doze powersaving -->
     <bool name="config_enableAutoPowerModes">true</bool>
 
+    <!-- Boolean indicating whether or not wifi firmware debugging is enabled -->
+    <bool translatable="false" name="config_wifi_enable_wifi_firmware_debugging">false</bool>
+
 </resources>
