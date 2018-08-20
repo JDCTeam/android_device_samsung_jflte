@@ -98,6 +98,5 @@ PRODUCT_PACKAGES += \
 
 # WiFi HIDL
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-impl \
     android.hardware.wifi@1.0-service
 
