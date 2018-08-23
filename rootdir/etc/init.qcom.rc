@@ -59,6 +59,9 @@ on fs
     # default country code
     setprop ro.boot.wificountrycode 00
 
+on post-fs 
+    chmod 0222 /sys/kernel/debug/tracing/trace_marker
+    
 on post-fs-data
     # Create directories for tombstone
     mkdir /data/tombstones 0771 system system
