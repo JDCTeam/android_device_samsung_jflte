@@ -180,7 +180,8 @@ PRODUCT_PACKAGES += \
 
 # GPS HAL
 PRODUCT_PACKAGES += \
-    gps.msm8960
+    gps.msm8960 \
+    gps.conf
 
 # Filesystem tools
 PRODUCT_PACKAGES += \
