@@ -85,7 +85,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_large_cache_height=2048 \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
-    ro.sf.lcd_density=420
+    ro.sf.lcd_density=420 \
+    video.accelerate.hw=1 \
+    debug.composition.type=gpu \
+    persist.hwc.mdpcomp.enable=false
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
