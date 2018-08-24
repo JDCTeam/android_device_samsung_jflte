@@ -22,8 +22,7 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth HIDL interfaces
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service
+    android.hardware.bluetooth@1.0-impl
 
 # Camera HIDL
 PRODUCT_PACKAGES += \
