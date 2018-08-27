@@ -148,7 +148,7 @@ vendor/bin/radish
 
 # Sensors
 vendor/lib/hw/sensorhubs.msm8960.so
-vendor/lib/hw/sensors.msm8960.so
+vendor/lib/sensors.vendor.msm8960.so 
 vendor/lib/libgnustl_shared.so
 vendor/lib/libsam.so
 vendor/lib/libsensirion_j1.so
@@ -165,7 +165,7 @@ vendor/lib/drm/libdrmwvmplugin.so|3bee766222895f524421eb996ca6a08bcf95f19f
 vendor/lib/libwvdrm_L1.so|3eaf8ed1cb337608a1ccdb80d2c95804e7aea323
 vendor/lib/libwvm.so|59c4c078f4b897ddac8f665309b7a3f25522f207
 vendor/lib/libWVStreamControlAPI_L1.so|6b28492ac55b9a3d86993343cf2c8b55240b3420
-vendor/lib/mediadrm/libwvdrmengine.so|6bdcc4d59b07ccbdd7b07a99677406ade3d2e232
+vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab
 
 # Wi-Fi
 etc/wifi/bcmdhd_apsta.bin
