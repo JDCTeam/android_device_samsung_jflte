@@ -136,12 +136,12 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
-    write /sys/module/cpu_boost/parameters/cpu_boost N
-    write /sys/module/cpu_boost/parameters/cpuboost_enable N
-    write /sys/module/cpu_boost/parameters/boost_ms 0
-    write /sys/module/cpu_boost/parameters/input_boost_ms 40
+    write /sys/module/cpu_boost/parameters/cpu_boost Y
+    write /sys/module/cpu_boost/parameters/cpuboost_enable Y
+    write /sys/module/cpu_boost/parameters/boost_ms 30
+    write /sys/module/cpu_boost/parameters/input_boost_ms 30
     write /sys/module/cpu_boost/parameters/sync_threshold 0
-    write /sys/module/cpu_boost/parameters/input_boost_freq 1782000
+    write /sys/module/cpu_boost/parameters/input_boost_freq 1026000
     write /sys/module/cpu_boost/parameters/load_based_syncs 0
 
     write /sys/module/msm_thermal/core_control/enabled 1
