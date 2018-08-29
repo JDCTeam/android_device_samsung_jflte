@@ -34,11 +34,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bt.bdaddr_path=/efs/bluetooth/bt_addr \
     persist.bt.enableAptXHD=true
 
-# Calls
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.call_ring.delay=0 \
-    ring.delay=0
-
 # Charger
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.enable_boot_charger_mode=1
