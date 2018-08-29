@@ -27,3 +27,6 @@
 
 # adbd
 /sys/devices/system/cpu(/.*)?							   u:object_r:sysfs:s0
+
+# Modem
+/dev/block/mmcblk0p14									   u:object_r:block_device:s0
