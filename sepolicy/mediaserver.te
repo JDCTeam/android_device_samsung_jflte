@@ -13,3 +13,6 @@ unix_socket_send(mediaserver, camera, mm-qcamerad)
 
 binder_call(mediaserver, hal_configstore)
 allow mediaserver hal_configstore_ISurfaceFlingerConfigs:hwservice_manager find;
+
+# Permit HDCP negotiations for wifi display / casting
+allow mediaserver tee_device:chr_file rw_file_perms;
