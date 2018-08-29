@@ -24,3 +24,6 @@
 # Camera
 /data/cam_socket(.*)                                       u:object_r:camera_socket:s0
 /dev/rawchip(.*)                                           u:object_r:mm-qcamerad_device:s0
+
+# adbd
+/sys/devices/system/cpu(/.*)?							   u:object_r:sysfs:s0
