@@ -30,3 +30,6 @@
 
 # Modem
 /dev/block/mmcblk0p14									   u:object_r:block_device:s0
+
+# zygote needs it
+/sys/kernel/debug/tracing/trace_marker					   u:object_r:debugfs:s0
