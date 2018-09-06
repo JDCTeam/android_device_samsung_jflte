@@ -97,12 +97,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1 \
-    mm.enable.smoothstreaming=true \
-    persist.media.treble_omx=false \
-    media.stagefright.enable-player=true \
-    media.stagefright.enable-meta=true \
-    media.stagefright.enable-scan=false \
-    media.stagefright.enable-http=true
+    mm.enable.smoothstreaming=true
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
