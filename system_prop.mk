@@ -85,7 +85,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
     ro.sf.lcd_density=420 \
-    debug.composition.type=gpu \
     persist.hwc.mdpcomp.enable=false
 
 # GPS
