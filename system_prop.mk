@@ -77,6 +77,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.hwui.use_buffer_age=false \
+    debug.sf.hw=1 \
     debug.composition.type=c2d \
     ro.opengles.version=131072 \
     ro.qualcomm.cabl=0 \
