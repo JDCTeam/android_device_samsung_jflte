@@ -84,7 +84,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
     ro.sf.lcd_density=420 \
-    video.accelerate.hw=1 \
     debug.composition.type=gpu \
     persist.hwc.mdpcomp.enable=false
 
@@ -103,8 +102,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.enable-player=true \
     media.stagefright.enable-meta=true \
     media.stagefright.enable-scan=false \
-    media.stagefright.enable-http=true \
-    video.accelerate.hw=1
+    media.stagefright.enable-http=true
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
