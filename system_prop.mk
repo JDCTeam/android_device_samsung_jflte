@@ -32,7 +32,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bt.bdaddr_path=/efs/bluetooth/bt_addr \
-    persist.bt.enableAptXHD=true
+    persist.bt.enableAptXHD=true \
+    qcom.bluetooth.soc=smd \
+    ro.bluetooth.hfp.ver=1.6 \
+    ro.qualcomm.bt.hci_transport=smd
 
 # Charger
 PRODUCT_PROPERTY_OVERRIDES += \
