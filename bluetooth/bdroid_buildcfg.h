@@ -27,4 +27,6 @@
 #define BTM_WBS_INCLUDED TRUE       /* Enable WBS */
 #define BTIF_HF_WBS_PREFERRED FALSE  /* Use WBS    */
 
+#define BTIF_HF_CLIENT_WBS_INCLUDED TRUE
+
 #endif
