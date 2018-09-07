@@ -51,6 +51,9 @@ TARGET_CPU_VARIANT := krait
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
+# Fonts
+SMALLER_FONT_FOOTPRINT := true
+
 # Default locale
 PRODUCT_LOCALES := en-GB
 
