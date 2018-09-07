@@ -25,6 +25,9 @@ COMMON_PATH := device/samsung/jf-common
 # Inherit from qcom-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
+# Shipping api level, 17= Android 4.2.2
+PRODUCT_SHIPPING_API_LEVEL := 17
+
 TARGET_SPECIFIC_HEADER_PATH += $(COMMON_PATH)/include
 # ADB
 TARGET_USES_LEGACY_ADB_INTERFACE := true
