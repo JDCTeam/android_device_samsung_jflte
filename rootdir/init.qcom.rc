@@ -41,9 +41,6 @@ on early-init
     chmod 644 /proc/cmdline
 
 on init
-    # Support legacy paths
-    symlink /sdcard /storage/sdcard0
-
     # Create USB host bus directory here so that libusbhost
     # can start monitoring.
     mkdir /dev/bus 0755 root root
