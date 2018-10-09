@@ -1,3 +1,0 @@
-allow mdm_helper self:capability setuid;
-allow mdm_helper toolbox_exec:file { execute execute_no_trans getattr open read };
-allow mdm_helper block_device:blk_file getattr;

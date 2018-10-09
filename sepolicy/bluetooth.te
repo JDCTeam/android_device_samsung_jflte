@@ -1,1 +1,0 @@
-allow bluetooth bluetooth_dev:chr_file rw_file_perms;
