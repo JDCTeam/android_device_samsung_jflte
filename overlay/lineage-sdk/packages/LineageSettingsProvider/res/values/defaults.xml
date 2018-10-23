@@ -30,4 +30,8 @@
          -->
      <integer name="def_battery_style">6</integer>
 
+     <!-- Default value for the notification LEDs brightness
+         when Do Not Disturb is active -->
+     <integer name="def_battery_brightness_level_zen">100</integer>
+
 </resources>
