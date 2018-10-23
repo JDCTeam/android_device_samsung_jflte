@@ -20,4 +20,14 @@
          2. Left -->
      <integer name="def_qs_quick_pulldown">1</integer>
 
+     <!-- Default for LineageSettings.System.STATUS_BAR_BATTERY_STYLE
+         * 0: Display the battery as icon in portrait mode
+         * 2: Display the battery as a circle
+         * 4: Hide the battery status information
+         * 5: Display the battery as icon in landscape mode
+         * 6: Display the battery as plain text
+         * default: 2
+         -->
+     <integer name="def_battery_style">6</integer>
+
 </resources>
