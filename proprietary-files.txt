@@ -69,7 +69,7 @@ vendor/lib/libloc_ds_api.so
 
 # Sensors
 vendor/bin/geomagneticd
-vendor/lib/libsensors.so
+vendor/lib/sensors.vendor.msm8960.so
 
 # Camera
 vendor/bin/mm-qcamera-daemon
