@@ -111,7 +111,8 @@ PRODUCT_COPY_FILES += \
 
 # GPS config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps.conf:system/vendor/etc/gps.conf
 
 # NFC config
 PRODUCT_COPY_FILES += \
