@@ -185,9 +185,9 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl
 
 # GPS
-#PRODUCT_PACKAGES += \
-#    android.hardware.gnss@1.0-impl \
-#    gps.msm8960
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl \
+    gps.msm8960
 
 # Bluetooth
 PRODUCT_PACKAGES += \
