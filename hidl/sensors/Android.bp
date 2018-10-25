@@ -25,11 +25,11 @@ cc_library_shared {
     relative_install_path: "hw",
     srcs: ["Sensors.cpp"],
     shared_libs: [
-        "liblog",
-        "libcutils",
-        "libhardware",
         "libbase",
+        "liblog",
+        "libhwbinder",
         "libutils",
+        "libhardware",
         "libhidlbase",
         "libhidltransport",
         "android.hardware.sensors@1.0",
@@ -50,10 +50,9 @@ cc_binary {
 
     shared_libs: [
         "liblog",
-        "libcutils",
-        "libdl",
-        "libbase",
+        "libhwbinder",
         "libutils",
+        "libhardware",
         "libhidlbase",
         "libhidltransport",
         "android.hardware.sensors@1.0",
