@@ -117,7 +117,7 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/mediaserver=22 \
     /system/vendor/bin/mm-qcamera-daemon=22 \
-    /system/vendor/lib/libsensirion_j1.so=22
+    /system/vendor/lib/libsensirion_j1.so=21
 
 # Camera
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
