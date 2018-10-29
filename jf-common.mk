@@ -126,7 +126,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     e2fsck_static \
     resize2fs_static
-    
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
@@ -265,16 +265,16 @@ PRODUCT_PACKAGES += \
     recovery-transform.sh
 
 # Doze
-PRODUCT_PACKAGES += \
-    SamsungDoze
+#PRODUCT_PACKAGES += \
+#    SamsungDoze
 
 # Camera
 PRODUCT_PACKAGES += \
     Snap
 
 # FlipFlap
-PRODUCT_PACKAGES += \
-    FlipFlap
+#PRODUCT_PACKAGES += \
+#    FlipFlap
 
 # call common jf system props
 $(call inherit-product, device/samsung/jf-common/system_prop.mk)
