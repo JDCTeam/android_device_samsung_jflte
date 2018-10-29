@@ -35,26 +35,9 @@
          config to 7. -->
     <integer name="config_deviceHardwareWakeKeys">65</integer>
 
-    <!-- Control the behavior when the user long presses the home button.
-            0 - Nothing
-            1 - Menu key
-            2 - Recent apps view in SystemUI
-            3 - Launch assist intent
-            4 - Voice Search
-            5 - In-app Search
-            6 - Launch camera
-            7 - Sleep
-            8 - Last app
-            9 - Toggle split screen
-         This needs to match the enums in
-         sdk/src/java/org/lineageos/internal/util/DeviceKeysConstants.java.
-    -->
-	<integer name="config_longPressOnHomeBehavior">2</integer>
-	<integer name="config_doubleTapOnHomeBehavior">8</integer>
-	<integer name="config_longPressOnMenuBehavior">7</integer>
-
 	<!-- Timeout in MS for how long you have to long-press the back key to
          kill the foreground app. -->
 	<integer name="config_backKillTimeout">1000</integer>
+
 
 </resources>
