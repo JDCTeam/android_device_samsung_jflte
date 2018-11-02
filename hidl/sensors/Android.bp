@@ -26,12 +26,12 @@ cc_library_shared {
     srcs: ["Sensors.cpp"],
     shared_libs: [
         "libbase",
+        "libhidlbase",
+        "libhidltransport",
         "liblog",
         "libhwbinder",
         "libutils",
         "libhardware",
-        "libhidlbase",
-        "libhidltransport",
         "android.hardware.sensors@1.0",
     ],
     static_libs: [
@@ -45,11 +45,12 @@ cc_binary {
     name: "android.hardware.sensors@1.0-service.jf",
     relative_install_path: "hw",
     vendor: true,
-    defaults: ["hidl_defaults"],
     init_rc: ["android.hardware.sensors@1.0-service.jf.rc"],
     srcs: ["service.cpp"],
 
     shared_libs: [
+        "libhidlbase",
+        "libhidltransport",
         "liblog",
         "libhwbinder",
         "libutils",
