@@ -45,6 +45,7 @@ cc_binary {
     name: "android.hardware.sensors@1.0-service.jf",
     relative_install_path: "hw",
     vendor: true,
+    defaults: ["hidl_defaults"],
     init_rc: ["android.hardware.sensors@1.0-service.jf.rc"],
     srcs: ["service.cpp"],
 
@@ -57,4 +58,11 @@ cc_binary {
         "libhidltransport",
         "android.hardware.sensors@1.0",
     ],
+     arch: {
+        arm: {
+            cflags: [
+                "-DARCH_ARM_32"
+            ],
+        },
+    },
 }
