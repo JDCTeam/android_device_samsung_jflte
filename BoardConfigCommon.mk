@@ -204,5 +204,4 @@ WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 #BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
 # Misc
-# WITH_SU := true
 ALLOW_MISSING_DEPENDENCIES := true
