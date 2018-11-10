@@ -1,0 +1,212 @@
+# SPECTRUM KERNEL MANAGER
+# Ramdisk file for profile based kernel management
+# Implimentation inspired by Franco's fku profiles
+# Tweaked by BUFF99 exclusively for BUFF99 & SIDEs use
+
+# Initialization
+on property:sys.boot_completed=1
+   # Set default profile on first boot
+   exec u:r:init:s0 root root -- /init.spectrum.sh
+   exec u:r:su:s0 root root -- /init.spectrum.sh
+   # Enable Spectrum support
+   setprop spectrum.support 1
+   # Add kernel name
+   setprop persist.spectrum.kernel BuffCore
+
+
+# Balance - same as default non-spectrum.
+# Tweaked by BUFF99 exclusively for BUFF99 & SIDEs use
+#
+on property:persist.spectrum.profile=0
+    stop mpdecision
+    # Speed
+    write /sys/module/msm_thermal/core_control/enabled 0
+    write /sys/devices/system/cpu/cpu0/online 1
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 29000
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 98
+    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_slack -1
+    write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "85 1458000:90 1782000:95"
+    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 60000
+    write /sys/devices/system/cpu/cpufreq/interactive/boost 0
+    write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 79000
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration 0
+
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
+
+    write /sys/module/msm_thermal/core_control/enabled 1
+
+    # GPU
+    write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel 0
+    write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/min_pwrlevel 3
+
+    setprop sys.io.scheduler fiops
+
+# Performance - default LOS, JDC, TSVIET
+# Tweaked by BUFF99 exclusively for BUFF99 & SIDEs use
+#
+on property:persist.spectrum.profile=1
+     # Speed
+    write /sys/module/msm_thermal/core_control/enabled 0
+    write /sys/devices/system/cpu/cpu0/online 1
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
+
+    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "19000 1400000:39000 1700000:19000"
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 90
+    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1134000
+
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_slack  80000
+
+    write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
+
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "85 1458000:90 1782000:95"
+    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 39000
+    write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 79000
+
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
+
+    write /sys/devices/system/cpu/cpufreq/interactive/boost 0
+    write /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration 0
+
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
+
+    write /sys/module/cpu_boost/parameters/cpu_boost Y
+    write /sys/module/cpu_boost/parameters/cpuboost_enable Y
+    write /sys/module/cpu_boost/parameters/boost_ms 40
+    write /sys/module/cpu_boost/parameters/input_boost_ms 40
+    write /sys/module/cpu_boost/parameters/sync_threshold 0
+    write /sys/module/cpu_boost/parameters/input_boost_freq 1782000
+    write /sys/module/cpu_boost/parameters/load_based_syncs 0
+
+    write /sys/module/msm_thermal/core_control/enabled 1
+
+    # GPU
+    write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel 0
+    write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/min_pwrlevel 3
+
+    setprop sys.io.scheduler bfq
+    start mpdecision
+
+# Battery - Slower and battery tuned
+# Tweaked by BUFF99 exclusively for BUFF99 & SIDEs use
+#
+on property:persist.spectrum.profile=2
+    stop mpdecision
+    # Speed
+    write /sys/module/msm_thermal/core_control/enabled 0
+    write /sys/devices/system/cpu/cpu0/online 1
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "20000 1026000:10000"
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 98
+    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_slack -1
+    write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "50 216000:33 270000:83 324000:20 378000:94 384000:2 486000:27 594000:22 702000:82 810000:15 918000:94 1026000:90 1134000:11 1242000:85 1350000:91 1458000:92 1566000:98 1674000:2 1782000:2 1890000:2"
+    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 15000
+    write /sys/devices/system/cpu/cpufreq/interactive/boost 0
+    write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 0
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration 0
+
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1566000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1566000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1566000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1566000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
+    write /sys/module/msm_thermal/core_control/enabled 1
+
+    # GPU
+    write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel 2
+    write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/min_pwrlevel 3
+
+    setprop sys.io.scheduler fiops
+
+# Gaming - default Buff with gov Target_load tweaked for NON power efficient voltages
+# Tweaked by BUFF99 exclusively for BUFF99 & SIDEs use
+#
+on property:persist.spectrum.profile=3
+    stop mpdecision
+   # Speed
+    write /sys/module/msm_thermal/core_control/enabled 0
+    write /sys/devices/system/cpu/cpu0/online 1
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "20000 1566000:10000"
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 98
+    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_slack -1
+    write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "64 216000:68 270000:71 324000:73 378000:84 384000:67 486000:74 594000:76 702000:78 810000:84 918000:85 1026000:86 1134000:87 1242000:88 1350000:89 1458000:90 1566000:92 1674000:94 1782000:95"
+    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 15000
+    write /sys/devices/system/cpu/cpufreq/interactive/boost 0
+    write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 0
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration 0
+
+    write /sys/module/cpu_boost/parameters/cpu_boost Y
+    write /sys/module/cpu_boost/parameters/cpuboost_enable Y
+    write /sys/module/cpu_boost/parameters/boost_ms 40
+    write /sys/module/cpu_boost/parameters/input_boost_ms 40
+    write /sys/module/cpu_boost/parameters/sync_threshold 0
+    write /sys/module/cpu_boost/parameters/input_boost_freq 1566000
+    write /sys/module/cpu_boost/parameters/load_based_syncs 0
+
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
+
+    write /sys/module/msm_thermal/core_control/enabled 1
+
+    # GPU
+    write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel 0
+    write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/min_pwrlevel 3
+
+    setprop sys.io.scheduler fiops
