@@ -57,9 +57,6 @@ TARGET_CPU_VARIANT := krait
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
-# Battery info on lock screen
-BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
-
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.memcg=true user_debug=22 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
