@@ -37,7 +37,7 @@ static const char *ENABLE_PATH = "/sys/class/timed_output/vibrator/enable";
 
 int main() {
 #ifdef ARCH_ARM_32
-    android::hardware::ProcessState::initWithMmapSize((size_t)(32768));
+    android::hardware::ProcessState::initWithMmapSize((size_t)8192);
 #endif
     std::ofstream enable{ENABLE_PATH};
     if (!enable) {
