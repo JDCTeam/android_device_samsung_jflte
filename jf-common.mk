@@ -287,6 +287,3 @@ $(call inherit-product, device/samsung/jf-common/system_prop_debug.mk)
 
 # Common qcom
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
-
-# call dalvik heap config
-$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
