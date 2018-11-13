@@ -16,9 +16,6 @@
 
 #include <hidl/HidlTransportSupport.h>
 #include "Usb.h"
-#ifdef ARCH_ARM_32
-#include <hwbinder/ProcessState.h>
-#endif
 
 using android::sp;
 
@@ -34,9 +31,6 @@ using android::status_t;
 using android::OK;
 
 int main() {
-#ifdef ARCH_ARM_32
-    android::hardware::ProcessState::initWithMmapSize((size_t)(32768));
-#endif
     android::sp<IUsb> service = new Usb();
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);

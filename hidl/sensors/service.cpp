@@ -26,7 +26,7 @@ using android::hardware::defaultPassthroughServiceImplementation;
 
 int main() {
 #ifdef ARCH_ARM_32
-    android::hardware::ProcessState::initWithMmapSize((size_t)(32768));
+    android::hardware::ProcessState::initWithMmapSize((size_t)8192);
 #endif
 
     /* Sensors framework service needs at least two threads.

@@ -21,7 +21,7 @@ cc_library_static {
 cc_library_shared {
     name: "android.hardware.sensors@1.0-impl.jf",
     defaults: ["hidl_defaults"],
-    proprietary: true,
+    vendor: true,
     relative_install_path: "hw",
     srcs: ["Sensors.cpp"],
     shared_libs: [
@@ -45,6 +45,7 @@ cc_binary {
     name: "android.hardware.sensors@1.0-service.jf",
     relative_install_path: "hw",
     vendor: true,
+    defaults: ["hidl_defaults"],
     init_rc: ["android.hardware.sensors@1.0-service.jf.rc"],
     srcs: ["service.cpp"],
 
@@ -61,9 +62,7 @@ cc_binary {
     ],
      arch: {
         arm: {
-            cflags: [
-                "-DARCH_ARM_32"
-            ],
+            cflags: ["-DARCH_ARM_32"],
         },
     },
 }
