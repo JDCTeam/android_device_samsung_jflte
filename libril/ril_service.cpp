@@ -7164,7 +7164,7 @@ void convertRilDataCallToHal(RIL_Data_Call_Response_v6 *dcResponse,
     dcResult.ifname = convertCharPtrToHidlString(dcResponse->ifname);
     dcResult.addresses = convertCharPtrToHidlString(dcResponse->addresses);
     dcResult.dnses = convertCharPtrToHidlString(dcResponse->dnses);
-    dcResult.gateways = convertCharPtrToHidlString(dcResponse->gateways);
+    dcResult.gateways = convertCharPtrToHidlString(dcResponse->addresses);
     dcResult.pcscf = hidl_string();
     dcResult.mtu = 0;
 }
