@@ -47,7 +47,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608 \
     ro.qualcomm.cabl=0 \
     persist.hwc.mdpcomp.enable = true \
-    ro.hwui.text_large_cache_height=2048
+    ro.hwui.text_large_cache_height=2048 \
+    debug.hwui.renderer=opengl
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
