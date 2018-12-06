@@ -19,7 +19,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.heaptargetutilization=0.75 \
 	dalvik.vm.heapminfree=4m \
 	dalvik.vm.heapmaxfree=8m
-    
+
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.gps.qc_nlp_in_use=1 \
@@ -51,7 +51,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    camera2.portability.force_api=1
+    camera2.portability.force_api=1 \
+    persist.camera.HAL3.enabled=1
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
