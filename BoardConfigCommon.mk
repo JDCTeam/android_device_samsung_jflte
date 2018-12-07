@@ -69,11 +69,7 @@ BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/samsung/jf
 TARGET_KERNEL_CONFIG := side_jf_defconfig
 
-# Toolchain lINARO 7.1.2
-# KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc/linux-x86/arm/arm-linaro-linux-androideabi-7.2/bin
-# TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linaro-linux-androideabi-
-
-# Toolchain BB 7.1.1
+# Toolchain
 KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc/linux-x86/arm/arm-linux-7.1.x-gnueabi/bin
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-Samsung-linux-gnueabi-
 
