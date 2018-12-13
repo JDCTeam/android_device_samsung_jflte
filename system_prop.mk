@@ -6,12 +6,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
 
-# Display
+# Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-	debug.hwui.use_buffer_age=false \
-	debug.composition.type=c2d \
-	ro.opengles.version=196608 \
-	ro.sf.lcd_density=480
+    debug.composition.type=c2d \
+    debug.hwui.use_buffer_age=false \
+    persist.debug.wfd.enable=1 \
+    debug.sf.disable_hwcomposer=1 \
+    persist.sys.wfd.virtual=0 \
+    ro.sf.lcd_density=420 \
+    ro.opengles.version=196608 \
+    ro.qualcomm.cabl=0 \
+    persist.hwc.mdpcomp.enable = true \
+	ro.hwui.text_large_cache_height=2048
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
