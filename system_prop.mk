@@ -2,16 +2,6 @@
 PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.dex2oat-swap=false
 
-# Audio
-PRODUCT_PROPERTY_OVERRIDES += \
-	audio.offload.disable=1 \
-	persist.audio.fluence.speaker=true \
-	persist.audio.fluence.voicecall=true \
-	qcom.hw.aac.encoder=true \
-	ro.qc.sdk.audio.fluencetype=fluence \
-	use.dedicated.device.for.voip=true \
-	use.voice.path.for.pcm.voip=false \
-
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
@@ -30,7 +20,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-	mm.enable.smoothstreaming=true
+    audio.offload.disable=1 \
+    media.aac_51_output_enabled=true \
+    mm.enable.smoothstreaming=true \
+    persist.vendor.audio.fluence.speaker=true \
+    persist.vendor.audio.fluence.voicecall=true \
+    ro.vendor.audio.sdk.fluencetype=fluence \
+    vendor.dedicated.device.for.voip=true \
+	vendor.voice.path.for.pcm.voip=false
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
