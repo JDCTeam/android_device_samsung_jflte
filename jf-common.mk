@@ -179,16 +179,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs_google_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_performance.xml \
     $(LOCAL_PATH)/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
+# NFC config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
+
 # NFC packages
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0-impl-bcm \
+    android.hardware.nfc@1.0-impl \
     android.hardware.nfc@1.0-service \
-    libnfc-nci \
-    libnfc_nci_jni \
-    nfc_nci.bcm2079x.default \
+    nfc_nci.msm8960 \
     NfcNci \
-    Tag \
-    com.android.nfc_extras
+    Tag
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
@@ -226,7 +227,7 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
-        
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
