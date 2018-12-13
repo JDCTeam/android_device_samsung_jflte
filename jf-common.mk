@@ -102,7 +102,7 @@ PRODUCT_PACKAGES += \
 # Camera configurations
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
-        
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -223,6 +223,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_ril
 
+# Sensors
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
+        
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
