@@ -232,7 +232,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.jf \
     android.hardware.sensors@1.0-service.jf
-    
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
@@ -259,12 +259,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
-# Wifi
+# WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
-    libnetcmdiface \
     macloader \
     hostapd \
+    libwpa_client \
+    wificond \
     wpa_supplicant \
     wpa_supplicant.conf
 
