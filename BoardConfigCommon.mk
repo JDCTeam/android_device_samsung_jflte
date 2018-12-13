@@ -108,8 +108,8 @@ MALLOC_SVELTE := true
 TARGET_NEEDS_GCC_LIBC := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
-# Lineage Hardware
-BOARD_HARDWARE_CLASS += $(COMMON_PATH)/lineagehw
+# LineageHW
+JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(COMMON_PATH)/lineagehw|**/*.java
 
 # NFC
 BOARD_NFC_HAL_SUFFIX := msm8960
