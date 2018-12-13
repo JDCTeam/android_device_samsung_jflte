@@ -215,10 +215,6 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 
-# RIL
-PRODUCT_PACKAGES += \
-    libshim_ril
-
 # Sensors
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
