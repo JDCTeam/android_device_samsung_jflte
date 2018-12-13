@@ -25,6 +25,10 @@
 # Inherit from qcom-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
+# Inherit from proprietary vendor
+-include vendor/samsung/jf-gsm-common/jf-gsm-common-vendor.mk
+-include vendor/samsung/jf-common/jf-common-vendor.mk
+
 COMMON_PATH := device/samsung/jf-common
 
 # Platform
