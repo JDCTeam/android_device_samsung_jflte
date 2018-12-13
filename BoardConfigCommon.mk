@@ -74,7 +74,7 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/mediaserver=22 \
     /system/vendor/bin/mm-qcamera-daemon=22 \
     /system/vendor/bin/hw/android.hardware.sensors@1.0-service.jf=22
-    
+
 #DEX preopt
 WITH_DEXPREOPT := true
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
@@ -100,7 +100,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
