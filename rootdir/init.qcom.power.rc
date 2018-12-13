@@ -1,40 +1,25 @@
-# Copyright (c) 2009-2013, The Linux Foundation. All rights reserved.
-#
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions are met:
-#     * Redistributions of source code must retain the above copyright
-#       notice, this list of conditions and the following disclaimer.
-#     * Redistributions in binary form must reproduce the above copyright
-#       notice, this list of conditions and the following disclaimer in the
-#       documentation and/or other materials provided with the distribution.
-#     * Neither the name of The Linux Foundation nor
-#       the names of its contributors may be used to endorse or promote
-#       products derived from this software without specific prior written
-#       permission.
-#
-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-# IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-# NON-INFRINGEMENT ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
-# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
-# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
-# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
-# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-
 on charger
+    wait /dev/block/platform/msm_sdcc.1/by-name/system
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system ro barrier=1
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu2/online 1
+    write /sys/devices/system/cpu/cpu3/online 1
     write /sys/module/rpm_resources/enable_low_power/L2_cache 1
     write /sys/module/rpm_resources/enable_low_power/pxo 1
     write /sys/module/rpm_resources/enable_low_power/vdd_dig 1
     write /sys/module/rpm_resources/enable_low_power/vdd_mem 1
+    write /sys/module/pm_8x60/modes/cpu0/retention/idle_enabled 1
+    write /sys/module/pm_8x60/modes/cpu1/retention/idle_enabled 1
+    write /sys/module/pm_8x60/modes/cpu2/retention/idle_enabled 1
+    write /sys/module/pm_8x60/modes/cpu3/retention/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu0/power_collapse/suspend_enabled 1
     write /sys/module/pm_8x60/modes/cpu1/power_collapse/suspend_enabled 1
     write /sys/module/pm_8x60/modes/cpu2/power_collapse/suspend_enabled 1
     write /sys/module/pm_8x60/modes/cpu3/power_collapse/suspend_enabled 1
     write /sys/module/pm_8x60/modes/cpu0/power_collapse/idle_enabled 1
+    write /sys/module/pm_8x60/modes/cpu1/power_collapse/idle_enabled 1
+    write /sys/module/pm_8x60/modes/cpu2/power_collapse/idle_enabled 1
+    write /sys/module/pm_8x60/modes/cpu3/power_collapse/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu0/standalone_power_collapse/suspend_enabled 1
     write /sys/module/pm_8x60/modes/cpu1/standalone_power_collapse/suspend_enabled 1
     write /sys/module/pm_8x60/modes/cpu2/standalone_power_collapse/suspend_enabled 1
@@ -43,42 +28,20 @@ on charger
     write /sys/module/pm_8x60/modes/cpu1/standalone_power_collapse/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu2/standalone_power_collapse/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu3/standalone_power_collapse/idle_enabled 1
-    write /sys/module/pm_8x60/modes/cpu0/retention/idle_enabled 1
-    write /sys/module/pm_8x60/modes/cpu1/retention/idle_enabled 1
-    write /sys/module/pm_8x60/modes/cpu2/retention/idle_enabled 1
-    write /sys/module/pm_8x60/modes/cpu3/retention/idle_enabled 1
-
-    write /sys/module/msm_thermal/core_control/enabled 0
-
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor powersave
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor powersave
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor powersave
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor powersave
-
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
-
-    write /sys/module/msm_thermal/core_control/enabled 1
-
     write /sys/devices/system/cpu/cpu1/online 0
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
 
 on enable-low-power
-    # Adaptive LMK
-    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
-    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
-
     write /sys/module/rpm_resources/enable_low_power/L2_cache 1
     write /sys/module/rpm_resources/enable_low_power/pxo 1
     write /sys/module/rpm_resources/enable_low_power/vdd_dig 1
     write /sys/module/rpm_resources/enable_low_power/vdd_mem 1
+    write /sys/module/pm_8x60/modes/cpu0/retention/idle_enabled 1
+    write /sys/module/pm_8x60/modes/cpu1/retention/idle_enabled 1
+    write /sys/module/pm_8x60/modes/cpu2/retention/idle_enabled 1
+    write /sys/module/pm_8x60/modes/cpu3/retention/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu0/power_collapse/suspend_enabled 1
     write /sys/module/pm_8x60/modes/cpu1/power_collapse/suspend_enabled 1
     write /sys/module/pm_8x60/modes/cpu2/power_collapse/suspend_enabled 1
@@ -92,10 +55,6 @@ on enable-low-power
     write /sys/module/pm_8x60/modes/cpu1/standalone_power_collapse/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu2/standalone_power_collapse/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu3/standalone_power_collapse/idle_enabled 1
-    write /sys/module/pm_8x60/modes/cpu0/retention/idle_enabled 1
-    write /sys/module/pm_8x60/modes/cpu1/retention/idle_enabled 1
-    write /sys/module/pm_8x60/modes/cpu2/retention/idle_enabled 1
-    write /sys/module/pm_8x60/modes/cpu3/retention/idle_enabled 1
 
     write /sys/module/msm_thermal/core_control/enabled 0
 
@@ -109,31 +68,58 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
 
-    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "19000 1400000:39000 1700000:19000"
-    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 90
-    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1134000
+    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 29000
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 98
+    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_slack -1
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
     write /sys/devices/system/cpu/cpufreq/interactive/target_loads "85 1458000:90 1782000:95"
-    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 39000
+    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 60000
+    write /sys/devices/system/cpu/cpufreq/interactive/boost 0
     write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 79000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration 0
 
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
+    write /sys/module/cpu_boost/parameters/cpu_boost Y
+    write /sys/module/cpu_boost/parameters/cpuboost_enable Y
+    write /sys/module/cpu_boost/parameters/boost_ms 30
+    write /sys/module/cpu_boost/parameters/input_boost_ms 30
+    write /sys/module/cpu_boost/parameters/sync_threshold 0
+    write /sys/module/cpu_boost/parameters/input_boost_freq 1026000
+    write /sys/module/cpu_boost/parameters/load_based_syncs 0
+
     write /sys/module/msm_thermal/core_control/enabled 1
 
-    write /sys/module/cpu_boost/parameters/input_boost_ms 40
-    write /sys/module/cpu_boost/parameters/input_boost_freq 1134000
-
+    write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel 0
+    write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/min_pwrlevel 3
     write /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor ondemand
 
     write /sys/devices/platform/msm_sdcc.3/idle_timeout 10
 
+    write /sys/kernel/fast_charge/force_fast_charge 1
+    write /sys/kernel/fast_charge/usb_charge_level 1600
+    write /sys/kernel/fast_charge/ac_charge_level 1900
+    write /sys/kernel/fast_charge/failsafe 0
+    write /sys/kernel/fast_charge/screen_on_current_limit 0
+    write /sys/kernel/fast_charge/use_mtp_during_fast_charge 1
+
 on boot
+    chown system system /sys/kernel/cpufreq_limit/limited_max_freq
+    chown system system /sys/kernel/cpufreq_limit/limited_min_freq
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis
+    chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis
     trigger enable-low-power
+
+    setprop sys.usb.ffs.aio_compat 1
 
 on property:init.svc.recovery=running
     trigger enable-low-power
@@ -150,8 +136,6 @@ on property:recovery.perf.mode=0
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
 
-on property:dev.bootcomplete=1
-    setprop sys.io.scheduler bfq
-
-    rm /data/system/perfd/default_values
-    start mpdecision
+on property:ro.twrp.boot=1
+    # Disable hardware keys when in TWRP recovery
+    write /sys/class/sec/sec_touchkey/touchkey_enable 0
