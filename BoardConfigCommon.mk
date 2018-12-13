@@ -119,6 +119,9 @@ JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(COMMON_PATH)/lineagehw|**/*.jav
 # NFC
 BOARD_NFC_HAL_SUFFIX := msm8960
 
+# The first api level the device has commercially launched on
+PRODUCT_SHIPPING_API_LEVEL := 17
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := f2fs
