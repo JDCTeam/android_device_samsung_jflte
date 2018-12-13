@@ -130,6 +130,10 @@ BOARD_NFC_HAL_SUFFIX := msm8960
 # The first api level the device has commercially launched on
 PRODUCT_SHIPPING_API_LEVEL := 17
 
+# Power
+TARGET_HAS_NO_POWER_STATS := true
+TARGET_HAS_NO_WLAN_STATS := true
+
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
