@@ -265,5 +265,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+# call common jf system props
+$(call inherit-product, device/samsung/jf-common/system_prop.mk)
+
 # Common Qualcomm
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
