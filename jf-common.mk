@@ -232,10 +232,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
 
-# SPN override
-PRODUCT_COPY_FILES += \
-    device/samsung/jf-common/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
-
 # Thermal profile
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermald.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermald.conf
