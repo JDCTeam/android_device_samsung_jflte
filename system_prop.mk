@@ -8,7 +8,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.sap=true \
     ro.bluetooth.hfp.ver=1.6 \
 	ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
-	
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
 	camera2.portability.force_api=1
@@ -56,4 +56,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
-	wifi.interface=wlan0
+	wifi.interface=wlan0 \
+	wifi.direct.interface=p2p0
