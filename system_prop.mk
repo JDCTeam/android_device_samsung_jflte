@@ -26,7 +26,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.gps.agps_provider=1 \
-	persist.gps.qc_nlp_in_use=0
+	persist.gps.qc_nlp_in_use=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
