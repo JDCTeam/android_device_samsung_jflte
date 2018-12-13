@@ -99,6 +99,10 @@ PRODUCT_PACKAGES += \
     Snap \
     camera.msm8960
 
+# Camera configurations
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
+        
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -131,7 +135,7 @@ PRODUCT_PACKAGES += \
 # GPS/location security configuration file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
-        
+
 # HIDL Manifest
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
