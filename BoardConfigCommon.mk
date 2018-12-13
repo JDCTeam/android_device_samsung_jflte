@@ -121,12 +121,6 @@ TARGET_SPECIFIC_HEADER_PATH += $(COMMON_PATH)/include
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
-# Legacy Hacks
-BOARD_GLOBAL_CFLAGS += -DDECAY_TIME_DEFAULT=0
-MALLOC_SVELTE := true
-TARGET_NEEDS_GCC_LIBC := true
-TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
-
 # LineageHW
 JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(COMMON_PATH)/lineagehw|**/*.java
 
