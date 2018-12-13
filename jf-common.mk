@@ -128,6 +128,10 @@ PRODUCT_PACKAGES += \
     e2fsck_static \
     resize2fs_static
 
+# GPS/location security configuration file
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
+        
 # HIDL Manifest
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
