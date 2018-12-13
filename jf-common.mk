@@ -144,10 +144,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-service \
 	gps.msm8960
 
-# HIDL Manifest
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
-
 # IPv6 tethering
 PRODUCT_PACKAGES += \
     ebtables \
