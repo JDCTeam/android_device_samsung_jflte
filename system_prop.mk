@@ -50,18 +50,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.extension_library=libqti-perfd-client.so
 
-# Radio
+# RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-	persist.data.ds_fmc_app.mode=0 \
-	persist.data_netmgrd_nint=16 \
-	persist.data.qmi.adb_logmask=0 \
-	persist.omh.enabled=1 \
-	persist.radio.add_power_save=1 \
-	persist.radio.apm_sim_not_pwdn=1 \
-	persist.radio.fill_eons=1 \
-	persist.radio.use_se_table_only=1 \
-	ro.telephony.mms_data_profile=5 \
-	ro.telephony.ril_class=jflteRIL
+    rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so \
+    ro.com.android.mobiledata=false \
+    persist.radio.add_power_save=1 \
+    persist.radio.apm_sim_not_pwdn=1 \
+	persist.radio.no_wait_for_card=1
 
 # Time
 PRODUCT_PROPERTY_OVERRIDES += \
