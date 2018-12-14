@@ -1,6 +1,4 @@
-#
-# Copyright (C) 2012 The Android Open-Source Project
-# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2013 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,13 +21,12 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter jactivelte jflteatt jfltespr jfltetmo jfltevzw jfltexx jfltecan jflteusc jfltecri jfltecsp jfltezm jftddxx jfltetfnatt,$(TARGET_DEVICE)),)
+ifeq ($(BOARD_VENDOR),samsung)
+ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
+ifneq ($(filter jactivelte jflte,$(TARGET_DEVICE)),)
 
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
-include $(CLEAR_VARS)
-
-# Create /firmware-mdm links
 FIRMWARE_MDM_IMAGES := \
     acdb.mbn \
     apps.mbn \
@@ -40,7 +37,7 @@ FIRMWARE_MDM_IMAGES := \
     sbl1.mbn \
     sbl2.mbn
 
-FIRMWARE_MDM_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_MDM_IMAGES)))
+FIRMWARE_MDM_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(FIRMWARE_MDM_IMAGES)))
 $(FIRMWARE_MDM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -49,13 +46,11 @@ $(FIRMWARE_MDM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MDM_SYMLINKS)
 
-
-# Create /firmware links
 FIRMWARE_IMAGES := \
     q6.b00 q6.b01 q6.b03 q6.b04 q6.b05 q6.b06 q6.mdt \
     tzapps.b00 tzapps.b01 tzapps.b02 tzapps.b03 tzapps.mdt
 
-FIRMWARE_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_IMAGES)))
+FIRMWARE_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(FIRMWARE_IMAGES)))
 $(FIRMWARE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -69,11 +64,13 @@ VIDC_IMAGES := \
 
 VIDC_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(VIDC_IMAGES)))
 $(VIDC_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-    @echo "Firmware link: $@"
-    @mkdir -p $(dir $@)
-    @rm -rf $@
-    $(hide) ln -sf /firmware/image/$(notdir $@) $@
+	@echo "Firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(VIDC_SYMLINKS)
 
+endif
+endif
 endif
