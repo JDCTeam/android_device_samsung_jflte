@@ -81,9 +81,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.qcom.power.rc:root/init.recovery.qcom.rc \
     $(LOCAL_PATH)/rootdir/init.qcom.rc:root/init.qcom.rc \
     $(LOCAL_PATH)/rootdir/init.qcom.usb.rc:root/init.qcom.usb.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc \
-    $(LOCAL_PATH)/rootdir/init.spectrum.sh:root/init.spectrum.sh \
-    $(LOCAL_PATH)/rootdir/init.spectrum.rc:root/init.spectrum.rc
+    $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc
 
 
 # GPS/location security configuration file
