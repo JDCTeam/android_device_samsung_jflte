@@ -466,6 +466,10 @@ service macloader /vendor/bin/macloader
     oneshot
     #seclabel u:r:macloader:s0
 
+service lpm /system/bin/lpm
+	class charger
+	critical
+
 on property:init.svc.macloader=stopped
     chown root system /data/.rev
     chmod 0664 /data/.rev
