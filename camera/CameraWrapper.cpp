@@ -140,6 +140,11 @@ static char* camera_fixup_getparams(int id, const char* settings) {
                "auto,asd,action,portrait,landscape,night,night-portrait,theatre,beach,snow,sunset,"
                "steadyphoto,fireworks,sports,party,candlelight,backlight,flowers,AR");
 
+    /* Exposure */
+    params.set(android::CameraParameters::KEY_EXPOSURE_COMPENSATION_STEP, "0.5");
+    params.set(android::CameraParameters::KEY_MIN_EXPOSURE_COMPENSATION, "-4");
+    params.set(android::CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION, "4");
+
 #if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);
     params.dump();
