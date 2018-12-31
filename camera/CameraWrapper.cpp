@@ -156,7 +156,6 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
     int id = CAMERA_ID(device);
     CameraParameters params;
     params.unflatten(String8(settings));
-    const char* camMode = params.get(CameraParameters::KEY_SAMSUNG_CAMERA_MODE);
 
     const char* recordingHint = params.get(CameraParameters::KEY_RECORDING_HINT);
     bool isVideo = false;
