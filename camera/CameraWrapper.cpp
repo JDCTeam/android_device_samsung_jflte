@@ -113,6 +113,7 @@ camera_memory_t* camera_get_memory(int fd, size_t buf_size,
     })
 
 #define CAMERA_ID(device) (((wrapper_camera_device_t*)(device))->id)
+const static char * iso_values[] = {"auto,ISO_HJR,ISO100,ISO200,ISO400,ISO800,ISO1600"};
 
 static int check_vendor_module() {
     int rv = 0;
@@ -124,20 +125,6 @@ static int check_vendor_module() {
     if (rv) ALOGE("failed to open vendor camera module");
     return rv;
 }
-
-const static char* iso_values[] = {
-    "auto,"
-#ifdef ISO_MODE_50
-    "ISO50,"
-#endif
-#ifdef ISO_MODE_HJR
-    "ISO_HJR,"
-#endif
-    "ISO100,ISO200,ISO400,ISO800"
-#ifdef ISO_MODE_1600
-    ",ISO1600"
-#endif
-};
 
 static char* camera_fixup_getparams(int id, const char* settings) {
     CameraParameters params;
