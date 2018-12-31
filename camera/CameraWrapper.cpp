@@ -154,38 +154,6 @@ static char* camera_fixup_getparams(int id, const char* settings) {
                "auto,asd,action,portrait,landscape,night,night-portrait,theatre,beach,snow,sunset,"
                "steadyphoto,fireworks,sports,party,candlelight,backlight,flowers,AR");
 
-#ifdef FFC_PICTURE_FIXUP
-    if (id == 1) {
-        params.set(CameraParameters::KEY_SUPPORTED_PICTURE_SIZES,
-                   "1392x1392,1280x720,640x480");
-    }
-#endif
-#ifdef FFC_VIDEO_FIXUP
-    if (id == 1) {
-        if (!params.get(CameraParameters::KEY_SUPPORTED_VIDEO_SIZES)) {
-            params.set(CameraParameters::KEY_SUPPORTED_VIDEO_SIZES,
-                       "1280x720,640x480,320x240,176x144");
-        }
-    }
-#endif
-
-#ifdef DISABLE_FACE_DETECTION
-#ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
-    /* Disable face detection for front facing camera */
-    if (id == 1) {
-#endif
-        params.remove(CameraParameters::KEY_QC_FACE_RECOGNITION);
-        params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION);
-        params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION_MODES);
-        params.remove(CameraParameters::KEY_QC_FACE_DETECTION);
-        params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_DETECTION);
-        params.remove(CameraParameters::KEY_FACE_DETECTION);
-        params.remove(CameraParameters::KEY_SUPPORTED_FACE_DETECTION);
-#ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
-    }
-#endif
-#endif
-
 #if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);
     params.dump();
@@ -230,36 +198,6 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
             params.set(CameraParameters::KEY_ISO_MODE, "1600");
     }
 
-#ifdef SAMSUNG_CAMERA_MODE
-    /* Samsung camcorder mode */
-    if (id == 1) {
-        /* Enable for front camera only */
-        if (!(!strcmp(camMode, "1") && !isVideo) || wasVideo) {
-            /* Enable only if not already set (Snapchat) but do enable if the setting is left
-               over while switching from stills to video */
-            if ((!strcmp(params.get(CameraParameters::KEY_PREVIEW_FRAME_RATE), "15") ||
-                 (!strcmp(params.get(CameraParameters::KEY_PREVIEW_SIZE), "320x240") &&
-                  !strcmp(params.get(CameraParameters::KEY_JPEG_QUALITY), "96"))) &&
-                !isVideo) {
-                /* Do not set for video chat in Hangouts (Frame rate 15) or Skype (Preview size
-                   320x240 and jpeg quality 96 */
-            } else {
-                /* "Normal case". Required to prevent distorted video and reboots
-                   while taking snaps */
-                params.set(CameraParameters::KEY_SAMSUNG_CAMERA_MODE, isVideo ? "1" : "0");
-            }
-            wasVideo = (isVideo || wasVideo);
-        }
-    } else {
-        wasVideo = false;
-    }
-#endif
-#ifdef ENABLE_ZSL
-    if (id != 1) {
-        params.set(CameraParameters::KEY_ZSL, isVideo ? "off" : "on");
-        params.set(CameraParameters::KEY_CAMERA_MODE, isVideo ? "0" : "1");
-    }
-#endif
 
 #if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);
@@ -423,13 +361,6 @@ static int camera_cancel_auto_focus(struct camera_device* device) {
           (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
 
     if (!device) return -EINVAL;
-
-/* APEXQ/EXPRESS: Calling cancel_auto_focus causes the camera to crash for unknown reasons.
- * Disabling it has no adverse effect. For others, only call cancel_auto_focus when the
- * preview is enabled. This is needed so some 3rd party camera apps don't lock up. */
-#ifndef DISABLE_AUTOFOCUS
-    if (camera_preview_enabled(device)) ret = VENDOR_CALL(device, cancel_auto_focus);
-#endif
 
     return ret;
 }
