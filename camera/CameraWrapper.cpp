@@ -130,11 +130,6 @@ static char* camera_fixup_getparams(int id, const char* settings) {
     CameraParameters params;
     params.unflatten(String8(settings));
 
-#if !LOG_NDEBUG
-    ALOGV("%s: original parameters:", __FUNCTION__);
-    params.dump();
-#endif
-
     params.set(CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values[id]);
     params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES,
                "auto,asd,action,portrait,landscape,night,night-portrait,theatre,beach,snow,sunset,"
@@ -147,11 +142,6 @@ static char* camera_fixup_getparams(int id, const char* settings) {
 
     /* Enforce video-snapshot-supported to true */
     params.set(android::CameraParameters::KEY_VIDEO_SNAPSHOT_SUPPORTED, "true");
-
-#if !LOG_NDEBUG
-    ALOGV("%s: fixed parameters:", __FUNCTION__);
-    params.dump();
-#endif
 
     String8 strParams = params.flatten();
     char* ret = strdup(strParams.string());
@@ -171,11 +161,6 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
     bool isVideo = false;
     if (recordingHint) isVideo = !strcmp(recordingHint, "true");
 
-#if !LOG_NDEBUG
-    ALOGV("%s: original parameters:", __FUNCTION__);
-    params.dump();
-#endif
-
     if (params.get("iso")) {
         const char* isoMode = params.get(CameraParameters::KEY_ISO_MODE);
         if (strcmp(isoMode, "ISO50") == 0)
@@ -191,12 +176,6 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
         else if (strcmp(isoMode, "ISO1600") == 0)
             params.set(CameraParameters::KEY_ISO_MODE, "1600");
     }
-
-
-#if !LOG_NDEBUG
-    ALOGV("%s: fixed parameters:", __FUNCTION__);
-    params.dump();
-#endif
 
     String8 strParams = params.flatten();
 
