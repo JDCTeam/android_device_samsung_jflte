@@ -136,7 +136,6 @@ static char* camera_fixup_getparams(int id, const char* settings) {
 #endif
 
     params.set(CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values[id]);
-    params.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1280x720");
     params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES,
                "auto,asd,action,portrait,landscape,night,night-portrait,theatre,beach,snow,sunset,"
                "steadyphoto,fireworks,sports,party,candlelight,backlight,flowers,AR");
