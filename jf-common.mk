@@ -88,6 +88,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.spectrum.rc:root/init.spectrum.rc
 
 
+# Time zone data for recovery
+PRODUCT_COPY_FILES += \
+    system/timezone/output_data/iana/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+    	
 # GPS/location security configuration file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
