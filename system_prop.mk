@@ -38,13 +38,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.composition.type=gpu \
+ 	debug.composition.type=c2d \
     debug.hwui.use_buffer_age=false \
-    debug.sf.disable_hwcomposer=1 \
     ro.sf.lcd_density=420 \
     ro.opengles.version=196608 \
     ro.qualcomm.cabl=0 \
-    persist.hwc.mdpcomp.enable = true \
     ro.hwui.text_large_cache_height=2048
 
 # Camera
