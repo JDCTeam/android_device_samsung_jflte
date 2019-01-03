@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <carrier_config_list>
     <carrier_config>
+    	<boolean name="allow_adding_apns_bool" value="true" />
+        <boolean name="apn_expand_bool" value="true" />
         <string-array name="carrier_metered_apn_types_strings" num="3">
             <item value="default" />
             <item value="dun" />
