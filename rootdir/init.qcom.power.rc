@@ -92,9 +92,9 @@ on enable-low-power
     write /sys/module/cpu_boost/parameters/cpu_boost Y
     write /sys/module/cpu_boost/parameters/cpuboost_enable Y
     write /sys/module/cpu_boost/parameters/boost_ms 30
-    write /sys/module/cpu_boost/parameters/input_boost_ms 30
+    write /sys/module/cpu_boost/parameters/input_boost_ms 40
     write /sys/module/cpu_boost/parameters/sync_threshold 0
-    write /sys/module/cpu_boost/parameters/input_boost_freq 0:1026000 1:1026000 2:384000 3:384000 
+    write /sys/module/cpu_boost/parameters/input_boost_freq 0:1026000 1:1026000 2:384000 3:384000
     write /sys/module/cpu_boost/parameters/load_based_syncs 0
 
     write /sys/module/msm_thermal/core_control/enabled 1
@@ -113,6 +113,14 @@ on enable-low-power
     write /sys/kernel/fast_charge/use_mtp_during_fast_charge 1
 
     write /sys/class/timed_output/vibrator/pwm_value 25
+
+    # Intelliplug
+    write /sys/module/intelli_plug/parameters/screen_off_max 162000
+    write /sys/module/intelli_plug/parameters/cpu_nr_run_threshold 730
+    write /sys/module/intelli_plug/parameters/nr_possible_cores 4
+    	# Concervative profile
+    write /sys/module/intelli_plug/parameters/nr_run_profile_sel 2
+	write /sys/module/intelli_plug/parameters/nr_run_hysteresis 2
 
 on boot
     chown system system /sys/kernel/cpufreq_limit/limited_max_freq
