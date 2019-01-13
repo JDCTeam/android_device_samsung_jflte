@@ -23,6 +23,7 @@ LOCAL_MODULE := loki_tool
 LOCAL_MODULE_TAGS := eng
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)/install/bin
 LOCAL_STATIC_LIBRARIES := libc
+LOCAL_CFLAGS += -Wno-pointer-arith -Wno-sign-compare
 LOCAL_FORCE_STATIC_EXECUTABLE := true
 include $(BUILD_EXECUTABLE)
 
