@@ -49,7 +49,7 @@ int main(int argc, char **argv) {
     } else if (argc == 4 && strcmp(argv[1], "unlok") == 0) {
         // argv[2]: in_image
         // argv[3]: out_image
-        return loki_unlok(argv[2], argv[3]);
+        return loki_unlock(argv[2], argv[3]);
     }
 
     return print_help(argv[0]);
