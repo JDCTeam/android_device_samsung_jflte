@@ -124,7 +124,8 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth firmware
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335_prepatch.hcd
+    $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335_prepatch.hcd \
+    $(LOCAL_PATH)/configs/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bcmdhd.cal
 
 # Filesystem tools
 PRODUCT_PACKAGES += \
@@ -284,3 +285,6 @@ $(call inherit-product, device/samsung/jf-common/system_prop_debug.mk)
 
 # Common qcom
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
+
+# Call BCM wifi stuff
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
