@@ -27,6 +27,7 @@ import org.lineageos.internal.util.FileUtils;
  */
 public class SunlightEnhancement {
 
+    private static final String FILE_SRE = "/sys/class/mdnie/mdnie/outdoor";
     private static final String FILE_HBM = "/sys/class/lcd/panel/panel/auto_brightness";
 
     /**
@@ -35,7 +36,9 @@ public class SunlightEnhancement {
      * @return boolean Supported devices must return always true
      */
     public static boolean isSupported() {
-        return FileUtils.isFileWritable(FILE_HBM) &&
+        return FileUtils.isFileWritable(FILE_SRE) &&
+                FileUtils.isFileReadable(FILE_SRE) &&
+                FileUtils.isFileWritable(FILE_HBM) &&
                 FileUtils.isFileReadable(FILE_HBM);
     }
 
@@ -46,7 +49,8 @@ public class SunlightEnhancement {
      * the operation failed while reading the status; true in any other case.
      */
     public static boolean isEnabled() {
-        return "6".equals(FileUtils.readOneLine(FILE_HBM));
+        return "1".equals(FileUtils.readOneLine(FILE_SRE)) &&
+                "6".equals(FileUtils.readOneLine(FILE_HBM));
     }
 
     /**
@@ -57,7 +61,8 @@ public class SunlightEnhancement {
      * failed; true in any other case.
      */
     public static boolean setEnabled(boolean status) {
-        return FileUtils.writeLine(FILE_HBM, status ? "6" : "0");
+        return FileUtils.writeLine(FILE_SRE, status ? "1" : "0") &&
+                FileUtils.writeLine(FILE_HBM, status ? "6" : "0");
     }
 
     /**

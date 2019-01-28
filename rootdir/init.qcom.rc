@@ -271,6 +271,8 @@ on boot
     chown system system /sys/class/mdnie/mdnie/playspeed
     chown system system /sys/class/mdnie/mdnie/scenario
 
+    chmod 0660 /sys/class/mdnie/mdnie/outdoor
+
     chown system system /sys/class/lcd/panel/window_type
     chown system radio /sys/class/lcd/panel/power_reduce
     chown system radio /sys/class/lcd/panel/siop_enable
