@@ -1,0 +1,5 @@
+cc_library_static {
+    name: "camera_parameters_samsung_msm8960",
+    include_dirs: ["device/samsung/jf-common/include"],
+    srcs: ["CameraParameters.cpp"],
+}
