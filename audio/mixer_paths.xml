@@ -242,6 +242,8 @@
         <ctl name="SLIM_3_RX Channels" value="One" />
         <ctl name="SLIMBUS_3_RX_Voice Mixer Voice Stub" value="1" />
         <ctl name="SLIMBUS_3_RX Port Mixer AUX_PCM_DL_RX" value="1" />
+        <ctl name="RX1 Digital Volume" value="90" />
+        <ctl name="RX2 Digital Volume" value="90" />
     </path>
 
     <path name="voice-call bt-sco-wb">
