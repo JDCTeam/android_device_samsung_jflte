@@ -77,3 +77,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # SU
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.root_access=3
+
+# Aroma validation
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.vendor.romname=optlosjdc
