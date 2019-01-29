@@ -19,7 +19,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.heaptargetutilization=0.75 \
 	dalvik.vm.heapminfree=4m \
 	dalvik.vm.heapmaxfree=8m
-    
+
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.gps.qc_nlp_in_use=1 \
@@ -73,3 +73,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2017-08-01
+
+# Aroma validation
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.vendor.romname=buffromsjdc
