@@ -26,5 +26,5 @@
 #define SC_MODE_INCLUDED FALSE
 #define SDP_DEBUG FALSE
 #define BTSNOOP_MEM FALSE
-
+#define BLE_PRIVACY_SPT FALSE
 #endif
