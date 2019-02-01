@@ -4,7 +4,7 @@ vendor/bin/hci_qcomm_init
 vendor/lib/libaptX_encoder.so
 
 # Bluetooth firmware
-vendor/firmware/bcm4335B0_002.001.006.0191.0201_ORC.hcd
+vendor/firmware/bcm4335.hcd
 
 # FM Radio
 vendor/bin/fm_qsoc_patches
