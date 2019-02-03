@@ -142,7 +142,8 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
-    libqcomvoiceprocessing
+    libqcomvoiceprocessing \
+    audio_amplifier.msm8960
 
 # TinyAlsa utils
 PRODUCT_PACKAGES += \
