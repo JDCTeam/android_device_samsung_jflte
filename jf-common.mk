@@ -125,7 +125,8 @@ PRODUCT_COPY_FILES += \
 # Bluetooth firmware
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335_prepatch.hcd \
-    $(LOCAL_PATH)/configs/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bcmdhd.cal
+    $(LOCAL_PATH)/configs/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bcmdhd.cal \
+    $(LOCAL_PATH)/bluetooth/bt_vendor.conf:/etc/bluetooth/bt_vendor.conf
 
 # Advanced Display
 PRODUCT_PACKAGES += \
@@ -215,7 +216,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service \
-    libbt-vendor
+    libbt-vendor \
+    hwaddrs
 
 # USB
 PRODUCT_PACKAGES += \

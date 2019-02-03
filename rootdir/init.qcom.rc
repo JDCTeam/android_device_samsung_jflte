@@ -177,6 +177,7 @@ on boot
     chmod 0660 /proc/bluetooth/sleep/btwrite
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chmod 0660 /dev/ttyHS0
+    chmod 0660 /efs/bluetooth/bt_addr
     chown bluetooth bluetooth /proc/bluetooth/sleep/lpm
     chown bluetooth bluetooth /proc/bluetooth/sleep/btwrite
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
@@ -479,6 +480,16 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
+
+service conn_init /vendor/bin/hwaddrs
+    class core
+    user root
+    group system
+    oneshot
+
+on property:init.svc.conn_init=stopped
+    chmod 0644 /efs/bluetooth/bt_addr
+    chown bluetooth bluetooth /efs/bluetooth/bt_addr
 
 service macloader /vendor/bin/macloader
     class main
