@@ -52,6 +52,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.dun=true \
+    persist.sys.dun.override=0 \
     ro.bluetooth.sap=true \
     ro.bluetooth.hfp.ver=1.6 \
     ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
