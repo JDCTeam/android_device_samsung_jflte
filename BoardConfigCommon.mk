@@ -34,7 +34,7 @@ COMMON_PATH := device/samsung/jf-common
 TARGET_BOARD_PLATFORM := msm8960
 
 # Architecture
-TARGET_CPU_VARIANT := krait
+TARGET_CPU_VARIANT := generic
 
 # Binder
 TARGET_USES_64_BIT_BINDER := true
