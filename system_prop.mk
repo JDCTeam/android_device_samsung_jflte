@@ -64,6 +64,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.dun.override=0 \
     ro.bluetooth.sap=true \
     ro.bluetooth.hfp.ver=1.6 \
+    bluetooth.chip.vendor=brcm \
+    persist.service.bdroid.a2dp_con=0 \
+	persist.service.bdroid.scms_t=0 \
     ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
 
 # Wifi

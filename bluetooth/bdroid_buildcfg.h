@@ -21,10 +21,5 @@
 
 #define BTM_DEF_LOCAL_NAME   "Samsung Galaxy S IV"
 
-#define BTA_DISABLE_DELAY 1000 /* in milliseconds */
-#define BTIF_HF_WBS_PREFERRED FALSE /* Do not prefer WBS */
-#define SC_MODE_INCLUDED FALSE
-#define SDP_DEBUG FALSE
-#define BTSNOOP_MEM FALSE
-#define BLE_PRIVACY_SPT FALSE
+#define BTIF_HF_WBS_PREFERRED FALSE /* Don't default to WBS */
 #endif
