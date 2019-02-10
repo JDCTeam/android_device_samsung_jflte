@@ -136,11 +136,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     e2fsck_static \
     resize2fs_static
-  
-# LiveDisplay
-PRODUCT_PACKAGES += \
-	vendor.lineage.livedisplay@2.0-service-legacymm
-
+ 
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
