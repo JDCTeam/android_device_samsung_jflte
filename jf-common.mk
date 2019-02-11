@@ -289,5 +289,5 @@ $(call inherit-product, device/samsung/jf-common/system_prop_debug.mk)
 # Common qcom
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
 
-# Call BCM wifi stuff
-#$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
+# HW/Samsung
+$(call inherit-product, hardware/samsung/Android.mk)
