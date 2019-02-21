@@ -112,7 +112,7 @@ on enable-low-power
     write /sys/kernel/fast_charge/screen_on_current_limit 0
     write /sys/kernel/fast_charge/use_mtp_during_fast_charge 1
 
-    write /sys/class/timed_output/vibrator/pwm_value 25
+    write /sys/class/timed_output/vibrator/pwm_value 37
 
     # Intelliplug
     write /sys/module/intelli_plug/parameters/screen_off_max 162000
