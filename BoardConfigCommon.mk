@@ -35,6 +35,7 @@ TARGET_BOARD_PLATFORM := msm8960
 
 # Architecture
 TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT_RUNTIME := krait
 
 # Binder
 TARGET_USES_64_BIT_BINDER := true
