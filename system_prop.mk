@@ -57,7 +57,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1 \
-    camera.hal1.packagelist=com.whatsapp
+    camera.hal1.packagelist=com.whatsapp,com.facebook.katana,com.instagram.android,com.snapchat.android
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
