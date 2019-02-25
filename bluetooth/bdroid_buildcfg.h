@@ -22,4 +22,8 @@
 #define BTM_DEF_LOCAL_NAME   "Samsung Galaxy S IV"
 
 #define BTIF_HF_WBS_PREFERRED FALSE /* Don't default to WBS */
+
+/* Defined if the kernel does not have support for CLOCK_BOOTTIME_ALARM */
+#define KERNEL_MISSING_CLOCK_BOOTTIME_ALARM TRUE
+
 #endif
