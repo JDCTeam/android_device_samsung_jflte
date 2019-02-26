@@ -60,7 +60,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.bdroid.a2dp_con=0 \
 	persist.service.bdroid.scms_t=0 \
     ro.bt.bdaddr_path=/efs/bluetooth/bt_addr \
-    persist.bt.enableAptXHD=true \
+    persist.bt.enableAptXHD=true
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
