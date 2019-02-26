@@ -59,7 +59,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     bluetooth.chip.vendor=brcm \
     persist.service.bdroid.a2dp_con=0 \
 	persist.service.bdroid.scms_t=0 \
-    ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
+    ro.bt.bdaddr_path=/efs/bluetooth/bt_addr \
+    persist.bt.enableAptXHD=true \
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
