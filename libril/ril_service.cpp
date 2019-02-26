@@ -8064,7 +8064,7 @@ void convertRilCellInfoListToHal(void *response, size_t responseLen, hidl_vec<Ce
                 cellInfoLte->cellIdentityLte.mcc =
                         std::to_string(rillCellInfo->CellInfo.lte.cellIdentityLte.mcc);
                 cellInfoLte->cellIdentityLte.mnc =
-                        std::to_string(rillCellInfo->CellInfo.lte.cellIdentityLte.mnc);
+                        ril::util::mnc::decode(rillCellInfo->CellInfo.lte.cellIdentityLte.mnc);
                 cellInfoLte->cellIdentityLte.ci =
                         rillCellInfo->CellInfo.lte.cellIdentityLte.ci;
                 cellInfoLte->cellIdentityLte.pci =
@@ -8095,7 +8095,7 @@ void convertRilCellInfoListToHal(void *response, size_t responseLen, hidl_vec<Ce
                         std::to_string(rillCellInfo->CellInfo.tdscdma.cellIdentityTdscdma.mcc);
                 cellInfoTdscdma->cellIdentityTdscdma.mnc =
                         ril::util::mnc::decode(
-                        	rillCellInfo->CellInfo.tdscdma.cellIdentityTdscdma.mnc);
+                                rillCellInfo->CellInfo.tdscdma.cellIdentityTdscdma.mnc);
                 cellInfoTdscdma->cellIdentityTdscdma.lac =
                         rillCellInfo->CellInfo.tdscdma.cellIdentityTdscdma.lac;
                 cellInfoTdscdma->cellIdentityTdscdma.cid =
