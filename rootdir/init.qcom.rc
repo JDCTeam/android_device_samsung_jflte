@@ -172,6 +172,8 @@ on early-boot
     setrlimit 8 67108864 67108864
 
 on boot
+	mkdir /dev/socket/netmgr 0750 radio radio
+
     # Configure bluetooth
     chmod 0660 /proc/bluetooth/sleep/lpm
     chmod 0660 /proc/bluetooth/sleep/btwrite
@@ -454,9 +456,9 @@ service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
 
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /vendor/bin/qmuxd
-    class core
-    user root
-    group radio audio bluetooth gps diag wakelock log
+    class main
+    user radio
+    group radio audio bluetooth wakelock diag gps oem_2950
 
 service netmgrd /vendor/bin/netmgrd
     class main
