@@ -433,4 +433,10 @@
          and one pSIM) -->
     <integer name="config_num_physical_slots">1</integer>
 
+    <!-- Boolean indicating whether the wifi chipset has background scan support -->
+    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
+
+    <!-- Wifi driver supports batched scan -->
+    <bool translatable="false" name="config_wifi_batched_scan_supported">true</bool>
+
 </resources>
