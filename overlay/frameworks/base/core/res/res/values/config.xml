@@ -351,6 +351,12 @@
         <item>"/system/framework/boot-core-libart.vdex"</item>
 	</string-array>
 
+    <!-- Keep chosen default camera app pinned in memory for faster launching -->
+    <bool name="config_pinnerCameraApp">true</bool>
+
+    <!-- Should the pinner service pin the Home application? -->
+    <bool name="config_pinnerHomeApp">true</bool>
+
     <!-- Control whether the always on display mode is enabled by default. This value will be used
          during initialization when the setting is still null. -->
     <bool name="config_dozeAlwaysOnEnabled">false</bool>
