@@ -44,6 +44,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.hw=1 \
+    persist.hwc.mdpcomp.enable=false \
  	debug.composition.type=c2d \
     debug.hwui.use_buffer_age=false \
     ro.sf.lcd_density=420 \
