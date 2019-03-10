@@ -137,6 +137,10 @@ endif
 # Display
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000U
 
+# Adreno configuration
+BOARD_EGL_CFG := $(COMMON_PATH)/configs/egl.cfg
+
+
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
