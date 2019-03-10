@@ -40,10 +40,6 @@ on late-fs
     # mount RW partitions which need run fsck
 	mount_all /fstab.qcom --late
 
-on property:sys.boot_completed=1
-    # end boot time fs tune
-    write /sys/block/sda/queue/read_ahead_kb 1024
-
 on early-init
     symlink /data/tombstones /tombstones
 
