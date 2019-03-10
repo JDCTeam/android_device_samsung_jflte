@@ -311,3 +311,6 @@ $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
 
 # HW/Samsung
 $(call inherit-product, hardware/samsung/Android.mk)
+
+# Broadcom wifi
+$(call inherit-product, hardware/broadcom/wlan/bcmdhd/Android.mk)
