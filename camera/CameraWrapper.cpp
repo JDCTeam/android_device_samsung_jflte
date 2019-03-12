@@ -134,11 +134,13 @@ static char* camera_fixup_getparams(int id, const char* settings) {
     params.set(CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values[id]);
     params.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1920x1080");
 
+    /*
     if (id != 1)
     	params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES,
                "auto,asd,action,portrait,landscape,night,night-portrait,theatre,beach,snow,sunset,"
                "steadyphoto,fireworks,sports,party,candlelight,backlight,flowers,AR,hdr");
 	else
+	*/
 		params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES,
                "auto,asd,action,portrait,landscape,night,night-portrait,theatre,beach,snow,sunset,"
                "steadyphoto,fireworks,sports,party,candlelight,backlight,flowers,AR");
@@ -185,9 +187,9 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
             params.set(CameraParameters::KEY_ISO_MODE, "1600");
     }
 
-    if (id != 1) {
-		params.set(android::CameraParameters::KEY_CAMERA_MODE, isVideo ? "0" : "1");
-    }
+    //if (id != 1) {
+	//	params.set(android::CameraParameters::KEY_CAMERA_MODE, isVideo ? "0" : "1");
+    // }
 
     String8 strParams = params.flatten();
     if (fixed_set_params[id]) free(fixed_set_params[id]);
