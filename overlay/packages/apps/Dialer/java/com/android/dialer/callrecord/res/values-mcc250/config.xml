@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-     Copyright (C) 2015 The CyanogenMod Project
+     Copyright (C) 2014-2016 The CyanogenMod Project
+     Copyright (C) 2016-2018 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,7 +16,13 @@
      limitations under the License.
 -->
 
-<!--Allow recording for country: Russia-->
+<!--Enable call recording for country: Russia-->
+<!--
+     Relevant laws and/or legal precedents:
+     Legality is further explained by the definition of the JC, concerning civil cases, rendered by
+     the Supreme Court of the Russian Federation on December 6, 2016 N 35-KG16-18.
+     https://www.supcourt.ru/stor_pdf.php?id=1502686
+-->
 <resources>
-	<bool name="call_recording_enabled">true</bool>
+
 </resources>

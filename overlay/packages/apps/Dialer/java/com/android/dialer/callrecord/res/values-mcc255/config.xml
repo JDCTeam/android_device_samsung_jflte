@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-     Copyright (C) 2015 The CyanogenMod Project
+     Copyright (C) 2014-2016 The CyanogenMod Project
+     Copyright (C) 2016-2018 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,7 +16,25 @@
      limitations under the License.
 -->
 
-<!--Allow recording for country: Ukraine-->
+<!--Enable call recording for country: Ukraine-->
+<!--
+     Relevant laws and/or legal precedents:
+     Sharing a call recording without consent is a punishable offense, and can not be used as valid
+     proof in a court of law. Call recordings may be handed over to the authorities, by one of the
+     two parties without the other party's consent, when a crime is mentioned in the recording. In
+     such cases the party that handed over the recording is not liable to fines or punishment, as
+     the authorities will use the recording to initiate an investigation, but not as proof of a
+     crime. The above information is covered in Articles 31 and 32 of the Constitution, as well as
+     Articles 163, 182 and 359 of the Criminal Code.
+     Constitution of Ukraine:
+     https://zakon.rada.gov.ua/cgi-bin/laws/main.cgi?nreg=254%EA%2F96%2D%E2%F0
+     Ukrainian Criminal Code:
+     https://www.legislationline.org/documents/section/criminal-codes/country/52
+     Radio Svoboda legal advice page:
+     https://www.radiosvoboda.org/a/details/28905674.html
+     Legal discussion:
+     https://sklaw.com.ua/ua/news/345_pro_naslidki_zapisu_telefonnoi_rozmovi_rozpovila_advokat_ao_spenser
+-->
 <resources>
-	<bool name="call_recording_enabled">true</bool>
+
 </resources>
