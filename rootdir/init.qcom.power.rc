@@ -55,7 +55,7 @@ on enable-low-power
     write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 29000
     write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 98
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
-    write /sys/devices/system/cpu/cpufreq/interactive/timer_slack -1
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 30000
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
     write /sys/devices/system/cpu/cpufreq/interactive/target_loads "85 1458000:90 1782000:95"
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 60000
