@@ -66,7 +66,7 @@ camera_module_t HAL_MODULE_INFO_SYM = {
             .module_api_version = CAMERA_MODULE_API_VERSION_1_0,
             .hal_api_version = HARDWARE_HAL_API_VERSION,
             .id = CAMERA_HARDWARE_MODULE_ID,
-            .name = "Samsung msm8960 Camera Wrapper",
+            .name = "JDCTeam jflte Camera Wrapper",
             .author = "The CyanogenMod Project",
             .methods = &camera_module_methods,
             .dso = NULL,     /* remove compilation warnings */
@@ -116,7 +116,6 @@ camera_memory_t* camera_get_memory(int fd, size_t buf_size,
     })
 
 #define CAMERA_ID(device) (((wrapper_camera_device_t*)(device))->id)
-const static char * iso_values[] = {"auto,ISO_HJR,ISO100,ISO200,ISO400,ISO800,ISO1600"};
 
 static int check_vendor_module() {
     int rv = 0;
@@ -124,8 +123,11 @@ static int check_vendor_module() {
     if (gVendorModule) return 0;
 
     rv = hw_get_module_by_class("camera", "vendor", (const hw_module_t**)&gVendorModule);
+    if (rv) ALOGE("failed to open vendor camera module");
     return rv;
 }
+
+const static char * iso_values[] = {"auto,ISO_HJR,ISO100,ISO200,ISO400,ISO800,ISO1600"};
 
 static char* camera_fixup_getparams(int id, const char* settings) {
     CameraParameters params;
@@ -133,26 +135,13 @@ static char* camera_fixup_getparams(int id, const char* settings) {
 
     params.set(CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values[id]);
     params.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1920x1080");
-
-    /*
-    if (id != 1)
-    	params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES,
-               "auto,asd,action,portrait,landscape,night,night-portrait,theatre,beach,snow,sunset,"
-               "steadyphoto,fireworks,sports,party,candlelight,backlight,flowers,AR,hdr");
-	else
-	*/
-		params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES,
+    params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES,
                "auto,asd,action,portrait,landscape,night,night-portrait,theatre,beach,snow,sunset,"
                "steadyphoto,fireworks,sports,party,candlelight,backlight,flowers,AR");
-	
-
-    /* Exposure */
-    params.set(android::CameraParameters::KEY_EXPOSURE_COMPENSATION_STEP, "0.5");
-    params.set(android::CameraParameters::KEY_MIN_EXPOSURE_COMPENSATION, "-4");
-    params.set(android::CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION, "4");
+    params.set(CameraParameters::KEY_PREVIEW_FRAME_RATE, "30");
 
     /* Enforce video-snapshot-supported to true */
-    params.set(android::CameraParameters::KEY_VIDEO_SNAPSHOT_SUPPORTED, "true");
+	params.set(CameraParameters::KEY_VIDEO_SNAPSHOT_SUPPORTED, "true");
 
     String8 strParams = params.flatten();
     char* ret = strdup(strParams.string());
@@ -166,6 +155,7 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
     int id = CAMERA_ID(device);
     CameraParameters params;
     params.unflatten(String8(settings));
+    const char* camMode = params.get(CameraParameters::KEY_SAMSUNG_CAMERA_MODE);
 
     const char* recordingHint = params.get(CameraParameters::KEY_RECORDING_HINT);
     bool isVideo = false;
@@ -187,11 +177,38 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
             params.set(CameraParameters::KEY_ISO_MODE, "1600");
     }
 
-    //if (id != 1) {
-	//	params.set(android::CameraParameters::KEY_CAMERA_MODE, isVideo ? "0" : "1");
-    // }
-
+#ifdef SAMSUNG_CAMERA_MODE
+    /* Samsung camcorder mode */
+    if (id == 1) {
+        /* Enable for front camera only */
+        if (!(!strcmp(camMode, "1") && !isVideo) || wasVideo) {
+            /* Enable only if not already set (Snapchat) but do enable if the setting is left
+               over while switching from stills to video */
+            if ((!strcmp(params.get(CameraParameters::KEY_PREVIEW_FRAME_RATE), "15") ||
+                 (!strcmp(params.get(CameraParameters::KEY_PREVIEW_SIZE), "320x240") &&
+                  !strcmp(params.get(CameraParameters::KEY_JPEG_QUALITY), "96"))) &&
+                !isVideo) {
+                /* Do not set for video chat in Hangouts (Frame rate 15) or Skype (Preview size
+                   320x240 and jpeg quality 96 */
+            } else {
+                /* "Normal case". Required to prevent distorted video and reboots
+                   while taking snaps */
+                params.set(CameraParameters::KEY_SAMSUNG_CAMERA_MODE, isVideo ? "1" : "0");
+            }
+            wasVideo = (isVideo || wasVideo);
+        }
+    } else {
+        wasVideo = false;
+    }
+#endif
+#ifdef ENABLE_ZSL
+    if (id != 1) {
+        params.set(CameraParameters::KEY_ZSL, isVideo ? "off" : "on");
+        params.set(CameraParameters::KEY_CAMERA_MODE, isVideo ? "0" : "1");
+    }
+#endif
     String8 strParams = params.flatten();
+
     if (fixed_set_params[id]) free(fixed_set_params[id]);
     fixed_set_params[id] = strdup(strParams.string());
     char* ret = fixed_set_params[id];
@@ -199,13 +216,8 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
     return ret;
 }
 
-/*******************************************************************
- * implementation of camera_device_ops functions
- *******************************************************************/
-
 static int camera_set_preview_window(struct camera_device* device,
                                      struct preview_stream_ops* window) {
-
     if (!device) return -EINVAL;
 
     return VENDOR_CALL(device, set_preview_window, window);
@@ -215,7 +227,6 @@ static void camera_set_callbacks(struct camera_device* device, camera_notify_cal
                                  camera_data_callback data_cb,
                                  camera_data_timestamp_callback data_cb_timestamp,
                                  camera_request_memory get_memory, void* user) {
-
     if (!device) return;
 
     gUserNotifyCb = notify_cb;
@@ -229,93 +240,79 @@ static void camera_set_callbacks(struct camera_device* device, camera_notify_cal
 }
 
 static void camera_enable_msg_type(struct camera_device* device, int32_t msg_type) {
-
     if (!device) return;
 
     VENDOR_CALL(device, enable_msg_type, msg_type);
 }
 
 static void camera_disable_msg_type(struct camera_device* device, int32_t msg_type) {
-
     if (!device) return;
 
     VENDOR_CALL(device, disable_msg_type, msg_type);
 }
 
 static int camera_msg_type_enabled(struct camera_device* device, int32_t msg_type) {
-    
     if (!device) return 0;
 
     return VENDOR_CALL(device, msg_type_enabled, msg_type);
 }
 
 static int camera_start_preview(struct camera_device* device) {
-
     if (!device) return -EINVAL;
 
     return VENDOR_CALL(device, start_preview);
 }
 
 static void camera_stop_preview(struct camera_device* device) {
-
     if (!device) return;
 
     VENDOR_CALL(device, stop_preview);
 }
 
 static int camera_preview_enabled(struct camera_device* device) {
-
     if (!device) return -EINVAL;
 
     return VENDOR_CALL(device, preview_enabled);
 }
 
 static int camera_store_meta_data_in_buffers(struct camera_device* device, int enable) {
-
     if (!device) return -EINVAL;
 
     return VENDOR_CALL(device, store_meta_data_in_buffers, enable);
 }
 
 static int camera_start_recording(struct camera_device* device) {
-
     if (!device) return EINVAL;
 
     return VENDOR_CALL(device, start_recording);
 }
 
 static void camera_stop_recording(struct camera_device* device) {
-
     if (!device) return;
 
     VENDOR_CALL(device, stop_recording);
 }
 
 static int camera_recording_enabled(struct camera_device* device) {
-
     if (!device) return -EINVAL;
 
     return VENDOR_CALL(device, recording_enabled);
 }
 
 static void camera_release_recording_frame(struct camera_device* device, const void* opaque) {
-
     if (!device) return;
 
     VENDOR_CALL(device, release_recording_frame, opaque);
 }
 
 static int camera_auto_focus(struct camera_device* device) {
-
     if (!device) return -EINVAL;
 
     return VENDOR_CALL(device, auto_focus);
 }
 
 static int camera_cancel_auto_focus(struct camera_device* device) {
-
     if (!device) return -EINVAL;
-
     return 0;
 }
 
@@ -326,14 +323,12 @@ static int camera_take_picture(struct camera_device* device) {
 }
 
 static int camera_cancel_picture(struct camera_device* device) {
-
     if (!device) return -EINVAL;
 
     return VENDOR_CALL(device, cancel_picture);
 }
 
 static int camera_set_parameters(struct camera_device* device, const char* params) {
-
     if (!device) return -EINVAL;
 
     char* tmp = NULL;
@@ -344,7 +339,6 @@ static int camera_set_parameters(struct camera_device* device, const char* param
 }
 
 static char* camera_get_parameters(struct camera_device* device) {
-
     if (!device) return NULL;
 
     char* params = VENDOR_CALL(device, get_parameters);
@@ -357,13 +351,11 @@ static char* camera_get_parameters(struct camera_device* device) {
 }
 
 static void camera_put_parameters(struct camera_device* device __unused, char* params) {
-
     if (params) free(params);
 }
 
 static int camera_send_command(struct camera_device* device, int32_t cmd, int32_t arg1,
                                int32_t arg2) {
-
     if (!device) return -EINVAL;
 
     return VENDOR_CALL(device, send_command, cmd, arg1, arg2);
@@ -380,7 +372,6 @@ static void camera_release(struct camera_device* device) {
 }
 
 static int camera_dump(struct camera_device* device, int fd) {
-
     if (!device) return -EINVAL;
 
     return VENDOR_CALL(device, dump, fd);
@@ -394,7 +385,7 @@ static int camera_device_close(hw_device_t* device) {
 
     if (!device) {
         ret = -EINVAL;
-        goto done;
+        return ret;
     }
 
     for (int i = 0; i < camera_get_number_of_cameras(); i++) {
@@ -405,26 +396,15 @@ static int camera_device_close(hw_device_t* device) {
 
     if (!wrapper_dev->camera_released) {
         VENDOR_CALL(wrapper_dev, release);
-
         wrapper_dev->camera_released = true;
     }
 
     wrapper_dev->vendor->common.close((hw_device_t*)wrapper_dev->vendor);
     if (wrapper_dev->base.ops) free(wrapper_dev->base.ops);
     free(wrapper_dev);
-done:
+
     return ret;
 }
-
-/*******************************************************************
- * implementation of camera_module functions
- *******************************************************************/
-
-/* open device handle to one of the cameras
- *
- * assume camera service will keep singleton of each camera
- * so this function will always only be called once per camera instance
- */
 
 static int camera_device_open(const hw_module_t* module, const char* name, hw_device_t** device) {
     int rv = 0;
@@ -435,7 +415,6 @@ static int camera_device_open(const hw_module_t* module, const char* name, hw_de
     wasVideo = false;
 
     Mutex::Autolock lock(gCameraWrapperLock);
-
     if (name != NULL) {
         if (check_vendor_module()) return -EINVAL;
 
@@ -444,18 +423,24 @@ static int camera_device_open(const hw_module_t* module, const char* name, hw_de
 
         fixed_set_params = (char**)malloc(sizeof(char*) * num_cameras);
         if (!fixed_set_params) {
+            ALOGE("parameter memory allocation fail");
             rv = -ENOMEM;
             goto fail;
         }
         memset(fixed_set_params, 0, sizeof(char*) * num_cameras);
 
         if (cameraid > num_cameras) {
+            ALOGE(
+                "camera service provided cameraid out of bounds, "
+                "cameraid = %d, num supported = %d",
+                cameraid, num_cameras);
             rv = -EINVAL;
             goto fail;
         }
 
         camera_device = (wrapper_camera_device_t*)malloc(sizeof(*camera_device));
         if (!camera_device) {
+            ALOGE("camera_device allocation fail");
             rv = -ENOMEM;
             goto fail;
         }
@@ -473,12 +458,15 @@ static int camera_device_open(const hw_module_t* module, const char* name, hw_de
             if (retry)
                 usleep(OPEN_RETRY_MSEC * 1000);
         } while (retry);
-        
-        if (rv) 
+
+        if (rv) {
+            ALOGE("vendor camera open fail");
             goto fail;
-      
+        }
+        
         camera_ops = (camera_device_ops_t*)malloc(sizeof(*camera_ops));
         if (!camera_ops) {
+            ALOGE("camera_ops allocation fail");
             rv = -ENOMEM;
             goto fail;
         }
