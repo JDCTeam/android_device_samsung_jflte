@@ -149,6 +149,10 @@ static char* camera_fixup_getparams(int id, const char* settings) {
     String8 strParams = params.flatten();
     char* ret = strdup(strParams.string());
 
+ 	if (id == 1) {
+        params.set(android::CameraParameters::KEY_FOCAL_LENGTH, "4.2");
+    }
+
     return ret;
 }
 
