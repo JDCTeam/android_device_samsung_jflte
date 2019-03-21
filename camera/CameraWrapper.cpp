@@ -138,10 +138,13 @@ static char* camera_fixup_getparams(int id, const char* settings) {
     params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES,
                "auto,asd,action,portrait,landscape,night,night-portrait,theatre,beach,snow,sunset,"
                "steadyphoto,fireworks,sports,party,candlelight,backlight,flowers,AR");
-    params.set(CameraParameters::KEY_PREVIEW_FRAME_RATE, "30");
+
 
     /* Enforce video-snapshot-supported to true */
 	params.set(CameraParameters::KEY_VIDEO_SNAPSHOT_SUPPORTED, "true");
+	
+	params.set("preview-frame-rate-mode", "frame-rate-fixed");
+	params.set(android::CameraParameters::KEY_PREVIEW_FPS_RANGE, "10000,60000");
 
     String8 strParams = params.flatten();
     char* ret = strdup(strParams.string());

@@ -124,7 +124,7 @@ TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := camera_parameters_samsung_msm8960
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_NEED_SAMSUNG_CAMERA_MODE := true
 TARGET_NEED_CAMERA_ZSL := true
-
+TARGET_DISPLAY_INSECURE_MM_HEAP := true
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
