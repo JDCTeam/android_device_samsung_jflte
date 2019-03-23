@@ -21,7 +21,7 @@
 # definition file).
 #
 
-COMMON_PATH := device/samsung/jf-common
+DEVICE_PATH := device/samsung/jflte
 
 # Inherit from proprietary vendor
 -include vendor/samsung/jf-common/BoardConfigVendor.mk
@@ -30,14 +30,14 @@ COMMON_PATH := device/samsung/jf-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
 # Includes
-TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # The first api level the device has commercially launched on
 PRODUCT_SHIPPING_API_LEVEL := 17
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Set default locale
 PRODUCT_LOCALES := en-GB
@@ -79,7 +79,7 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 # Recovery
 LZMA_RAMDISK_TARGETS := recovery
 TARGET_RECOVERY_DENSITY := hdpi
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.qcom
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -93,7 +93,7 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 2170552320
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USES_MKE2FS := true
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
 # Audio
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
@@ -105,8 +105,8 @@ BOARD_HAVE_SAMSUNG_CSDCLIENT := true
 USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
-BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/vnd_jf.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+BOARD_CUSTOM_BT_CONFIG := $(DEVICE_PATH)/bluetooth/vnd_jf.txt
 BOARD_HAVE_BLUETOOTH_BCM := true
 
 # Legacy blobs
@@ -140,7 +140,7 @@ USE_OPENGL_RENDERER := true
 
 
 # Adreno configuration
-BOARD_EGL_CFG := $(COMMON_PATH)/configs/egl.cfg
+BOARD_EGL_CFG := $(DEVICE_PATH)/configs/egl.cfg
 
 
 # Renderscript
@@ -173,7 +173,7 @@ TARGET_HAS_NO_POWER_STATS := true
 TARGET_HAS_NO_WLAN_STATS := true
 
 # LineageHW
-JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(COMMON_PATH)/lineagehw|**/*.java
+JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(DEVICE_PATH)/lineagehw|**/*.java
 
 # Vendor init
 TARGET_INIT_VENDOR_LIB := libinit_jflte
@@ -210,7 +210,7 @@ WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 # Include SE policies
 #include device/qcom/sepolicy/sepolicy.mk
 #include device/qcom/sepolicy/legacy-sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
+#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Misc
 ALLOW_MISSING_DEPENDENCIES := true

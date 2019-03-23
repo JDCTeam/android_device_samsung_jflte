@@ -13,11 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Also get non-open-source specific aspects if available
-$(call inherit-product-if-exists, vendor/samsung/jf-common/jf-common-vendor-blobs.mk)
-
-# Common overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/jf-common/overlay
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/jflte/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -301,14 +298,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FlipFlap
 
-# call common jf system props
-$(call inherit-product, device/samsung/jf-common/system_prop.mk)
+# call jf system props
+$(call inherit-product, device/samsung/jflte/system_prop.mk)
 
-# call common jf system debug props
-$(call inherit-product, device/samsung/jf-common/system_prop_debug.mk)
+# call jf system debug props
+$(call inherit-product, device/samsung/jflte/system_prop_debug.mk)
 
 # Common qcom
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
 
 # HW/Samsung
 $(call inherit-product, hardware/samsung/Android.mk)
+
+# Also get non-open-source specific aspects if available
+$(call inherit-product, vendor/samsung/jf-common/jf-common-vendor-blobs.mk)
