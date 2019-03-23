@@ -125,14 +125,17 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_NEED_SAMSUNG_CAMERA_MODE := true
 TARGET_NEED_CAMERA_ZSL := true
 TARGET_DISPLAY_INSECURE_MM_HEAP := true
-# Enable dexpreopt to speed boot time
+
+# Dexpreopt
 ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
+    ifneq ($(TARGET_BUILD_VARIANT),eng)
+        WITH_DEXPREOPT := true
+        WITH_DEXPREOPT_DEBUG_INFO := false
+        USE_DEX2OAT_DEBUG := false
+        DONT_DEXPREOPT_PREBUILTS := true
+        WITH_DEXPREOPT_PIC := true
+        WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
     endif
-  endif
 endif
 
 # Display
