@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export DEVICE_COMMON=jf-common
+export DEVICE_COMMON=jflte
 export VENDOR=samsung
 
 OUTDIR=vendor/$VENDOR/$DEVICE_COMMON
