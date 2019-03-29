@@ -396,4 +396,7 @@
     <integer name="config_proximityCheckTimeout">250</integer>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
 
+<!-- Whether navigation bar can be disabled (for devices with hardware keys) -->
+   <bool name="config_canDisableNavigationBar">true</bool>
+
 </resources>
