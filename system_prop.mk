@@ -113,3 +113,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.am.reschedule_service=true \
     ro.vendor.qti.sys.fw.bservice_enable=true
 
+# UI Threads
+PRODUCT_PROPERTY_OVERRIDES += \
+	sys.use_fifo_ui=1
+
+# touch optimize
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.vendor.qti.inputopts.enable=true \
+persist.vendor.qti.inputopts.movetouchslop=0.6
