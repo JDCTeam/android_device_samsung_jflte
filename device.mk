@@ -128,6 +128,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335_prepatch.hcd \
     $(LOCAL_PATH)/configs/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bcmdhd.cal
 
+# Advanced Display
+PRODUCT_PACKAGES += \
+    AdvancedDisplay
+    
 # Filesystem tools
 PRODUCT_PACKAGES += \
     e2fsck_static \
