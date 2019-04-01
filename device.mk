@@ -16,8 +16,8 @@
 # Also get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/jf-common/jf-common-vendor-blobs.mk)
 
-# Common overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/jf-common/overlay
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/jflte/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -91,7 +91,7 @@ PRODUCT_COPY_FILES += \
 # Time zone data for recovery
 PRODUCT_COPY_FILES += \
     system/timezone/output_data/iana/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
-    	
+
 # GPS/location security configuration file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
@@ -201,7 +201,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
     netutils-wrapper-1.0
-    
+
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
@@ -289,14 +289,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
-# call common jf system props
-$(call inherit-product, device/samsung/jf-common/system_prop.mk)
+# call jf system props
+$(call inherit-product, device/samsung/jflte/system_prop.mk)
 
-# call common jf system debug props
-$(call inherit-product, device/samsung/jf-common/system_prop_debug.mk)
+# call jf system debug props
+$(call inherit-product, device/samsung/jflte/system_prop_debug.mk)
 
 # Common qcom
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
 
 # HW/Samsung
 $(call inherit-product, hardware/samsung/Android.mk)
+
+# Also get non-open-source specific aspects if available
+$(call inherit-product, vendor/samsung/jf-common/jf-common-vendor-blobs.mk))

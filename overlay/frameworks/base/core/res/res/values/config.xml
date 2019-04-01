@@ -38,6 +38,12 @@
         <item>"7,1"</item>
     </string-array>
 
+    <!-- The RadioAccessFamilies supported by the device.
+         Empty is viewed as "all".  Only used on devices which
+         don't support RIL_REQUEST_GET_RADIO_CAPABILITY
+         format is UMTS|LTE|... -->
+    <string translatable="false" name="config_radio_access_family">GSM|WCDMA|LTE</string>
+
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          USB interfaces.  If the device doesn't want to support tething over USB this should
          be empty.  An example would be "usb.*" -->
@@ -403,7 +409,7 @@
         <item>"/system/framework/arm/boot.oat"</item>
         <item>"/system/framework/boot.vdex"</item>
         <item>"/system/framework/arm/boot-core-libart.oat"</item>
-        <item>"/system/framework/boot-core-libart.vdex"</item>	
+        <item>"/system/framework/boot-core-libart.vdex"</item>
         <item>"/system/lib/libsurfaceflinger.so"</item>
 	</string-array>
 
