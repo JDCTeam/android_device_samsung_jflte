@@ -54,12 +54,13 @@ on property:persist.spectrum.profile=0
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
     # Intelliplug
-    write /sys/module/intelli_plug/parameters/screen_off_max 162000
-    write /sys/module/intelli_plug/parameters/cpu_nr_run_threshold 730
-    write /sys/module/intelli_plug/parameters/nr_possible_cores 4
-    	# Concervative profile
-    write /sys/module/intelli_plug/parameters/nr_run_profile_sel 2
-	write /sys/module/intelli_plug/parameters/nr_run_hysteresis 2
+    write /sys/kernel/intelli_plug/intelli_plug_active 1 
+    write /sys/kernel/intelli_plug/debug_intelli_plug 0
+	write /sys/kernel/intelli_plug/cpus_boosted 3
+	write /sys/kernel/intelli_plug/boost_lock_duration 400
+	write /sys/kernel/intelli_plug/down_lock_duration 1500
+	write /sys/kernel/intelli_plug/nr_run_hysteresis 2
+
 
     write /sys/module/msm_thermal/core_control/enabled 1
 
@@ -123,12 +124,12 @@ on property:persist.spectrum.profile=1
     write /sys/module/cpu_boost/parameters/load_based_syncs 0
 
     # Intelliplug
-    write /sys/module/intelli_plug/parameters/screen_off_max 1782000
-    write /sys/module/intelli_plug/parameters/cpu_nr_run_threshold 500
-    write /sys/module/intelli_plug/parameters/nr_possible_cores 4
-    	# Performance profile
-    write /sys/module/intelli_plug/parameters/nr_run_profile_sel 1
-	write /sys/module/intelli_plug/parameters/nr_run_hysteresis 2
+    write /sys/kernel/intelli_plug/intelli_plug_active 1 
+    write /sys/module/intelli_plug/debug_intelli_plug 0
+	write /sys/module/intelli_plug/cpus_boosted 2
+	write /sys/module/intelli_plug/boost_lock_duration 400
+	write /sys/module/intelli_plug/down_lock_duration 1500
+	write /sys/module/intelli_plug/full_mode_profile 1
 
     write /sys/module/msm_thermal/core_control/enabled 1
 
@@ -177,12 +178,12 @@ on property:persist.spectrum.profile=2
     write /sys/module/msm_thermal/core_control/enabled 1
 
      # Intelliplug
-    write /sys/module/intelli_plug/parameters/screen_off_max 384000
-    write /sys/module/intelli_plug/parameters/cpu_nr_run_threshold 800
-    write /sys/module/intelli_plug/parameters/nr_possible_cores 3
-    	# Concervative profile
-    write /sys/module/intelli_plug/parameters/nr_run_profile_sel 2
-	write /sys/module/intelli_plug/parameters/nr_run_hysteresis 15
+    write /sys/kernel/intelli_plug/intelli_plug_active 1 
+    write /sys/module/intelli_plug/debug_intelli_plug 0
+	write /sys/module/intelli_plug/cpus_boosted 2
+	write /sys/module/intelli_plug/boost_lock_duration 400
+	write /sys/module/intelli_plug/down_lock_duration 1500
+	write /sys/module/intelli_plug/full_mode_profile 6
 
     # GPU
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel 2
@@ -235,12 +236,12 @@ on property:persist.spectrum.profile=3
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
      # Intelliplug
-    write /sys/module/intelli_plug/parameters/screen_off_max 1782000
-    write /sys/module/intelli_plug/parameters/cpu_nr_run_threshold 500
-    write /sys/module/intelli_plug/parameters/nr_possible_cores 4
-    	# Performance profile
-    write /sys/module/intelli_plug/parameters/nr_run_profile_sel 1
-	write /sys/module/intelli_plug/parameters/nr_run_hysteresis 2
+    write /sys/kernel/intelli_plug/intelli_plug_active 1 
+    write /sys/module/intelli_plug/debug_intelli_plug 0
+	write /sys/module/intelli_plug/cpus_boosted 4
+	write /sys/module/intelli_plug/boost_lock_duration 400
+	write /sys/module/intelli_plug/down_lock_duration 1500
+	write /sys/module/intelli_plug/full_mode_profile 1
 
     write /sys/module/msm_thermal/core_control/enabled 1
 
