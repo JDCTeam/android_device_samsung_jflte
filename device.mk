@@ -303,4 +303,4 @@ $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
 $(call inherit-product, hardware/samsung/Android.mk)
 
 # Also get non-open-source specific aspects if available
-$(call inherit-product, vendor/samsung/jf-common/jf-common-vendor-blobs.mk))
+$(call inherit-product, vendor/samsung/jf-common/jf-common-vendor-blobs.mk)
