@@ -290,7 +290,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
-call jf system props
+# call jf system props
 $(call inherit-product, device/samsung/jflte/system_prop.mk)
 
 # call jf system debug props
