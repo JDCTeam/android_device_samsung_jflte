@@ -53,7 +53,7 @@
 
          For example, a device with notification and battery lights that supports
          pulsating and RGB control would set this config to 75. -->
-    <integer name="config_deviceLightCapabilities">195</integer>
+    <integer name="config_deviceLightCapabilities">75</integer>
     
     <!-- Default values for display color temperature -->
     <integer name="config_nightColorTemperature">5200</integer>
