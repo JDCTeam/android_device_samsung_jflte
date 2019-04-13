@@ -17,12 +17,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	pm.dexopt.install=quicken \
 	dalvik.vm.dex2oat-swap=false \
 	dalvik.vm.dex2oat-filter=quicken \
-	dalvik.vm.boot-dex2oat-threads=4 \
-	dalvik.vm.dex2oat-threads=2 \
 	dalvik.vm.image-dex2oat-threads=4 \
 	dalvik.vm.image-dex2oat-filter=quicken \
-	dalvik.vm.isa.arm.features=default \
-	dalvik.vm.isa.arm.variant=krait \
 	dalvik.vm.heapstartsize=16m \
 	dalvik.vm.heapgrowthlimit=256m \
 	dalvik.vm.heapsize=512m \
@@ -116,8 +112,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # UI Threads
 PRODUCT_PROPERTY_OVERRIDES += \
 	sys.use_fifo_ui=1
-
-# touch optimize
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.vendor.qti.inputopts.enable=true \
-	persist.vendor.qti.inputopts.movetouchslop=0.6
