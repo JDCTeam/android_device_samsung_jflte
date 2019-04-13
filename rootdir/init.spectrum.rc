@@ -41,20 +41,20 @@ on property:persist.spectrum.profile=0
     write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
     write /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration 0
 
-	write /sys/module/cpu_boost/parameters/input_boost_freq 0:1026000 1:1026000 2:384000 3:384000
+	write /sys/module/cpu_boost/parameters/input_boost_freq 0:1026000 1:1026000 2:384000 3:384000 
 	write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1890000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 216000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
     # Intelliplug
-    write /sys/kernel/intelli_plug/intelli_plug_active 1
+    write /sys/kernel/intelli_plug/intelli_plug_active 1 
     write /sys/kernel/intelli_plug/debug_intelli_plug 0
 	write /sys/kernel/intelli_plug/cpus_boosted 3
 	write /sys/kernel/intelli_plug/boost_lock_duration 400
@@ -110,10 +110,10 @@ on property:persist.spectrum.profile=1
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1890000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 216000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
     write /sys/module/cpu_boost/parameters/cpu_boost Y
     write /sys/module/cpu_boost/parameters/cpuboost_enable Y
@@ -124,7 +124,7 @@ on property:persist.spectrum.profile=1
     write /sys/module/cpu_boost/parameters/load_based_syncs 0
 
     # Intelliplug
-    write /sys/kernel/intelli_plug/intelli_plug_active 1
+    write /sys/kernel/intelli_plug/intelli_plug_active 1 
     write /sys/module/intelli_plug/debug_intelli_plug 0
 	write /sys/module/intelli_plug/cpus_boosted 2
 	write /sys/module/intelli_plug/boost_lock_duration 400
@@ -171,14 +171,14 @@ on property:persist.spectrum.profile=2
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1566000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1566000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1566000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 216000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
     write /sys/module/msm_thermal/core_control/enabled 1
 
      # Intelliplug
-    write /sys/kernel/intelli_plug/intelli_plug_active 1
+    write /sys/kernel/intelli_plug/intelli_plug_active 1 
     write /sys/module/intelli_plug/debug_intelli_plug 0
 	write /sys/module/intelli_plug/cpus_boosted 2
 	write /sys/module/intelli_plug/boost_lock_duration 400
@@ -230,13 +230,13 @@ on property:persist.spectrum.profile=3
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1890000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 216000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
      # Intelliplug
-    write /sys/kernel/intelli_plug/intelli_plug_active 1
+    write /sys/kernel/intelli_plug/intelli_plug_active 1 
     write /sys/module/intelli_plug/debug_intelli_plug 0
 	write /sys/module/intelli_plug/cpus_boosted 4
 	write /sys/module/intelli_plug/boost_lock_duration 400
