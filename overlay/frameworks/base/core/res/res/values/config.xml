@@ -363,38 +363,8 @@
     <integer name="config_num_physical_slots">1</integer>
 
    <bool name="config_button_brightness_support">true</bool>
-    <!-- Indicate whether encryption causes significant performances loss.
-         This MUST NOT be set to true on devices produced in 2016 or later -->
 
     <!-- True if the home button has the ability to wake up phone from lockscreen-->
     <bool name="config_HomeWakeButton">true</bool>
-
-    <!-- Allow devices override audio panel location to the left side -->
-    <bool name="config_audioPanelOnLeftSide">false</bool>
-
-    <!-- Keep chosen default camera app pinned in memory for faster launching -->
-    <bool name="config_pinnerCameraApp">true</bool>
-
-    <!-- Control whether the always on display mode is enabled by default. This value will be used
-         during initialization when the setting is still null. -->
-    <bool name="config_dozeAlwaysOnEnabled">false</bool>
-
-    <!-- Allow automatic adjusting of the screen brightness while dozing in low power state. -->
-    <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
-
-    <!-- Default value for proximity check on screen wake
-     NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
-    <bool name="config_proximityCheckOnWake">true</bool>
-    <integer name="config_proximityCheckTimeout">250</integer>
-    <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
-
-<!-- Whether navigation bar can be disabled (for devices with hardware keys) -->
-   <bool name="config_canDisableNavigationBar">true</bool>
-
-<!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
-   <bool name="config_swipe_up_gesture_setting_available">true</bool>
-
-   <!-- enable doze powersaving mode -->
-   <bool name="config_enableAutoPowerModes">true</bool>
 
 </resources>
