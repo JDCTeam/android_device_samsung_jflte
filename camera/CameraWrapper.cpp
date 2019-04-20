@@ -28,7 +28,7 @@
 #include <log/log.h>
 
 #include <camera/Camera.h>
-#include <camera/CameraParameters.h>
+#include <camera/CameraParametersW.h>
 #include <hardware/camera.h>
 #include <hardware/hardware.h>
 #include <utils/threads.h>
@@ -142,7 +142,7 @@ static char* camera_fixup_getparams(int id, const char* settings) {
 
     /* Enforce video-snapshot-supported to true */
 	params.set(CameraParameters::KEY_VIDEO_SNAPSHOT_SUPPORTED, "true");
-	
+
 	params.set("preview-frame-rate-mode", "frame-rate-fixed");
 	params.set(android::CameraParameters::KEY_PREVIEW_FPS_RANGE, "10000,60000");
 
@@ -470,7 +470,7 @@ static int camera_device_open(const hw_module_t* module, const char* name, hw_de
             ALOGE("vendor camera open fail");
             goto fail;
         }
-        
+
         camera_ops = (camera_device_ops_t*)malloc(sizeof(*camera_ops));
         if (!camera_ops) {
             ALOGE("camera_ops allocation fail");

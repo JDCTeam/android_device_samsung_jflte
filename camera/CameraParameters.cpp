@@ -20,7 +20,7 @@
 
 #include <string.h>
 #include <stdlib.h>
-#include <camera/CameraParameters.h>
+#include <camera/CameraParametersW.h>
 #include <system/graphics.h>
 
 namespace android {
