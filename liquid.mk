@@ -17,10 +17,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from jflte device
-$(call inherit-product, device/samsung/jflte/device.mk)
+$(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Inherit some Liquid stuff.
-$(call inherit-product, vendor/liquid//config/common_full_phone.mk)
+$(call inherit-product, vendor/liquid/config/common_full_phone.mk)
 
 # Boot animation res
 TARGET_BOOT_ANIMATION_RES := 1080
