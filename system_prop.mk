@@ -61,6 +61,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.hwui.text_large_cache_height=4096 \
 	debug.hwui.renderer=skiagl \
 	persist.hwc.mdpcomp.enable=true \
+	debug.cpurend.vsync=false \
 	debug.sf.hw=1 \
 	debug.egl.hw=1
 
