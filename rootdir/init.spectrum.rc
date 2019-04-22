@@ -29,6 +29,14 @@ on property:persist.spectrum.profile=0
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor pegasusq
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor pegasusq
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor pegasusq
+
+    write /sys/devices/system/cpu/cpufreq/pegasusq/down_differential 10
+    write /sys/devices/system/cpu/cpufreq/pegasusq/freq_for_responsiveness 1350000
+    write /sys/devices/system/cpu/cpufreq/pegasusq/sampling_rate 50000
+    write /sys/devices/system/cpu/cpufreq/pegasusq/sampling_rate_min 10000
+    write /sys/devices/system/cpu/cpufreq/pegasusq/up_threshold 60
+    write /sys/devices/system/cpu/cpufreq/pegasusq/freq_step 40
+
     write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 29000
     write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 98
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
