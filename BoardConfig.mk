@@ -36,8 +36,8 @@ TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 PRODUCT_SHIPPING_API_LEVEL := 17
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/vendor_interface/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/vendor_interface/compatibility_matrix.xml
 
 # Set default locale
 PRODUCT_LOCALES := en-GB
@@ -129,6 +129,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_NEED_SAMSUNG_CAMERA_MODE := true
 TARGET_NEED_CAMERA_ZSL := true
 TARGET_DISPLAY_INSECURE_MM_HEAP := true
+
 # Enable dexpreopt to speed boot time
 WITH_DEXPREOPT := true
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
@@ -153,7 +154,6 @@ TARGET_USES_ION := true
 
 # Adreno configuration
 BOARD_EGL_CFG := $(DEVICE_PATH)/configs/egl.cfg
-
 
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
@@ -219,14 +219,12 @@ WIFI_DRIVER_FW_PATH_AP := "/vendor/etc/wifi/bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_STA := "/vendor/etc/wifi/bcmdhd_sta.bin"
 WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 
-# Include SE policies
-#include device/qcom/sepolicy/sepolicy.mk
+# Include SE policy
 include device/qcom/sepolicy-legacy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # TWRP
 #-include device/samsung/jflte/twrp.mk
-
 
 # Misc
 ALLOW_MISSING_DEPENDENCIES := true
