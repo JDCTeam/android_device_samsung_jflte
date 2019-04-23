@@ -36,8 +36,8 @@ TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 PRODUCT_SHIPPING_API_LEVEL := 17
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/vendor_interface/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/vendor_interface/compatibility_matrix.xml
 
 # Set default locale
 PRODUCT_LOCALES := en-GB
@@ -147,7 +147,6 @@ TARGET_USES_ION := true
 # Adreno configuration
 BOARD_EGL_CFG := $(DEVICE_PATH)/configs/egl.cfg
 
-
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
@@ -220,14 +219,19 @@ WIFI_DRIVER_FW_PATH_AP := "/vendor/etc/wifi/bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_STA := "/vendor/etc/wifi/bcmdhd_sta.bin"
 WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 
+<<<<<<< HEAD
 # Include SE policies
 #include device/qcom/sepolicy/sepolicy.mk
 #include device/qcom/sepolicy/legacy-sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+=======
+# Include SE policy
+include device/qcom/sepolicy-legacy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+>>>>>>> 5a2a10f... device tree: Clean up and some tidy
 
 # TWRP
 #-include device/samsung/jflte/twrp.mk
-
 
 # Misc
 ALLOW_MISSING_DEPENDENCIES := true
