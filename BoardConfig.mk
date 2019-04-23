@@ -233,5 +233,9 @@ WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 #include device/qcom/sepolicy/legacy-sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
+# TWRP
+#-include device/samsung/jflte/twrp.mk
+
+
 # Misc
 ALLOW_MISSING_DEPENDENCIES := true
