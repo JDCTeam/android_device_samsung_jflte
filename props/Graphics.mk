@@ -21,10 +21,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.sf.disable_backpressure=1 \
 	debug.sf.recomputecrop=0 \
 	debug.composition.type=c2d \
-    debug.hwui.use_buffer_age=false \
-	debug.sf.hw=1 \
-	debug.egl.hw=1
+    debug.hwui.use_buffer_age=false
 
-# UI Threads
-PRODUCT_PROPERTY_OVERRIDES += \
-	sys.use_fifo_ui=1
