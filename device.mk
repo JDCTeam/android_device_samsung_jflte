@@ -291,10 +291,7 @@ PRODUCT_PACKAGES += \
     Snap
 
 # call jf system props
-$(call inherit-product, device/samsung/jflte/system_prop.mk)
-
-# call jf system debug props
-$(call inherit-product, device/samsung/jflte/system_prop_debug.mk)
+include device/samsung/jflte/props/*.mk
 
 # Common qcom
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
