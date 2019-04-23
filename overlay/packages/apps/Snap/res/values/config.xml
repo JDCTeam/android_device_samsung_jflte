@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Opens back camera using openLegacy() -->
-    <bool name="back_camera_open_legacy">false</bool>
+   <!-- Opens back camera using openLegacy() and forces api v1 -->
+   <bool name="back_camera_open_legacy">true</bool>
 
-    <!-- Opens front camera using openLegacy() -->
-    <bool name="front_camera_open_legacy">false</bool>
+   <!-- Opens front camera using openLegacy() and forces api v1 -->
+   <bool name="front_camera_open_legacy">true</bool>
 
     <!-- Restart preview for back camera onPictureTaken -->
     <bool name="back_camera_restart_preview_onPictureTaken">true</bool>
