@@ -197,14 +197,6 @@ PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 # Always preopt extracted APKs to prevent extracting out of the APK
 # for gms modules.
 PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
-PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
-PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
-PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
-
-# Compile libhwui in performance mode
-HWUI_COMPILE_FOR_PERF := true
 
 # Wifi module
 BOARD_HAVE_SAMSUNG_WIFI := true
@@ -220,16 +212,9 @@ WIFI_DRIVER_FW_PATH_AP := "/vendor/etc/wifi/bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_STA := "/vendor/etc/wifi/bcmdhd_sta.bin"
 WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 
-<<<<<<< HEAD
-# Include SE policies
-#include device/qcom/sepolicy/sepolicy.mk
-#include device/qcom/sepolicy/legacy-sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
-=======
 # Include SE policy
 include device/qcom/sepolicy-legacy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
->>>>>>> 5a2a10f... device tree: Clean up and some tidy
 
 # TWRP
 #-include device/samsung/jflte/twrp.mk
