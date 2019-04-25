@@ -42,7 +42,7 @@ on property:persist.spectrum.profile=0
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 30000
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "1 384000:5 486000:10 594000:20 918000:30 1134000:50 1458000:60 1566000:75 1674000:80 1782000:85 1890000:90"
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "20 918000:30 1134000:50 1458000:60 1566000:75 1674000:80 1782000:85 1890000:90"
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 60000
     write /sys/devices/system/cpu/cpufreq/interactive/boost 0
     write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 79000
