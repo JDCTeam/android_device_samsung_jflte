@@ -25,8 +25,16 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 
+# Toolchain
+KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc/linux-x86/arm/arm-linux-7.1.x-gnueabi/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-Samsung-linux-gnueabi-
+
 # Boot image
-TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/kernel
+TARGET_KERNEL_SOURCE := kernel/samsung/jf
+BOARD_CUSTOM_BOOTIMG := true
+BOARD_KERNEL_IMAGE_NAME := zImage
+TARGET_KERNEL_CONFIG := side_jf_defconfig
+
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_TREE)/mkbootimg.mk
 
 # Kernel
