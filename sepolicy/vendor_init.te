@@ -1,4 +1,5 @@
 type_transition vendor_init system_data_file:file wifi_data_file;
 
+allow vendor_init unlabeled:{ dir file } { getattr relabelfrom };
 allow vendor_init wifi_data_file:dir rw_dir_perms;
 allow vendor_init wifi_data_file:file create_file_perms;
