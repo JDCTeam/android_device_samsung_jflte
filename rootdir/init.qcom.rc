@@ -399,10 +399,6 @@ on boot
     chmod 0660 /sys/class/timed_output/vibrator/pwm_threshold
     chmod 0660 /sys/class/timed_output/vibrator/pwm_value
 
-    #Processgroup
-    chown system system /acct/uid_*
-    chmod 0777 /acct/uid_*
-
     # Barcode emulation
     chown system radio /sys/class/sec/sec_barcode_emul/barcode_led_status
     chown system radio /sys/class/sec/sec_barcode_emul/barcode_send
