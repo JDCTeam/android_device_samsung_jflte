@@ -9,3 +9,4 @@ ro.lcd_brightness=25
 ro.sf.lcd_density=480
 persist.sys.usb.config=mtp,adb
 persist.fuse_sdcard=true
+tw_app_install_status=1
