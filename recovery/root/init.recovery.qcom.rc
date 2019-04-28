@@ -83,4 +83,5 @@ on recovery_profile
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor performance
     write /sys/module/cpu_boost/parameters/input_boost_freq 1890000
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
+    write /sys/module/msm_thermal/core_control/enabled 0
 
