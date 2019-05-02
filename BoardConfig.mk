@@ -187,6 +187,9 @@ JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(DEVICE_PATH)/lineagehw|**/*.jav
 TARGET_INIT_VENDOR_LIB := libinit_jflte
 TARGET_RECOVERY_DEVICE_MODULES := libinit_jflte
 
+# Exclude serif fonts for saving system.img size.
+EXCLUDE_SERIF_FONTS := true
+
 # Don't try to build and run all tests by default. Several tests have
 # dependencies on the framework.
 ANDROID_NO_TEST_CHECK := true
