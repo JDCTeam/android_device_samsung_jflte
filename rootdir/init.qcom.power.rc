@@ -142,6 +142,7 @@ on property:recovery.perf.mode=0
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
 
-on property:dev.bootcomplete=1
+on property:sys.boot_completed=1
+    swapon_all ./fstab.qcom
     rm /data/system/perfd/default_values
 
