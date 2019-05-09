@@ -20,13 +20,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Inherit some AospExtended stuff.
-$(call inherit-product, vendor/aosp/common.mk)
+$(call inherit-product, vendor/aicp/config/common_full_phone.mk)
 
 # Boot animation res
 TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := aosp_jflte
+PRODUCT_NAME := aicp_jflte
 PRODUCT_DEVICE := jflte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := Samsung
 PRODUCT_RELEASE_NAME := jflte
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    DEVICE_MAINTAINERS="Buff99 & JDCTeam"

@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_jflte.mk
+    $(LOCAL_DIR)/aicp_jflte.mk
