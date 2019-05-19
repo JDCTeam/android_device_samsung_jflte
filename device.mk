@@ -129,8 +129,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bcmdhd.cal
 
 # Advanced Display
-PRODUCT_PACKAGES += \
-    AdvancedDisplay
+#PRODUCT_PACKAGES += \
+#    AdvancedDisplay
     
 # Filesystem tools
 PRODUCT_PACKAGES += \
@@ -286,8 +286,8 @@ PRODUCT_PACKAGES += \
     recovery-transform.sh
 
 # Doze
-PRODUCT_PACKAGES += \
-    SamsungDoze
+#PRODUCT_PACKAGES += \
+#    SamsungDoze
 
 # Qcom RIL
 PRODUCT_PACKAGES += \

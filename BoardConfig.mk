@@ -73,8 +73,8 @@ TARGET_KERNEL_SOURCE := kernel/samsung/jf
 TARGET_KERNEL_CONFIG := side_jf_defconfig
 
 # Toolchain
-KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc/linux-x86/arm/arm-linux-7.1.x-gnueabi/bin
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-Samsung-linux-gnueabi-
+#KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc/linux-x86/arm/arm-linux-7.1.x-gnueabi/bin
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-Samsung-linux-gnueabi-
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960

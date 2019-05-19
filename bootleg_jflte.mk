@@ -20,12 +20,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
 
 # Inherit some JDCTeam stuff.
-$(call inherit-product, vendor/jdc/config/common.mk)
+#$(call inherit-product, vendor/jdc/config/common.mk)
 
-PRODUCT_NAME := lineage_jflte
+PRODUCT_NAME := bootleg_jflte
 PRODUCT_DEVICE := jflte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := Samsung

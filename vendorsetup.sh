@@ -1,1 +1,1 @@
-add_lunch_combo lineage_jflte-userdebug
+add_lunch_combo bootleg_jflte-userdebug
