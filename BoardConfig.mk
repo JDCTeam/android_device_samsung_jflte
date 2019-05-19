@@ -228,3 +228,12 @@ WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 
 # Misc
 ALLOW_MISSING_DEPENDENCIES := true
+
+
+# Audio/Display/Media HAL
+TARGET_QCOM_AUDIO_VARIANT := caf-msm8960
+TARGET_QCOM_DISPLAY_VARIANT := caf-msm8960
+TARGET_QCOM_MEDIA_VARIANT := caf-msm8960
+
+# Enabling QCOM Audio/Video Enhancements
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
