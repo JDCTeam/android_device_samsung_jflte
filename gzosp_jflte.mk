@@ -19,17 +19,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from jflte device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Inherit some AospExtended stuff.
-$(call inherit-product, vendor/aicp/config/common_full_phone.mk)
+# Enhanced NFC
+#$(call inherit-product, vendor/gzosp/config/nfc_enhanced.mk)
+
+# Inherit some Gzosp stuff.
+$(call inherit-product, vendor/gzosp/config/common_full_phone.mk)
 
 # Boot animation res
 TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := aicp_jflte
+PRODUCT_NAME := gzosp_jflte
 PRODUCT_DEVICE := jflte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := Samsung
-PRODUCT_RELEASE_NAME := jflte
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DEVICE_MAINTAINERS="Buff99 & JDCTeam"

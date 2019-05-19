@@ -1,2 +1,2 @@
-add_lunch_combo aosp_jflte-userdebug
-add_lunch_combo aosp_jflte-user
+add_lunch_combo gzosp_jflte-userdebug
+add_lunch_combo gzosp_jflte-user
