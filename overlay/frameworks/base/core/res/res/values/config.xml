@@ -432,4 +432,7 @@
 
     <integer name="config_screen_off_delay">0</integer>
 
+    <!-- Default state for LiveDisplay -->
+    <bool name="config_liveDisplayAvailable">true</bool>
+
 </resources>
