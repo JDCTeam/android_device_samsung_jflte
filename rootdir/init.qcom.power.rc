@@ -61,7 +61,7 @@ on enable-low-power
     write /sys/devices/system/cpu/cpufreq/pegasusq/freq_step 40
 
     write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 29000
-    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 98
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 95
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 30000
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
