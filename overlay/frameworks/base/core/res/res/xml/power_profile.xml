@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
     <item name="none">0</item>
+    <item name="battery.capacity">2600</item>
+    <!-- Additional power consumption when CPU is in a kernel idle loop -->
+	<item name="cpu.awake">8</item>
+
     <item name="screen.on">120</item>
     <item name="bluetooth.active">110</item>
     <item name="bluetooth.on">0.9</item>
@@ -17,7 +21,11 @@
         <value>1.23</value>
         <value>1.23</value>
     </array>
-    <array name="cpu.speeds">
+
+    <item name="cpu.idle">4</item>
+	<item name="cpu.clusters.cores">4</item>
+
+    <array name="cpu.core_speeds.cluster0">
         <value>1890000</value>
         <value>1782000</value>
         <value>1674000</value>
@@ -33,9 +41,14 @@
         <value>594000</value>
         <value>486000</value>
         <value>384000</value>
+        <value>378000</value>
+        <value>324000</value>
+        <value>270000</value>
+        <value>216000</value>
+        <value>162000</value>
     </array>
-    <item name="cpu.idle">4</item>
-    <array name="cpu.active">
+
+    <array name="cpu.core_power.cluster0">
         <value>118</value>
         <value>113</value>
         <value>108</value>
@@ -52,5 +65,5 @@
         <value>74</value>
         <value>61</value>
     </array>
-    <item name="battery.capacity">2600</item>
+    
 </device>
