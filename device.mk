@@ -128,9 +128,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335_prepatch.hcd \
     $(LOCAL_PATH)/configs/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bcmdhd.cal
 
-# wifi bodge
- $(LOCAL_PATH)/configs/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml \
-
 # Filesystem tools
 PRODUCT_PACKAGES += \
     e2fsck_static \
@@ -292,14 +289,6 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     Snap
-
-# Wi-Fi Display
-PRODUCT_PACKAGES += \
-    libaacwrapper \
-    libnl
-
-PRODUCT_BOOT_JARS += \
-    WfdCommon
 
 # call jf system props
 include device/samsung/jflte/props/*.mk
