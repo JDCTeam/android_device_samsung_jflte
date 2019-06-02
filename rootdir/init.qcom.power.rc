@@ -93,8 +93,14 @@ on enable-low-power
 
     write /sys/block/mmcblk0/queue/iostats 1
     write /sys/block/mmcblk0/queue/add_random 1
-    write /sys/block/mmcblk0/queue/read_ahead_kb 1024
+    write /sys/block/mmcblk0/queue/read_ahead_kb 128
+    write /sys/block/mmcblk0/queue/nr_requests 128
     write /sys/block/mmcblk0/queue/rq_affinity 0
+    write /sys/block/mmcblk0rpmb/queue/iostats 1
+    write /sys/block/mmcblk0rpmb/queue/add_random 1
+    write /sys/block/mmcblk0rpmb/queue/read_ahead_kb 128
+    write /sys/block/mmcblk0rpmb/queue/nr_requests 128
+    write /sys/block/mmcblk0rpmb/queue/rq_affinity 0
 
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel 0
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/min_pwrlevel 3
