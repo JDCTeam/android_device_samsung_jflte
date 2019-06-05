@@ -1,0 +1,1 @@
+/sys/devices/system/cpu/online			u:object_r:sysfs_cpu:s0
