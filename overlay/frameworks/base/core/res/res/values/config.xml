@@ -432,4 +432,6 @@
 
     <integer name="config_screen_off_delay">0</integer>
 
+    <bool name="config_swipe_up_gesture_default">false</bool>
+
 </resources>
