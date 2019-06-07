@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/gzosp_jflte.mk
+    $(LOCAL_DIR)/omni_jflte.mk

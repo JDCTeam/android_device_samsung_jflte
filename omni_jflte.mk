@@ -13,22 +13,35 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
 
-# Inherit from jflte device
-$(call inherit-product, $(LOCAL_PATH)/device.mk)
+# Get the prebuilt list of APNs
+$(call inherit-product, vendor/omni/config/gsm.mk)
+
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Enhanced NFC
 #$(call inherit-product, vendor/gzosp/config/nfc_enhanced.mk)
 
-# Inherit some Gzosp stuff.
-$(call inherit-product, vendor/gzosp/config/common_full_phone.mk)
+# must be before including omni part
+TARGET_BOOTANIMATION_SIZE := 1080p
 
-# Boot animation res
-TARGET_BOOT_ANIMATION_RES := 1080
+# Inherit some Omni stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
 
-PRODUCT_NAME := gzosp_jflte
+# Inherit from jflte device
+$(call inherit-product, $(LOCAL_PATH)/device.mk)
+
+
+# Boot animation
+TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 1920
+
+# CarrierConfig
+PRODUCT_PACKAGE_OVERLAYS += vendor/omni/overlay/CarrierConfig
+
+PRODUCT_NAME := omni_jflte
 PRODUCT_DEVICE := jflte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := Samsung
