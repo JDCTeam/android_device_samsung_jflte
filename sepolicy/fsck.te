@@ -1,0 +1,2 @@
+allow fsck sysfs_cpu:file r_file_perms;
+allow fsck sysfs_cpu:file rw_file_perms;
