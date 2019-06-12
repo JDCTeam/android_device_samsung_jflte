@@ -29,3 +29,18 @@ PRODUCT_NAME := lineage_jflte
 PRODUCT_DEVICE := jflte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := Samsung
+
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="blueline-user 9 PQ2A.190405.003 5310204 release-keys"
+
+# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
+BUILD_FINGERPRINT := google/blueline/blueline:9/PQ2A.190405.003/5310204:user/release-keys
+VENDOR_BUILD_FINGERPRINT := google/blueline/blueline:9/PQ2A.190405.003/5310204:user/release-keys
+
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME="GT-I9505"
