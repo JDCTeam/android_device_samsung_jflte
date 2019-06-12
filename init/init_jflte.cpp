@@ -193,6 +193,7 @@ void vendor_load_properties()
         property_override_dual("ro.build.product","ro.lineage.device","jactivelte");
     } else {
         property_override("ro.build.fingerprint","ERROR.INIT FAILED");
+        return;
     }
     property_override_dual("ro.build.fingerprint","ro.vendor.build.fingerprint", "google/blueline/blueline:9/PQ2A.190405.003/5310204:user/release-keys");
     property_override("ro.build.description", "blueline-user 9 PQ2A.190405.003 5310204 release-keys");
