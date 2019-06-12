@@ -192,8 +192,8 @@ void vendor_load_properties()
     } else if (bootloader.find("I9505") != std::string::npos) {
         /* jfltexx */
         gsm_properties();
-        property_override_dual("ro.build.fingerprint","ro.vendor.build.fingerprint", "samsung/jfltexx/jflte:5.0.1/LRX22C/I9505XXUHOB7:user/release-keys");
-        property_override("ro.build.description", "jfltexx-user 5.0.1 LRX22C I9505XXUHOB7 release-keys");
+        property_override_dual("ro.build.fingerprint","ro.vendor.build.fingerprint", "google/blueline/blueline:9/PQ2A.190405.003/5310204:user/release-keys");
+        property_override("ro.build.description", "blueline-user 9 PQ2A.190405.003 5310204 release-keys");
         property_override_dual("ro.product.model","ro.product.vendor.model", "GT-I9505");
         property_override_dual("ro.product.device","ro.product.vendor.device", "jfltexx");
         property_override_dual("ro.build.product","ro.lineage.device","jfltexx");
