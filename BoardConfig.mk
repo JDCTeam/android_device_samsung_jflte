@@ -39,6 +39,9 @@ PRODUCT_SHIPPING_API_LEVEL := 17
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/vendor_interface/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/vendor_interface/compatibility_matrix.xml
 
+TARGET_USES_OLD_MNC_FORMAT := true
+
+
 # Set default locale
 PRODUCT_LOCALES := en-GB
 

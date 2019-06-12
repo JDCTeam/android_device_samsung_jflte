@@ -26,6 +26,7 @@
 #
 
 import init.spectrum.rc
+import init.safailnet.rc
 import init.qcom.power.rc
 import init.qcom.usb.rc
 
@@ -418,6 +419,9 @@ on boot
 
     # Wifi firmware reload path
     chown wifi wifi /sys/module/dhd/parameters/firmware_path
+
+    # Use the group Wi-Fi Direct interface on bcm43xx
+	setprop wifi.direct.interface p2p-dev-wlan0
 
 service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
