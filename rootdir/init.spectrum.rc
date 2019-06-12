@@ -38,7 +38,7 @@ on property:persist.spectrum.profile=0
     write /sys/devices/system/cpu/cpufreq/pegasusq/freq_step 40
 
     write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 29000
-    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 95
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 98
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 30000
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
@@ -159,7 +159,7 @@ on property:persist.spectrum.profile=2
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor conservative
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor conservative
     write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "20000 1026000:10000"
-    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 110
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 98
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_slack -1
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
@@ -210,7 +210,7 @@ on property:persist.spectrum.profile=3
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor performance
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor performance
     write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "20000 1566000:10000"
-    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 95
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 98
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 80000
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
