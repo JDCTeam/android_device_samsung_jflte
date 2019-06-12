@@ -26,10 +26,11 @@
 #
 
 import init.spectrum.rc
+import init.safailnet.rc
 import init.qcom.power.rc
 import init.qcom.usb.rc
 
-on late-fs 
+on late-fs
 	write /sys/block/mmcblk0/queue/iostats 0
 	write /sys/block/mmcblk0/queue/read_ahead_kb 2048
 	write /sys/block/mmcblk0/queue/nr_requests 256
@@ -297,7 +298,7 @@ on boot
     chown system system /sys/class/sec/sec_touchkey/glove_mode
     chown system system /sys/class/sec/sec_touchkey/keypad_enable
     chmod 0660 /sys/class/sec/sec_touchkey/keypad_enable
-    
+
     chmod 0660 /sys/class/sec/sec_touchkey/glove_mode
     chown system system /sys/devices/i2c-3/3-0020/input/input3/glove_enable
     chmod 0777 /sys/devices/i2c-3/3-0020/input/input3/glove_enable
