@@ -26,6 +26,8 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 $(call inherit-product, vendor/gzosp/config/common_full_phone.mk)
 
 # Boot animation res
+TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 1920
 TARGET_BOOT_ANIMATION_RES := 1080
 
 PRODUCT_NAME := gzosp_jflte
