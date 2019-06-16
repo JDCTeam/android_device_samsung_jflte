@@ -124,10 +124,6 @@ PRODUCT_PACKAGES += \
     e2fsck_static \
     resize2fs_static
 
-# HIDL Manifest
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
-
 # IPv6 tethering
 PRODUCT_PACKAGES += \
     ebtables \
