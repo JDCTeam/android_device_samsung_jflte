@@ -91,6 +91,11 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
+# Dexpreopt
+# Always preopt extracted APKs to prevent extracting out of the APK
+# for gms modules.
+PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
+
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
