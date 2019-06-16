@@ -163,7 +163,7 @@ WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/dhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA := "/vendor/etc/wifi/bcmdhd_sta.bin"
 WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 
-#TWRP (optional)
+# TWRP (optional)
 ifeq ($(WITH_TWRP),true)
 -include device/samsung/jf-common/twrp.mk
 endif
