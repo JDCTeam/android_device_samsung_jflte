@@ -96,11 +96,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 # for gms modules.
 PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 
-# Display
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-TARGET_DISPLAY_USE_RETIRE_FENCE := true
-
 # Fonts
 EXCLUDE_SERIF_FONTS := true
 
@@ -149,6 +144,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
+
+# Renderscript
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # RIL
 BOARD_PROVIDES_LIBRIL := true
