@@ -19,6 +19,7 @@ TARGET_OTA_ASSERT_DEVICE := jflte,jfltexx,i9505,GT-I9505,jgedlte,i9505g,GT-I9505
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/jflte/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/jflte/overlay-lineage
 
 # Permissions
 PRODUCT_COPY_FILES += \
