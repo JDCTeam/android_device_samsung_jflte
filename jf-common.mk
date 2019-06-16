@@ -204,17 +204,9 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 
-# RIL
-PRODUCT_PACKAGES += \
-    libshim_ril
-
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
-
-# SPN override
-PRODUCT_COPY_FILES += \
-    device/samsung/jf-common/selective-spn-conf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/selective-spn-conf.xml
 
 # Thermal
 PRODUCT_COPY_FILES += \

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (c) 2016 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,20 @@
  * limitations under the License.
  */
 
-/* status_t Parcel::writeString16 */
-extern "C" int _ZN7android6Parcel13writeString16EPKDsj();
-extern "C" int _ZN7android6Parcel13writeString16EPKtj() {
-    return _ZN7android6Parcel13writeString16EPKDsj();
-}
+#ifndef SAP_SERVICE_H
+#define SAP_SERVICE_H
+
+#include <telephony/ril.h>
+#include <ril_internal.h>
+#include <RilSapSocket.h>
+#include <hardware/ril/librilutils/proto/sap-api.pb.h>
+
+namespace sap {
+
+void registerService(const RIL_RadioFunctions *callbacks);
+void processResponse(MsgHeader *rsp, RilSapSocket *sapSocket);
+void processUnsolResponse(MsgHeader *rsp, RilSapSocket *sapSocket);
+
+}   // namespace android
+
+#endif  // RIL_SERVICE_H
