@@ -223,6 +223,10 @@ $(call inherit-product, device/samsung/jf-common/system_prop.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-8064ab.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8064ab.conf
 
+# Touch
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.jf
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.jf
