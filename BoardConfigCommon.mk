@@ -89,8 +89,6 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/mm-qcamera-daemon=22
 
 # Charger
-BOARD_CHARGING_CMDLINE_NAME := "androidboot.bootchg"
-BOARD_CHARGING_CMDLINE_VALUE := "true"
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Display
