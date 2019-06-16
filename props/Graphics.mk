@@ -15,7 +15,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.hwui.text_large_cache_height=4096 \
 	persist.hwc.mdpcomp.enable=true \
 	persist.graphics.vulkan.disable=true \
-	debug.hwui.renderer=opengl \
 	debug.cpurend.vsync=false \
 	debug.sf.latch_unsignaled=1 \
 	debug.sf.disable_backpressure=1 \
