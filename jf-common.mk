@@ -90,10 +90,10 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl-legacy \
-    camera.device@1.0-impl-legacy \
-    Snap \
-    camera.msm8960
+    android.hardware.camera.provider@2.4-impl.jf \
+    camera.device@1.0-impl.jf \
+    camera.msm8960 \
+    Snap
 
 # Display
 PRODUCT_PACKAGES += \
