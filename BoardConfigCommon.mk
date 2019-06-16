@@ -157,6 +157,9 @@ BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/hw/android.hardware.sensors@1.0-service.jf=22
 
+# Shipping API Level
+PRODUCT_SHIPPING_API_LEVEL := 17
+
 # System Server
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 
