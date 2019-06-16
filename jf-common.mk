@@ -70,7 +70,10 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudio-resampler \
     libqcomvoiceprocessing \
-    tinymix
+    tinycap \
+    tinymix \
+    tinypcminfo \
+    tinyplay
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
