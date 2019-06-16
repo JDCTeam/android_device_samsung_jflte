@@ -146,6 +146,10 @@ TARGET_USE_SDCLANG := true
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
+# Sensors
+TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
+    /system/vendor/bin/hw/android.hardware.sensors@1.0-service.jf=22
+
 # Wifi module
 BOARD_WLAN_DEVICE := bcmdhd
 BOARD_HAVE_SAMSUNG_WIFI := true
