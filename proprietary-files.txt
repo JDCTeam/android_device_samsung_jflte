@@ -1,0 +1,89 @@
+# Bluetooth
+vendor/lib/libaptX_encoder.so
+
+# Bluetooth firmware
+vendor/firmware/bcm4335.hcd
+vendor/firmware/bcm4335_prepatch.hcd
+
+# Thermal
+vendor/bin/mpdecision
+vendor/bin/thermald
+
+# Audio
+vendor/lib/libcsd-client.so
+
+# Adreno GPU
+vendor/firmware/a300_pfp.fw
+vendor/firmware/a300_pm4.fw
+vendor/firmware/vidc_1080p.fw
+vendor/lib/egl/eglsubAndroid.so
+vendor/lib/egl/libEGL_adreno.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
+vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/libadreno_utils.so
+vendor/lib/libbccQTI.so
+vendor/lib/libC2D2.so
+vendor/lib/libc2d30-a3xx.so
+vendor/lib/libCB.so
+vendor/lib/libgsl.so
+vendor/lib/libllvm-qcom.so
+vendor/lib/librs_adreno_sha1.so
+vendor/lib/librs_adreno.so
+vendor/lib/libRSDriver_adreno.so
+vendor/lib/libsc-a3xx.so
+
+# Radio
+vendor/bin/efsks
+vendor/bin/ks
+vendor/bin/qcks
+vendor/bin/qmuxd
+vendor/bin/netmgrd
+vendor/lib/libdiag.so
+vendor/lib/libdsutils.so
+vendor/lib/libidl.so
+vendor/lib/libnetmgr.so
+vendor/lib/libqcci_legacy.so
+vendor/lib/libqdi.so
+vendor/lib/libqdp.so
+vendor/lib/libqmi.so
+vendor/lib/libqmi_cci.so
+vendor/lib/libqmi_client_qmux.so
+vendor/lib/libqmi_common_so.so
+vendor/lib/libqmi_csi.so
+vendor/lib/libqmi_encdec.so
+vendor/lib/libqmiservices.so
+vendor/lib/libril-qc-qmi-1.so
+vendor/lib/libril-qcril-hook-oem.so
+vendor/lib/libxml.so
+
+# Network
+vendor/bin/radish
+
+# GPS
+vendor/bin/irsc_util
+vendor/lib/libdsi_netctrl.so
+vendor/lib/libgeofence.so
+vendor/lib/libizat_core.so
+vendor/lib/libloc_api_v02.so
+vendor/lib/libloc_ds_api.so
+
+# Sensors
+vendor/lib/hw/sensors.vendor.msm8960.so
+vendor/lib/libgnustl_shared.so
+vendor/lib/libsam.so
+vendor/lib/libsensirion_j1.so
+
+# NFC firmware
+vendor/firmware/bcm2079xB4_firmware.ncd
+vendor/firmware/bcm2079xB4_pre_firmware.ncd
+
+# Perf
+vendor/lib/libqti-perfd-client.so
+
+# DRM
+vendor/lib/mediadrm/libwvdrmengine.so
+
+# Wi-Fi
+vendor/etc/wifi/bcmdhd_apsta.bin
+vendor/etc/wifi/bcmdhd_sta.bin
