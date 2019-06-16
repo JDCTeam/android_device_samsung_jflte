@@ -5,7 +5,7 @@
 | Feature                 | Specification                     |
 | :---------------------- | :-------------------------------- |
 | CPU                     | Quad-core 1.9 GHz Krait 300       |
-| Chipset                 | Qualcomm APQ8064AB Snapdragon 600 |
+| Chipset                 | Qualcomm APQ8064T Snapdragon 600  |
 | GPU                     | Adreno 320                        |
 | Memory                  | 2 GB                              |
 | Shipped Android Version | 4.2.2                             |
