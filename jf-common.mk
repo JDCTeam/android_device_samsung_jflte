@@ -230,7 +230,7 @@ $(call inherit-product, device/samsung/jf-common/system_prop.mk)
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine-8064ab.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8064ab.conf
+    $(LOCAL_PATH)/configs/thermald.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermald.conf
 
 # Touch
 PRODUCT_PACKAGES += \
