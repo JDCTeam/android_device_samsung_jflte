@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/lineage_jflte.mk
+	$(LOCAL_DIR)/havoc_jflte.mk
