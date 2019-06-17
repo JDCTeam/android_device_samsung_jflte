@@ -88,6 +88,9 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/bin/mediaserver=22 \
     /system/vendor/bin/mm-qcamera-daemon=22
 
+# Display
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000U
+
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
