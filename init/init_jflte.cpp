@@ -31,6 +31,8 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 #include <android-base/properties.h>
+#include <android-base/strings.h>	
+#include <android-base/file.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
@@ -38,11 +40,15 @@
 //#include "util.h"
 #include <string>
 
+#define SERIAL_NUMBER_FILE "/efs/FactoryApp/serial_no"
+
 void gsm_properties();
 void cdma_properties(int sub);
 void r970_properties();
 
 using android::base::GetProperty;
+using android::base::ReadFileToString;
+using android::base::Trim;
 
 void property_override(char const prop[], char const value[])
 {
@@ -198,6 +204,13 @@ void vendor_load_properties()
     property_override_dual("ro.build.fingerprint","ro.vendor.build.fingerprint", "google/blueline/blueline:9/PQ2A.190405.003/5310204:user/release-keys");
     property_override("ro.build.description", "blueline-user 9 PQ2A.190405.003 5310204 release-keys");
     android::init::property_set("ro.boot.btmacaddr", "00:00:00:00:00:00");
+
+    char const *serial_number_file = SERIAL_NUMBER_FILE;
+	std::string serial_number;
+	if (ReadFileToString(serial_number_file, &serial_number)) {
+        serial_number = Trim(serial_number);
+        property_override("ro.serialno", serial_number.c_str());
+	}	
 }
 
 void gsm_properties()
