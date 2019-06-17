@@ -286,8 +286,8 @@ PRODUCT_PACKAGES += \
     recovery-transform.sh
 
 # Doze
-PRODUCT_PACKAGES += \
-    SamsungDoze
+#PRODUCT_PACKAGES += \
+ #   SamsungDoze
 
 # Qcom RIL
 PRODUCT_PACKAGES += \
