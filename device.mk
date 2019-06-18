@@ -290,6 +290,10 @@ PRODUCT_PACKAGES += \
     loki.sh \
     loki_bootloaders \
     recovery-transform.sh
+    
+# Touch
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.jf
 
 # Doze
 PRODUCT_PACKAGES += \
