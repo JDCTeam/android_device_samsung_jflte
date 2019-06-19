@@ -422,10 +422,6 @@
     <!-- True if the home button has the ability to wake up phone from lockscreen-->
     <bool name="config_HomeWakeButton">true</bool>
 
-   <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
-         autodetected from the Configuration. -->
-    <bool name="config_showNavigationBar">true</bool>
-
     <!-- Amount of time it takes for the light sensor to warm up in milliseconds.
     For this time after the screen turns on, the Power Manager
     will not debounce light sensor readings -->
@@ -439,8 +435,17 @@
     <!-- Default state for LiveDisplay -->
     <bool name="config_liveDisplayAvailable">true</bool>
 
+   <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
+         autodetected from the Configuration. -->
+    <bool name="config_showNavigationBar">true</bool>
+
     <!-- Whether device can force navbar disabling -->
     <bool name="config_canForceDisableNavigationBar">true</bool>
+
+    <bool name="config_swipe_up_gesture_default">true</bool>
+
+    <!-- True if the device supports system navigation keys. -->
+    <bool name="config_supportSystemNavigationKeys">true</bool>
 
     <!-- Remote server that can provide NTP responses. -->
     <string translatable="false" name="config_ntpServer">1.android.pool.ntp.org</string>
