@@ -432,14 +432,17 @@
 
     <integer name="config_screen_off_delay">0</integer>
 
+    <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
+         autodetected from the Configuration. -->
+    <bool name="config_showNavigationBar">true</bool>
+
+    <!-- Whether device can force navbar disabling -->
+    <bool name="config_canForceDisableNavigationBar">true</bool>
+
     <bool name="config_swipe_up_gesture_default">true</bool>
 
     <!-- True if the device supports system navigation keys. -->
     <bool name="config_supportSystemNavigationKeys">true</bool>
-
-    <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
-         autodetected from the Configuration. -->
-    <bool name="config_showNavigationBar">false</bool>
 
     <!-- Remote server that can provide NTP responses. -->
     <string translatable="false" name="config_ntpServer">1.android.pool.ntp.org</string>
