@@ -478,4 +478,8 @@
     -->
     <integer name="config_doubleTapOnHomeBehavior">1</integer>
 
+    <!-- Do the battery/notification LEDs support pulsing?
+         Used to decide if we show pulse settings -->
+<bool name="config_ledCanPulse">true</bool>
+
 </resources>
