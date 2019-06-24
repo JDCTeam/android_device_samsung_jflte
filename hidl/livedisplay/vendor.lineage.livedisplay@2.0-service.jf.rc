@@ -7,6 +7,9 @@ on post-fs-data
     mkdir /data/vendor/display 0770 system system
 
 service vendor.livedisplay-hal-2-0-jf /vendor/bin/hw/vendor.lineage.livedisplay@2.0-service.jf
+    interface vendor.lineage.livedisplay@2.0::IDisplayColorCalibration default
+    interface vendor.lineage.livedisplay@2.0::IDisplayModes default
+    interface vendor.lineage.livedisplay@2.0::ISunlightEnhancement default
     class late_start
     user system
     group system
