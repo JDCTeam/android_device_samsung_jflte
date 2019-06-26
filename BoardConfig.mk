@@ -70,7 +70,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/samsung/jf
-TARGET_KERNEL_CONFIG := side_jf_defconfig
+TARGET_KERNEL_CONFIG := lineage_jf_defconfig
 
 # Toolchain
 KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc/linux-x86/arm/arm-linux-7.1.x-gnueabi/bin
