@@ -180,5 +180,5 @@ WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 
 # TWRP (optional)
 ifeq ($(WITH_TWRP),true)
--include device/samsung/jf-common/twrp.mk
+-include $(COMMON_PATH)/twrp.mk
 endif
