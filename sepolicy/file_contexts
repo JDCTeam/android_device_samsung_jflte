@@ -1,25 +1,53 @@
-# bluetooth
-/dev/btlock                                        u:object_r:bluetooth_dev:s0
-/efs/bluetooth/bt_addr                             u:object_r:bluetooth_efs_file:s0
+/data/.cid.info                                                  u:object_r:wifi_data_file:s0
+/data/.wifiver.info                                              u:object_r:wifi_data_file:s0
+/data/data/com.android.providers.telephony/databases(/.*)?       u:object_r:radio_data_file:s0
+/data/data/com.android.providers.telephony/shared_prefs(/.*)?    u:object_r:radio_data_file:s0
+/data/system/yas.cfg.tmp                                         u:object_r:sensors_data_file:s0
+/data/system/yas.cfg                                             u:object_r:sensors_data_file:s0
 
-# fsck
-/dev/block/platform/msm_sdcc\.1/by-name/efs        u:object_r:efs_block_device:s0
+/dev/bcm2079x                                       u:object_r:nfc_device:s0
+/dev/block/platform/msm_sdcc\.1/by-name/efs         u:object_r:efs_block_device:s0
+/dev/block/platform/msm_sdcc\.1/by-name/m9kefs1     u:object_r:efs_boot_dev:s0
+/dev/block/platform/msm_sdcc\.1/by-name/m9kefs2     u:object_r:efs_boot_dev:s0
+/dev/block/platform/msm_sdcc\.1/by-name/m9kefs3     u:object_r:efs_boot_dev:s0
+/dev/block/platform/msm_sdcc\.1/by-name/mdm         u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/msm_sdcc\.1/by-name/modem       u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/msm_sdcc\.1/by-name/pad         u:object_r:misc_block_device:s0
+/dev/block/platform/msm_sdcc\.1/by-name/userdata    u:object_r:userdata_block_device:s0
+/dev/btlock                                         u:object_r:bluetooth_device:s0
+/dev/rfkill                                         u:object_r:wlan_device:s0
 
-# macloader
-/data/\.cid\.info                                  u:object_r:wifi_data_file:s0
+/efs/bluetooth(/.*)?    u:object_r:bluetooth_efs_file:s0
+/efs/wifi(/.*)?         u:object_r:wifi_efs_file:s0
 
-# NFC
-/dev/bcm2079x                                      u:object_r:nfc_device:s0
+/sys/class/mhl(/.*)?                                                                              u:object_r:sysfs_graphics:s0
+/sys/devices/platform/i2c-gpio.12/i2c-12/12-0066/max77693-led/leds(/.*)?                          u:object_r:sysfs_leds:s0
+/sys/devices/platform/i2c-gpio.16/i2c-16/16-0020/leds/button-backlight(/.*)?                      u:object_r:sysfs_leds:s0
+/sys/devices/platform/i2c-gpio.21/i2c-21/21-0030/leds(/.*)?                                       u:object_r:sysfs_leds:s0
+/sys/devices/platform/bcm[0-9]+_bluetooth/rfkill/rfkill0(/.*)?                                    u:object_r:sysfs_bluetooth_writable:s0
+/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/gpuclk                                             u:object_r:sysfs_thermal:s0
+/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_gpuclk                                         u:object_r:sysfs_thermal:s0
+/sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/reset_count                                        u:object_r:sysfs_thermal:s0
+/sys/devices/platform/mipi_samsung_full_hd.2305/lcd/panel/panel(/.*)?                             u:object_r:sysfs_graphics:s0
+/sys/devices/platform/msm_fb.526593/leds/lcd-backlight(/.*)?                                      u:object_r:sysfs_leds:s0
+/sys/devices/platform/msm_sdcc\.[0-9]/mmc_host/mmc[0-9]/mmc[0-9]:[0-9]+/block/mmcblk[0-9]/stat    u:object_r:sysfs_disk_stat:s0
+/sys/devices/platform/i2c-gpio.11/i2c-11/11-0036/power_supply(/.*)?                               u:object_r:sysfs_batteryinfo:s0
+/sys/devices/platform/i2c-gpio.12/i2c-12/12-0066/max77693-charger/power_supply(/.*)?              u:object_r:sysfs_batteryinfo:s0
+/sys/devices/platform/sec-battery/power_supply(/.*)?                                              u:object_r:sysfs_batteryinfo:s0
+/sys/devices/virtual/graphics/fb0/csc_cfg                                                         u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/mdnie/mdnie(/.*)?                                                            u:object_r:sysfs_mdnie:s0
+/sys/devices/virtual/sec/sec_touchkey/keypad_enable                                               u:object_r:sysfs_keypad:s0
+/sys/devices/virtual/sensors(/.*)?                                                                u:object_r:sysfs_sensors:s0
+/sys/module/dhd/parameters/firmware_path                                                          u:object_r:sysfs_wifi_writeable:s0
+/sys/module/dhd/parameters/nvram_path                                                             u:object_r:sysfs_wifi_writeable:s0
 
-# ril
-/efs/imei(/.*)?                                    u:object_r:ril_efs_file:s0
-/efs/FactoryApp/keystr                             u:object_r:ril_efs_file:s0
-
-# sensors
-/efs/hw_offset                                     u:object_r:sensors_efs_file:s0
-/efs/prox_cal                                      u:object_r:sensors_efs_file:s0
-/efs/gyro_cal_data                                 u:object_r:sensors_efs_file:s0
-/efs/FactoryApp/baro_delta                         u:object_r:sensors_efs_file:s0
-
-# wifi
-/efs/wifi/\.mac\.info                              u:object_r:wifi_efs_file:s0
+/(vendor|system/vendor)/bin/efsks                                               u:object_r:mdm_helper_exec:s0
+/(vendor|system/vendor)/bin/macloader                                           u:object_r:macloader_exec:s0
+/(vendor|system/vendor)/bin/qcks                                                u:object_r:mdm_helper_exec:s0
+/(vendor|system/vendor)/bin/thermald                                            u:object_r:thermald_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service\.jf        u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@1\.0-service\.jf      u:object_r:hal_sensors_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.jf          u:object_r:hal_usb_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service\.jf     u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.jf    u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.jf          u:object_r:hal_lineage_touch_default_exec:s0

@@ -1,1 +1,9 @@
-allow thermal-engine self:capability chown;
+type_transition thermal-engine socket_device:sock_file thermal_socket;
+
+allow thermal-engine self:capability { chown net_admin };
+allow thermal-engine self:netlink_kobject_uevent_socket { bind read setopt };
+allow thermal-engine socket_device:dir create_dir_perms;
+allow thermal-engine sysfs_devices_system_cpu:file rw_file_perms;
+allow thermal-engine sysfs:file rw_file_perms;
+allow thermal-engine system_file:file execmod;
+allow thermal-engine thermal_socket:sock_file { unlink };
