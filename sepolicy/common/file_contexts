@@ -65,6 +65,7 @@
 /(vendor|system/vendor)/bin/macloader                                           u:object_r:macloader_exec:s0
 /(vendor|system/vendor)/bin/qcks                                                u:object_r:mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.health@2\.0-service\.jf       u:object_r:hal_health_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software       u:object_r:hal_gatekeeper_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service\.samsung      u:object_r:hal_ir_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.samsung   u:object_r:hal_light_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service\.jf        u:object_r:hal_power_default_exec:s0
