@@ -428,9 +428,6 @@
     will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">200</integer>
 
-    <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
-    <bool name="config_swipe_up_gesture_setting_available">true</bool>
-
     <integer name="config_screen_off_delay">0</integer>
 
     <!-- Default state for LiveDisplay -->
@@ -439,6 +436,11 @@
    <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">false</bool>
+
+    <!-- Whether device can force navbar disabling
+    <bool name="config_canForceDisableNavigationBar">true</bool> -->
+
+    <bool name="config_swipe_up_gesture_default">false</bool>
 
     <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
     <bool name="config_swipe_up_gesture_setting_available">true</bool>
