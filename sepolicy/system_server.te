@@ -1,0 +1,6 @@
+allow system_server efs_file:dir search;
+allow system_server ril_efs_file:file { open read };
+allow system_server sensors_efs_file:file { open read write };
+allow system_server wifi_efs_file:file { open read };
+allow system_server mdm_device:chr_file { getattr ioctl open read };
+allow system_server system_file:file execmod;
