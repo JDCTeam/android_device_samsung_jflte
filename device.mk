@@ -294,6 +294,10 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl
 
+# Doze
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap
