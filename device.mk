@@ -259,6 +259,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.jf \
     android.hardware.sensors@1.0-service.jf
 
+# Touch
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.jf
+
 # Lights
 PRODUCT_PACKAGES += \
 	android.hardware.light@2.0-impl \
@@ -291,10 +295,6 @@ PRODUCT_PACKAGES += \
     loki.sh \
     loki_bootloaders \
     recovery-transform.sh
-    
-# Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.jf
 
 # Qcom RIL
 PRODUCT_PACKAGES += \

@@ -186,9 +186,6 @@ TARGET_USES_OLD_MNC_FORMAT := true
 TARGET_HAS_NO_POWER_STATS := true
 TARGET_HAS_NO_WLAN_STATS := true
 
-# LineageHW
-JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(DEVICE_PATH)/lineagehw|**/*.java
-
 # Vendor init
 TARGET_INIT_VENDOR_LIB := libinit_jflte
 TARGET_RECOVERY_DEVICE_MODULES := libinit_jflte
