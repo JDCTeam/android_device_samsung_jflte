@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,12 @@
 #include <android/hardware/vibrator/1.0/IVibrator.h>
 #include <hidl/HidlSupport.h>
 #include <hidl/HidlTransportSupport.h>
-#include <utils/Errors.h>
-#include <utils/StrongPointer.h>
 #ifdef ARCH_ARM_32
 #include <hwbinder/ProcessState.h>
 #endif
+#include <utils/Errors.h>
+#include <utils/StrongPointer.h>
+
 #include "Vibrator.h"
 
 using android::hardware::configureRpcThreadpool;
