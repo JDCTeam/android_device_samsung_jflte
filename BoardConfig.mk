@@ -60,6 +60,9 @@ BOARD_USES_QCOM_HARDWARE := true
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
+# Legacy
+ TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+ 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.memcg=true user_debug=22 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
