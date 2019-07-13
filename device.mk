@@ -127,11 +127,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
 
-# Bluetooth firmware
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335_prepatch.hcd \
-    $(LOCAL_PATH)/configs/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bcmdhd.cal
-
 # Advanced Display
 PRODUCT_PACKAGES += \
     AdvancedDisplay
@@ -322,5 +317,3 @@ $(call inherit-product, hardware/samsung/Android.mk)
 
 # Also get non-open-source specific aspects if available
 $(call inherit-product, vendor/samsung/jf-common/jf-common-vendor-blobs.mk)
-
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
