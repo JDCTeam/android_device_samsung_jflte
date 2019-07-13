@@ -222,10 +222,6 @@ PRODUCT_PACKAGES += \
     libbt-vendor \
     hwaddrs
 
-# USB
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
-
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
@@ -273,7 +269,8 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.jf
+    android.hardware.usb@1.0-service.jf \
+    com.android.future.usb.accessory
 
 # Power
 PRODUCT_PACKAGES += \
