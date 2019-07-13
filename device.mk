@@ -268,12 +268,6 @@ PRODUCT_PACKAGES += \
     loki_bootloaders \
     recovery-transform.sh
 
-# Qcom RIL
-PRODUCT_PACKAGES += \
-    libcnefeatureconfig \
-    librmnetctl
-
-# Doze
 PRODUCT_PACKAGES += \
     SamsungDoze
 
