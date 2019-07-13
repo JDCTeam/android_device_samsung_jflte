@@ -43,6 +43,11 @@ on init
     # Support legacy paths
     symlink /sdcard /storage/sdcard0
 
+    # Create USB host bus directory here so that libusbhost
+    # can start monitoring.
+    mkdir /dev/bus 0755 root root
+    mkdir /dev/bus/usb 0755 root root
+
 on fs
     wait /dev/block/platform/${ro.boot.bootdevice}
     symlink /dev/block/platform/${ro.boot.bootdevice} /dev/block/bootdevice
@@ -131,11 +136,8 @@ on post-fs-data
     chown system system /efs/wifi/.mac.info
     chmod 0664 /efs/wifi/.mac.info
 
-    mkdir /data/system 0775 system system
-
     # Create directories for perfd
     mkdir /data/misc/perfd 2755 root system
-    mkdir /data/system/perfd 2770 root system
 
     setprop vold.post_fs_data_done 1
 
@@ -443,7 +445,6 @@ on property:persist.sys.mdm.timeout_disable=1
 
 on property:sys.boot_completed=1
     setprop sys.io.scheduler cfq
-    rm /data/system/perfd/default_values
 
     # Adaptive LMK
     write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
