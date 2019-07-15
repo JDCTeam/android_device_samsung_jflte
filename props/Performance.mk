@@ -26,3 +26,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.usejitprofiles=false \
     pm.dexopt.bg-dexopt=speed \
     pm.dexopt.ab-ota=speed
+
+# Charger
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.charger.enable_suspend=true
