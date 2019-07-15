@@ -65,8 +65,12 @@ USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
+ifneq ($(findstring jfvelte,$(TARGET_PRODUCT)),)
+BOARD_HAVE_BLUETOOTH_QCOM := true
+else
 BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/vnd_jf.txt
 BOARD_HAVE_BLUETOOTH_BCM := true
+endif
 
 # Boot Animation
 TARGET_SCREEN_HEIGHT := 1920
@@ -163,6 +167,21 @@ TARGET_INIT_VENDOR_LIB := libinit_jf
 TARGET_RECOVERY_DEVICE_MODULES := libinit_jf
 
 # Wifi module
+ifneq ($(findstring jfvelte,$(TARGET_PRODUCT)),)
+BOARD_WLAN_DEVICE := qcwcn
+BOARD_HAS_QCOM_WLAN := true
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+TARGET_PROVIDES_WCNSS_QMI := true
+TARGET_USES_QCOM_WCNSS_QMI := true
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+WIFI_DRIVER_MODULE_PATH := "/vendor/lib/modules/wlan.ko"
+WIFI_DRIVER_MODULE_NAME := "wlan"
+WIFI_DRIVER_FW_PATH_STA := "sta"
+WIFI_DRIVER_FW_PATH_AP := "ap"
+else
 BOARD_WLAN_DEVICE := bcmdhd
 BOARD_HAVE_SAMSUNG_WIFI := true
 BOARD_HOSTAPD_DRIVER := NL80211
@@ -174,6 +193,7 @@ WIFI_BAND := 802_11_ABG
 WIFI_DRIVER_FW_PATH_AP := "/vendor/etc/wifi/bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/dhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA := "/vendor/etc/wifi/bcmdhd_sta.bin"
+endif
 
 # TWRP (optional)
 ifeq ($(WITH_TWRP),true)
