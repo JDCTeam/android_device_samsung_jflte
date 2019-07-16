@@ -104,10 +104,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
 
-# Thermal profile
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermald.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermald.conf
-
 # GPS config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
@@ -258,6 +254,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
+
+# Thermal
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermal-engine-8064ab.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8064ab.conf
 
 # F2FS
 PRODUCT_PACKAGES += \
