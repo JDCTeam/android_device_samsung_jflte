@@ -36,7 +36,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.fluence.voicecall=true \
     ro.vendor.audio.sdk.fluencetype=fluence \
     vendor.dedicated.device.for.voip=true \
-    vendor.voice.path.for.pcm.voip=false
+    vendor.voice.path.for.pcm.voip=true
 
 # Qualcomm Perf
 PRODUCT_PROPERTY_OVERRIDES += \
