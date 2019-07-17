@@ -1,3 +1,5 @@
-type sensors_efs_file, file_type;
-type ril_efs_file, file_type;
+type proc_bt_sleep, fs_type, proc_type;
+type sysfs_keypad, fs_type, sysfs_type;
+type sysfs_mdnie, fs_type, sysfs_type;
+type sysfs_wifi_writeable, fs_type, sysfs_type;
 type wifi_efs_file, file_type;
