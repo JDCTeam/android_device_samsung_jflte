@@ -9,9 +9,9 @@
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia5" value="0" />
     <ctl name="AFE_PCM_RX Port Mixer SLIM_1_TX" value="0" />
     <ctl name="AFE_PCM_RX_Voice Mixer Voice Stub" value="0" />
-    <ctl name="AUXPCM_RX Port Mixer SLIM_1_TX" value="0" />
     <ctl name="AUX_PCM_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="AUX_PCM_RX Audio Mixer MultiMedia5" value="0" />
+    <ctl name="AUXPCM_RX Port Mixer SLIM_1_TX" value="0" />
     <ctl name="AUX_PCM_RX_Voice Mixer Voice Stub" value="0" />
     <ctl name="AUX_PCM_RX_Voice Mixer Voip" value="0" />
     <ctl name="COMP1 Switch" value="0" />
@@ -24,9 +24,9 @@
     <ctl name="DEC4 MUX" value="ZERO" />
     <ctl name="DEC5 MUX" value="ZERO" />
     <ctl name="EAR PA Gain" value="POS_6_DB" />
+    <ctl name="ES325-AP Tx Channels" value="One" />
     <ctl name="ES325 RX2 Enable" value="ZERO" />
     <ctl name="ES325 TX1 Enable" value="ZERO" />
-    <ctl name="ES325-AP Tx Channels" value="One" />
     <ctl name="HDMI Mixer MultiMedia1" value="0" />
     <ctl name="HDMI Mixer MultiMedia5" value="0" />
     <ctl name="HDMI_RX Port Mixer SLIM_3_TX" value="0" />
@@ -60,10 +60,12 @@
     <ctl name="RX5 MIX1 INP1" value="ZERO" />
     <ctl name="RX5 MIX1 INP2" value="ZERO" />
     <ctl name="RX6 DSM MUX" value="DSM_INV" />
-    <ctl name="SLIM RX1 MUX" value="ZERO" />
-    <ctl name="SLIM RX6 MUX" value="ZERO" />
-    <ctl name="SLIM TX7 MUX" value="ZERO" />
-    <ctl name="SLIM TX8 MUX" value="ZERO" />
+    <ctl name="SLIM_0_RX Channels" value="Two" />
+    <ctl name="SLIM_0_RX_Voice Mixer Voip" value="0" />
+    <ctl name="SLIM_0_TX Channels" value="One" />
+    <ctl name="SLIM_1 SampleRate" value="8000" />
+    <ctl name="SLIM_1_TX Channels" value="One" />
+    <ctl name="SLIM_3_RX Channels" value="One" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="0" />
     <ctl name="SLIMBUS_1_RX Mixer Voice Stub" value="0" />
@@ -73,12 +75,10 @@
     <ctl name="SLIMBUS_3_RX Port Mixer AUX_PCM_DL_RX" value="0" />
     <ctl name="SLIMBUS_3_RX_Voice Mixer Voice Stub" value="0" />
     <ctl name="SLIMBUS_DL_HL Switch" value="0" />
-    <ctl name="SLIM_0_RX Channels" value="Two" />
-    <ctl name="SLIM_0_RX_Voice Mixer Voip" value="0" />
-    <ctl name="SLIM_0_TX Channels" value="One" />
-    <ctl name="SLIM_1 SampleRate" value="8000" />
-    <ctl name="SLIM_1_TX Channels" value="One" />
-    <ctl name="SLIM_3_RX Channels" value="One" />
+    <ctl name="SLIM RX1 MUX" value="ZERO" />
+    <ctl name="SLIM RX6 MUX" value="ZERO" />
+    <ctl name="SLIM TX7 MUX" value="ZERO" />
+    <ctl name="SLIM TX8 MUX" value="ZERO" />
     <ctl name="STUB_RX Mixer Voice Stub" value="0" />
     <ctl name="TTY Mode" value="OFF" />
     <ctl name="TX3 HPF cut off" value="MIN_3DB_4Hz" />
@@ -91,15 +91,15 @@
     <ctl name="Voice Stub Tx Mixer AUX_PCM_UL_TX" value="0" />
     <ctl name="Voice Stub Tx Mixer SLIM_1_TX" value="0" />
     <ctl name="Voice Stub Tx Mixer SLIM_3_TX" value="0" />
-    <ctl name="Voice Stub Tx Mixer STUB_TX_HL" value="0" />
     <ctl name="Voice Stub Tx Mixer STUB_1_TX_HL" value="0" />
-    <ctl name="Voip_Tx Mixer AUX_PCM_TX_Voip" value="0" />
-    <ctl name="Voip_Tx Mixer SLIM_0_TX_Voip" value="0" />
+    <ctl name="Voice Stub Tx Mixer STUB_TX_HL" value="0" />
     <ctl name="Voip Dtx Mode" value="0" />
     <ctl name="Voip Evrc Min Max Rate Config" id="0" value="1" />
     <ctl name="Voip Evrc Min Max Rate Config" id="1" value="4" />
     <ctl name="Voip Mode Config" value="12" />
     <ctl name="Voip Rate Config" value="0" />
+    <ctl name="Voip_Tx Mixer AUX_PCM_TX_Voip" value="0" />
+    <ctl name="Voip_Tx Mixer SLIM_0_TX_Voip" value="0" />
 
     <!-- echo reference -->
     <ctl name="EC_REF_RX" value="NONE" />
@@ -382,10 +382,17 @@
 
     <path name="handset-mic">
         <ctl name="Main Mic Delay" value="4" />
-        <path name="adc3" />
+        <ctl name="SLIM_0_TX Channels" value="Two" />
+        <ctl name="SLIM TX7 MUX" value="DEC3" />
+        <ctl name="DEC3 MUX" value="ADC4" />
+        <ctl name="ADC4 Volume" value="3" />
+        <ctl name="DEC3 Volume" value="105" />
+        <ctl name="SLIM TX8 MUX" value="DEC4" />
+        <ctl name="DEC4 MUX" value="ADC3" />
         <ctl name="ADC3 Volume" value="3" />
-        <ctl name="DEC4 Volume" value="88" />
+        <ctl name="DEC4 Volume" value="105" />
         <ctl name="MICBIAS1 CAPLESS Switch" value="1" />
+        <ctl name="MICBIAS3 CAPLESS Switch" value="1" />
     </path>
 
     <path name="dmic-endfire">
@@ -431,6 +438,7 @@
         <ctl name="DAC1 Switch" value="1" />
         <ctl name="RX1 Digital Volume" value="88" />
         <ctl name="ES325 RX2 Enable" value="1" />
+        <ctl name="VEQ Enable" value="1" />
     </path>
 
     <path name="voice-handset-mic">
@@ -464,20 +472,16 @@
         <ctl name="LINEOUT4 Volume" value="12" />
         <ctl name="RX5 Digital Volume" value="88" />
         <ctl name="ES325 RX2 Enable" value="1" />
+        <ctl name="VEQ Enable" value="0" />
     </path>
 
     <path name="voice-speaker-mic">
-        <ctl name="SLIM_0_TX Channels" value="Two" />
-        <ctl name="SLIM TX7 MUX" value="DEC2" />
+        <ctl name="SLIM_0_TX Channels" value="One" />
+        <ctl name="SLIM TX7 MUX" value="DEC3" />
         <ctl name="DEC3 MUX" value="ADC4" />
         <ctl name="ADC4 Volume" value="3" />
         <ctl name="DEC3 Volume" value="88" />
-        <ctl name="SLIM TX8 MUX" value="DEC3" />
-        <ctl name="DEC2 MUX" value="ADC5" />
-        <ctl name="ADC5 Volume" value="3" />
-        <ctl name="DEC2 Volume" value="88" />
         <ctl name="MICBIAS3 CAPLESS Switch" value="1" />
-        <ctl name="MICBIAS4 CAPLESS Switch" value="1" />
         <ctl name="TX3 HPF cut off" value="MIN_3DB_150Hz" />
         <ctl name="TX4 HPF cut off" value="MIN_3DB_150Hz" />
         <ctl name="TX5 HPF cut off" value="MIN_3DB_150Hz" />
@@ -607,18 +611,7 @@
     </path>
 
     <path name="camcorder-mic">
-        <ctl name="Main Mic Delay" value="4" />
-        <ctl name="SLIM_0_TX Channels" value="Two" />
-        <ctl name="SLIM TX7 MUX" value="DEC3" />
-        <ctl name="DEC3 MUX" value="ADC4" />
-        <ctl name="ADC4 Volume" value="3" />
-        <ctl name="DEC3 Volume" value="105" />
-        <ctl name="SLIM TX8 MUX" value="DEC4" />
-        <ctl name="DEC4 MUX" value="ADC3" />
-        <ctl name="ADC3 Volume" value="3" />
-        <ctl name="DEC4 Volume" value="105" />
-        <ctl name="MICBIAS1 CAPLESS Switch" value="1" />
-        <ctl name="MICBIAS3 CAPLESS Switch" value="1" />
+        <path name="handset-mic" />
     </path>
 
     <path name="hdmi-mic">
