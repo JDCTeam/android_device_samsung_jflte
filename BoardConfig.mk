@@ -62,7 +62,7 @@ TARGET_USES_64_BIT_BINDER := true
 
 # Legacy
  TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
- 
+
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.memcg=true user_debug=22 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
@@ -106,11 +106,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
 AUDIO_FEATURE_ENABLED_FLUENCE := true
 AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
-AUDIO_FEATURE_ENABLED_NEW_SAMPLE_RATE := true
 BOARD_USES_ALSA_AUDIO := true
 BOARD_HAVE_SAMSUNG_CSDCLIENT := true
 USE_CUSTOM_AUDIO_POLICY := 1
-TARGET_USE_OLD_SOUND_PICKER := true
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
