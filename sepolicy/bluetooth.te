@@ -1,2 +1,0 @@
-allow bluetooth bluetooth_dev:chr_file rw_file_perms;
-allow bluetooth bluetooth_efs_file:file { open read };
