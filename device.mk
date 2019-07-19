@@ -247,8 +247,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.jf \
-    com.android.future.usb.accessory
+    android.hardware.usb@1.0-service.jf
 
 # Power
 PRODUCT_PACKAGES += \
