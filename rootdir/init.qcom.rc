@@ -26,7 +26,6 @@
 #
 
 import init.spectrum.rc
-import init.safailnet.rc
 import init.qcom.power.rc
 import init.qcom.usb.rc
 
