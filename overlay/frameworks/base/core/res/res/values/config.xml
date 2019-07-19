@@ -372,8 +372,4 @@
     will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">200</integer>
 
-    <!-- Remote server that can provide NTP responses. -->
-    <string translatable="false" name="config_ntpServer">1.android.pool.ntp.org</string>
-
-
 </resources>
