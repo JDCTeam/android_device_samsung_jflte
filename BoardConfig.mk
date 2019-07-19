@@ -24,7 +24,7 @@
 DEVICE_PATH := device/samsung/jflte
 
 # Inherit from proprietary vendor
--include vendor/samsung/jf-common/BoardConfigVendor.mk
+-include vendor/samsung/jf-common/jf-common-vendor-blobs.mk
 
 # inherit from qcom-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
