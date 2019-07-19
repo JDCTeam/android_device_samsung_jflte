@@ -151,10 +151,6 @@ ARCH_ARM_HAVE_NEON := true
 USE_OPENGL_RENDERER := true
 TARGET_USES_ION := true
 
-
-# Adreno configuration
-BOARD_EGL_CFG := $(DEVICE_PATH)/configs/egl.cfg
-
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
