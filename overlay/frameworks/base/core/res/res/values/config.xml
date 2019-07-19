@@ -362,9 +362,6 @@
          and one pSIM) -->
     <integer name="config_num_physical_slots">1</integer>
 
-    <!-- Should the pinner service pin the Home application? -->
-    <bool name="config_pinnerHomeApp">true</bool>
-
     <!-- Amount of time it takes for the light sensor to warm up in milliseconds.
     For this time after the screen turns on, the Power Manager
     will not debounce light sensor readings -->
