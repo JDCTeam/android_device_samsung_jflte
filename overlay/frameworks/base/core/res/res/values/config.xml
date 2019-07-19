@@ -92,7 +92,7 @@
         <item>7</item>
         <item>0</item>
     </integer-array>
-    
+
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
          should be empty.  An example would be "softap.*" -->
@@ -121,6 +121,9 @@
 
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
+
+    <!-- Boolean indicating whether the wifi chipset has background scan support -->
+    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
     <!-- Flag indicating whether we should enable the automatic brightness in Settings.
          config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
