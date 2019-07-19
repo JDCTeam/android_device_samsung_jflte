@@ -468,9 +468,6 @@
     <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
     <bool name="config_swipe_up_gesture_setting_available">true</bool>
 
-    <!-- Remote server that can provide NTP responses. -->
-    <string translatable="false" name="config_ntpServer">1.android.pool.ntp.org</string>
-
     <!-- If this is true, the screen will fade off. -->
     <bool name="config_animateScreenLights">false</bool>
 
@@ -497,6 +494,6 @@
 
     <!-- Do the battery/notification LEDs support pulsing?
          Used to decide if we show pulse settings -->
-<bool name="config_ledCanPulse">true</bool>
+    <bool name="config_ledCanPulse">true</bool>
 
 </resources>
