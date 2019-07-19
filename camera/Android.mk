@@ -43,7 +43,7 @@ ifeq ($(TARGET_ADD_ISO_MODE_HJR),true)
     LOCAL_CFLAGS += -DISO_MODE_HJR
 endif
 
-LOCAL_C_INCLUDES := \
+LOCAL_C_INCLUDES += \
     framework/native/include \
     system/media/camera/include
 
