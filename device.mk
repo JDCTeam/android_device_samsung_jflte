@@ -108,10 +108,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
 
-# Camera configurations
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
-
 # Thermal profile
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermald.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermald.conf
