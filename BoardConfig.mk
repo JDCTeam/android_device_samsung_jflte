@@ -65,7 +65,7 @@ TARGET_USES_64_BIT_BINDER := true
  
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.memcg=true user_debug=22 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=enforcing
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
@@ -73,12 +73,12 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/samsung/jf
-TARGET_KERNEL_CONFIG := lineageos_jf_defconfig
+TARGET_KERNEL_CONFIG := side_jf_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := jf_eur_defconfig
 
 # Toolchain
-#KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc/linux-x86/arm/arm-linux-7.1.x-gnueabi/bin
-#TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-Samsung-linux-gnueabi-
+KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc/linux-x86/arm/arm-linux-7.1.x-gnueabi/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-Samsung-linux-gnueabi-
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
