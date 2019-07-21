@@ -157,8 +157,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    lights.MSM8960
+    android.hardware.light@2.0-service.samsung
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
