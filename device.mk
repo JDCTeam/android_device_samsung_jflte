@@ -211,6 +211,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service.jf
@@ -239,8 +240,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-	android.hardware.light@2.0-impl \
-    lights.MSM8960
+    android.hardware.light@2.0-service.samsung
 
 # Vibrator
 PRODUCT_PACKAGES += \
