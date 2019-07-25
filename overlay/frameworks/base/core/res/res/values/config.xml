@@ -436,10 +436,7 @@
     <bool name="config_showNavigationBar">false</bool>
 
     <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
-    <bool name="config_custom_swipe_up_gesture_setting_available">true</bool>
-
-    <!-- True if the device supports system navigation keys.
-    <bool name="config_supportSystemNavigationKeys">true</bool> -->
+    <bool name="config_swipe_up_gesture_setting_available">true</bool>
 
     <!-- If this is true, the screen will fade off. -->
     <bool name="config_animateScreenLights">false</bool>
