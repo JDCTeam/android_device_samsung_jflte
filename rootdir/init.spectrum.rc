@@ -20,7 +20,6 @@ on property:sys.boot_completed=1
 on property:persist.spectrum.profile=0
     stop mpdecision
     # Speed
-    write /sys/module/msm_thermal/core_control/enabled 0
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
@@ -80,7 +79,6 @@ on property:persist.spectrum.profile=0
 #
 on property:persist.spectrum.profile=1
      # Speed
-    write /sys/module/msm_thermal/core_control/enabled 0
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
@@ -147,7 +145,6 @@ on property:persist.spectrum.profile=1
 on property:persist.spectrum.profile=2
     stop mpdecision
     # Speed
-    write /sys/module/msm_thermal/core_control/enabled 0
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
@@ -198,7 +195,6 @@ on property:persist.spectrum.profile=2
 on property:persist.spectrum.profile=3
     stop mpdecision
    # Speed
-    write /sys/module/msm_thermal/core_control/enabled 0
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
@@ -244,7 +240,7 @@ on property:persist.spectrum.profile=3
 	write /sys/module/intelli_plug/down_lock_duration 1500
 	write /sys/module/intelli_plug/full_mode_profile 1
 
-    write /sys/module/msm_thermal/core_control/enabled 1
+    write /sys/module/msm_thermal/core_control/enabled 0
 
     # GPU
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel 0
