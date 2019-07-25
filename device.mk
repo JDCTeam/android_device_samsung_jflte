@@ -191,6 +191,10 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-service \
     gps.msm8960
 
+# Trust HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
