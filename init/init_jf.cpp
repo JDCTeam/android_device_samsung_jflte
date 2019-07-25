@@ -14,7 +14,6 @@ using android::base::GetProperty;
 using android::base::ReadFileToString;
 using android::base::Trim;
 
-#define MODEL_NAME_LEN 5
 #define SERIAL_NUMBER_FILE "/efs/FactoryApp/serial_no"
 
 void property_override(char const prop[], char const value[])
