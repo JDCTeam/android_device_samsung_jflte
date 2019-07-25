@@ -234,6 +234,10 @@ $(call inherit-product, $(LOCAL_PATH)/system_prop.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-8064ab.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8064ab.conf
 
+# Trust
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
+    
 # Touch
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.jf
