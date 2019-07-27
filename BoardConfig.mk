@@ -220,8 +220,9 @@ ANDROID_NO_TEST_CHECK := true
 # include device/qcom/sepolicy-legacy/sepolicy.mk
 # BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
-# TWRP
-#-include device/samsung/jflte/twrp.mk
+ifeq ($(WITH_TWRP),true)
+-include $(COMMON_PATH)/twrp.mk
+endif
 
 # Misc
 ALLOW_MISSING_DEPENDENCIES := true
