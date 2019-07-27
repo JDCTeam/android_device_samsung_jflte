@@ -237,7 +237,7 @@ PRODUCT_COPY_FILES += \
 # Trust
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
-    
+
 # Touch
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.jf
