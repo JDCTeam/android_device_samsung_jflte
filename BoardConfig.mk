@@ -34,6 +34,7 @@ TARGET_KERNEL_SOURCE := kernel/samsung/jf
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_KERNEL_IMAGE_NAME := zImage
 TARGET_KERNEL_CONFIG := side_jf_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := jf_eur_defconfig
 
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_TREE)/mkbootimg.mk
 
