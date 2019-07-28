@@ -35,7 +35,7 @@ BOARD_CUSTOM_BOOTIMG := true
 BOARD_KERNEL_IMAGE_NAME := zImage
 TARGET_KERNEL_CONFIG := twrp_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := jf_eur_defconfig
-
+TARGET_RECOVERY_FSTAB := device/samsung/jflte/rootdir/twrp.fstab
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_TREE)/mkbootimg.mk
 
 # Kernel
