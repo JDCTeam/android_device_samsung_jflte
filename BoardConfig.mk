@@ -138,9 +138,6 @@ WITH_DEXPREOPT_DEBUG_INFO := false
 USE_DEX2OAT_DEBUG := false
 DONT_DEXPREOPT_PREBUILTS := true
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
-PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
 
 # Compile libhwui in performance mode
@@ -192,13 +189,6 @@ EXCLUDE_SERIF_FONTS := true
 # Don't try to build and run all tests by default. Several tests have
 # dependencies on the framework.
 ANDROID_NO_TEST_CHECK := true
-
-# Speed profile services and wifi-service to reduce RAM and storage.
-PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
-
-# Always preopt extracted APKs to prevent extracting out of the APK
-# for gms modules.
-PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 
 # Wifi module
 BOARD_HAVE_SAMSUNG_WIFI := true
