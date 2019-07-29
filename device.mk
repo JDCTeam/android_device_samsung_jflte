@@ -89,7 +89,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc \
     $(LOCAL_PATH)/rootdir/init.spectrum.sh:root/init.spectrum.sh \
     $(LOCAL_PATH)/rootdir/init.spectrum.rc:root/init.spectrum.rc
- 	
+
 # GPS/location security configuration file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
@@ -113,12 +113,12 @@ PRODUCT_COPY_FILES += \
 # NFC config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
-    
+
 # Filesystem tools
 PRODUCT_PACKAGES += \
     e2fsck_static \
     resize2fs_static
- 
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
@@ -184,7 +184,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
-    
+
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
@@ -274,7 +274,7 @@ PRODUCT_PACKAGES += \
 # Doze
 PRODUCT_PACKAGES += \
     SamsungDoze
-    
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap

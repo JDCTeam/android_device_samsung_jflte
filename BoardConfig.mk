@@ -62,7 +62,7 @@ TARGET_USES_64_BIT_BINDER := true
 
 # Legacy
  TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
- 
+
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.memcg=true user_debug=22 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
@@ -134,8 +134,8 @@ TARGET_DISPLAY_INSECURE_MM_HEAP := true
 # Enable dexpreopt to speed boot time
 WITH_DEXPREOPT := true
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
-WITH_DEXPREOPT_DEBUG_INFO := false 
-USE_DEX2OAT_DEBUG := false 
+WITH_DEXPREOPT_DEBUG_INFO := false
+USE_DEX2OAT_DEBUG := false
 DONT_DEXPREOPT_PREBUILTS := true
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
