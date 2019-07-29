@@ -35,3 +35,8 @@ def FullOTA_InstallEnd(info):
   info.script.script = [cmd for cmd in info.script.script if not "show_progress(0.100000, 0);" in cmd]
   info.script.AppendExtra('package_extract_file("boot.img", "/tmp/boot.img");')
   info.script.AppendExtra('assert(run_program("/sbin/sh", "/tmp/install/etc/loki.sh") == 0);')
+  info.script.AppendExtra('ui_print(" ");');
+  info.script.AppendExtra('ui_print("Flashing Gapps...");');
+  info.script.AppendExtra('ui_print(" ");');
+  info.script.AppendExtra('run_program("/sbin/busybox", "unzip", "/tmp/install/_gapps.zip", "META-INF/com/google/android/update-binary", "-d", "/tmp/install");')
+  info.script.AppendExtra('run_program("/sbin/busybox", "sh", "/tmp/install/META-INF/com/google/android/update-binary", "null", "1", "/tmp/install/_gapps.zip");')
