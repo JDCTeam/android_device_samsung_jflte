@@ -31,7 +31,7 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 #include <android-base/properties.h>
-#include <android-base/strings.h>	
+#include <android-base/strings.h>
 #include <android-base/file.h>
 
 #include "vendor_init.h"
@@ -201,8 +201,8 @@ void vendor_load_properties()
         property_override("ro.build.fingerprint","ERROR.INIT FAILED");
         return;
     }
-    property_override_dual("ro.build.fingerprint","ro.vendor.build.fingerprint", "google/blueline/blueline:9/PQ2A.190405.003/5310204:user/release-keys");
-    property_override("ro.build.description", "blueline-user 9 PQ2A.190405.003 5310204 release-keys");
+    property_override_dual("ro.build.fingerprint","ro.vendor.build.fingerprint", "samsung/jfltexx/jflte:5.0.1/LRX22C/I9505XXUHQK1:user/release-keys");
+    property_override("ro.build.description", "jfltexx-user 5.0.1 LRX22C I9505XXUHQK1 release-keys");
     android::init::property_set("ro.boot.btmacaddr", "00:00:00:00:00:00");
 
     char const *serial_number_file = SERIAL_NUMBER_FILE;
@@ -210,7 +210,7 @@ void vendor_load_properties()
 	if (ReadFileToString(serial_number_file, &serial_number)) {
         serial_number = Trim(serial_number);
         property_override("ro.serialno", serial_number.c_str());
-	}	
+	}
 }
 
 void gsm_properties()
