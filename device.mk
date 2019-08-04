@@ -207,11 +207,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
-
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.jf
-
 # IR package
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
