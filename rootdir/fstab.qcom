@@ -16,4 +16,5 @@
 /dev/block/platform/msm_sdcc.1/by-name/fota      /misc          emmc    defaults                                                                                      defaults
 
 /devices/platform/msm_sdcc.2/mmc_host/mmc2*      auto           auto    defaults                                                                                      voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/platform/msm_sdcc.3/mmc_host/mmc1*      auto           auto    defaults                                                                                      voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/platform/msm_hsusb_host/usb*            auto           auto    defaults                                                                                      voldmanaged=usb:auto
