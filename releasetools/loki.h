@@ -53,7 +53,7 @@ struct loki_hdr {
 int loki_patch(const char* partition_label, const char* aboot_image, const char* in_image, const char* out_image);
 int loki_flash(const char* partition_label, const char* loki_image);
 int loki_find(const char* aboot_image);
-int loki_unlock(const char* in_image, const char* out_image);
+int loki_unlok(const char* in_image, const char* out_image);
 
 #define PATCH	"\xfe\xb5"			\
 				"\x0d\x4d"			\
