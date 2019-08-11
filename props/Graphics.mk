@@ -15,14 +15,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.cpurend.vsync=false \
 	debug.composition.type=c2d \
     debug.hwui.use_buffer_age=false
-
-# Experimental
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.qualcomm.cabl=0 \
-	persist.hwc.mdpcomp.enable=true \
-	persist.graphics.vulkan.disable=true \
-    debug.sf.latch_unsignaled=1 \
-	debug.sf.disable_backpressure=1 \
-	debug.sf.recomputecrop=0 \
-	debug.hwui.renderer=opengl
-	
