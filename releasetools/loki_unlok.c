@@ -1,5 +1,5 @@
 /*
- * loki_unlock
+ * loki_unlok
  *
  * A utility to revert the changes made by loki_patch.
  *
@@ -35,7 +35,7 @@ int find_ramdisk_addr(void *img, int sz)
 	return ramdisk;
 }
 
-int loki_unlock(const char* in_image, const char* out_image)
+int loki_unlok(const char* in_image, const char* out_image)
 {
 	int ifd, ofd;
 	unsigned int orig_ramdisk_size, orig_kernel_size, orig_ramdisk_addr;
