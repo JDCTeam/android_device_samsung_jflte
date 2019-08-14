@@ -18,8 +18,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-swap=false \
-    ro.am.reschedule_service=true
+    dalvik.vm.dex2oat-swap=false
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
