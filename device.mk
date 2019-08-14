@@ -129,10 +129,7 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
-    libqcomvoiceprocessing
-
-# TinyAlsa utils
-PRODUCT_PACKAGES += \
+    libqcomvoiceprocessing \
     tinyplay \
     tinycap \
     tinymix \
