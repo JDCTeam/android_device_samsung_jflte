@@ -91,10 +91,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.spectrum.rc:root/init.spectrum.rc \
     $(LOCAL_PATH)/rootdir/init.safailnet.rc:root/init.safailnet.rc
 
-# GPS/location security configuration file
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
-
 # WPA supplicant overlay files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
