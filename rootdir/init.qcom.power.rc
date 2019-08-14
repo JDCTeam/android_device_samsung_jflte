@@ -118,6 +118,8 @@ on enable-low-power
 	write /sys/kernel/intelli_plug/boost_lock_duration 400
 	write /sys/kernel/intelli_plug/down_lock_duration 1500
 	write /sys/kernel/intelli_plug/nr_run_hysteresis 2
+
+	write /sys/class/timed_output/vibrator/pwm_value 37
 on boot
     chown system system /sys/kernel/cpufreq_limit/limited_max_freq
     chown system system /sys/kernel/cpufreq_limit/limited_min_freq
