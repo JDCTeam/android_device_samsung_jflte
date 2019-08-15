@@ -89,7 +89,7 @@ on post-fs-data
     mkdir /tombstones/mdm 0771 system system
     mkdir /tombstones/mdm2 0771 system system
 
-    # Communicate with mpdecision and thermald
+    # Communicate with mpdecision and thermald/thermal-engine
     mkdir /dev/socket/mpdecision 2770 root system
 
     # Create directories for audio
@@ -149,6 +149,7 @@ on post-fs-data
 
     # Create directories for perfd
     mkdir /data/misc/perfd 2755 root system
+    mkdir /data/system/perfd 2770 root system
 
     setprop vold.post_fs_data_done 1
 
@@ -468,10 +469,10 @@ service charger /charger
     group system
     seclabel u:r:charger:s0
 
-service thermald /vendor/bin/thermald
-    class main
-    user root
-    group radio system
+service thermal-engine /vendor/bin/thermal-engine
+   class main
+   user root
+   group root
 
 # Disable boot timeout for external modems.
 on property:persist.sys.mdm.timeout_disable=1
@@ -479,3 +480,4 @@ on property:persist.sys.mdm.timeout_disable=1
 
 on property:sys.boot_completed=1
     setprop sys.io.scheduler cfq
+    rm /data/system/perfd/default_values
