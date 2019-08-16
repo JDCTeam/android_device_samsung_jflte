@@ -190,7 +190,7 @@
     <bool name="config_intrusiveNotificationLed">true</bool>
 
     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <!-- <bool name="config_intrusiveBatteryLed">true</bool> -->
+    <bool name="config_intrusiveBatteryLed">true</bool>
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N  1 zones as follows:
@@ -326,6 +326,11 @@
          devices where the display has be tuned to be power efficient in DOZE and/or DOZE_SUSPEND
          states. -->
     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+
+    <!-- Control whether the always on display mode is enabled by default. This value will be used
+         during initialization when the setting is still null. -->
+    <bool name="config_dozeAlwaysOnEnabled">false</bool>
+
     <!-- Whether the display blanks itself when transitioning from a doze to a non-doze state -->
     <bool name="config_displayBlanksAfterDoze">true</bool>
 
@@ -361,5 +366,19 @@
     For this time after the screen turns on, the Power Manager
     will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">200</integer>
+
+    <integer name="config_screen_off_delay">0</integer>
+
+    <!-- Do the battery/notification LEDs support pulsing?
+         Used to decide if we show pulse settings -->
+    <bool name="config_ledCanPulse">true</bool>
+
+
+    <!-- If this is true, the screen will fade off. -->
+    <bool name="config_animateScreenLights">false</bool>
+
+   <!-- Does the battery LED support multiple colors?
+        Used to decide if the user can change the colors -->
+    <bool name="config_multiColorBatteryLed">true</bool>
 
 </resources>
