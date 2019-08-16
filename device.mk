@@ -268,9 +268,6 @@ PRODUCT_PACKAGES += \
     loki_bootloaders \
     recovery-transform.sh
 
-PRODUCT_PACKAGES += \
-    SamsungDoze
-
 # Camera
 PRODUCT_PACKAGES += \
     Snap
