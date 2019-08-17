@@ -49,6 +49,19 @@ on property:persist.spectrum.profile=0
     write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
     write /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration 0
 
+    write /sys/module/autosmp/parameters/enabled "Y"
+    write /sys/module/autosmp/parameters/max_cpus_screenoff 2
+    write /sys/kernel/autosmp/conf/boost_lock_duration 100
+    write /sys/kernel/autosmp/conf/cpufreq_down 45
+    write /sys/kernel/autosmp/conf/cpufreq_up 65
+    write /sys/kernel/autosmp/conf/cpus_boosted 2
+    write /sys/kernel/autosmp/conf/cycle_down 2
+    write /sys/kernel/autosmp/conf/cycle_up 1
+    write /sys/kernel/autosmp/conf/delay 20
+    write /sys/kernel/autosmp/conf/max_cpus 4
+    write /sys/kernel/autosmp/conf/min_boost_freq 918000
+    write /sys/kernel/autosmp/conf/min_cpus 1
+
 	write /sys/module/cpu_boost/parameters/input_boost_freq "0:1134000 1:1134000 2:1134000 3:1134000"
 	write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
