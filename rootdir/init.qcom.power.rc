@@ -76,10 +76,10 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1890000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 216000
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 216000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
     write /sys/module/cpu_boost/parameters/cpu_boost Y
     write /sys/module/cpu_boost/parameters/cpuboost_enable Y
@@ -108,14 +108,6 @@ on enable-low-power
     write /sys/kernel/fast_charge/failsafe 0
     write /sys/kernel/fast_charge/screen_on_current_limit 0
     write /sys/kernel/fast_charge/use_mtp_during_fast_charge 1
-
-    # Intelliplug
-    write /sys/kernel/intelli_plug/intelli_plug_active 1 
-    write /sys/kernel/intelli_plug/debug_intelli_plug 0
-	write /sys/kernel/intelli_plug/cpus_boosted 3
-	write /sys/kernel/intelli_plug/boost_lock_duration 400
-	write /sys/kernel/intelli_plug/down_lock_duration 1500
-	write /sys/kernel/intelli_plug/nr_run_hysteresis 2
 
 	write /sys/class/timed_output/vibrator/pwm_value 37
 on boot
