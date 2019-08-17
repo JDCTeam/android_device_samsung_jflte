@@ -203,14 +203,14 @@ void vendor_load_properties()
     }
     property_override_dual("ro.build.fingerprint","ro.vendor.build.fingerprint", "samsung/jfltexx/jflte:5.0.1/LRX22C/I9505XXUHQK1:user/release-keys");
     property_override("ro.build.description", "jfltexx-user 5.0.1 LRX22C I9505XXUHQK1 release-keys");
-    android::init::property_set("ro.boot.btmacaddr", "00:00:00:00:00:00");
-
+    
     char const *serial_number_file = SERIAL_NUMBER_FILE;
 	std::string serial_number;
 	if (ReadFileToString(serial_number_file, &serial_number)) {
         serial_number = Trim(serial_number);
         property_override("ro.serialno", serial_number.c_str());
 	}
+
 }
 
 void gsm_properties()
