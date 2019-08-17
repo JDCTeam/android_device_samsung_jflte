@@ -123,6 +123,8 @@ on enable-low-power
     write /sys/kernel/fast_charge/use_mtp_during_fast_charge 1
 
 	write /sys/class/timed_output/vibrator/pwm_value 37
+	setprop sys.io.scheduler deadline
+
 on boot
     chown system system /sys/kernel/cpufreq_limit/limited_max_freq
     chown system system /sys/kernel/cpufreq_limit/limited_min_freq
