@@ -70,7 +70,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/samsung/jf
-TARGET_KERNEL_CONFIG := buff_jf_defconfig
+TARGET_KERNEL_CONFIG := jdc_jf_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := jf_eur_defconfig
 
 # Toolchain
