@@ -108,8 +108,8 @@ void vendor_load_properties()
         property_override_dual("ro.product.device","ro.product.vendor.device",  "jfltecsp");
         property_override_dual("ro.build.product","ro.lineage.device","jfltecsp");
         android::init::property_set("telephony.sms.pseudo_multipart", "1");
-         property_set("ro.cdma.home.operator.alpha", "C Spire");
-        property_set("ro.cdma.home.operator.numeric", "311230");
+        android::init::property_set("ro.cdma.home.operator.alpha", "C Spire");
+        android::init::property_set("ro.cdma.home.operator.numeric", "311230");
     } else if (bootloader.find("L720") != std::string::npos) {
         /* jfltespr */
         cdma_properties(1);
