@@ -71,6 +71,29 @@ $(VIDC_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(VIDC_SYMLINKS)
 
+WCNSS_IMAGES := \
+    wcnss.b00 wcnss.b01 wcnss.b02 wcnss.b04 wcnss.b05 \
+    wcnss.b06 wcnss.mdt
+
+WCNSS_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(WCNSS_IMAGES)))
+$(WCNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "WCNSS firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /firmware/image/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_SYMLINKS)
+
+$(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware/wlan/prima; \
+	ln -sf /vendor/etc/wifi/WCNSS_qcom_cfg.ini \
+		$(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini)
+
+$(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware/wcd9310; \
+	ln -sf /data/misc/audio/wcd9310_anc.bin \
+		$(TARGET_OUT_VENDOR)/firmware/wcd9310/wcd9310_anc.bin; \
+	ln -sf /data/misc/audio/mbhc.bin \
+		$(TARGET_OUT_VENDOR)/firmware/wcd9310/wcd9310_mbhc.bin)
+
 endif
 endif
 endif
