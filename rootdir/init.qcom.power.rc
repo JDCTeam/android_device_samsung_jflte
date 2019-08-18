@@ -81,7 +81,8 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
-    write /sys/module/autosmp/parameters/enabled "Y"
+    write /sys/module/autosmp/parameters/autosmp_enabled "Y"
+    write /sys/module/autosmp/parameters/hotplug_suspend "Y"
     write /sys/module/autosmp/parameters/max_cpus_screenoff 2
     write /sys/kernel/autosmp/conf/boost_lock_duration 100
     write /sys/kernel/autosmp/conf/cpufreq_down 45
