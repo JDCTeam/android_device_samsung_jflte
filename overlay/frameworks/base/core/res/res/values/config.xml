@@ -109,10 +109,6 @@
         <item>"bt-pan"</item>
     </string-array>
 
-    <!-- Boolean indicating if current platform supports bluetooth wide band
-         speech -->
-    <bool name="config_bluetooth_wide_band_speech">false</bool>
-
     <!-- Default interface to monitor data use -->
     <string name="config_datause_iface">rmnet_usb0</string>
 
