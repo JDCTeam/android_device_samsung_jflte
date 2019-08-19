@@ -224,7 +224,7 @@ PRODUCT_PACKAGES += \
 
 # Health HAL
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-service
+    android.hardware.health@2.0-service.jf
 
 # Lights
 PRODUCT_PACKAGES += \
