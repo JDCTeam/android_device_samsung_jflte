@@ -165,6 +165,10 @@ PRODUCT_PACKAGES += \
     camera.msm8960 \
     Snap
 
+# Trust
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
+    
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
