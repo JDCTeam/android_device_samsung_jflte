@@ -117,7 +117,8 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/mediaserver=22 \
     /system/vendor/bin/mm-qcamera-daemon=22 \
-    /system/vendor/bin/hw/android.hardware.sensors@1.0-service.jf=22
+    /system/vendor/bin/hw/android.hardware.sensors@1.0-service.jf=22 \
+    /system/lib/libbluetooth.so=22
 
 # Camera
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
