@@ -65,7 +65,7 @@ on enable-low-power
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 30000
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "20 918000:30 1134000:50 1458000:60 1566000:75 1674000:80 1782000:85 1890000:90"
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "85 1458000:90 1782000:95"
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 60000
     write /sys/devices/system/cpu/cpufreq/interactive/boost 0
     write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 79000
@@ -81,16 +81,20 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
-    write /sys/module/autosmp/parameters/autosmp_enabled "Y"
-    write /sys/module/autosmp/parameters/hotplug_suspend "Y"
+    # Buff autosmp
+    write /sys/module/autosmp/parameters/enabled "Y"
     write /sys/module/autosmp/parameters/max_cpus_screenoff 2
+    # Dorimanx autosmp
+    write /sys/module/autosmp/parameters/autosmp_enabled "Y"
+    write /sys/module/autosmp/parameters/hotplug_suspend 1
+    
     write /sys/kernel/autosmp/conf/boost_lock_duration 100
-    write /sys/kernel/autosmp/conf/cpufreq_down 45
-    write /sys/kernel/autosmp/conf/cpufreq_up 65
+    write /sys/kernel/autosmp/conf/cpufreq_down 30
+    write /sys/kernel/autosmp/conf/cpufreq_up 75
     write /sys/kernel/autosmp/conf/cpus_boosted 2
-    write /sys/kernel/autosmp/conf/cycle_down 2
-    write /sys/kernel/autosmp/conf/cycle_up 1
-    write /sys/kernel/autosmp/conf/delay 20
+    write /sys/kernel/autosmp/conf/cycle_down 1
+    write /sys/kernel/autosmp/conf/cycle_up 3
+    write /sys/kernel/autosmp/conf/delay 300
     write /sys/kernel/autosmp/conf/max_cpus 4
     write /sys/kernel/autosmp/conf/min_boost_freq 918000
     write /sys/kernel/autosmp/conf/min_cpus 1
