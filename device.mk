@@ -150,8 +150,8 @@ PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libmm-omxcore \
     libOmxCore \
-    libOmxVenc \
     libOmxVdec \
+    libOmxVenc \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxEvrcEnc \
@@ -193,7 +193,7 @@ PRODUCT_PACKAGES += \
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
-    android.hardware.wifi@1.0-impl \
+    macloader \
     hostapd \
     libwpa_client \
     wificond \
