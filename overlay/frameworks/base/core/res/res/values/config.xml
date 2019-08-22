@@ -363,8 +363,6 @@
     will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">200</integer>
 
-    <integer name="config_screen_off_delay">0</integer>
-
     <!-- Do the battery/notification LEDs support pulsing?
          Used to decide if we show pulse settings -->
     <bool name="config_ledCanPulse">true</bool>
