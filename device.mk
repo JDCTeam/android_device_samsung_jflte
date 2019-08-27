@@ -168,7 +168,7 @@ PRODUCT_PACKAGES += \
 # Trust
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
-    
+
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
@@ -271,6 +271,10 @@ PRODUCT_PACKAGES += \
     loki.sh \
     loki_bootloaders \
     recovery-transform.sh
+
+# Doze
+PRODUCT_PACKAGES += \
+    SamsungDoze
 
 # Camera
 PRODUCT_PACKAGES += \
