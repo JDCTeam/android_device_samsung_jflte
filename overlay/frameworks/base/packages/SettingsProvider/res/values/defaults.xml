@@ -4,4 +4,11 @@
     <bool name="def_screen_brightness_automatic_mode">false</bool>
     <bool name="def_install_non_market_apps">true</bool>
     <bool name="def_vibrate_when_ringing">false</bool>
+
+    <!-- Disable UI touch sounds by default -->
+    <bool name="def_sound_effects_enabled">false</bool>
+
+    <!-- Disable UI touch haptic feedback by default -->
+    <bool name="def_haptic_feedback">false</bool>
+
 </resources>
