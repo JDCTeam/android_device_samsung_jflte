@@ -407,4 +407,7 @@
     <!-- Pocket Lock -->
     <bool name="config_pocketModeSupported">false</bool>
 
+    <!-- AICP -->
+    <bool name="config_enableSmartPixels">true</bool>
+
 </resources>
