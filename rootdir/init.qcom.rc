@@ -400,12 +400,6 @@ on property:persist.sys.camera.preview=1
 on property:persist.sys.camera.preview=0
     write /sys/class/leds/led_b/brightness 0
 
-on property:init.svc.media=restarting
-    restart qcamerasvr
-
-on property:init.svc.servicemanager=restarting
-    restart qcamerasvr
-
 service mpdecision /vendor/bin/mpdecision --no_sleep --avg_comp
     class main
     user root
