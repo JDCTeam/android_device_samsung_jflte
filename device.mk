@@ -289,9 +289,3 @@ include device/samsung/jflte/props/*.mk
 
 # Common qcom
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
-
-# HW/Samsung
-$(call inherit-product, hardware/samsung/Android.mk)
-
-# Also get non-open-source specific aspects if available
-$(call inherit-product, vendor/samsung/jf-common/jf-common-vendor-blobs.mk)
