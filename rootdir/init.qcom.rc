@@ -159,6 +159,15 @@ on early-boot
 
 on boot
     # Configure bluetooth
+    chmod 0660 /dev/ttyHS0
+    chmod 0660 /proc/bluetooth/sleep/asleep
+    chmod 0660 /proc/bluetooth/sleep/btwake
+    chmod 0660 /proc/bluetooth/sleep/btwrite
+    chmod 0660 /proc/bluetooth/sleep/hostwake
+    chmod 0660 /proc/bluetooth/sleep/lpm
+    chmod 0660 /proc/bluetooth/sleep/proto
+    chmod 0660 /sys/class/rfkill/rfkill0/state
+    chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
     chown bluetooth bluetooth /dev/ttyHS0
     chown bluetooth bluetooth /proc/bluetooth/sleep/asleep
     chown bluetooth bluetooth /proc/bluetooth/sleep/btwake
@@ -169,15 +178,6 @@ on boot
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chown bluetooth bluetooth /efs/bluetooth/bt_addr
-    chmod 0660 /dev/ttyHS0
-    chmod 0664 /proc/bluetooth/sleep/asleep
-    chmod 0664 /proc/bluetooth/sleep/btwake
-    chmod 0664 /proc/bluetooth/sleep/btwrite
-    chmod 0664 /proc/bluetooth/sleep/hostwake
-    chmod 0664 /proc/bluetooth/sleep/lpm
-    chmod 0664 /proc/bluetooth/sleep/proto
-    chmod 0660 /sys/class/rfkill/rfkill0/state
-    chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
     
     # Create QMUX daemon socket area
     mkdir /dev/socket/qmux_audio 2770 media audio
