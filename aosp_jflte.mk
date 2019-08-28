@@ -22,26 +22,22 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 # Inherit some AospExtended stuff.
 $(call inherit-product, vendor/aosp/common.mk)
 
-# Boot animation res
-TARGET_BOOT_ANIMATION_RES := 1080
-
 PRODUCT_NAME := aosp_jflte
 PRODUCT_DEVICE := jflte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := Samsung
 PRODUCT_RELEASE_NAME := jflte
 
+# Boot animation res
+TARGET_BOOT_ANIMATION_RES := 1080
+
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=jfltexx \
+    TARGET_DEVICE=jfltexx \
     PRIVATE_BUILD_DESC="jfltexx-user 5.0.1 LRX22C I9505XXUHQK1 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := samsung/jfltexx/jflte:5.0.1/LRX22C/I9505XXUHQK1:user/release-keys
-VENDOR_BUILD_FINGERPRINT := samsung/jfltexx/jflte:5.0.1/LRX22C/I9505XXUHQK1:user/release-keys
-
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME="GT-I9505"
