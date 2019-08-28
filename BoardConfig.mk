@@ -102,7 +102,7 @@ TARGET_NEED_SAMSUNG_CAMERA_MODE := true
 TARGET_NEED_CAMERA_ZSL := true
 TARGET_DISPLAY_INSECURE_MM_HEAP := true
 
-TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/bin/mediaserver=22 \
     /system/vendor/bin/mm-qcamera-daemon=22 \
     /system/vendor/bin/hw/android.hardware.sensors@1.0-service.jf=22
