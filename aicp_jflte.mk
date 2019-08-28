@@ -19,13 +19,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from jflte device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Inherit some AospExtended stuff.
+# Inherit some AICP stuff.
 $(call inherit-product, vendor/aicp/config/common_full_phone.mk)
-
-# Boot animation res
-TARGET_SCREEN_WIDTH := 1080
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_BOOT_ANIMATION_RES := 1080
 
 PRODUCT_NAME := aicp_jflte
 PRODUCT_DEVICE := jflte
@@ -33,20 +28,18 @@ PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := Samsung
 PRODUCT_RELEASE_NAME := jflte
 
+# Boot animation res
+TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_BOOT_ANIMATION_RES := 1080
+
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=jfltexx \
+    TARGET_DEVICE=jfltexx \
     PRIVATE_BUILD_DESC="jfltexx-user 5.0.1 LRX22C I9505XXUHQK1 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := samsung/jfltexx/jflte:5.0.1/LRX22C/I9505XXUHQK1:user/release-keys
-VENDOR_BUILD_FINGERPRINT := samsung/jfltexx/jflte:5.0.1/LRX22C/I9505XXUHQK1:user/release-keys
-
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME="GT-I9505"
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    DEVICE_MAINTAINERS="Buff99 & JDCTeam"
