@@ -85,10 +85,6 @@ DEVICE_FRAMEWORK_MANIFEST_FILE := system/libhidl/vintfdata/manifest_healthd_excl
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/vendor_interface/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/vendor_interface/compatibility_matrix.xml
 
-# Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
 # Camera
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_PROVIDES_CAMERA_HAL := true
