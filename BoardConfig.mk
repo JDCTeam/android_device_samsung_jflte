@@ -108,10 +108,6 @@ ARCH_ARM_HAVE_NEON := true
 USE_OPENGL_RENDERER := true
 TARGET_USES_ION := true
 
-# Always preopt extracted APKs to prevent extracting out of the APK
-# for gms modules.
-PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
-
 # Exclude serif fonts for saving system.img size.
 EXCLUDE_SERIF_FONTS := true
 
