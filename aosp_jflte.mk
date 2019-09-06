@@ -14,13 +14,13 @@
 # limitations under the License.
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from jflte device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Inherit some AospExtended stuff.
-$(call inherit-product, vendor/aosp/common.mk)
+# Inherit some AOSP stuff.
+$(call inherit-product-if-exists, vendor/aosp/common.mk)
 
 PRODUCT_NAME := aosp_jflte
 PRODUCT_DEVICE := jflte
