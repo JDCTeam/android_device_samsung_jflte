@@ -154,9 +154,6 @@ TARGET_USES_OLD_MNC_FORMAT := true
 # Compile libhwui in performance mode
 HWUI_COMPILE_FOR_PERF := true
 
-# Speed profile services and wifi-service to reduce RAM and storage.
-PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
-
 # Vendor init
 TARGET_INIT_VENDOR_LIB := libinit_jflte
 TARGET_RECOVERY_DEVICE_MODULES := libinit_jflte
