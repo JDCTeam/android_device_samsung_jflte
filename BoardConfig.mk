@@ -85,9 +85,6 @@ DEVICE_FRAMEWORK_MANIFEST_FILE := system/libhidl/vintfdata/manifest_healthd_excl
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/vendor_interface/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/vendor_interface/compatibility_matrix.xml
 
-# Set default locale
-PRODUCT_LOCALES := en-GB
-
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
