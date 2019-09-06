@@ -151,10 +151,6 @@ BOARD_PROVIDES_LIBRIL := true
 TARGET_RIL_VARIANT := caf
 TARGET_USES_OLD_MNC_FORMAT := true
 
-# The first api level the device has commercially launched on
-PRODUCT_SHIPPING_API_LEVEL := 17
-
-
 # Enable dexpreopt to speed boot time
 WITH_DEXPREOPT := true
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
