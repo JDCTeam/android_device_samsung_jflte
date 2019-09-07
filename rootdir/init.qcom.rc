@@ -200,6 +200,9 @@ on boot
     write /sys/module/rmnet_usb/parameters/rmnet_data_init 1
     chown radio radio /sys/devices/virtual/hsicctl/hsicctl0/modem_wait
 
+    # Disable boot timeout for external modems.
+    write /sys/module/mdm_common/parameters/disable_boot_timeout 1
+
     chown system radio /sys/class/sec/switch/usb_sel
     chown system radio /sys/class/sec/switch/usb_state
     chown system radio /sys/class/sec/switch/uart_sel
@@ -457,10 +460,6 @@ service thermal-engine /vendor/bin/thermal-engine
    class main
    user root
    group root
-
-# Disable boot timeout for external modems.
-on property:persist.sys.mdm.timeout_disable=1
-    write /sys/module/mdm_common/parameters/disable_boot_timeout 1
 
 on property:sys.boot_completed=1
     setprop sys.io.scheduler cfq
