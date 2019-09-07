@@ -9,9 +9,6 @@ vendor/firmware/bcm4335_prepatch.hcd
 vendor/bin/mpdecision
 vendor/bin/thermal-engine
 
-# Audio
-vendor/lib/libcsd-client.so
-
 # Adreno GPU
 vendor/firmware/a300_pfp.fw
 vendor/firmware/a300_pm4.fw
