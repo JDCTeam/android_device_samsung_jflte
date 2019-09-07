@@ -389,6 +389,12 @@ on boot
     # Set freeze timeout to 2 seconds
     write /sys/power/pm_freeze_timeout 2000
 
+    # Set subsystem restart level
+    # 1 = SOC
+    # 2 = COUPLED
+    # 3 = INDEPENDENT
+    write /sys/module/subsystem_restart/parameters/restart_level 3
+
 service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
