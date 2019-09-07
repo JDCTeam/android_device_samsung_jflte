@@ -257,7 +257,7 @@ PRODUCT_PACKAGES += \
     mkfs.f2fs
 
 # Loki
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES_ENG += \
     loki_tool \
     loki.sh \
     loki_bootloaders \
