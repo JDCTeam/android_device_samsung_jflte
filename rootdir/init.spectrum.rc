@@ -57,7 +57,7 @@ on property:persist.spectrum.profile=0
     write /sys/module/autosmp/parameters/hotplug_suspend 1
     
     write /sys/kernel/autosmp/conf/boost_lock_duration 100
-    write /sys/kernel/autosmp/conf/cpufreq_down 30
+    write /sys/kernel/autosmp/conf/cpufreq_down 45
     write /sys/kernel/autosmp/conf/cpufreq_up 75
     write /sys/kernel/autosmp/conf/cpus_boosted 2
     write /sys/kernel/autosmp/conf/cycle_down 1
@@ -136,7 +136,7 @@ on property:persist.spectrum.profile=1
     write /sys/module/autosmp/parameters/hotplug_suspend 1
     
     write /sys/kernel/autosmp/conf/boost_lock_duration 100
-    write /sys/kernel/autosmp/conf/cpufreq_down 30
+    write /sys/kernel/autosmp/conf/cpufreq_down 45
     write /sys/kernel/autosmp/conf/cpufreq_up 75
     write /sys/kernel/autosmp/conf/cpus_boosted 2
     write /sys/kernel/autosmp/conf/cycle_down 1
@@ -198,7 +198,7 @@ on property:persist.spectrum.profile=2
     write /sys/module/autosmp/parameters/hotplug_suspend 1
     
     write /sys/kernel/autosmp/conf/boost_lock_duration 100
-    write /sys/kernel/autosmp/conf/cpufreq_down 30
+    write /sys/kernel/autosmp/conf/cpufreq_down 45
     write /sys/kernel/autosmp/conf/cpufreq_up 75
     write /sys/kernel/autosmp/conf/cpus_boosted 2
     write /sys/kernel/autosmp/conf/cycle_down 1
