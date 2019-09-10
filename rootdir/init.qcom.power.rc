@@ -135,6 +135,7 @@ on enable-low-power
 
 	write /sys/class/timed_output/vibrator/pwm_value 37
 	setprop sys.io.scheduler deadline
+	write /sys/devices/system/cpu/sched_mc_power_savings 2
 
 on boot
     chown system system /sys/kernel/cpufreq_limit/limited_max_freq
