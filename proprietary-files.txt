@@ -67,7 +67,6 @@ vendor/lib/libloc_ds_api.so
 
 # Sensors
 vendor/lib/hw/sensors.vendor.msm8960.so
-vendor/lib/libgnustl_shared.so
 vendor/lib/libsam.so
 vendor/lib/libsensirion_j1.so
 
