@@ -11,4 +11,8 @@
     <!-- Disable UI touch haptic feedback by default -->
     <bool name="def_haptic_feedback">false</bool>
 
+    <integer name="def_dock_audio_media_enabled">0</integer>
+    <integer name="def_power_sounds_enabled">0</integer>
+    <integer name="def_lockscreen_sounds_enabled">0</integer>
+
 </resources>
