@@ -85,7 +85,7 @@ on property:persist.spectrum.profile=0
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel 0
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/min_pwrlevel 3
 
-    setprop sys.io.scheduler deadline
+    setprop sys.io.scheduler fiops
 
 # Performance - default LOS, JDC, TSVIET
 # Tweaked by BUFF99 exclusively for BUFF99 & SIDEs use
@@ -160,7 +160,7 @@ on property:persist.spectrum.profile=1
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel 0
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/min_pwrlevel 3
 
-    setprop sys.io.scheduler deadline
+    setprop sys.io.scheduler fiops
     start mpdecision
 
 # Battery - Slower and battery tuned
@@ -222,7 +222,7 @@ on property:persist.spectrum.profile=2
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel 2
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/min_pwrlevel 3
 
-    setprop sys.io.scheduler deadline
+    setprop sys.io.scheduler fiops
 
 # Gaming - default Buff with gov Target_load tweaked for NON power efficient voltages
 # Tweaked by BUFF99 exclusively for BUFF99 & SIDEs use
@@ -274,4 +274,4 @@ on property:persist.spectrum.profile=3
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel 0
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/min_pwrlevel 3
 
-    setprop sys.io.scheduler deadline
+    setprop sys.io.scheduler fiops
