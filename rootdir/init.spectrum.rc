@@ -42,7 +42,7 @@ on property:persist.spectrum.profile=0
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 30000
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "75 384000:20 594000:30 918000:40 1134000:50 1458000:60 1674000:70 1890000:90"
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "71 486000:22 594000:18 702000:78 810000:79 918000:80 1026000:81 1134000:82 1242000:83 1350000:84 1458000:85 1566000:86 1674000: 87 178200:90"
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 60000
     write /sys/devices/system/cpu/cpufreq/interactive/boost 0
     write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 79000
@@ -55,7 +55,7 @@ on property:persist.spectrum.profile=0
     # Dorimanx autosmp
     write /sys/module/autosmp/parameters/autosmp_enabled "Y"
     write /sys/module/autosmp/parameters/hotplug_suspend 1
-    
+
     write /sys/kernel/autosmp/conf/boost_lock_duration 100
     write /sys/kernel/autosmp/conf/cpufreq_down 45
     write /sys/kernel/autosmp/conf/cpufreq_up 75
@@ -110,7 +110,7 @@ on property:persist.spectrum.profile=1
 
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
 
-    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "75 384000:20 594000:30 918000:40 1134000:50 1458000:60 1674000:70 1890000:90"
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "71 486000:22 594000:18 702000:78 810000:79 918000:80 1026000:81 1134000:82 1242000:83 1350000:84 1458000:85 1566000:86 1674000: 87 178200:90"
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 39000
     write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 79000
 
@@ -134,7 +134,7 @@ on property:persist.spectrum.profile=1
     # Dorimanx autosmp
     write /sys/module/autosmp/parameters/autosmp_enabled "Y"
     write /sys/module/autosmp/parameters/hotplug_suspend 1
-    
+
     write /sys/kernel/autosmp/conf/boost_lock_duration 100
     write /sys/kernel/autosmp/conf/cpufreq_down 45
     write /sys/kernel/autosmp/conf/cpufreq_up 75
@@ -183,7 +183,7 @@ on property:persist.spectrum.profile=2
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_slack -1
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "75 384000:20 594000:30 918000:40 1134000:50 1458000:60 1674000:70 1890000:90"
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "71 486000:22 594000:18 702000:78 810000:79 918000:80 1026000:81 1134000:82 1242000:83 1350000:84 1458000:85 1566000:86 1674000: 87 178200:90"
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 15000
     write /sys/devices/system/cpu/cpufreq/interactive/boost 0
     write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 0
@@ -196,7 +196,7 @@ on property:persist.spectrum.profile=2
     # Dorimanx autosmp
     write /sys/module/autosmp/parameters/autosmp_enabled "Y"
     write /sys/module/autosmp/parameters/hotplug_suspend 1
-    
+
     write /sys/kernel/autosmp/conf/boost_lock_duration 100
     write /sys/kernel/autosmp/conf/cpufreq_down 45
     write /sys/kernel/autosmp/conf/cpufreq_up 75
@@ -244,7 +244,7 @@ on property:persist.spectrum.profile=3
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 80000
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "75 384000:20 594000:30 918000:40 1134000:50 1458000:60 1674000:70 1890000:90"
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "71 486000:22 594000:18 702000:78 810000:79 918000:80 1026000:81 1134000:82 1242000:83 1350000:84 1458000:85 1566000:86 1674000: 87 178200:90"
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 15000
     write /sys/devices/system/cpu/cpufreq/interactive/boost 0
     write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 0
