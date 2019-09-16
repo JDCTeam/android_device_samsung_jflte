@@ -162,7 +162,6 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
     int id = CAMERA_ID(device);
     CameraParameters params;
     params.unflatten(String8(settings));
-    const char* camMode = params.get(CameraParameters::KEY_SAMSUNG_CAMERA_MODE);
 
     const char* recordingHint = params.get(CameraParameters::KEY_RECORDING_HINT);
     bool isVideo = false;
@@ -184,30 +183,6 @@ static char* camera_fixup_setparams(struct camera_device* device, const char* se
             params.set(CameraParameters::KEY_ISO_MODE, "1600");
     }
 
-#ifdef SAMSUNG_CAMERA_MODE
-    /* Samsung camcorder mode */
-    if (id == 1) {
-        /* Enable for front camera only */
-        if (!(!strcmp(camMode, "1") && !isVideo) || wasVideo) {
-            /* Enable only if not already set (Snapchat) but do enable if the setting is left
-               over while switching from stills to video */
-            if ((!strcmp(params.get(CameraParameters::KEY_PREVIEW_FRAME_RATE), "15") ||
-                 (!strcmp(params.get(CameraParameters::KEY_PREVIEW_SIZE), "320x240") &&
-                  !strcmp(params.get(CameraParameters::KEY_JPEG_QUALITY), "96"))) &&
-                !isVideo) {
-                /* Do not set for video chat in Hangouts (Frame rate 15) or Skype (Preview size
-                   320x240 and jpeg quality 96 */
-            } else {
-                /* "Normal case". Required to prevent distorted video and reboots
-                   while taking snaps */
-                params.set(CameraParameters::KEY_SAMSUNG_CAMERA_MODE, isVideo ? "1" : "0");
-            }
-            wasVideo = (isVideo || wasVideo);
-        }
-    } else {
-        wasVideo = false;
-    }
-#endif
 #ifdef ENABLE_ZSL
     if (id != 1) {
         params.set(CameraParameters::KEY_ZSL, isVideo ? "off" : "on");
