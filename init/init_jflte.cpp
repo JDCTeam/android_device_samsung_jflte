@@ -121,6 +121,17 @@ void vendor_load_properties()
         android::init::property_set("ro.telephony.default_network", "8");
         android::init::property_set("ro.telephony.get_imsi_from_sim", "true");
         android::init::property_set("telephony.sms.pseudo_multipart", "1");
+     } else if (bootloader.find("L720T") != std::string::npos) {
+        /* jflterefreshspr */
+        cdma_properties(1);
+        property_override_dual("ro.product.model","ro.product.vendor.model", "SPH-L720T");
+        property_override_dual("ro.product.device","ro.product.vendor.device",  "jflterefreshspr");
+        property_override_dual("ro.build.product","ro.lineage.device","jflterefreshspr");
+        android::init::property_set("ro.cdma.home.operator.numeric", "310120");
+        android::init::property_set("ro.cdma.home.operator.alpha", "Sprint");
+        android::init::property_set("ro.telephony.default_network", "8");
+        android::init::property_set("ro.telephony.get_imsi_from_sim", "true");
+        android::init::property_set("telephony.sms.pseudo_multipart", "1");
     } else if (bootloader.find("M919") != std::string::npos) {
         /* jfltetmo */
         gsm_properties();
