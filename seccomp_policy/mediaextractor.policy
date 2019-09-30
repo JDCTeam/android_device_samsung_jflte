@@ -1,6 +1,0 @@
-# device specific syscalls.
-readlinkat: 1
-pread64: 1
-getsockopt: 1
-# ffmpeg needs this
-nanosleep: 1
