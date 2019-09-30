@@ -22,14 +22,17 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 # Inherit some AospExtended stuff.
 $(call inherit-product, vendor/aosp/common.mk)
 
+# Boot animation res
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Ditch Via, Build Jelly
+TARGET_USE_JELLY := true
+
 PRODUCT_NAME := aosp_jflte
 PRODUCT_DEVICE := jflte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := Samsung
 PRODUCT_MODEL := GT-I9505
-
-# Boot animation res
-TARGET_BOOT_ANIMATION_RES := 1080
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
