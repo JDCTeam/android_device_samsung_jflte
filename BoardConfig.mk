@@ -139,7 +139,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.qcom
 # Filesystem
 BOARD_ROOT_EXTRA_FOLDERS := efs firmware firmware-mdm
 BOARD_ROOT_EXTRA_SYMLINKS := /data/tombstones:/tombstones
-TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
