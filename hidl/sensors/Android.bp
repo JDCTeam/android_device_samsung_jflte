@@ -27,9 +27,7 @@ cc_library_shared {
     shared_libs: [
         "libbase",
         "libhidlbase",
-        "libhidltransport",
         "liblog",
-        "libhwbinder",
         "libutils",
         "libhardware",
         "android.hardware.sensors@1.0",
@@ -50,9 +48,7 @@ cc_binary {
     srcs: ["service.cpp"],
     shared_libs: [
         "libhidlbase",
-        "libhidltransport",
         "liblog",
-        "libhwbinder",
         "libutils",
         "libhardware",
         "android.hardware.sensors@1.0",
