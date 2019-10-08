@@ -1,11 +1,14 @@
 # Android fstab file.
-# The filesystem that contains the filesystem checker binary (typically /system) cannot
-# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+# The filesystem that contains the filesystem e2fsck binary (typically /system) cannot
+# specify 'check', and must come before any filesystems that do specify 'check'
+
+# NOTE: /system partition is now early-mounted and the fstab entry is specified in device tree:
+#       /proc/device-tree/firmware/android/fstab/system
 
 #<src>                                           <mnt_point>    <type>  <mnt_flags and options>                                                                       <fs_mgr_flags>
 /dev/block/platform/msm_sdcc.1/by-name/boot      /boot          emmc    defaults                                                                                      recoveryonly
 /dev/block/platform/msm_sdcc.1/by-name/recovery  /recovery      emmc    defaults                                                                                      recoveryonly
-/dev/block/platform/msm_sdcc.1/by-name/system    /system        ext4    ro,barrier=1                                                                                  wait
+/dev/block/platform/msm_sdcc.1/by-name/system    /system        ext4    ro,barrier=1                                                                                  wait,recoveryonly
 /dev/block/platform/msm_sdcc.1/by-name/apnhlos   /firmware      sdfat   ro,uid=1000,gid=1000,dmask=227,fmask=337                                                      wait
 /dev/block/platform/msm_sdcc.1/by-name/mdm       /firmware-mdm  sdfat   ro,uid=1000,gid=1000,dmask=227,fmask=337                                                      wait
 /dev/block/platform/msm_sdcc.1/by-name/efs       /efs           ext4    rw,nosuid,nodev,noatime,noauto_da_alloc,journal_async_commit                                  wait,check,notrim
