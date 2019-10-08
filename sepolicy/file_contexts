@@ -18,6 +18,8 @@
 /dev/btlock                                         u:object_r:bluetooth_device:s0
 /dev/rfkill                                         u:object_r:wlan_device:s0
 
+/firmware               u:object_r:firmware_file:s0
+/firmware-mdm           u:object_r:firmware_file:s0
 /tombstones             u:object_r:rootfs:s0
 
 /efs/bluetooth(/.*)?    u:object_r:bluetooth_efs_file:s0
