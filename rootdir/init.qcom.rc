@@ -439,13 +439,13 @@ service macloader /vendor/bin/macloader
     user system
     group system wifi
     oneshot
-    seclabel u:r:macloader:s0
+    #seclabel u:r:macloader:s0
 
 service charger /charger
     class charger
     critical
     group system
-    seclabel u:r:charger:s0
+    #seclabel u:r:charger:s0
 
 service thermal-engine /vendor/bin/thermal-engine
    class main
