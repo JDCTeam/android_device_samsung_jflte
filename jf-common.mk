@@ -27,6 +27,13 @@ $(call inherit-product-if-exists, vendor/samsung/jf-common/jf-common-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
+# Always preopt extracted APKs to prevent extracting out of the APK
+# for gms modules.
+PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
+
+# System Server
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
