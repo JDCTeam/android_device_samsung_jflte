@@ -114,11 +114,11 @@ PRODUCT_PACKAGES += \
     libbt-vendor
 
 # Camera
-PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl.jf \
-    camera.device@1.0-impl.jf \
-    camera.msm8960 \
-    Snap
+#PRODUCT_PACKAGES += \
+#    android.hardware.camera.provider@2.4-impl.jf \
+#    camera.device@1.0-impl.jf \
+#    camera.msm8960 \
+#    Snap
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
