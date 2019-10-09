@@ -160,6 +160,14 @@ void vendor_load_properties()
         property_override_triple("ro.product.device", "ro.product.system.device", "ro.product.vendor.device", "jfltevzw");
         property_override_triple("ro.product.name", "ro.product.system.name", "ro.product.vendor.name", "jfltevzw");
         property_override("ro.build.product", "jfltevzw");
+    } else if (bootloader.find("I9295") == 0) {
+        /* jactivelte */
+        property_override("ro.build.description", "jactiveltexx-user 5.0.1 LRX22C I9295XXUDPF1 release-keys");
+        property_override_triple("ro.build.fingerprint", "ro.system.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/jactiveltexx/jactivelte:5.0.1/LRX22C/I9295XXUDPF1:user/release-keys");
+        property_override_triple("ro.product.model", "ro.product.system.model", "ro.product.vendor.model", "GT-I9295");
+        property_override_triple("ro.product.device", "ro.product.system.device", "ro.product.vendor.device", "jactivelte");
+        property_override_triple("ro.product.name", "ro.product.system.name", "ro.product.vendor.name", "jactiveltexx");
+        property_override("ro.build.product", "jactivelte");
     }
 
     const std::string device = GetProperty("ro.product.device", "");
