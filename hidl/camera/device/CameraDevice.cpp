@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2019 The Android Open Source Project
+ * Copyright (C) 2017 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,8 +35,6 @@ using ::android::hardware::graphics::common::V1_0::BufferUsage;
 using ::android::hardware::graphics::common::V1_0::PixelFormat;
 
 HandleImporter CameraDevice::sHandleImporter;
-
-static CameraDevice *sCameraDevice;
 
 Status CameraDevice::getHidlStatus(const int& status) {
     switch (status) {
@@ -362,10 +360,9 @@ CameraDevice::CameraHeapMemory::~CameraHeapMemory() {
 }
 
 // shared memory methods
-camera_memory_t* CameraDevice::sGetMemory(int fd, size_t buf_size, uint_t num_bufs,
-        void *user __unused) {
+camera_memory_t* CameraDevice::sGetMemory(int fd, size_t buf_size, uint_t num_bufs, void *user) {
     ALOGV("%s", __FUNCTION__);
-    CameraDevice* object = sCameraDevice;
+    CameraDevice* object = static_cast<CameraDevice*>(user);
     if (object->mDeviceCallback == nullptr) {
         ALOGE("%s: camera HAL request memory while camera is not opened!", __FUNCTION__);
         return nullptr;
@@ -381,6 +378,7 @@ camera_memory_t* CameraDevice::sGetMemory(int fd, size_t buf_size, uint_t num_bu
     hidl_handle hidlHandle = mem->mHidlHandle;
     MemoryId id = object->mDeviceCallback->registerMemory(hidlHandle, buf_size, num_bufs);
     mem->handle.mId = id;
+
     {
         Mutex::Autolock _l(object->mMemoryMapLock);
         if (object->mMemoryMap.count(id) != 0) {
@@ -413,18 +411,18 @@ void CameraDevice::sPutMemory(camera_memory_t *data) {
 }
 
 // Callback forwarding methods
-void CameraDevice::sNotifyCb(int32_t msg_type, int32_t ext1, int32_t ext2, void *user __unused) {
+void CameraDevice::sNotifyCb(int32_t msg_type, int32_t ext1, int32_t ext2, void *user) {
     ALOGV("%s", __FUNCTION__);
-    CameraDevice* object = sCameraDevice;
+    CameraDevice* object = static_cast<CameraDevice*>(user);
     if (object->mDeviceCallback != nullptr) {
         object->mDeviceCallback->notifyCallback((NotifyCallbackMsg) msg_type, ext1, ext2);
     }
 }
 
 void CameraDevice::sDataCb(int32_t msg_type, const camera_memory_t *data, unsigned int index,
-        camera_frame_metadata_t *metadata, void *user __unused) {
+        camera_frame_metadata_t *metadata, void *user) {
     ALOGV("%s", __FUNCTION__);
-    CameraDevice* object = sCameraDevice;
+    CameraDevice* object = static_cast<CameraDevice*>(user);
     sp<CameraHeapMemory> mem(static_cast<CameraHeapMemory*>(data->handle));
     if (index >= mem->mNumBufs) {
         ALOGE("%s: invalid buffer index %d, max allowed is %d", __FUNCTION__,
@@ -492,9 +490,9 @@ void CameraDevice::handleCallbackTimestamp(
 }
 
 void CameraDevice::sDataCbTimestamp(nsecs_t timestamp, int32_t msg_type,
-        const camera_memory_t *data, unsigned index, void *user __unused) {
+        const camera_memory_t *data, unsigned index, void *user) {
     ALOGV("%s", __FUNCTION__);
-    CameraDevice* object = sCameraDevice;
+    CameraDevice* object = static_cast<CameraDevice*>(user);
     // Start refcounting the heap object from here on.  When the clients
     // drop all references, it will be destroyed (as well as the enclosed
     // MemoryHeapBase.
@@ -670,7 +668,6 @@ Return<Status> CameraDevice::open(const sp<ICameraDeviceCallback>& callback) {
 
     initHalPreviewWindow();
     mDeviceCallback = callback;
-    sCameraDevice = this;
 
     if (mDevice->ops->set_callbacks) {
         mDevice->ops->set_callbacks(mDevice,
@@ -847,7 +844,6 @@ void CameraDevice::releaseRecordingFrameLocked(
             }
             camMemory = it->second;
         }
-
         if (bufferIndex >= camMemory->mNumBufs) {
             ALOGE("%s: bufferIndex %d exceeds number of buffers %d",
                     __FUNCTION__, bufferIndex, camMemory->mNumBufs);

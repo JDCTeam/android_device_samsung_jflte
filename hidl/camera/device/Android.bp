@@ -25,8 +25,8 @@ cc_library_shared {
     static_libs: [
         "android.hardware.camera.common@1.0-helper"
     ],
-    include_dirs: [
-        "frameworks/native/include/media/openmax"
+    header_libs: [
+        "media_plugin_headers",
     ],
     export_include_dirs: ["."]
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2019 The Android Open Source Project
+ * Copyright (C) 2017 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -166,7 +166,7 @@ private:
     sp<ICameraDeviceCallback> mDeviceCallback = nullptr;
 
     mutable Mutex mMemoryMapLock; // gating access to mMemoryMap
-                                 // must not hold mLock after this lock is acquired
+                                  // must not hold mLock after this lock is acquired
     std::unordered_map<MemoryId, CameraHeapMemory*> mMemoryMap;
 
     bool mMetadataMode = false;
