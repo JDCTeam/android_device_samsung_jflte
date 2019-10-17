@@ -22,8 +22,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_SHARED_LIBRARIES := \
     libcutils \
-    liblog \
-    libhwbinder
+    liblog
 
 LOCAL_HEADER_LIBRARIES := \
     libhardware_headers \
