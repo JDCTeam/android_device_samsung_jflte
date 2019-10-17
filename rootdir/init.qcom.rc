@@ -440,7 +440,7 @@ service macloader /vendor/bin/macloader
     oneshot
     #seclabel u:r:macloader:s0
 
-service charger /charger
+service charger /system/bin/charger
     class charger
     critical
     group system
