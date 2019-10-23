@@ -196,6 +196,8 @@ WIFI_DRIVER_FW_PATH_STA := "/vendor/etc/wifi/bcmdhd_sta.bin"
 WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 endif
 
+ALLOW_MISSING_DEPENDENCIES:=true
+
 # TWRP (optional)
 ifeq ($(WITH_TWRP),true)
 -include $(DEVICE_PATH)/twrp.mk
