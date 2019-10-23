@@ -26,9 +26,9 @@
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
 # Inherit from proprietary vendor
--include vendor/samsung/jf-common/BoardConfigVendor.mk
+-include vendor/samsung/jf-common/jf-common-vendor-blobs.mk
 
-COMMON_PATH := device/samsung/jf-common
+DEVICE_PATH := device/samsung/jflte
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
@@ -46,13 +46,15 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 # Kernel
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=22 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 LZMA_RAMDISK_TARGETS := recovery
-TARGET_KERNEL_CONFIG := lineageos_jf_defconfig
+TARGET_KERNEL_CONFIG := jdc_jf_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := jf_eur_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/jf
 
 # Audio
@@ -66,11 +68,11 @@ USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 ifneq ($(findstring jfvelte,$(TARGET_PRODUCT)),)
 BOARD_HAVE_BLUETOOTH_QCOM := true
 else
-BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/vnd_jf.txt
+BOARD_CUSTOM_BT_CONFIG := $(DEVICE_PATH)/bluetooth/vnd_jf.txt
 BOARD_HAVE_BLUETOOTH_BCM := true
 endif
 
@@ -94,6 +96,13 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
 # Display
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x02000000U
 
+# Enable dexpreopt to speed boot time
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
+WITH_DEXPREOPT_DEBUG_INFO := false
+USE_DEX2OAT_DEBUG := false
+DONT_DEXPREOPT_PREBUILTS := true
+
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
@@ -106,11 +115,11 @@ BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 TARGET_NO_RPC := true
 
 # Includes
-TARGET_SPECIFIC_HEADER_PATH += $(COMMON_PATH)/include
+TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 
 # Manifests
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Legacy
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
@@ -118,7 +127,7 @@ TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 # Filesystem
 BOARD_ROOT_EXTRA_FOLDERS := efs firmware firmware-mdm
 BOARD_ROOT_EXTRA_SYMLINKS := /data/tombstones:/tombstones
-TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
@@ -131,12 +140,12 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Recovery
 TARGET_RECOVERY_DENSITY := xhdpi
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
@@ -145,16 +154,16 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 BOARD_PROVIDES_LIBRIL := true
 
 # SELinux
-include device/qcom/sepolicy-legacy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
+#include device/qcom/sepolicy-legacy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Sensors
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/hw/android.hardware.sensors@1.0-service.jf=22
 
 # Vendor Init
-TARGET_INIT_VENDOR_LIB := libinit_jf
-TARGET_RECOVERY_DEVICE_MODULES := libinit_jf
+TARGET_INIT_VENDOR_LIB := libinit_jflte
+TARGET_RECOVERY_DEVICE_MODULES := libinit_jflte
 
 # Wifi module
 ifneq ($(findstring jfvelte,$(TARGET_PRODUCT)),)
@@ -187,5 +196,5 @@ endif
 
 # TWRP (optional)
 ifeq ($(WITH_TWRP),true)
--include $(COMMON_PATH)/twrp.mk
+-include $(DEVICE_PATH)/twrp.mk
 endif

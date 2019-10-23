@@ -15,13 +15,13 @@
 # limitations under the License.
 #
 
-$(LOCAL_PATH) := device/samsung/jf-common
+# Assert
+TARGET_OTA_ASSERT_DEVICE := jflte,jfltexx,i9505,GT-I9505,jgedlte,i9505g,GT-I9505G,9505G,i9505G,GT-9505G,9507,GT-9507,i9507,jfltevzw,jfltespr,jflterefreshspr,jfltetmo,jfltecri,jfltecsp,jflteatt,jfltecan,jfltetfnatt,jfltetfntmo,jflteusc,jfltezm
+
+$(LOCAL_PATH) := device/samsung/jflte
 
 # Shipping API level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
-
-# Get non-open-source specific aspects if available
-$(call inherit-product-if-exists, vendor/samsung/jf-common/jf-common-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -237,8 +237,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.qcom.power.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.power.rc \
     $(LOCAL_PATH)/rootdir/init.qcom.power.rc:root/init.recovery.qcom.rc \
     $(LOCAL_PATH)/rootdir/init.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.rc \
+    $(LOCAL_PATH)/rootdir/init.spectrum.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.spectrum.rc \
     $(LOCAL_PATH)/rootdir/init.qcom.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.usb.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
+    $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
+	$(LOCAL_PATH)/rootdir/init.spectrum.sh:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.spectrum.sh
 
 # Health HAL
 PRODUCT_PACKAGES += \
@@ -260,8 +262,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
 
-# System Properties
-$(call inherit-product, $(LOCAL_PATH)/system_prop.mk)
+# call jf system props
+include $(LOCAL_PATH)/props/*.mk
 
 # Thermal
 PRODUCT_COPY_FILES += \

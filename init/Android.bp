@@ -15,12 +15,11 @@
 //
 
 cc_library_static {
-    name: "libinit_jf",
+    name: "libinit_jflte",
     recovery_available: true,
-    srcs: ["init_jf.cpp"],
+    srcs: ["init_jflte.cpp"],
     include_dirs: [
         "system/core/base/include",
         "system/core/init"
     ]
 }
-
