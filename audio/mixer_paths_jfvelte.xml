@@ -654,12 +654,6 @@
         <ctl name="TX5 HPF cut off" value="MIN_3DB_150Hz" />
     </path>
 
-    <path name="voice-rx">
-    </path>
-
-    <path name="voice-tx">
-    </path>
-
     <path name="echo-reference">
         <ctl name="EC_REF_RX" value="SLIM_RX" />
     </path>
