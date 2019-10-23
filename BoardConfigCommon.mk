@@ -141,9 +141,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
-# RIL
-BOARD_PROVIDES_LIBRIL := true
-
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
