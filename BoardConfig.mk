@@ -118,8 +118,8 @@ TARGET_NO_RPC := true
 TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 
 # Manifests
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/vendor_interface/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/vendor_interface/compatibility_matrix.xml
 
 # Legacy
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
