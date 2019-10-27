@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Flag indicating if network query through TelephonyManager.requestNetworkScan() should be
-         disabled.
-         If set to true, it will send network query through Phone.getAvailableNetworks() directly
-         rather than attempt to query through TelephonyManager.requestNetworkScan() first. -->
-    <bool name="config_disable_TelephonyManager_network_scan">true</bool>
-</resources>
