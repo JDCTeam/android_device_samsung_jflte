@@ -84,7 +84,7 @@ on post-fs-data
     mkdir /data/misc/audio 0770 audio audio
 
     # Create directory used by radio subsystem
-    mkdir /data/radio 0770 radio radio
+    mkdir /data/radio 0770 radio radio encryption=Require
 
     # Create directory for H2K
     mkdir /data/misc/radio/hatp 0775 radio system
@@ -105,19 +105,15 @@ on post-fs-data
     # Broadcom NFC
     chmod 0600 /dev/bcm2079x
     chown nfc nfc /dev/bcm2079x
-    mkdir /data/nfc
-    mkdir /data/nfc/param
-    chmod 0700 /data/nfc
-    chmod 0700 /data/nfc/param
-    chown nfc nfc /data/nfc
-    chown nfc nfc /data/nfc/param
+    mkdir /data/nfc 0770 nfc nfc encryption=Require
+    mkdir /data/nfc/param 0770 nfc nfc
 
     # Create directories for WiFi
     mkdir /data/vendor/wifi 0771 wifi wifi
     mkdir /data/vendor/wifi/wpa 0771 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
-    mkdir /data/qcks 0771 system system
+    mkdir /data/qcks 0771 system system encryption=Require
 
     # WiFi TRP/TIS
     write /data/.psm.info 1
