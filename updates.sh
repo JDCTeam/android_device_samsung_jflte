@@ -8,21 +8,17 @@ changes=(
 256150 # bionic: Use legacy pthread_mutex_init() behavior on pre-P API levels
 256151 # Actually restore pre-P mutex behavior
 )
-repopick ${changes[@]}&
+repopick -P bionic ${changes[@]}&
 
 # bootable/recovery
 changes=(
 255990 # recovery: Remove HOST_OS guard for f2fs tools
-255831 # recovery: Get a proper shell environment in recovery
 255832 # recovery: ui: Default to touch enabled
 255833 # recovery: ui: Minor cleanup for touch code
 255992 # recovery: ui: Support hardware virtual keys
-259434 # recovery: Puke out an /etc/fstab so stuff like busybox/toybox is happy
 256010 # recovery: Include vendor init trigger
 259546 # recovery: Allow device-specific recovery modules
 259547 # recovery: Blank screen during shutdown and reboot
-259720 # recovery: sdcard is data/media/0
-259629 # recovery: Provide caching for sideload files
 259548 # recovery: Provide sideload cancellation
 259823 # otautil: add support for unmounting entire volumes
 259642 # recovery: Add wipe system partition option
@@ -32,17 +28,15 @@ changes=(
 259646 # recovery: Expose reboot to recovery option
 259647 # recovery: Only show tests in eng builds
 259648 # recovery: Also hide rescue mode from non eng builds
-259649 # recovery: Blank screen on init
-255979 # recovery: symlink /sbin for script compatibility
 259738 # recovery: Allow bypassing signature verification on non-release builds
 259748 # recovery: Add runtime checks for A/B vs traditional updates
-255830 # Make adb use a custom prop for adb root
-)
-repopick ${changes[@]}&
-
-# build/blueprint
-changes=(
-259301 # Make off-the-shelf order funcs public.
+259649 # recovery: Blank screen on init
+#255831 # recovery: Get a proper shell environment in recovery
+#259434 # recovery: Puke out an /etc/fstab so stuff like busybox/toybox is happy
+#259720 # recovery: sdcard is data/media/0
+#259629 # recovery: Provide caching for sideload files
+#255979 # recovery: symlink /sbin for script compatibility
+#255830 # Make adb use a custom prop for adb root
 )
 repopick ${changes[@]}&
 
@@ -64,55 +58,33 @@ changes=(
 257099 # Make PRODUCT_BUILD_PROP_OVERRIDES bit more powerful
 260346 # build: Remove su inclusion
 )
-repopick ${changes[@]}&
+repopick -P build/make ${changes[@]}&
 
 # build/soong
 changes=(
 256886 # soong: Add function to return camera parameters library name
-259286 # Add android_app_import.
-259287 # uncompressedDex option for android_app_import.
-259288 # Implement DPI variants in android_app_import.
-259289 # androidmk conversion logic for android_app_import
-259290 # Improve android_app_import.dpi_variants handling.
-259291 # Add filename property to android_app_import
-259292 # Add arch variant support to android_app_import.
-259293 # Add default_dev_cert to android_app_import
-259511 # New AndroidMk authoring system based on entry map.
-259512 # Add data property to sh_test.
-259513 # Add sh_test_host.
-259514 # Add overrides property to prebuilt_apex
-259515 # AndroidMkEntries minor refactoring.
-259516 # Comment out broken android_app_imports tests
-261076 # soong: Give priority to modules in exported namespaces for bootjars
 )
-repopick ${changes[@]}&
+repopick -P build/soong ${changes[@]}&
 
 # device/lineage/sepolicy
 changes=(
-259621 # sepolicy: qcom: RIP legacy
 261929 # sepolicy: Allow Snap to execute bcc
 257100 # [DNM] Kill su
 )
-repopick ${changes[@]}&
-
-# external/mksh
-changes=(
-259638 # mksh: Mark mkshrc as recovery_available
-)
-repopick ${changes[@]}&
+repopick -P device/lineage/sepolicy ${changes[@]}&
 
 # external/tinycompress
 changes=(
 256308 # tinycompress: Enable extended compress format
 )
-repopick ${changes[@]}&
+repopick -P external/tinycompress ${changes[@]}&
 
 # frameworks/av
 changes=(
 256899 # camera: Allow devices to load custom CameraParameter code
 258812 # CameraService: Support hooks for motorized camera
 )
-repopick ${changes[@]}&
+repopick -P frameworks/av ${changes[@]}&
 
 # frameworks/base
 changes=(
@@ -120,8 +92,6 @@ changes=(
 258159 # frameworks: base: Port password retention feature
 258180 # Fix Build Credentials refactored to use byte[]
 258160 # LockSettingsService: Support for separate clear key api
-256163 # Configurable 0, 90, 180 and 270 degree rotation
-256164 # SystemUI: Fix toggling lockscreen rotation [1/3]
 256446 # SystemUI: Enable and fix QS detail view, adapt layout to Pie
 256447 # SystemUI: Add Profiles tile
 256448 # SystemUI: Advanced location tile
@@ -136,12 +106,14 @@ changes=(
 258820 # SystemUI: Add visualizer feature
 258826 # SystemUI: Dismiss keyguard on boot if disabled by current profile
 258827 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
-258853 # Add CHANNEL_MODE_DUAL_CHANNEL constant
-258854 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
-258855 # Allow SBC as HD audio codec in Bluetooth device configuration
+#258853 # Add CHANNEL_MODE_DUAL_CHANNEL constant
+#258854 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
+#258855 # Allow SBC as HD audio codec in Bluetooth device configuration
 259458 # storage: Do not notify for volumes on non-removable disks
 260002 # fw/b: Squash of app fw restriction commits
 261314 # Allow override of DUN settings
+262045 # SystemUI: Allow disabling BrightlineFalsingManager with config flag
+262889 # Disable doc generation
 255646 # Revert "DO NOT MERGE Remove Privacy Indicators"
 255648 # Revert "DO NOT MERGE Revert "Adding the privacy chip to the CarStatusBar""
 255649 # PrivacyItemController: Enable permission hub by default
@@ -150,9 +122,9 @@ changes=(
 255650 # Revert "Drop final remnants of Type clock face"
 255647 # Revert "Drop Type clock face."
 255651 # TypeClockController: Make it compile with new plugin API
-256192 # [DNM] IS_DEBUGGABLE -> IS_ENG
+#256192 # [DNM] IS_DEBUGGABLE -> IS_ENG
 )
-repopick ${changes[@]}&
+repopick -P frameworks/base ${changes[@]}&
 
 # frameworks/native
 changes=(
@@ -161,25 +133,27 @@ changes=(
 259448 # libui: Allow invalid bits from callers conditionally
 261898 # input: Adjust priority
 )
-repopick ${changes[@]}&
+repopick -P frameworks/native ${changes[@]}&
 
 # frameworks/opt/net/wifi
 changes=(
 261857 # wifi: Not reset country code for Dual SIM if any slot is active
 )
-repopick ${changes[@]}&
+repopick -P frameworks/opt/net/wifi ${changes[@]}&
 
-# hardware/broadcom/libbt
+# frameworks/opt/telephony
 changes=(
-261899 # correct WBS config VSC params
+262868 # Migrate GSM SignalStrength to WCDMA on HAL 1.0
+262869 # Fix Issue Where SignalStrengthGsm is null
+262870 # 2G wants proper signal strength too
 )
-repopick ${changes[@]}&
+repopick -P frameworks/opt/telephony ${changes[@]}&
 
 # hardware/interfaces
 changes=(
 258181 # keymasterV4_0: Tags support for FBE wrapped key.
 )
-repopick ${changes[@]}&
+repopick -P hardware/interfaces ${changes[@]}&
 
 # hardware/lineage/interfaces
 changes=(
@@ -187,75 +161,61 @@ changes=(
 260411 # cryptfshw: Introduce qti backend implementation
 260069 # wifi: Disable softAP MAC randomization by default
 )
-repopick ${changes[@]}&
+repopick -P hardware/lineage/interfaces ${changes[@]}&
 
 # hardware/qcom/data/ipacfg-mgr
 changes=(
 261831 # Kernel Header Changes
 261832 # ipacfg-mgr: Use generated kernel headers
 )
-repopick ${changes[@]}&
+repopick -P hardware/qcom/data/ipacfg-mgr ${changes[@]}&
 
 # hardware/qcom/keymaster
 changes=(
 260415 # keymaster: Reverse wait for qsee flag
 )
-repopick ${changes[@]}&
+repopick -P hardware/qcom/keymaster ${changes[@]}&
 
 # hardware/qcom-caf/msm8996/audio
 changes=(
-260609 # audio: Fix complilation errors under Clang
 260610 # audio: Fix flac offload not working
 260613 # audio: Extend platform parser to allow device name aliasing
 260615 # hal: Add open source HAL for Elliptic Ultrasound
-260616 # audio: Use libprocessgroup unconditionally
-260617 # audio: Use normal tinycompress
 261894 # Build audio.primary.* with BOARD_VNDK_VERSION
 )
-repopick ${changes[@]}&
+repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
 
 # hardware/qcom-caf/msm8996/display
 changes=(
 261895 # hwc: Set ioprio for vsync thread
 )
-repopick ${changes[@]}&
+repopick -P hardware/qcom-caf/msm8996/display ${changes[@]}&
 
 # hardware/qcom-caf/msm8998/display
 changes=(
 261897 # hwc: Set ioprio for vsync thread
 )
-repopick ${changes[@]}&
+repopick -P hardware/qcom-caf/msm8998/display ${changes[@]}&
 
 # lineage-sdk
 changes=(
 258333 # lineage-sdk: Bump PREF_HAS_MIGRATED_LINEAGE_SETTINGS for 17.0
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
 )
-repopick ${changes[@]}&
+repopick -P lineage-sdk ${changes[@]}&
 
 # packages/apps/Bluetooth
-changes=(
-258859 # SBC Dual Channel (SBC HD Audio) support
-258860 # Assume optional codecs are supported if were supported previously
-)
-repopick ${changes[@]}&
-
-# packages/apps/Contacts
-changes=(
-256654 # Contacts: Enable support for device contact.
-256655 # Place MyInfo shortcut on drawer
-256656 # Place EmergencyInfo shortcut on drawer
-256657 # Allow calling contacts via specific phone accounts.
-#256658 # Contacts: use white nav bar
-)
-repopick ${changes[@]}&
+#changes=(
+#258859 # SBC Dual Channel (SBC HD Audio) support
+#258860 # Assume optional codecs are supported if were supported previously
+#)
+#repopick -P packages/apps/Bluetooth ${changes[@]}&
 
 # packages/apps/DeskClock
 changes=(
-256663 # Provide upgrade path for cm-14.1 -> lineage-16.0
 256664 # Make new menu entry to link to cLock widget settings.
 )
-repopick ${changes[@]}&
+repopick -P packages/apps/DeskClock ${changes[@]}&
 
 # packages/apps/Dialer
 changes=(
@@ -273,280 +233,334 @@ changes=(
 257135 # Control dialer's incoming call proximity sensor check via an overlay
 257136 # Dialer: AudioModeProvider: use wired route for usb headsets
 )
-repopick ${changes[@]}&
+repopick -P packages/apps/Dialer ${changes[@]}&
 
 # packages/apps/Email
 changes=(
-256675 # Email: handle databases from cm-14.1
-256676 # Allow account deletion.
-256677 # email: support for auto-sync multiple IMAP folders
-256678 # email: Add an ActionBar to the mail app's PreferenceActivity
-256679 # email: support per-folder notifications
-256680 # Rewrite MailboxSettings loading logic.
-256681 # email: fix eas autodiscover
-256682 # Implement IMAP push using IMAP IDLE.
-256683 # Request battery optimization exemption if IMAP IDLE is used.
-256684 # Fix crash when attempting to view EML files.
-256685 # Allow download of compressed attachments.
-256686 # email: fix empty body update
-256687 # Improve notification coalescence algorithm.
-256688 # Email: Fix the ActivityNotFoundException when click "Update now"
-256689 # Email: Clean duplicated WRITE_CONTACTS permission
-256690 # email: return default folder name for subfolders
-256691 # email: junk icon
-256692 # Search in folder specified via URI parameter, if possible.
-256693 # Remove max aspect ratio.
-257358 # Fix Email tests on userdebug builds.
-257360 # Remove build-time dep on opt-datetimepicker
 257361 # Revert "Revert "AOSP/Email - Changes for code to work with UnifiedEmail's ...
 257362 # Revert "Revert "AOSP/Email - Bump targetSdkVersion to 28.""
 #257363 # AOSP/Email - Bump version number to 28 in the XML file.
 #257364 # AOSP/Email - Bumped version number to 28. Disabled notifications, uifolders ...
 #257365 # AOSP/Email and AOSP/UnfiedEmail - Added back call to uiaccounts. + Added ...
 )
-repopick ${changes[@]}&
-
-# packages/apps/Exchange
-changes=(
-257297 # Exchange: Migrate to androidx
-)
-repopick ${changes[@]}&
+repopick -P packages/apps/Email ${changes[@]}&
 
 # packages/apps/LineageParts
 changes=(
-256409 # LineageParts: Reenable DisplayRotation
 258825 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
 260782 # LineageParts: Migrate to Android.bp
 )
-repopick ${changes[@]}&
+repopick -P packages/apps/LineageParts ${changes[@]}&
 
 # packages/apps/Messaging
 changes=(
-256720 # Messaging: Fix generating id in android namespace
-257324 # AOSP/Messaging - Update the Messaging version to 24 until notification related logic changes are made. Fixes the error "Developer warning for package com.android. messaging failed to post notification on channel null".
-257325 # AOSP/Messaging - Remove TEST_MAPPING because presubmit tests fail on build_target: aosp_cf_x86_phone-userdebug
-257326 # AOSP/Messaging - Moved LOCAL_COMPATIBILITY_SUITE to tests/Android.mk. + Deleted the unnecessary blankId check. Updated the TODO comment for NUM_TEST_CONVERSATIONS+4. + Added AndroidTest.xml + Added "LOCAL_PROGUARD_ENABLED := disabled" for tests to pass on cf.
-257327 # AOSP/Messaging - Fix many improperly formatted resource strings in Messaging.
-257328 # Fix X-Mms-Transaction-ID of M-Acknowledge.ind
-257329 # Fix SMS status handling
-257330 # Use correct format info for SMS
-257331 # Fix MMS Config issues in Debug menu
-257332 # Fix assertion failures caused by different instance type
-257333 # Fix wrong PreferenceCategory for SMS delivery report
-257334 # Apply new duplication detection logic for M-Notification.ind
-257335 # Replace no error code '0' for SMS with '-1'
-257336 # Fix GetOrCreateConversationActionTest failure
-257337 # Sort ParticipantsData in order of the slot id
-257338 # Ignore unexpected ACTION_DOWN for SIM avatar icons
-257339 # Fix FATAL EXCEPTION on SmsStorageLowWarningActivity
-257340 # Move Messaging to /product
-257341 # Move libgiftranscode.so to /product
-256696 # Messaging: define app category
-256697 # Messaging: adaptive icon
-256698 # Messaging: Implement option for swipe right to delete.
-256699 # Messaging: change Avatar fontFamily to sans-serif-medium
-256700 # MessageQueue: Process pending messages per subscription
-256701 # Messaging: Toggable keyboard emoticons access
-256702 # Fix menu item highlight color.
-256704 # Messaging: bring back accent color
-256705 # Messaging: Implement saved video attachments in MMS
-256706 # Play an audible notification on receiving a class zero message.
-256707 # Added support for video and audio mms attachments
-256708 # Fixed storage permission issue for attachments
-256709 # Messaging app crashes after a few MMS
-256711 # Messaging: fix bad recycle on sending two mms in a row
-256712 # MediaPicker: Check for NPE
-256713 # Messaging: Don't crash on unsupported shared content type
-256714 # Messaging: Fix crash of blocked participant list activity
-256715 # Messaging: Add "Mark as read" quick action for message notifications
-256716 # Allow intent shared subject or title to be mms subject
-256718 # Messaging: use white nav bar
-257342 # Don't build with platform certificate
 257343 # Messaging: Implement per conversation channels
 )
-repopick ${changes[@]}&
+repopick -P packages/apps/Messaging ${changes[@]}&
 
 # packages/apps/Nfc
 changes=(
 256814 # NFCService: Add sysprop to prevent FW download during boot with NFC off.
 260063 # NfcNci: make T3T/Nfc-F HCE optional
 )
-repopick ${changes[@]}&
+repopick -P packages/apps/Nfc ${changes[@]}&
 
-# packages/apps/PackageInstaller
+# packages/apps/PermissionController
 changes=(
 255658 # Revert "Remove Permissions Hub."
 255659 # PermissionController: Enable permission hub by default
 )
-repopick ${changes[@]}&
+repopick -P packages/apps/PermissionController ${changes[@]}&
 
 # packages/apps/Settings
 changes=(
-256162 # Settings: Add rotation settings
 258304 # Settings: Add LineageParts charging sound settings preference
 258819 # Settings: Add lockscreen visualizer toggle
-258856 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
-#259315 # One does not simply become a Developer
+#258856 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
+259315 # One does not simply become a Developer
 259459 # storage: Do not allow eject for volumes on non-removable disks
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
-261351 # Settings: Fix QrCamera crash on devices without flash
 261364 # Settings: Use landscape qrcode scanner layout for sw600dp
+262883 # Fix duplicated entries in sound settings.
+262884 # Don't change nouns in summaries to lower case for German
+262886 # VolumePanel: fix showing notification volume slider when unlinked
 )
-repopick ${changes[@]}&
+repopick -P packages/apps/Settings ${changes[@]}&
 
 # packages/apps/SetupWizard
 changes=(
 257065 # Account for PhoneMonitor API change
 )
-repopick ${changes[@]}&
+repopick -P packages/apps/SetupWizard ${changes[@]}&
+
+# packages/apps/Snap
+changes=(
+262664 # Revert "Remove CameraDataCallback."
+262665 # Revert "SnapdragonCamera: Forbid volume key can take picture"
+262666 # Revert "SnapdragonCamera: Reduce number of countdown timer option"
+262667 # Revert "SnapdragonCamera: Add missing permissions"
+262668 # Rename SnapdragonCamera to Snap
+262669 # tests: fix class name
+262670 # Snap: Use AOSP app label
+262671 # Snap: Remove old icons
+262672 # SnapdragonCamera: Initialize overlay before control-by-intent
+262673 # Snap: Re-enable ZSL after exiting HDR mode
+262674 # SnapdragonCamera: Hide UI after error-checking video preferences
+262675 # camera: Add parameter debugging support
+262676 # camera: Remove the luma-adaptation seekbar
+262677 # Camera: Cleanup and compatibility fixes
+262678 # camera: Add all focus modes, scene modes, and color effects.
+262679 # Camera: Add red-eye flash mode support
+262680 # camera: Check if video sizes are available
+262681 # Camera2: enable antibanding by default
+262682 # camera: Remove ICS hack to stop preview after takePicture
+262683 # Camera: fix preview for landscape devices
+262684 # Camera2: Don't report incorrect supported picture formats
+262685 # Camera2: some aapt warnings cleanup
+262686 # Camera2: Remove CAF video duration code
+262687 # Camera2: implement exposure compensation settings in video mode
+262688 # Camera: separate settings for color effects
+262689 # Camera: Change volume hard key button to zoom function
+262690 # Camera: Powerkey shutter (2/2)
+262691 # Camera: Cleanup hardware key handling
+262692 # Camera: Handle keys only while in app
+262693 # Camera2: Headset shutter mode
+262694 # Camera2: Add option to set max screen brightness
+262695 # SnapdragonCamera: Reset camera state after taking picture
+262696 # Snap: Add support for additional ISO values
+262697 # add support for non-standard iso keys and values
+262698 # Snap: Add support for luminance-condition parameter
+262699 # option to set manufacturer specific parameters on startup
+262700 # Snap: Add options to restart preview onPictureTaken
+262701 # Snap: Make openLegacy an option
+262702 # Snap: Add touch-to-focus timeout duration settings
+262703 # Snap: Add support for shutter speed
+262704 # Snap: Add support for mw_continuous-picture focus mode
+262705 # Snap: Fall back to default quality for invalid video qualities
+262706 # SnapdragonCamera: Fix incorrect viewfinder ratio for 13.1MP shots
+262707 # CameraActivity: Handle NPE when film strip view is null
+262708 # Snap: Remove CAF Chinese translations
+262709 # Snap: Fix aapt warnings
+262710 # Snap: Fix NPE when parameters.getSupportedVideoSizes() is null
+262711 # Snap: Add special handling of hdr-mode parameter for LGE devices
+262712 # Snap: Support for HTC's HDR mode
+262713 # Snap: Remove touch AF/AEC option
+262714 # Snap: Actually select the highest quality video by default
+262715 # SnapdragonCamera: Add option to control antibanding in camcorder
+262716 # SnapdragonCamera: Fix overly-aggressive auto rotation
+262717 # SnapdragonCamera: Remove 'off' option for antibanding
+262718 # SnapdragonCamera: Fix UI alignment glitches when nav-bar is enabled
+262719 # Snap: Don't crash when hardcoded gallery intent fails
+262720 # SnapdragonCamera: Set camera parameters before restarting preview
+262721 # Fix crash if Exif-Tag buffer-length and component-count are both 0
+262722 # Snap: Don't crash if user saved preference is not valid
+262723 # SnapdragonCamera: Scale up bitrate for HSR recordings
+262724 # Snap: Fix filtering of unsupported HFR/HSR modes
+262725 # Snap: Remove auto HDR option when not supported
+262726 # Snap: Remove video snapshot size when not supported
+262727 # Snap: Remove face detection option if not supported
+262728 # Snap: Fix incorrect preview layout surface size in landscape mode
+262729 # Snap: Do not crash when cur-focus-scale is null
+262730 # Snap: Fall back to REVIEW intent before VIEW intent
+262731 # Fix view index tracking.
+262732 # Snap: Support override maker and model exif tag
+262733 # Snap: Extend user menu, disable dev menu
+262734 # Snap: Make developer menu more accessible
+262735 # Snap: Unbreak auto-HDR
+262736 # snap: Add constrained longshot mode
+262737 # Snap: Remove storage menu if no external storage available
+262738 # CameraNext: dynamically generate available photo resolutions
+262739 # Snap: add auto-hdr option to photo menu
+262740 # Allow to re-open Snap from recent menu
+262741 # Add orientation correction for landscape devices
+262742 # camera: Touch focus support for camcorder
+262743 # SnapdragonCamera: Add focus-mode option to camcorder
+262744 # SnapdragonCamera: Always lock AE and AWB when auto-focus is used
+262745 # SnapdragonCamera: Lock AE and AWB for tap-to-focus in camcorder
+262746 # SnapdragonCamera: Unlock AE/AWB after taking a photo with ZSL
+262747 # Snap: Expose video snapshot size setting
+262748 # Snap: Add focus time support in camcorder
+262749 # Snap: Add ability to set the tap-to-focus duration to 0 sec
+262750 # Snap: Separate default focus time between camera/video
+262751 # Camera2: Only autofocus before a snap if we are actually in "auto" mode.
+262752 # camera: Keep touch focus intact during back-to-back ZSL shots
+262753 # Snap: Fixes for advanced features and scene modes
+262754 # Snap: grant android.permission.RECEIVE_BOOT_COMPLETED permisions
+262755 # Snap: Materialize
+262756 # Snap: Material toasts
+262757 # Remove unused menu indicators code.
+262758 # Snap: Add icons to all remaining preferences
+262759 # Snap: Add icons to all scene modes
+262760 # snap: Adjust top bar icon order
+262761 # De-uglify menu.
+262762 # Use material versions of share/delete/edit icons.
+262763 # CameraNext: Fallback to do copy exif if exif not exist
+262764 # CameraNext: don't crash when pref is not boolean
+262765 # Show UI when pano stitch starts and remove cancel condition
+262766 # snap: Panorama fixes
+262767 # Fix broken filenames for cropped images
+262768 # CropActivity: notify MediaScanner on save complete
+262769 # CameraNext: stop updating the pano progress bar on pause
+262770 # Grant read URI permission for playback of video capture
+262771 # Make panorama able to go 270 degrees in landscape
+262772 # CameraNext: Update focus behavior for panoramas
+262773 # Stop data loader on activity destroy.
+262774 # Initialize focus manager in onResume().
+262775 # Snap: prevent NPE when checking if controls are visible
+262776 # Snap: Detect and use Camera2 if available
+262777 # Snap: CaptureModule: check if ZSL is supported before using it
+262778 # Snap: Allow switching beyond just 2 cameras
+262779 # Always apply frame size reduction to panorama pictures
+262780 # Snap: Simulate back button press when menu back button is pressed
+262781 # Never ignore finger swipes in gallery mode
+262782 # Initialize focus overlay manager if it is not initialized.
+262783 # Camera: Set preview fps after recording.
+262784 # Snapdragon Camera: Use consistent API for preview fps reset
+262785 # SnapdragonCamera: Longshot with Burst Functionality.
+262786 # Protect against multiple shutter callbacks per frame in longshot mode.
+262787 # ListPreference: prevent ArrayIndexOutOfBoundsException
+262788 # VideoModule: don't set negative HFR value
+262789 # SnapdragonCamera: Fix shutter button clicks in rapid succession getting ignored
+262790 # SnapdragonCamera: Enforce 120ms delay in between shutter clicks
+262791 # Snap: Render zoom circle in the center of the camera preview
+262792 # Snap: Don't do touch-to-focus on top of UI elements
+262793 # SnapdragonCamera: Add missing toast on HSR/HFR override
+262794 # Snap: Show remaining photos on initial start
+262795 # Snap: Disable warped pano preview
+262796 # Snap: Increase default pano capture pixels to 1440x1000
+262797 # Snap: Adjust scene and filter mode layout dimensions
+262798 # Snap: Don't close slide out menu after selecting scene mode
+262799 # Snap: Fix swipe right to open menu
+262800 # Snap: Fix filter mode button after disabling HDR mode
+262801 # Snap: Remove "help screen on first start" feature
+262802 # Snap: Arrange video menu so it's similar to photo menu
+262803 # Snap: Fix panorama layout
+262804 # Removed littlemock dependency and cleanup
+262805 # Snap: Rip out hdr-need-1x option
+262806 # Snap: check tags before using them
+262807 # QuickReader: initial commit
+262808 # Snap: add QReader to module switch
+262809 # Snap: Add missing thumbnails for filter modes
+262810 # Snap: Port all string improvements from cm-14.1
+262811 # Snap: adaptive icon
+262812 # Snap: Convert "save best" dialog text to a quantity string
+262813 # Snap: don't try to set up cameras with ids greater than MAX_NUM_CAM
+262814 # Drop new focus indicator into Camera2.
+262815 # Snap: Add support for focus distance
+262816 # Snap: Configure focus ring preview dimensions
+262817 # Snap: Check for ACCESS_FINE_LOCATION instead of ACCESS_COARSE_LOCATION
+262818 # SnapdragonCamera: Panorama, replace border drawable
+262819 # Snap: turn developer category title into a translatable string
+262820 # Snap: Allow quickreader to work with secure device
+262821 # CameraSettings: Do not crash if zoom ratios are not exposed
+262822 # Snap: use platform cert
+262823 # Fix force close when launch camera on P
+262824 # DisableCameraReceiver: Initialize CameraHolder before use
+262825 # SnapdragonCamera: SetParameters use the mParameters Object
+262826 # SnapdragonCamera: Fix parameters NullPointerException
+262827 # Fix to change default mode to Camera1 HAL1
+262828 # Fix get aePref is null in PhotoMenu
+262829 # Snap: Create correct redeye reduction config icon
+262830 # Snap: Fix layout of zoom option
+262831 # Snap: Check various feature support before applying
+262832 # Snap: Add missing NULL check in updatePictureAndVideoSize()
+262833 # Snap: Disable debugging of double open issue
+262834 # Snap: Always allow 100% JPEG quality to be set
+262835 # QuickReader: Update libs
+262836 # Snap: Yet Another String Improvement
+262837 # Snap: make support for bokeh mode configurable per device
+262838 # Snap: Fix shutter button size
+262839 # Snap: Remove unused resources
+262840 # Snap: Add back original-package in manifest
+262841 # Snap: Fix picture size preference
+262842 # Snap: allow to disable image stabilization per device
+262843 # snap: remove double resources
+262844 # Snap: Fix Undo button behaviour
+262845 # Stop using deprecated Canvas APIs.
+262846 # Fix use of deprecated SoundPool API in Snap
+262351 # Fix NPE when removing RAW setting
+262847 # Snap: Grant android.permission.START_ACTIVITIES_FROM_BACKGROUND
+262848 # Snap: Set CameraHolder context on camera button action
+)
+repopick -P packages/apps/Snap ${changes[@]}&
 
 # packages/apps/ThemePicker
 changes=(
 256017 # ThemePicker: Properly update clock face setting
 )
-repopick ${changes[@]}&
+repopick -P packages/apps/ThemePicker ${changes[@]}&
 
 # packages/apps/Trebuchet
 changes=(
-260143 # Trebuchet: prefer our wallpaper picker if possible
+#260143 # Trebuchet: prefer our wallpaper picker if possible
+262575 # Apply icon size modifications from old Trebuchet
+262576 # Add a 5x4 workspace and switch to it
+262577 # Add contacts app to hotseat
 )
-repopick ${changes[@]}&
+repopick -P packages/apps/Trebuchet ${changes[@]}&
 
 # packages/apps/UnifiedEmail
 changes=(
-256727 # unified email: prefer account display name to sender name
-256728 # email: fix back button
-256729 # unified-email: check notification support prior to create notification objects
-256730 # unified-email: respect swipe user setting
-256731 # email: linkify urls in plain text emails
-256732 # email: do not close the input attachment buffer in Conversion#parseBodyFields
-256733 # email: linkify phone numbers
-256734 # Remove obsolete theme.
-256735 # Don't assume that a string isn't empty
-256736 # Add an ActionBar to the mail app's PreferenceActivity.
-256737 # email: allow move/copy operations to more system folders
-256738 # unifiedemail: junk icon
-256739 # Remove mail signatures from notification text.
-256740 # MimeUtility: ensure streams are always closed
-256741 # Fix cut off notification sounds.
-256742 # Pass selected folder to message search.
-256743 # Properly close body InputStreams.
-256744 # Make navigation drawer extend over status bar.
-256745 # Disable animations for translucent activities.
-256746 # Don't re-show search bar on query click.
-257366 # Fix UnifiedEmail tests on userdebug builds.
-257367 # AOSP/UnifiedEmail -  Fix improperly formatted resource strings in UnifiedEmail.
-257368 # Remove build-time dep on opt-datetimepicker
-257369 # Import translations. DO NOT MERGE]
 257370 # Revert "Revert "AOSP/UnifiedEmail - Bumped the targetSdkVersion to 28 ...
 #257371 # AOSP/Email and AOSP/UnfiedEmail - Added back call to uiaccounts. + Added ...
 )
-repopick ${changes[@]}&
+repopick -P packages/apps/UnifiedEmail ${changes[@]}&
 
-# packages/providers/ContactsProvider
+# packages/providers/MediaProvider
 changes=(
-256773 # ContactsProvider: Prevent device contact being deleted.
-256774 # CallLogDatabase: Try to re-run the version 5 upgrade path
+262193 # MediaProvider: Make sure to check the type when searching for sounds
 )
-repopick ${changes[@]}&
+repopick -P packages/providers/MediaProvider ${changes[@]}&
 
 # packages/providers/TelephonyProvider
 changes=(
 256780 # TelephonyProvider: add upgrade support from cm-14.1
 )
-repopick ${changes[@]}&
+repopick -P packages/providers/TelephonyProvider ${changes[@]}&
 
 # packages/services/Telecomm
 changes=(
 256161 # Telecomm: Make sensitive phone numbers not to be shown in call log history.
 256265 # CallLog: Take into account multiple SIMs for sensitive numbers
 )
-repopick ${changes[@]}&
+repopick -P packages/services/Telecomm ${changes[@]}&
 
 # packages/services/Telephony
 changes=(
 256792 # Telephony: Add ERI configuration for U.S. Cellular
 256793 # Telephony: Support muting by RIL command
-256794 # Fix non-protected broadcasts sent from phone process.
 256795 # Don't start SIP service before decrypted
-256797 # Allow to disable the new scan API for manual network search.
 )
-repopick ${changes[@]}&
-
-# platform_testing
-changes=(
-257354 # Remove LauncherRotationStressTest; Launcher2 was removed
-257355 # Revert "Test: Manually tested."
-257356 # Revert "Test: Manually tested."
-257357 # Revert "Add PlatformScenarioTests to test artifacts."
-)
-repopick ${changes[@]}&
+repopick -P packages/services/Telephony ${changes[@]}&
 
 # system/bt
-changes=(
-258857 # Increase maximum Bluetooth SBC codec bitrate for SBC HD
-258858 # Explicit SBC Dual Channel (SBC HD) support
-)
-repopick ${changes[@]}&
+#changes=(
+#258857 # Increase maximum Bluetooth SBC codec bitrate for SBC HD
+#258858 # Explicit SBC Dual Channel (SBC HD) support
+#)
+#repopick -P system/bt ${changes[@]}&
 
 # system/core
 changes=(
 258166 # Add wrapped key support
 256219 # utils: Threads: Handle empty thread names
-261945 # fs_mgr: Fix EnsurePathMounted with a given mount_point.
-259414 # reboot: mark as recovery_available
-260334 # fs_mgr: mount: don't set the block device as ro for recovery
-261075 # Revert "Format formattable partitions if mount fails"
-259650 # Make adb use a custom prop for adb root
+#259650 # Make adb use a custom prop for adb root
 )
-repopick ${changes[@]}&
+repopick -P system/core ${changes[@]}&
 
 # system/netd
 changes=(
 256959 # netd: Allow devices to force-add directly-connected routes
 260003 # system/netd: Squash of app fw restriction commits
 )
-repopick ${changes[@]}&
+repopick -P system/netd ${changes[@]}&
 
 # system/update_engine
 changes=(
 259363 # Move performance mode to top app
 )
-repopick ${changes[@]}&
-
-# system/vold
-changes=(
-258131 # vold: Add Hardware FDE feature
-258132 # system: vold: Remove crypto block device creation
-258133 # vold: Wrapped key support for FBE
-258134 # vold: Use separate flag for wrappedkey
-258135 # Remove no longer relevant header file
-258136 # vold: add support for clear key
-258137 # Fix for CTS test CtsAppSecurityHostTestCases
-258138 # vold: fix build error
-258139 # vold: change to upgrade key if export fails
-258141 # system: vold: fix block disk encryption to work with metadata encryption
-258145 # Updates for migrated code upstream
-258147 # system: vold: Close crypto block device if it was created
-258148 # system: vold: pass proper extra params to load crypto device
-258140 # system: vold: Use wrapped key for metadata encryption
-258149 # [automerger] vold: resolve crypto device creation failure with dm-crypt skipped: 4b5c1b2db2
-258150 # system: vold: Use ICE for UFS card
-258151 # vold: Move QCOM HW FDE inclusion under Lineage namespace
-258169 # vold: add support for more filesystems for public storage
-258170 # vold: Fix fsck on public volumes
-258171 # vold: Support internal storage partitions
-258172 # vold: Honor mount options for ext4/f2fs partitions
-258173 # vold: Mount ext4/f2fs portable storage with sdcard_posix
-258174 # vold ext4/f2fs: do not use dirsync if we're mounting adopted storage
-258175 # Fix the group permissions of the sdcard root.
-258176 # vold: skip first disk change when converting MBR to GPT
-258177 # vold: Allow reset after shutdown
-258178 # vold: Accept Linux GPT partitions on external SD cards
-258179 # Add "changepw" command to vdc.
-)
-repopick ${changes[@]}&
+repopick -P system/update_engine ${changes[@]}&
 
 # vendor/lineage
 changes=(
@@ -556,98 +570,27 @@ changes=(
 259449 # config: Mark more gralloc bits as valid
 259310 # prebuilt: Add a script to simplify A-only recovery system mount
 257000 # Remove apicheck.mk
-259699 # extract_files: Support system/ prefixes
-259701 # extract_files: Add extract2() function
-260081 # extract_files: Match non-treble path prefixes
-258774 # extract_files: Add initial blueprint creation
-258775 # extract_files: Implement blueprint file generation
-260417 # extract_utils: Added Suffix uses COMMON_SUFFIX
+#259701 # extract_files: Add extract2() function
 255667 # adb insecure by default
 261292 # vendor/lineage: Fix dopush
 261642 # vendor: make dopush recognize /vendor files
 258204 # build: set build fingerprint for all devices
 259683 # lineage: don't mount system during install{boot,recovery}
+262320 # aosp_audio: copy our own old AOSP alarm variants
+262174 # vendor: Add messaging app to power whitelist
+262413 # privapp-permissions: Allow Snap to use android.permission.START_ACTIVITIES_FROM_BACKGROUND
+262606 # overlay: Remove config_show4GForLTE
+262169 # overlay: Clean up Settings overlay
 )
-repopick ${changes[@]}&
+repopick -P vendor/lineage ${changes[@]}&
 
 # vendor/codeaurora/telephony
 changes=(
 257215 # Revert "IMS-VT: Low battery handling for Video calls"
 )
-repopick ${changes[@]}&
-
-# vendor/qcom/opensource/fm-commonsys
-changes=(
-260194 # Revert "FM: Use btconfigstore interface to fetch vendor features"
-260195 # Revert "Fm: Use btconfigstore interface to fetch vendor features"
-260422 # jni: fix calibration data path for legacy fm_qsoc_patches
-260423 # jni: Skip loading FM firmware if requested
-260429 # jni: Remove unused variables
-260431 # jni: Resolve FM_DEVICE_PATH R/O open flag
-260432 # jni: Ignore unused parameters from APIs
-260434 # jni: Resolve equality comparisons with extraneous parentheses
-260435 # jni: Resolve V4L2_CID_AUDIO_MUTE redefinitions
-260436 # jni: Resolve -Wwritable-strings warnings in helium FW library variables
-260437 # Allow library to be used by apps directly
-260438 # FM: Break bootclasspath dependency
-260439 # FM: Re-vamp UI
-260440 # FM: Restore seek arrows
-260441 # FM: Make default country an overlay
-260442 # FM: Re-add RDS fields to UI
-260443 # FM: Scanned frequencies are saved in ascending ordering
-260444 # FM: Call unregister in onPause
-260445 # FM: Switch file extension to aac
-260446 # FM: Add property to force use internal antenna
-260447 # FM: Cleanup resources
-260448 # FM: add Indonesia
-260449 # FM: materialize
-260450 # FM: retune last frequency when resume after call
-260451 # FM: Store tag num/value in sequence
-260452 # FM: reenable radio text visibility after station info updated
-260453 # FM: Launch station list automatically after scan
-260454 # FM: Fix status text to reflect when FM is enabled.
-260455 # FM: The collect channel disappear when quit FM
-260456 # FM: Ensure scan state is kept in sync
-260457 # FM: Keep track of scanned frequencies in service
-260458 # FM: Select band based on country
-260459 # FM: improved band selection
-260460 # FM: Localization of band types
-260461 # FM: Fix settings UI bugs
-260462 # FM: Fix headphone icon
-260463 # FM: Update India bands
-260464 # FM: Convert regional band arrays to string references
-260465 # FM: Fix KHz->kHz
-260487 # FM: Revamp notifications
-260488 # FM: adaptive icon
-260489 # fm: Drop unnecessary dependencies
-260490 # FM: Remove unnecessary TARGET_BOARD_PLATFORM guard
-)
-repopick ${changes[@]}&
-
-# vendor/qcom/opensource/power
-changes=(
-261751 # power: Find online CPU core and get scaling governor
-260232 # power: Clean up and fix video encode/decode hint handling
-260233 # power: Clean up and fix set_interactive_override
-260234 # power: msm8996: Support VR + Sustained performance mode
-260235 # power: Add known perf hint IDs
-261752 # power: Use declared enums where possible
-260236 # power: perform_hint_action: return an error code
-260237 # power: Use monotonic time for interaction boost
-260238 # power: Handle launch and interaction hints for perf HAL platforms
-260239 # power: Handle launch and interaction hints for legacy platforms
-261753 # power: msm8916: Drop MIN_FREQ tweak for 8939
-260240 # power: Prepare for power profile support
-260241 # power: msm8998: Support power profiles
-260242 # power: sdm660: Support power profiles
-260243 # power: msm8996: Support power profiles
-260244 # power: msm8953: Support power profiles
-260246 # power: msm8937: Support power profiles
-260247 # power: Support power profiles on legacy platforms
-)
-repopick ${changes[@]}&
+repopick -P vendor/codeaurora/telephony ${changes[@]}&
 
 wait
 
 # build/make
-repopick -f 259858 # Sorry bro: 6 -> 3
+repopick -P build/make -f 259858 # Sorry bro: 6 -> 3
