@@ -24,7 +24,7 @@ $(LOCAL_PATH) := device/samsung/jflte
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
 
 # Get non-open-source specific aspects if available
-$(call inherit-product-if-exists, vendor/samsung/jf-common/jf-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/jf-common/jf-common-vendor-blobs.mk)
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
