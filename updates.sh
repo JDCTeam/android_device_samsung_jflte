@@ -519,13 +519,6 @@ changes=(
 )
 repopick -P packages/providers/TelephonyProvider ${changes[@]}&
 
-# packages/services/Telecomm
-changes=(
-256161 # Telecomm: Make sensitive phone numbers not to be shown in call log history.
-256265 # CallLog: Take into account multiple SIMs for sensitive numbers
-)
-repopick -P packages/services/Telecomm ${changes[@]}&
-
 # packages/services/Telephony
 changes=(
 256792 # Telephony: Add ERI configuration for U.S. Cellular
@@ -561,6 +554,40 @@ changes=(
 259363 # Move performance mode to top app
 )
 repopick -P system/update_engine ${changes[@]}&
+
+# system/vold
+changes=(
+258131 # vold: Add Hardware FDE feature
+258132 # system: vold: Remove crypto block device creation
+258133 # vold: Wrapped key support for FBE
+258134 # vold: Use separate flag for wrappedkey
+258135 # Remove no longer relevant header file
+258136 # vold: add support for clear key
+258137 # Fix for CTS test CtsAppSecurityHostTestCases
+258138 # vold: fix build error
+258139 # vold: change to upgrade key if export fails
+258141 # system: vold: fix block disk encryption to work with metadata encryption
+258145 # Updates for migrated code upstream
+258147 # system: vold: Close crypto block device if it was created
+258148 # system: vold: pass proper extra params to load crypto device
+258140 # system: vold: Use wrapped key for metadata encryption
+258149 # [automerger] vold: resolve crypto device creation failure with dm-crypt skipped: 4b5c1b2db2
+258150 # system: vold: Use ICE for UFS card
+262319 # system: vold: Fix for ICE UFS card support
+258151 # vold: Move QCOM HW FDE inclusion under Lineage namespace
+258169 # vold: add support for more filesystems for public storage
+258170 # vold: Fix fsck on public volumes
+258171 # vold: Support internal storage partitions
+258172 # vold: Honor mount options for ext4/f2fs partitions
+258173 # vold: Mount ext4/f2fs portable storage with sdcard_posix
+258174 # vold ext4/f2fs: do not use dirsync if we're mounting adopted storage
+258175 # Fix the group permissions of the sdcard root.
+258176 # vold: skip first disk change when converting MBR to GPT
+258177 # vold: Allow reset after shutdown
+258178 # vold: Accept Linux GPT partitions on external SD cards
+258179 # Add "changepw" command to vdc.
+)
+repopick -P system/vold ${changes[@]}&
 
 # vendor/lineage
 changes=(
