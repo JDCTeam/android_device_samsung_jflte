@@ -3,13 +3,6 @@
 set -e
 source build/envsetup.sh
 
-# bionic
-changes=(
-256150 # bionic: Use legacy pthread_mutex_init() behavior on pre-P API levels
-256151 # Actually restore pre-P mutex behavior
-)
-repopick -P bionic ${changes[@]}&
-
 # bootable/recovery
 changes=(
 255990 # recovery: Remove HOST_OS guard for f2fs tools
