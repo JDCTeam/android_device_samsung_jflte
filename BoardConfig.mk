@@ -28,7 +28,7 @@
 # Inherit from proprietary vendor
 -include vendor/samsung/jf-common/BoardConfigVendor.mk
 
-COMMON_PATH := device/samsung/jf-common
+DEVICE_PATH := device/samsung/jflte
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
@@ -53,8 +53,9 @@ BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 LZMA_RAMDISK_TARGETS := recovery
-TARGET_KERNEL_CONFIG := lineageos_jf_defconfig
+TARGET_KERNEL_CONFIG := jdc_jf_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/jf
+TARGET_KERNEL_VARIANT_CONFIG := jf_eur_defconfig
 
 # Audio
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
@@ -67,11 +68,11 @@ USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 ifneq ($(findstring jfvelte,$(TARGET_PRODUCT)),)
 BOARD_HAVE_BLUETOOTH_QCOM := true
 else
-BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/vnd_jf.txt
+BOARD_CUSTOM_BT_CONFIG := $(DEVICE_PATH)/bluetooth/vnd_jf.txt
 BOARD_HAVE_BLUETOOTH_BCM := true
 endif
 
@@ -85,7 +86,7 @@ TARGET_NEED_CAMERA_ZSL := true
 TARGET_NEED_DISABLE_FACE_DETECTION := true
 TARGET_NEED_DISABLE_FACE_DETECTION_BOTH_CAMERAS := true
 TARGET_PROVIDES_CAMERA_HAL := true
-TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := //$(COMMON_PATH):camera_parameters_samsung_msm8960
+TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := //$(DEVICE_PATH):camera_parameters_samsung_msm8960
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
@@ -107,11 +108,11 @@ BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 TARGET_NO_RPC := true
 
 # Includes
-TARGET_SPECIFIC_HEADER_PATH += $(COMMON_PATH)/include
+TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 
 # Manifests
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/vendor_interface/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/vendor_interface/compatibility_matrix.xml
 
 # Legacy
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
@@ -119,40 +120,41 @@ TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 # Filesystem
 BOARD_ROOT_EXTRA_FOLDERS := efs firmware firmware-mdm
 BOARD_ROOT_EXTRA_SYMLINKS := /data/tombstones:/tombstones
-TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_CACHEIMAGE_PARTITION_SIZE := 2170552320
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16000000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2894069760
+# Set to jgedlte value to maintain compatibility
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1181114368 
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 9961472000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Recovery
 TARGET_RECOVERY_DENSITY := xhdpi
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # SELinux
 #include device/qcom/sepolicy-legacy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
-BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy_tmp
+#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy_tmp
 
 # Sensors
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/hw/android.hardware.sensors@1.0-service.jf=22
 
 # Vendor Init
-TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_jf
-TARGET_RECOVERY_DEVICE_MODULES := libinit_jf
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_jflte
+TARGET_RECOVERY_DEVICE_MODULES := libinit_jflte
 
 # Wifi module
 ifneq ($(findstring jfvelte,$(TARGET_PRODUCT)),)
@@ -185,5 +187,5 @@ endif
 
 # TWRP (optional)
 ifeq ($(WITH_TWRP),true)
--include $(COMMON_PATH)/twrp.mk
+-include $(DEVICE_PATH)/twrp.mk
 endif

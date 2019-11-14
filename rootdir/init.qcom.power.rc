@@ -67,6 +67,51 @@ on enable-low-power
 
     write /sys/devices/platform/msm_sdcc.3/idle_timeout 10
 
+    # JDCTeam
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
+
+    #pegasusq tuning
+    write /sys/devices/system/cpu/cpufreq/pegasusq/down_differential 10
+    write /sys/devices/system/cpu/cpufreq/pegasusq/freq_for_responsiveness 1350000
+    write /sys/devices/system/cpu/cpufreq/pegasusq/sampling_rate 50000
+    write /sys/devices/system/cpu/cpufreq/pegasusq/sampling_rate_min 10000
+    write /sys/devices/system/cpu/cpufreq/pegasusq/up_threshold 60
+    write /sys/devices/system/cpu/cpufreq/pegasusq/freq_step 40
+
+    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 29000
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 98
+    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 918000
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 30000
+    write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "71 486000:22 594000:18 702000:78 810000:79 918000:80 1026000:81 1134000:82 1242000:83 1350000:84 1458000:85 1566000:86 1674000: 87 178200:90"
+    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 60000
+    write /sys/devices/system/cpu/cpufreq/interactive/boost 0
+    write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 79000
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration 0
+
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
+
+
+    write /sys/kernel/fast_charge/force_fast_charge 1		
+    write /sys/kernel/fast_charge/usb_charge_level 1600		
+    write /sys/kernel/fast_charge/ac_charge_level 1900		
+    write /sys/kernel/fast_charge/failsafe 0		
+    write /sys/kernel/fast_charge/screen_on_current_limit 0		
+    write /sys/kernel/fast_charge/use_mtp_during_fast_charge 1		
+			
+    write /sys/class/timed_output/vibrator/pwm_value 37		
+    setprop sys.io.scheduler row
 on boot
     chown system system /sys/kernel/cpufreq_limit/limited_max_freq
     chown system system /sys/kernel/cpufreq_limit/limited_min_freq

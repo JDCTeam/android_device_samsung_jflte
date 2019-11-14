@@ -12,19 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-BOARD_HAS_NO_REAL_SDCARD := true
-RECOVERY_SDCARD_ON_DATA := true
-RECOVERY_VARIANT := twrp
-TARGET_KERNEL_CONFIG := twrp_defconfig
-TARGET_RECOVERY_FSTAB := device/samsung/jflte/rootdir/twrp.fstab
-TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-TW_EXCLUDE_TWRPAPP := true
-TW_HAS_DOWNLOAD_MODE := true
-TW_INCLUDE_CRYPTO := true
-TW_NO_REBOOT_BOOTLOADER := true
-TW_TARGET_USES_QCOM_BSP := true
-TW_USE_TOOLBOX := true
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/lineage_jflte.mk
 
-# Time zone data for recovery
-PRODUCT_COPY_FILES += \
-    system/timezone/output_data/iana/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+COMMON_LUNCH_CHOICES := \
+    lineage_jflte-userdebug \
+    lineage_jflte-eng

@@ -400,6 +400,14 @@ service kickstart /vendor/bin/qcks -i /firmware-mdm/image/
 on property:ro.baseband=mdm
     start kickstart
 
+# LEDify		
+service ledify /system/vendor/bin/ledify		
+    class late_start		
+    user root		
+    group shell		
+    seclabel u:r:init:s0		
+    oneshot
+
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class main
     user root
