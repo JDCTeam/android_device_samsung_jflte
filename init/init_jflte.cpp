@@ -93,7 +93,7 @@ void property_override(char const prop[], char const value[], bool add = true)
 // copied from build/tools/releasetools/ota_from_target_files.py
 // but with "." at the end and empty entry
 std::vector<std::string> ro_product_props_default_source_order = {
-    ".",
+    "",
     "product.",
     "product_services.",
     "odm.",
