@@ -25,6 +25,14 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+subsystem adsp
+    devname uevent_devpath
+    dirname /dev/adsp
+
+subsystem msm_camera
+    devname uevent_devpath
+    dirname /dev/msm_camera
+
 # the DIAG device node is not world writable/readable.
 /dev/diag                 0666   system     diag
 /dev/config*              0660   system     camera
@@ -127,6 +135,7 @@
 /dev/tun                  0660   system     vpn
 
 # permissions for audio
+/dev/adsp/*               0660   system     audio
 /dev/msm_qcelp            0660   system     audio
 /dev/msm_evrc             0660   system     audio
 /dev/msm_wma              0660   system     audio
