@@ -35,7 +35,6 @@ subsystem msm_camera
 
 # the DIAG device node is not world writable/readable.
 /dev/diag                 0666   system     diag
-/dev/config*              0660   system     camera
 /dev/alarm                0664   system     radio
 /dev/genlock              0666   system     system
 /dev/kgsl                 0666   system     system
