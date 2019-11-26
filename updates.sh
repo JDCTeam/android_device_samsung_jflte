@@ -88,14 +88,6 @@ changes=(
 )
 repopick -P frameworks/opt/net/wifi ${changes[@]}&
 
-# frameworks/opt/telephony
-changes=(
-262868 # Migrate GSM SignalStrength to WCDMA on HAL 1.0
-262869 # Fix Issue Where SignalStrengthGsm is null
-262870 # 2G wants proper signal strength too
-)
-repopick -P frameworks/opt/telephony ${changes[@]}&
-
 # hardware/lineage/interfaces
 changes=(
 260411 # cryptfshw: Introduce qti backend implementation
