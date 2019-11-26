@@ -208,25 +208,6 @@ changes=(
 )
 repopick -P system/vold ${changes[@]}&
 
-# vendor/lineage
-changes=(
-256960 # soong_config: add TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE
-259449 # config: Mark more gralloc bits as valid
-259310 # prebuilt: Add a script to simplify A-only recovery system mount
-257000 # Remove apicheck.mk
-261292 # vendor/lineage: Fix dopush
-261642 # vendor: make dopush recognize /vendor files
-258204 # build: set build fingerprint for all devices
-259683 # lineage: don't mount system during install{boot,recovery}
-262320 # aosp_audio: copy our own old AOSP alarm variants
-263052 # Build ThemePicker
-263053 # Add overlay to specify our custom theme provider
-263055 # Build Lineage Themes stub package
-263873 # overlay: Update webview providers
-255667 # adb insecure by default
-)
-repopick -P vendor/lineage ${changes[@]}&
-
 wait
 
 # build/make
