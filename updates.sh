@@ -182,21 +182,7 @@ changes=(
 #263006 # Update default workspace
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
-
-# packages/apps/UnifiedEmail
-changes=(
-257370 # Revert "Revert "AOSP/UnifiedEmail - Bumped the targetSdkVersion to 28 ...
-#257371 # AOSP/Email and AOSP/UnfiedEmail - Added back call to uiaccounts. + Added ...
-)
-repopick -P packages/apps/UnifiedEmail ${changes[@]}&
-
-# packages/overlays/Lineage
-changes=(
-263056 # [TMP]Kill accents
-263054 # Add initial stub apk for themes
-)
-repopick -P packages/overlays/Lineage ${changes[@]}&
-
+ 
 # packages/services/Telephony
 changes=(
 256792 # Telephony: Add ERI configuration for U.S. Cellular
@@ -207,16 +193,14 @@ repopick -P packages/services/Telephony ${changes[@]}&
 
 # system/core
 changes=(
+264691 # adbd: Initialize adbroot status to false	
+264692 # adbd: Make adbroot interface a static lib	
+264693 # adb_root: Enforce caller UID	
+264694 # adb_root: Add mutex to binder interface	
+264695 # adb_root: Restart adbd when turning off root
 256219 # utils: Threads: Handle empty thread names
 )
 repopick -P system/core ${changes[@]}&
-
-# system/netd
-changes=(
-256959 # netd: Allow devices to force-add directly-connected routes
-260003 # system/netd: Squash of app fw restriction commits
-)
-repopick -P system/netd ${changes[@]}&
 
 # system/update_engine
 changes=(
