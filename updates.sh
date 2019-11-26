@@ -91,15 +91,14 @@ changes=(
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
 
-# packages/apps/Settings
+## packages/apps/Settings
 changes=(
 258304 # Settings: Add LineageParts charging sound settings preference
 258819 # Settings: Add lockscreen visualizer toggle
 259315 # One does not simply become a Developer
 259459 # storage: Do not allow eject for volumes on non-removable disks
-259455 # Settings: per-app cellular data, vpn and wifi restrictions
-261364 # Settings: Use landscape qrcode scanner layout for sw600dp
-262884 # Don't change nouns in summaries to lower case for German
+264689 # Settings: Mark adb root toggle as non-persistent
+264690 # Settings: Remove ADBROOT permission from manifest
 )
 repopick -P packages/apps/Settings ${changes[@]}&
 
