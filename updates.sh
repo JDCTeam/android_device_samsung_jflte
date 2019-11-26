@@ -35,62 +35,45 @@ changes=(
 )
 repopick -P build/soong ${changes[@]}&
 
-# external/tinycompress
-changes=(
-256308 # tinycompress: Enable extended compress format
-)
-repopick -P external/tinycompress ${changes[@]}&
 
 # frameworks/av
 changes=(
 256899 # camera: Allow devices to load custom CameraParameter code
-258812 # CameraService: Support hooks for motorized camera
 )
 repopick -P frameworks/av ${changes[@]}&
 
-# frameworks/base
+## frameworks/base
 changes=(
-256446 # SystemUI: Enable and fix QS detail view, adapt layout to Pie
 256447 # SystemUI: Add Profiles tile
-256448 # SystemUI: Advanced location tile
 258303 # power: Re-introduce custom charging sounds
-258546 # Camera button support
-257246 # fingerprint: handle PerformanceStats NULL pointers
-258754 # Keyguard: Allow disabling fingerprint wake-and-unlock
 258820 # SystemUI: Add visualizer feature
 258826 # SystemUI: Dismiss keyguard on boot if disabled by current profile
 258827 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
 259458 # storage: Do not notify for volumes on non-removable disks
-260002 # fw/b: Squash of app fw restriction commits
 261314 # Allow override of DUN settings
 263007 # SystemUI: get rid of build text in qs
 256016 # Revert "Disable custom clock faces in SystemUI"
 256015 # Revert "Disable ClockOptionsProvider so clocks don't appear in picker app"
-263050 # etc: Add privapp whitelist permissions for ThemePicker
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
+264427 # Prevent NFE in SystemUI when parsing invalid int
 255650 # Revert "Drop final remnants of Type clock face"
 255647 # Revert "Drop Type clock face."
 255651 # TypeClockController: Make it compile with new plugin API
+264687 # ADBRootService: Deal with binder death
+264688 # ADBRootService: Remove redundant permission check
 )
 repopick -P frameworks/base ${changes[@]}&
 
 # frameworks/native
 changes=(
-258443 # sensorservice: Register orientation sensor if HAL doesn't provide it
-258601 # sensorservice: customize sensor fusion mag filter via prop
 259448 # libui: Allow invalid bits from callers conditionally
 )
 repopick -P frameworks/native ${changes[@]}&
 
-# frameworks/opt/net/wifi
-changes=(
-261857 # wifi: Not reset country code for Dual SIM if any slot is active
-)
-repopick -P frameworks/opt/net/wifi ${changes[@]}&
-
 # hardware/lineage/interfaces
 changes=(
-260411 # cryptfshw: Introduce qti backend implementation
+260411 # cryptfshw: Introduce QSEECom backend implementation
+263896 # cryptfshw: Introduce kernel backend implementation
 )
 repopick -P hardware/lineage/interfaces ${changes[@]}&
 
@@ -101,27 +84,10 @@ changes=(
 )
 repopick -P hardware/qcom/data/ipacfg-mgr ${changes[@]}&
 
-# packages/apps/DeskClock
-changes=(
-256664 # Make new menu entry to link to cLock widget settings.
-)
-repopick -P packages/apps/DeskClock ${changes[@]}&
-
-# packages/apps/Email
-changes=(
-257361 # Revert "Revert "AOSP/Email - Changes for code to work with UnifiedEmail's ...
-257362 # Revert "Revert "AOSP/Email - Bump targetSdkVersion to 28.""
-#257363 # AOSP/Email - Bump version number to 28 in the XML file.
-#257364 # AOSP/Email - Bumped version number to 28. Disabled notifications, uifolders ...
-#257365 # AOSP/Email and AOSP/UnfiedEmail - Added back call to uiaccounts. + Added ...
-)
-repopick -P packages/apps/Email ${changes[@]}&
-
 # packages/apps/LineageParts
 changes=(
 258825 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
-260782 # LineageParts: Migrate to Android.bp
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
 
@@ -142,15 +108,6 @@ changes=(
 257065 # Account for PhoneMonitor API change
 )
 repopick -P packages/apps/SetupWizard ${changes[@]}&
-
-# packages/apps/ThemePicker
-changes=(
-263051 # Require wallpaper privapp whitelist package
-256017 # ThemePicker: Properly update clock face setting
-263057 # Properly catch exceptions
-263058 # Specify we read and write launcher settings
-)
-repopick -P packages/apps/ThemePicker ${changes[@]}&
 
 # packages/apps/Trebuchet
 changes=(
@@ -187,11 +144,6 @@ changes=(
 )
 repopick -P system/core ${changes[@]}&
 
-# system/update_engine
-changes=(
-259363 # Move performance mode to top app
-)
-repopick -P system/update_engine ${changes[@]}&
 
 # system/vold
 changes=(
