@@ -125,13 +125,6 @@ changes=(
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
 
-# packages/apps/Nfc
-changes=(
-256814 # NFCService: Add sysprop to prevent FW download during boot with NFC off.
-260063 # NfcNci: make T3T/Nfc-F HCE optional
-)
-repopick -P packages/apps/Nfc ${changes[@]}&
-
 # packages/apps/Settings
 changes=(
 258304 # Settings: Add LineageParts charging sound settings preference
