@@ -22,6 +22,8 @@ LOCAL_CFLAGS += \
      -fno-short-enums \
      -D_ANDROID_ \
      -Wno-error \
+     -Wno-format \
+     -Wno-unused-parameter
 
 LOCAL_LDFLAGS += -Wl,--export-dynamic
 
