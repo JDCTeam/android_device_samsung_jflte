@@ -28,6 +28,7 @@
 # the DIAG device node is not world writable/readable.
 /dev/diag                 0666   system     diag
 
+/dev/config*              0660   system     camera
 /dev/genlock              0666   system     system
 /dev/kgsl                 0666   system     system
 /dev/kgsl-3d0             0666   system     system
