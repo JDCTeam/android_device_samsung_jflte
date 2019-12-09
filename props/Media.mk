@@ -7,7 +7,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.fluence.voicecall=true \
     ro.vendor.audio.sdk.fluencetype=fluence \
     vendor.dedicated.device.for.voip=true \
-    vendor.voice.path.for.pcm.voip=true
+    vendor.voice.path.for.pcm.voip=true \
+    debug.stagefright.ccodec=0
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
