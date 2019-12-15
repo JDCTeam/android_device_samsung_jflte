@@ -41,9 +41,6 @@ on init
     mkdir /dev/bus/usb 0755 root root
 
 on fs
-    wait /dev/block/platform/${ro.boot.bootdevice}
-    symlink /dev/block/platform/${ro.boot.bootdevice} /dev/block/bootdevice
-
     mount_all /vendor/etc/fstab.qcom
 
     restorecon_recursive /efs
