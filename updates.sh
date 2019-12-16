@@ -63,12 +63,6 @@ changes=(
 )
 repopick -P frameworks/base ${changes[@]}&
 
-## frameworks/native
-changes=(
-259448 # libui: Allow invalid bits from callers conditionally
-)
-repopick -P frameworks/native ${changes[@]}&
-
 ## hardware/lineage/interfaces
 changes=(
 260411 # cryptfshw: Introduce QSEECom backend implementation
