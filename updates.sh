@@ -41,12 +41,6 @@ repopick -P build/soong ${changes[@]}&
 #)
 #repopick -P external/tinycompress ${changes[@]}&
 
-## frameworks/av
-changes=(
-256899 # camera: Allow devices to load custom CameraParameter code
-)
-repopick -P frameworks/av ${changes[@]}&
-
 ## frameworks/base
 changes=(
 256447 # SystemUI: Add Profiles tile
