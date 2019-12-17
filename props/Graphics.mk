@@ -15,8 +15,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.cpurend.vsync=false \
 	debug.composition.type=c2d \
     debug.hwui.use_buffer_age=false \
-    persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0 \
     debug.sf.enable_gl_backpressure=1
 
 # Experimental
