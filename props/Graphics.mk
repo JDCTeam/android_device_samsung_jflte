@@ -15,9 +15,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.cpurend.vsync=false \
 	debug.composition.type=c2d \
 	debug.hwui.use_buffer_age=false \
-    debug.hwui.use_buffer_age=false \
-    persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0
+	persist.debug.wfd.enable=1 \
+	persist.sys.wfd.virtual=0
 
 # Experimental
 PRODUCT_PROPERTY_OVERRIDES += \
