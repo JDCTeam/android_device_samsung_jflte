@@ -154,9 +154,17 @@ static char* camera_fixup_getparams(int id, const char* settings) {
     String8 strParams = params.flatten();
     char* ret = strdup(strParams.string());
 
-   if (id == 1)
-	params.set(android::CameraParameters::KEY_FOCAL_LENGTH, "4.2");
+   	if (id == 1)
+		params.set(android::CameraParameters::KEY_FOCAL_LENGTH, "4.2");
 
+	// disable face recognition
+    params.remove(CameraParameters::KEY_QC_FACE_RECOGNITION);
+    params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION);
+    params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION_MODES);
+    params.remove(CameraParameters::KEY_QC_FACE_DETECTION);
+    params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_DETECTION);
+    params.remove(CameraParameters::KEY_FACE_DETECTION);
+    params.remove(CameraParameters::KEY_SUPPORTED_FACE_DETECTION);
     return ret;
 }
 
