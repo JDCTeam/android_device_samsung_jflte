@@ -23,9 +23,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
 # Get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/jf-common/jf-common-vendor-blobs.mk)
 
-# System Properties
-include device/samsung/jflte/props/*.mk
-
 # Soong
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
@@ -66,12 +63,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml
 
-# AAPT
-# Device uses extra-extra-high-density artwork where available
-
 # call jf system props
 include $(DEVICE_PATH)/props/*.mk
 
+# AAPT
+# Device uses extra-extra-high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
