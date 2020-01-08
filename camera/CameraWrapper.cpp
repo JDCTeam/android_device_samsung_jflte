@@ -33,9 +33,6 @@
 #include <hardware/hardware.h>
 #include <utils/threads.h>
 
-#define OPEN_RETRIES 10
-#define OPEN_RETRY_MSEC 40
-
 using namespace android;
 
 static Mutex gCameraWrapperLock;
@@ -66,7 +63,7 @@ camera_module_t HAL_MODULE_INFO_SYM = {
             .module_api_version = CAMERA_MODULE_API_VERSION_1_0,
             .hal_api_version = HARDWARE_HAL_API_VERSION,
             .id = CAMERA_HARDWARE_MODULE_ID,
-            .name = "JDCTeam jflte Camera Wrapper",
+            .name = "Samsung msm8960 Camera Wrapper", // Edited by JDCTeam
             .author = "The CyanogenMod Project",
             .methods = &camera_module_methods,
             .dso = NULL,     /* remove compilation warnings */
@@ -145,26 +142,54 @@ static char* camera_fixup_getparams(int id, const char* settings) {
                "auto,asd,action,portrait,landscape,night,night-portrait,theatre,beach,snow,sunset,"
                "steadyphoto,fireworks,sports,party,candlelight,backlight,flowers,AR");
 
+#ifdef FFC_PICTURE_FIXUP
+    if (id == 1) {
+        params.set(CameraParameters::KEY_SUPPORTED_PICTURE_SIZES,
+                   "1392x1392,1280x720,640x480");
+    }
+#endif
+#ifdef FFC_VIDEO_FIXUP
+    if (id == 1) {
+        if (!params.get(CameraParameters::KEY_SUPPORTED_VIDEO_SIZES)) {
+            params.set(CameraParameters::KEY_SUPPORTED_VIDEO_SIZES,
+                       "1280x720,640x480,320x240,176x144");
+        }
+    }
+#endif
+
+#ifdef DISABLE_FACE_DETECTION
+#ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
+    /* Disable face detection for front facing camera */
+    if (id == 1) {
+#endif
+        params.remove(CameraParameters::KEY_QC_FACE_RECOGNITION);
+        params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION);
+        params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION_MODES);
+        params.remove(CameraParameters::KEY_QC_FACE_DETECTION);
+        params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_DETECTION);
+        params.remove(CameraParameters::KEY_FACE_DETECTION);
+        params.remove(CameraParameters::KEY_SUPPORTED_FACE_DETECTION);
+#ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
+    }
+#endif
+#endif
+
+#if !LOG_NDEBUG
+    ALOGV("%s: fixed parameters:", __FUNCTION__);
+    params.dump();
+#endif
+
     /* Enforce video-snapshot-supported to true */
     params.set(CameraParameters::KEY_VIDEO_SNAPSHOT_SUPPORTED, "true");
-		
     params.set("preview-frame-rate-mode", "frame-rate-fixed");
     params.set(android::CameraParameters::KEY_PREVIEW_FPS_RANGE, "10000,60000");
+
+    if (id == 1)
+		params.set(android::CameraParameters::KEY_FOCAL_LENGTH, "4.2");
 
     String8 strParams = params.flatten();
     char* ret = strdup(strParams.string());
 
-   	if (id == 1)
-		params.set(android::CameraParameters::KEY_FOCAL_LENGTH, "4.2");
-
-	// disable face recognition
-    params.remove(CameraParameters::KEY_QC_FACE_RECOGNITION);
-    params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION);
-    params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION_MODES);
-    params.remove(CameraParameters::KEY_QC_FACE_DETECTION);
-    params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_DETECTION);
-    params.remove(CameraParameters::KEY_FACE_DETECTION);
-    params.remove(CameraParameters::KEY_SUPPORTED_FACE_DETECTION);
     return ret;
 }
 
@@ -266,7 +291,6 @@ static void camera_set_callbacks(struct camera_device* device, camera_notify_cal
                                  camera_data_callback data_cb,
                                  camera_data_timestamp_callback data_cb_timestamp,
                                  camera_request_memory get_memory, void* user) {
-
     if (!device) return;
 
     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
@@ -589,17 +613,8 @@ static int camera_device_open(const hw_module_t* module, const char* name, hw_de
         camera_device->camera_released = false;
         camera_device->id = cameraid;
 
-        int retries = OPEN_RETRIES;
-	bool retry;
-	do {
-	   rv = gVendorModule->common.methods->open(
-	                    (const hw_module_t*)gVendorModule, name,
-	                    (hw_device_t**)&(camera_device->vendor));
-	   retry = --retries > 0 && rv;
-	   if (retry)
-	       usleep(OPEN_RETRY_MSEC * 1000);
-	} while (retry);
-	
+        rv = gVendorModule->common.methods->open((const hw_module_t*)gVendorModule, name,
+                                                 (hw_device_t**)&(camera_device->vendor));
         if (rv) {
             ALOGE("vendor camera open fail");
             goto fail;
