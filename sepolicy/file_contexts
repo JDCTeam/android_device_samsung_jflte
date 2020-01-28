@@ -43,6 +43,7 @@
 /sys/devices/virtual/graphics/fb0/csc_cfg                                                         u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/mdnie/mdnie(/.*)?                                                            u:object_r:sysfs_mdnie:s0
 /sys/devices/virtual/sec/led(/.*)?                                                                u:object_r:sysfs_leds:s0
+/sys/devices/virtual/sec/sec_ir/ir_send                                                           u:object_r:sysfs_ir:s0
 /sys/devices/virtual/sec/sec_touchkey/keypad_enable                                               u:object_r:sysfs_keypad:s0
 /sys/devices/virtual/sensors(/.*)?                                                                u:object_r:sysfs_sensors:s0
 /sys/module/dhd/parameters/firmware_path                                                          u:object_r:sysfs_wifi_writeable:s0
@@ -52,6 +53,7 @@
 /(vendor|system/vendor)/bin/macloader                                           u:object_r:macloader_exec:s0
 /(vendor|system/vendor)/bin/qcks                                                u:object_r:mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.health@2\.0-service\.jf       u:object_r:hal_health_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service\.samsung      u:object_r:hal_ir_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.samsung   u:object_r:hal_light_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service\.jf        u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@1\.0-service\.jf      u:object_r:hal_sensors_default_exec:s0
