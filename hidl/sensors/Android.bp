@@ -1,17 +1,22 @@
 cc_library_static {
     name: "multihal-jf",
-    vendor: true,
+    defaults: ["hidl_defaults"],
+    vendor_available: true,
+
     srcs: [
-        "multihal.cpp",
         "SensorEventQueue.cpp",
+        "multihal.cpp",
     ],
+
     shared_libs: [
-        "liblog",
         "libcutils",
-        "libutils",
         "libdl",
+        "liblog",
+        "libutils",
     ],
+
     export_include_dirs: ["."],
+
     cflags: [
         "-Wall",
         "-Werror",
@@ -23,19 +28,25 @@ cc_library_shared {
     defaults: ["hidl_defaults"],
     vendor: true,
     relative_install_path: "hw",
-    srcs: ["Sensors.cpp"],
+
+    srcs: [
+        "Sensors.cpp",
+    ],
+
     shared_libs: [
         "libbase",
+        "libhardware",
         "libhidlbase",
         "liblog",
         "libutils",
-        "libhardware",
         "android.hardware.sensors@1.0",
     ],
+
     static_libs: [
-        "android.hardware.sensors@1.0-convert",
         "multihal-jf",
+        "android.hardware.sensors@1.0-convert",
     ],
+
     local_include_dirs: ["include/sensors"],
 }
 
@@ -45,17 +56,16 @@ cc_binary {
     vendor: true,
     relative_install_path: "hw",
     init_rc: ["android.hardware.sensors@1.0-service.jf.rc"],
-    srcs: ["service.cpp"],
+
+    srcs: [
+        "service.cpp",
+    ],
+
     shared_libs: [
+        "libhardware",
         "libhidlbase",
         "liblog",
         "libutils",
-        "libhardware",
         "android.hardware.sensors@1.0",
     ],
-    arch: {
-        arm: {
-            cflags: ["-DARCH_ARM_32"],
-        },
-    },
 }

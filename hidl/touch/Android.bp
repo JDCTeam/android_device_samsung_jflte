@@ -4,7 +4,12 @@ cc_binary {
     vendor: true,
     relative_install_path: "hw",
     init_rc: ["vendor.lineage.touch@1.0-service.jf.rc"],
-    srcs: ["service.cpp", "KeyDisabler.cpp"],
+
+    srcs: [
+        "KeyDisabler.cpp",
+        "service.cpp",
+    ],
+
     shared_libs: [
         "libbase",
         "libhidlbase",

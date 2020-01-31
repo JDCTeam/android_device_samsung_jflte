@@ -17,7 +17,6 @@
 #define HARDWARE_LIBHARDWARE_MODULES_SENSORS_MULTIHAL_H_
 
 #include <hardware/sensors.h>
-#include <hardware/hardware.h>
 
 static const char* MULTI_HAL_CONFIG_FILE_PATH = "/vendor/etc/sensors/_hals.conf";
 

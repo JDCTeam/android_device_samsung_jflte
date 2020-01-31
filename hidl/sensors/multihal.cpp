@@ -18,26 +18,14 @@
 #include "multihal.h"
 
 #define LOG_NDEBUG 1
-#include <log/log.h>
-#include <cutils/atomic.h>
-#include <hardware/sensors.h>
 
-#include <vector>
-#include <string>
+#include <hardware/sensors.h>
+#include <log/log.h>
+
+#include <dlfcn.h>
 #include <fstream>
 #include <map>
-
-#include <dirent.h>
-#include <dlfcn.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <limits.h>
-#include <math.h>
-#include <poll.h>
-#include <pthread.h>
-#include <stdio.h>
-#include <stdlib.h>
-
+#include <vector>
 
 static pthread_mutex_t init_modules_mutex = PTHREAD_MUTEX_INITIALIZER;
 static pthread_mutex_t init_sensors_mutex = PTHREAD_MUTEX_INITIALIZER;
