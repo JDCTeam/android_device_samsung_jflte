@@ -32,7 +32,7 @@
 /* Temp android logging...move to android tgt config file */
 
 #ifndef LINUX_NATIVE
-#include <cutils/log.h>
+#include <log/log.h>
 #else
 #define LOGV(format, ...) fprintf(stdout, LOG_TAG format, ##__VA_ARGS__)
 #define LOGE(format, ...) fprintf(stderr, LOG_TAG format, ##__VA_ARGS__)

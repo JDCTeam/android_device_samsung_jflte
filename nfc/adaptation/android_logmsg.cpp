@@ -16,7 +16,7 @@
  *
  ******************************************************************************/
 #include "android_logmsg.h"
-#include <cutils/log.h>
+#include <log/log.h>
 #include "_OverrideLog.h"
 #include "buildcfg.h"
 #include "nfc_target.h"

@@ -29,8 +29,7 @@ static void gki_remove_from_pool_list(uint8_t pool_id);
 
 #if (GKI_BUFFER_DEBUG == TRUE)
 #define LOG_TAG "GKI_DEBUG"
-#include <android/log.h>
-#include <cutils/log.h>
+#include <log/log.h>
 #define LOGD(format, ...)                                       \
   LogMsg(TRACE_CTRL_GENERAL | TRACE_LAYER_GKI | TRACE_ORG_GKI | \
              TRACE_TYPE_GENERIC,                                \

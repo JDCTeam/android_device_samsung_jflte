@@ -31,7 +31,7 @@
 #define ALOGD(...) \
   ((void)ALOGD_IF(appl_trace_level >= BT_TRACE_LEVEL_DEBUG, __VA_ARGS__))
 
-#include <cutils/log.h>  //define Android logging macros
+#include <log/log.h>  //define Android logging macros
 #include "bt_types.h"
 
 #ifdef __cplusplus
