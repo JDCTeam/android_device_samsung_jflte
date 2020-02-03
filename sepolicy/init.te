@@ -34,4 +34,3 @@ allow init vendor_toolbox_exec:file execute_no_trans;
 binder_call(init, system_server)
 
 set_prop(init, vendor_wifi_prop)
-
