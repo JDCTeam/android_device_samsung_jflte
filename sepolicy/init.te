@@ -6,6 +6,7 @@ allow init debugfs:file w_file_perms;
 allow init diag_device:chr_file unlink;
 allow init labeledfs:filesystem associate;
 allow init proc_filesystems:file getattr;
+allow init proc_modules:file r_file_perms;
 allow init self:capability sys_nice;
 allow init self:netlink_kobject_uevent_socket { bind create read setopt };
 allow init self:netlink_socket read;
