@@ -193,10 +193,6 @@ PRODUCT_PACKAGES += \
     loki.sh \
     loki_bootloaders \
     recovery-transform.sh
-    
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.jf
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -269,14 +265,6 @@ PRODUCT_COPY_FILES += \
 # Thermal
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/thermal-engine-8064ab.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8064ab.conf
-
-# Trust
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
-
-# Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.jf
 
 # USB
 PRODUCT_PACKAGES += \
