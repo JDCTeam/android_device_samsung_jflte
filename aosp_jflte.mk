@@ -22,13 +22,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from jflte
 $(call inherit-product, device/samsung/jflte/device.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common AEX stuff.
+$(call inherit-product, vendor/aosp/common.mk)
 
-# Inherit some JDCTeam stuff.
-$(call inherit-product, vendor/jdc/config/common.mk)
+# Boot animation res
+TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := lineage_jflte
+PRODUCT_NAME := aosp_jflte
 PRODUCT_DEVICE := jflte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := Samsung
