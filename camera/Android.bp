@@ -1,5 +1,5 @@
 cc_library_static {
     name: "camera_parameters_samsung_msm8960",
-    include_dirs: ["device/samsung/jflte/include"],
+    include_dirs: ["device/samsung/jflte/camera"],
     srcs: ["CameraParameters.cpp"],
 }
