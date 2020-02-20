@@ -25,9 +25,6 @@ $(call inherit-product, device/samsung/jflte/device.mk)
 # Inherit some common AEX stuff.
 $(call inherit-product, vendor/aosp/common.mk)
 
-# Boot animation res
-TARGET_BOOT_ANIMATION_RES := 1080
-
 PRODUCT_NAME := aosp_jflte
 PRODUCT_DEVICE := jflte
 PRODUCT_BRAND := samsung
