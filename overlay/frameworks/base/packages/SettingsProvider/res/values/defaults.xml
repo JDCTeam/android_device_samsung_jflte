@@ -19,4 +19,7 @@
     <!-- Disable UI touch haptic feedback by default -->
     <bool name="def_haptic_feedback">false</bool>
 
+    <!-- Disable dock attach sound by default -->
+    <integer name="def_dock_audio_media_enabled">0</integer>
+
 </resources>
