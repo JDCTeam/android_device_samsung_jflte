@@ -339,4 +339,7 @@
          config to 7. -->
     <integer name="config_deviceHardwareWakeKeys">65</integer>
 
+    <!-- Whether device supports button backlight -->
+    <bool name="config_button_brightness_support">true</bool>
+
 </resources>
