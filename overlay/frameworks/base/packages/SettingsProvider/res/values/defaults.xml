@@ -22,4 +22,7 @@
     <!-- Disable dock attach sound by default -->
     <integer name="def_dock_audio_media_enabled">0</integer>
 
+    <!-- Disable power attach sound by default -->
+    <integer name="def_power_sounds_enabled">0</integer>
+
 </resources>
