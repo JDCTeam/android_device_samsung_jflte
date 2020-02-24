@@ -16,5 +16,7 @@
     <!-- Disable UI touch sounds by default -->
     <bool name="def_sound_effects_enabled">false</bool>
 
+    <!-- Disable UI touch haptic feedback by default -->
+    <bool name="def_haptic_feedback">false</bool>
 
 </resources>
