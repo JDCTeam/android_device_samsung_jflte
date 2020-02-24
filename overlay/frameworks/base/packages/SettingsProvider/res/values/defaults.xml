@@ -10,4 +10,11 @@
     <!-- enable vibrate when ringing by default -->
     <bool name="def_vibrate_when_ringing">true</bool>
 
+
+    <!-- enable installation of non-market apps by default -->
+    <bool name="def_install_non_market_apps">true</bool>
+
+
+
+
 </resources>
