@@ -156,6 +156,10 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     android.hardware.drm@1.0-service
 
+# fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # Filesystem tools
 PRODUCT_PACKAGES += \
     resize2fs_static
