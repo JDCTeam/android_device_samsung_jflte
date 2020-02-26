@@ -150,6 +150,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service
 
+# fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # Filesystem tools
 PRODUCT_PACKAGES += \
     resize2fs_static
