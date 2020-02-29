@@ -128,6 +128,9 @@ TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/vendor_interface/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/vendor_interface/compatibility_matrix.xml
 
+# DexPreopt debug info
+WITH_DEXPREOPT_DEBUG_INFO := false
+
 # Legacy
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
