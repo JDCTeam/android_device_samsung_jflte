@@ -32,6 +32,7 @@ DEVICE_PATH := device/samsung/jflte
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno320
 
 # Architecture
 TARGET_CPU_VARIANT := generic
