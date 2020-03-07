@@ -28,7 +28,7 @@
 #include <log/log.h>
 
 #include <camera/Camera.h>
-#include <CameraParameters.h>
+#include <camera/CameraParameters.h>
 #include <hardware/camera.h>
 #include <hardware/hardware.h>
 #include <utils/threads.h>
