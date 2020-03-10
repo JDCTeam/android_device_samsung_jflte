@@ -27,7 +27,9 @@
                 <item>Speaker</item>
                 <item>In Call-Voice</item>
             </attachedDevices>
+
             <defaultOutputDevice>Speaker</defaultOutputDevice>
+
             <mixPorts>
                 <mixPort name="primary output" role="source" flags="AUDIO_OUTPUT_FLAG_PRIMARY">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
@@ -77,21 +79,17 @@
                              samplingRates="8000,16000"
                              channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
                 </devicePort>
-                <devicePort tagName="BT SCO Headset" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000,16000"
-                             channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
-                </devicePort>
                 <devicePort tagName="BT SCO Car Kit" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO_CARKIT" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,16000"
                              channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
                 </devicePort>
-                <devicePort tagName="BT SCO All" type="AUDIO_DEVICE_OUT_ALL_SCO" role="sink">
+                <devicePort tagName="BT SCO Headset" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,16000"
                              channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
                 </devicePort>
+
                 <devicePort tagName="HDMI" type="AUDIO_DEVICE_OUT_AUX_DIGITAL" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="44100,48000"
@@ -129,6 +127,7 @@
                              channelMasks="AUDIO_CHANNEL_IN_MONO"/>
                 </devicePort>
             </devicePorts>
+
             <routes>
                 <route type="mix" sink="Earpiece"
                        sources="primary output,low_latency,voip_rx"/>
@@ -142,14 +141,18 @@
                        sources="primary output,low_latency"/>
                 <route type="mix" sink="Proxy"
                        sources="primary output,low_latency"/>
-                <route type="mix" sink="BT SCO All"
+                <route type="mix" sink="BT SCO"
+                       sources="primary output,low_latency,voip_rx"/>
+                <route type="mix" sink="BT SCO Car Kit"
+                       sources="primary output,low_latency,voip_rx"/>
+                <route type="mix" sink="BT SCO Headset"
                        sources="primary output,low_latency,voip_rx"/>
                 <route type="mix" sink="primary input"
                        sources="Built-In Back Mic,Built-In Mic,Wired Headset Mic,BT SCO Headset Mic,In Call-Voice"/>
             </routes>
         </module>
 
-        <!-- A2DP Input Audio HAL -->
+        <!-- A2dp Audio HAL -->
         <xi:include href="a2dp_audio_policy_configuration.xml"/>
 
         <!-- Usb Audio HAL -->
