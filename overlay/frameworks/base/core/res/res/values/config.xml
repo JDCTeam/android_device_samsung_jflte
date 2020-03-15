@@ -342,4 +342,7 @@
     <!-- Whether device supports button backlight -->
     <bool name="config_button_brightness_support">true</bool>
 
+    <!-- BurnIn protection. This should be enabled on devices that have OLED displays -->
+    <bool name="config_enableBurnInProtection">true</bool>
+
 </resources>
