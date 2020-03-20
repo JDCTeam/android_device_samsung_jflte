@@ -43,6 +43,7 @@ on init
 
 on fs
     mount_all /vendor/etc/fstab.qcom
+    mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
 
     restorecon_recursive /efs
 
