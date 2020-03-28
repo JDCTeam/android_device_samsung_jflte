@@ -200,6 +200,10 @@ PRODUCT_PACKAGES += \
     loki_bootloaders \
     recovery-transform.sh
 
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service.samsung-qcom
+
 # Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
