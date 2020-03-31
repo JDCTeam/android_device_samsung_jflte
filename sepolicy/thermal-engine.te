@@ -4,11 +4,10 @@ type_transition thermal-engine socket_device:sock_file thermal_socket "thermal-r
 
 allow thermal-engine mpdecision_socket:dir rw_dir_perms;
 allow thermal-engine self:capability { chown net_admin };
-allow thermal-engine self:netlink_kobject_uevent_socket { bind read setopt };
+allow thermal-engine self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 allow thermal-engine socket_device:dir create_dir_perms;
 allow thermal-engine sysfs_batteryinfo:dir search;
 allow thermal-engine sysfs_batteryinfo:file r_file_perms;
 allow thermal-engine sysfs_devices_system_cpu:file rw_file_perms;
 allow thermal-engine sysfs_soc_id:file r_file_perms;
-allow thermal-engine system_file:file execmod;
 allow thermal-engine thermal_socket:sock_file { unlink };

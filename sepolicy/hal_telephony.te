@@ -1,0 +1,1 @@
+allow hal_telephony_server alarm_device:chr_file rw_file_perms;

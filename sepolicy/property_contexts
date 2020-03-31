@@ -2,3 +2,4 @@ persist.sys.camera.preview    u:object_r:camera_prop:s0
 ro.wcnss.serialno             u:object_r:vendor_wifi_prop:s0
 user.language                 u:object_r:default_prop:s0
 user.region                   u:object_r:default_prop:s0
+wifi.active.interface         u:object_r:exported_wifi_prop:s0

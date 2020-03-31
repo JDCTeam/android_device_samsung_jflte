@@ -1,1 +1,2 @@
+allow webview_zygote app_data_file:dir getattr;
 allow webview_zygote zygote:unix_dgram_socket write;

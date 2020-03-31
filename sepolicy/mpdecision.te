@@ -11,4 +11,3 @@ allow mpdecision socket_device:dir w_dir_perms;
 allow mpdecision sysfs_devices_system_cpu:file rw_file_perms;
 allow mpdecision sysfs_soc_id:file r_file_perms;
 allow mpdecision system_data_file:dir w_dir_perms;
-allow mpdecision system_file:file execmod;
