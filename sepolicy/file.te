@@ -1,4 +1,5 @@
 type proc_bt_sleep, fs_type, proc_type;
+type sysfs_camera, sysfs_type, fs_type;
 type sysfs_cpufreq_limit, fs_type, sysfs_type;
 type sysfs_ir, fs_type, sysfs_type;
 type sysfs_keypad, fs_type, sysfs_type;

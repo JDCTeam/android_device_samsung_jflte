@@ -1,1 +1,2 @@
 allow hal_gnss_default mdm_device:chr_file r_file_perms;
+allow hal_gnss_default sysfs_soc_id:file r_file_perms;

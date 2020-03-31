@@ -8,7 +8,7 @@ allow untrusted_app sysfs_batteryinfo:file r_file_perms;
 allow untrusted_app tombstone_data_file:dir getattr;
 
 # sdcardfs madness
-allow untrusted_app sdcard_posix:dir create_dir_perms;
-allow untrusted_app sdcard_posix:file create_file_perms;
+#allow untrusted_app sdcard_posix:dir create_dir_perms;
+#allow untrusted_app sdcard_posix:file create_file_perms;
 allow untrusted_app vfat:dir create_dir_perms;
 allow untrusted_app vfat:file create_file_perms;
