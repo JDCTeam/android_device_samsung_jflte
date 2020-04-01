@@ -13,3 +13,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1 \
     media.stagefright.legacyencoder=true \
 	media.stagefright.less-secure=true
+
+# Volume
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.config.media_vol_steps=45
