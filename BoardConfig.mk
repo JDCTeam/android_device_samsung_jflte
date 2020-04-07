@@ -170,7 +170,6 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_jflte
 TARGET_RECOVERY_DEVICE_MODULES := libinit_jflte
 
 # Wifi module
-TARGET_INCLUDE_WIFI_EXT := false
 ifneq ($(findstring jfvelte,$(TARGET_PRODUCT)),)
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HAS_QCOM_WLAN := true
