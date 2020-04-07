@@ -27,7 +27,7 @@
  */
 #define PANEL_BRIGHTNESS_NODE "/sys/class/leds/lcd-backlight/brightness"
 #define PANEL_MAX_BRIGHTNESS_NODE "/sys/class/leds/lcd-backlight/max_brightness"
-#define BUTTON_BRIGHTNESS_NODE "/sys/class/sec/sec_touchkey/brightness"
+#define BUTTON_BRIGHTNESS_NODE "/sys/class/leds/button-backlight/brightness"
 #define LED_BLINK_NODE "/sys/class/sec/led/led_blink"
 #define LED_R_NODE "/sys/class/sec/led/led_r"
 #define LED_G_NODE "/sys/class/sec/led/led_g"
