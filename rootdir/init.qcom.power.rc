@@ -69,73 +69,13 @@ on enable-low-power
 
     write /sys/devices/platform/msm_sdcc.3/idle_timeout 10
 
-    # JDCTeam
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor interactive
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
-
-    # Handle mpdecision
-    write /sys/module/msm_thermal/core_control/enabled 0
-    write /sys/devices/system/cpu/cpu0/rq-stats/hotplug_disable 1
-    stop mpdecision
-    chown system system /sys/devices/system/cpu/cpu1/online
-    chown system system /sys/devices/system/cpu/cpu2/online
-    chown system system /sys/devices/system/cpu/cpu3/online
-    chmod 664 /sys/devices/system/cpu/cpu1/online
-    chmod 664 /sys/devices/system/cpu/cpu2/online
-    chmod 664 /sys/devices/system/cpu/cpu3/online
-    write /sys/devices/system/cpu/cpu0/online 1
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-
-    # Buff autosmp
-    write /sys/module/autosmp/parameters/enabled "Y"
-    write /sys/module/autosmp/parameters/max_cpus_screenoff 2
-
-    #pegasusq tuning
-    write /sys/devices/system/cpu/cpufreq/pegasusq/down_differential 10
-    write /sys/devices/system/cpu/cpufreq/pegasusq/freq_for_responsiveness 1350000
-    write /sys/devices/system/cpu/cpufreq/pegasusq/sampling_rate 50000
-    write /sys/devices/system/cpu/cpufreq/pegasusq/sampling_rate_min 10000
-    write /sys/devices/system/cpu/cpufreq/pegasusq/up_threshold 60
-    write /sys/devices/system/cpu/cpufreq/pegasusq/freq_step 40
-
-    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 30000
-    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 90
-    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1134000
-    write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 30000
-    write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 90000
-    write /sys/devices/system/cpu/cpufreq/interactive/boost 0
-    write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 79000
-    write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 30000
-
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1890000
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1890000
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1890000
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1890000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
-    
-    write /sys/module/cpu_boost/parameters/boost_ms 20
-    write /sys/module/cpu_boost/parameters/input_boost_ms 40
-    write /sys/module/cpu_boost/parameters/sync_threshold 1242000
-    write /sys/module/cpu_boost/parameters/input_boost_freq 1134000
-    write /sys/module/cpu_boost/parameters/load_based_syncs 1
-
     write /sys/kernel/fast_charge/force_fast_charge 1		
     write /sys/kernel/fast_charge/usb_charge_level 1600		
     write /sys/kernel/fast_charge/ac_charge_level 1900		
     write /sys/kernel/fast_charge/failsafe 0		
     write /sys/kernel/fast_charge/screen_on_current_limit 0		
     write /sys/kernel/fast_charge/use_mtp_during_fast_charge 1		
-			
-    write /sys/class/timed_output/vibrator/pwm_value 37		
-    setprop sys.io.scheduler row
+    
 on boot
     chown system system /sys/kernel/cpufreq_limit/limited_max_freq
     chown system system /sys/kernel/cpufreq_limit/limited_min_freq
