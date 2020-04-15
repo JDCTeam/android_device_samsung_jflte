@@ -1,5 +1,19 @@
+# QC Perf
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=libqti-perfd-client.so
+
+# LMKD
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lmk.critical_upgrade=true \
+    ro.lmk.downgrade_pressure=60 \
+    ro.lmk.kill_heaviest_task=false \
+    ro.lmk.log_stats=true \
+    ro.lmk.upgrade_pressure=40 \
+    ro.lmk.use_psi=false
+
 # Dex
 PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-swap=false \
 	pm.dexopt.install=quicken \
 	dalvik.vm.dex2oat-swap=false \
 	dalvik.vm.dex2oat-filter=quicken \
@@ -14,21 +28,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.usejitprofiles=false \
 	pm.dexopt.bg-dexopt=speed \
 	pm.dexopt.ab-ota=speed
-
-# QC Perf
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=libqti-perfd-client.so
-
-# Dalvik
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-swap=false
-
-# LMKD
-	
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lmk.critical_upgrade=true \
-    ro.lmk.downgrade_pressure=60 \
-    ro.lmk.kill_heaviest_task=false \
-    ro.lmk.log_stats=true \
-    ro.lmk.upgrade_pressure=40 \
-    ro.lmk.use_psi=false
