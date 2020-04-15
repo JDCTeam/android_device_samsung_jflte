@@ -142,8 +142,8 @@ PRODUCT_PACKAGES += \
     memtrack.msm8960
 
 # Doze
-#PRODUCT_PACKAGES += \
-#    SamsungDoze
+PRODUCT_PACKAGES += \
+    SamsungDoze
 
 # DRM
 PRODUCT_PACKAGES += \
