@@ -22,10 +22,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from jflte
 $(call inherit-product, device/samsung/jflte/device.mk)
 
-# Inherit some common Pixel stuff.
+# Inherit some common  Evolution X stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
-
-# PixelExperience props
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_BOOT_ANIMATION_RES_EVO := true
 TARGET_GAPPS_ARCH := arm
 
 PRODUCT_NAME := aosp_jflte
