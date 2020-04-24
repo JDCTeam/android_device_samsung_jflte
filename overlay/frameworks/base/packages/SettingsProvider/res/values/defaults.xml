@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- enable bluetooth by default -->
     <bool name="def_bluetooth_on">false</bool>
-
-    <!-- enable auto brightness by default -->
     <bool name="def_screen_brightness_automatic_mode">true</bool>
-
-    <!-- enable vibrate when ringing by default -->
     <bool name="def_vibrate_when_ringing">true</bool>
-
-    <!-- enable installation of non-market apps by default -->
-    <bool name="def_install_non_market_apps">true</bool>
-
-    <!-- Disable UI touch sounds by default -->
-    <bool name="def_sound_effects_enabled">false</bool>
-
-    <!-- Disable UI touch haptic feedback by default -->
-    <bool name="def_haptic_feedback">false</bool>
-
-    <!-- Disable dock attach sound by default -->
-    <integer name="def_dock_audio_media_enabled">0</integer>
-
-    <!-- Disable power attach sound by default -->
-    <integer name="def_power_sounds_enabled">0</integer>
-
-    <!-- Disable lockscreen sounds by default -->
-    <integer name="def_lockscreen_sounds_enabled">0</integer>
-
 </resources>
