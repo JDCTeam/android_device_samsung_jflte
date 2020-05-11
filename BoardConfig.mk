@@ -45,6 +45,9 @@ TARGET_USES_64_BIT_BINDER := true
 #Battery
 HEALTHD_USE_BATTERY_INFO := true
 
+#Pixel Charging animation
+USE_PIXEL_CHARGER_IMAGES=true
+
 # LMKD stats logging
 TARGET_LMKD_STATS_LOG := true
 
