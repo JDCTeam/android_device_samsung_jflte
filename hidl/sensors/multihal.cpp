@@ -537,7 +537,7 @@ static void fix_sensor_fields(sensor_t& sensor) {
      * Use the flags suggested by the sensors documentation.
      */
     case SENSOR_TYPE_TILT_DETECTOR:
-        sensor.flags = SENSOR_FLAG_WAKE_UP | SENSOR_FLAG_ON_CHANGE_MODE;
+        sensor.flags = SENSOR_FLAG_ON_CHANGE_MODE;
         break;
     /*
      * Report a proper range to fix doze proximity check.
