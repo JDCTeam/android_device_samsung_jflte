@@ -6,7 +6,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.audio.sdk.fluencetype=fluence \
     vendor.dedicated.device.for.voip=true \
     vendor.voice.path.for.pcm.voip=true \
-    debug.stagefright.ccodec=0
+    debug.stagefright.ccodec=0 \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank=0
 
 # Volume
 PRODUCT_PROPERTY_OVERRIDES += \
