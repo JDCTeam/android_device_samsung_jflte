@@ -1,3 +1,8 @@
+type app_efs_file, file_type;
+type carrier_efs_file, file_type;
+type drm_efs_file, file_type;
+type imei_efs_file, file_type;
+type sensor_efs_file, file_type;
 type proc_bt_sleep, fs_type, proc_type;
 type sysfs_camera, sysfs_type, fs_type;
 type sysfs_cpufreq_limit, fs_type, sysfs_type;
