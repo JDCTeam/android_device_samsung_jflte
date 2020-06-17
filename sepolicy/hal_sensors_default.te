@@ -1,7 +1,7 @@
 type_transition hal_sensors_default system_data_file:file sensors_data_file;
 
 allow hal_sensors_default efs_file:dir search;
-allow hal_sensors_default efs_file:file rw_file_perms;
+allow hal_sensors_default sensor_efs_file:file rw_file_perms;
 allow hal_sensors_default hal_sensors_default_exec:file execmod;
 allow hal_sensors_default sensors_data_file:dir rw_file_perms;
 allow hal_sensors_default sensors_data_file:file create_file_perms;
