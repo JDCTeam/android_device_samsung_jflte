@@ -13,8 +13,8 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_jflte.mk
+    $(LOCAL_DIR)/aicp_jflte.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_jflte-userdebug \
-    aosp_jflte-eng
+    aicp_jflte-userdebug \
+    aicp_jflte-eng
