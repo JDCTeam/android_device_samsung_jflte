@@ -32,7 +32,7 @@ DEVICE_PATH := device/samsung/jflte
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno320
+#TARGET_BOARD_PLATFORM_GPU := qcom-adreno320
 
 # Architecture
 TARGET_CPU_VARIANT := generic
@@ -42,18 +42,18 @@ TARGET_CPU_VARIANT_RUNTIME := krait
 TARGET_USES_64_BIT_BINDER := true
 
 #Pixel Charging animation
-USE_PIXEL_CHARGER_IMAGES=true
+#USE_PIXEL_CHARGER_IMAGES=true
 
 # LMKD stats logging
 TARGET_LMKD_STATS_LOG := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
-BOARD_VENDOR := samsung
+#BOARD_VENDOR := samsung
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG := true
-BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
+#BOARD_CUSTOM_BOOTIMG := true
+#BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80200000
@@ -80,7 +80,7 @@ USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
-BOARD_HAVE_BLUETOOTH := true
+#BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 ifneq ($(findstring jfvelte,$(TARGET_PRODUCT)),)
 BOARD_HAVE_BLUETOOTH_QCOM := true
@@ -153,6 +153,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Recovery
 TARGET_RECOVERY_DENSITY := xhdpi
+TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_SKIP_EV_REL_INPUT := true
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -173,7 +174,7 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
 
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_jflte
-TARGET_RECOVERY_DEVICE_MODULES := libinit_jflte
+TARGET_RECOVERY_DEVICE_MODULES := //$(DEVICE_PATH):libinit_jflte
 
 # Wifi module
 ifneq ($(findstring jfvelte,$(TARGET_PRODUCT)),)
