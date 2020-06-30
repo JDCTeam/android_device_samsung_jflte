@@ -9,7 +9,6 @@
         <string name="gps.lpp_profile">0</string>
         <string name="gps.use_emergency_pdn_for_emergency_supl">1</string>
         <string name="gps.a_glonass_pos_protocol_select">0</string>
-        <string name="gps.gps_lock">0</string>
 
         <string-array name="carrier_metered_apn_types_strings" num="3">
             <item value="default" />
