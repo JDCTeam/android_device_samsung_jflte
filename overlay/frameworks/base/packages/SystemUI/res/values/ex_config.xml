@@ -21,4 +21,5 @@
 
     <!-- LockScreenCharger voltage sysfs path -->
     <string name="config_voltagePath">/sys/class/power_supply/battery/voltage_now</string>
+
 </resources>
