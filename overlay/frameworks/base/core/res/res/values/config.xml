@@ -344,15 +344,6 @@
     <bool name="config_enableBurnInProtection">true</bool>
 
     <!-- Whether the device supports Smart Pixels -->
-    <bool name="config_enableSmartPixels">true
-
-    <!-- LockScreenCharger current inversion -->
-    <bool name="showInvertedCurrent">false</bool>
-
-    <!-- LockScreenCharger current sysfs path -->
-    <string name="config_currentPath">/sys/class/power_supply/battery/current_now</string>
-
-    <!-- LockScreenCharger voltage sysfs path -->
-    <string name="config_voltagePath">/sys/class/power_supply/battery/voltage_now</string></bool>
+    <bool name="config_enableSmartPixels">true</bool>
 
 </resources>
