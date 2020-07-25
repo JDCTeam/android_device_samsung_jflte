@@ -1,5 +1,6 @@
 allow ueventd exfat:dir search;
 allow ueventd exfat:file r_file_perms;
+allow ueventd self:capability sys_nice;
 allow ueventd sysfs_graphics:file getattr;
 allow ueventd sysfs_keypad:file getattr;
 allow ueventd sysfs_mdnie:file getattr;
