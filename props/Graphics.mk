@@ -1,6 +1,6 @@
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=480 \
+    ro.sf.lcd_density=430 \
     ro.opengles.version=196608 \
 	debug.composition.type=c2d \
     debug.hwui.use_buffer_age=false \
