@@ -33,7 +33,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Always preopt extracted APKs to prevent extracting out of the APK
 # for gms modules.
-# PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
+PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 
 # System Server
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
