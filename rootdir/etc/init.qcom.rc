@@ -35,6 +35,13 @@ on early-init
     chown system system /sys/kernel/debug/kgsl/proc
     chmod 644 /proc/cmdline
 
+    # Disable boot timeout for external modems.
+    write /sys/module/mdm_common/parameters/disable_boot_timeout 1
+
+    # Initialize MDM modem
+    write /sys/module/rmnet_usb/parameters/rmnet_data_init 1
+    chown radio radio /sys/devices/virtual/hsicctl/hsicctl0/modem_wait
+
 on init
     # Create USB host bus directory here so that libusbhost
     # can start monitoring.
@@ -187,13 +194,6 @@ on boot
     # connections on high-throughput links get dropped when
     # an ack packet comes out of order
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
-
-    # Initialize MDM modem
-    write /sys/module/rmnet_usb/parameters/rmnet_data_init 1
-    chown radio radio /sys/devices/virtual/hsicctl/hsicctl0/modem_wait
-
-    # Disable boot timeout for external modems.
-    write /sys/module/mdm_common/parameters/disable_boot_timeout 1
 
     chown system radio /sys/class/sec/switch/usb_sel
     chown system radio /sys/class/sec/switch/usb_state
