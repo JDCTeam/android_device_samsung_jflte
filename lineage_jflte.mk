@@ -25,9 +25,6 @@ $(call inherit-product, device/samsung/jflte/device.mk)
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit some JDCTeam stuff.
-$(call inherit-product, vendor/jdc/config/common.mk)
-
 PRODUCT_NAME := lineage_jflte
 PRODUCT_DEVICE := jflte
 PRODUCT_BRAND := samsung
