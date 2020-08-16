@@ -25,8 +25,14 @@ $(call inherit-product, device/samsung/jflte/device.mk)
 # Inherit some common rr stuff.
 $(call inherit-product, vendor/rr/config/common_full_phone.mk)
 
-#Bootanimation
+#RR stuff
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
 TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_GAPPS_ARCH := arm
+TARGET_APPS_ARCH := arm
+TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK := true
+TARGET_FACE_UNLOCK_SUPPORTED := false
 
 PRODUCT_NAME := rr_jflte
 PRODUCT_DEVICE := jflte
