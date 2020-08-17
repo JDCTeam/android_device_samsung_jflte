@@ -29,7 +29,7 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay \
-    $(DEVICE_PATH)/overlay-rr
+    $(DEVICE_PATH)/overlay-lineage
 
 # Always preopt extracted APKs to prevent extracting out of the APK
 # for gms modules.
