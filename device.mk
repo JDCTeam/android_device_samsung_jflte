@@ -27,9 +27,7 @@ $(call inherit-product-if-exists, vendor/samsung/jf-common/jf-common-vendor-blob
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay \
-    $(DEVICE_PATH)/overlay-lineage
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 
 # Always preopt extracted APKs to prevent extracting out of the APK
 # for gms modules.
