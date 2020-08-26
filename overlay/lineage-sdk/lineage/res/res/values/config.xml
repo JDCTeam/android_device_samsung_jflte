@@ -78,4 +78,7 @@
     <integer name="config_buttonBrightnessSettingDefault">1</integer>
     <bool name="config_deviceHasVariableButtonBrightness">true</bool>
 
+    <!-- Whether device has a notch -->
+    <bool name="config_haveNotch">false</bool>
+
 </resources>
