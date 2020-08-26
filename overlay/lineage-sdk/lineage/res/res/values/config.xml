@@ -74,7 +74,7 @@
     <integer name="config_deviceLightCapabilities">75</integer>
 
 	<!-- Button backlight -->
-    <integer name="config_buttonBrightnessSettingDefault">255</integer>
-    <bool name="config_deviceHasVariableButtonBrightness">false</bool>
+    <integer name="config_buttonBrightnessSettingDefault">1</integer>
+    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
 
 </resources>
