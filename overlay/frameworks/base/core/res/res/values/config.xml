@@ -298,6 +298,8 @@
     <bool name="config_dozeAlwaysOnEnabled">false</bool>
 
     <!-- Button backlight -->
+    <bool name="config_button_brightness_support">true</bool>
+    <integer name="config_button_brightness_default">1</integer>
     <bool name="config_deviceHasVariableButtonBrightness">true</bool>
     <integer name="config_buttonBrightnessSettingDefault">1</integer>
 
