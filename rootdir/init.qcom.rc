@@ -461,6 +461,12 @@ service thermal-engine /vendor/bin/thermal-engine
    user root
    group root
 
+on property:persist.sys.camera.preview=1
+    write /sys/class/leds/led_b/brightness 40
+
+on property:persist.sys.camera.preview=0
+    write /sys/class/leds/led_b/brightness 0  
+    
 on property:sys.boot_completed=1
     setprop sys.io.scheduler cfq
     rm /data/system/perfd/default_values
