@@ -163,6 +163,7 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/common
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
 # Sensors
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
