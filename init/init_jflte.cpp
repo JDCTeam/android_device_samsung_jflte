@@ -37,47 +37,16 @@
 #include "property_service.h"
 #include "vendor_init.h"
 
+
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
 using android::base::GetProperty;
 using android::base::ReadFileToString;
 using android::base::Trim;
-using android::init::property_set;
+//using property_override;
 
 #define SERIAL_NUMBER_FILE "/efs/FactoryApp/serial_no"
-
-void gsm_properties()
-{
-    android::init::property_set("telephony.lteOnGsmDevice", "1");
-    android::init::property_set("ro.telephony.default_network", "9");
-    android::init::property_set("telephony.radioAccessFamily", "gsm");
-}
-
-void cdma_properties(int sub)
-{
-    if ( sub == 1 )
-        android::init::property_set("ro.telephony.default_cdma_sub", "1");
-    else
-        android::init::property_set("ro.telephony.default_cdma_sub", "0");
-
-    android::init::property_set("ro.gps.set_privacy", "1");
-    android::init::property_set("persist.eons.enabled", "false");
-    android::init::property_set("persist.radio.snapshot_enabled", "1");
-    android::init::property_set("persist.radio.snapshot_timer", "22");
-    android::init::property_set("telephony.lteOnCdmaDevice", "1");
-    android::init::property_set("telephony.radioAccessFamily", "cdma");
-}
-
-void r970_properties()
-{
-    android::init::property_set("ro.telephony.default_network", "8");
-    android::init::property_set("ril.subscription.types", "NV,RUIM");
-    android::init::property_set("telephony.sms.pseudo_multipart", "1");
-    android::init::property_set("ro.config.combined_signal", "true");
-    android::init::property_set("ro.gsm.data_retry_config", "max_retries=infinite,0,0,60000,120000,480000,900000");
-    android::init::property_set("DEVICE_PROVISIONED", "1");
-}
 
 void property_override(char const prop[], char const value[], bool add = true)
 {
@@ -88,6 +57,38 @@ void property_override(char const prop[], char const value[], bool add = true)
     } else if (add) {
         __system_property_add(prop, strlen(prop), value, strlen(value));
     }
+}
+
+void gsm_properties()
+{
+    property_override("telephony.lteOnGsmDevice", "1");
+    property_override("ro.telephony.default_network", "9");
+    property_override("telephony.radioAccessFamily", "gsm");
+}
+
+void cdma_properties(int sub)
+{
+    if ( sub == 1 )
+        property_override("ro.telephony.default_cdma_sub", "1");
+    else
+        property_override("ro.telephony.default_cdma_sub", "0");
+
+    property_override("ro.gps.set_privacy", "1");
+    property_override("persist.eons.enabled", "false");
+    property_override("persist.radio.snapshot_enabled", "1");
+    property_override("persist.radio.snapshot_timer", "22");
+    property_override("telephony.lteOnCdmaDevice", "1");
+    property_override("telephony.radioAccessFamily", "cdma");
+}
+
+void r970_properties()
+{
+    property_override("ro.telephony.default_network", "8");
+    property_override("ril.subscription.types", "NV,RUIM");
+    property_override("telephony.sms.pseudo_multipart", "1");
+    property_override("ro.config.combined_signal", "true");
+    property_override("ro.gsm.data_retry_config", "max_retries=infinite,0,0,60000,120000,480000,900000");
+    property_override("DEVICE_PROVISIONED", "1");
 }
 
 // copied from build/tools/releasetools/ota_from_target_files.py
@@ -154,8 +155,8 @@ void vendor_load_properties()
         property_override("ro.build.description", "jfltecri-user 4.4.2 KOT49H R970CVVUFNC6 release-keys");
         property_override("ro.build.product", "jfltecri");
 
-        android::init::property_set("ro.cdma.home.operator.alpha", "Cricket");
-        android::init::property_set("ro.cdma.home.operator.numeric", "310090");
+        property_override("ro.cdma.home.operator.alpha", "Cricket");
+        property_override("ro.cdma.home.operator.numeric", "310090");
     } else if (bootloader.find("R970X") == 0) {
         /* jfltecsp */
         cdma_properties(0);
@@ -169,9 +170,9 @@ void vendor_load_properties()
         property_override("ro.build.description", "jfltecsp-user 5.0.1 LRX22C R970XWWUGOH1 release-keys");
         property_override("ro.build.product", "jfltecsp");
 
-        android::init::property_set("telephony.sms.pseudo_multipart", "1");
-        android::init::property_set("ro.cdma.home.operator.alpha", "C Spire");
-        android::init::property_set("ro.cdma.home.operator.numeric", "311230");
+        property_override("telephony.sms.pseudo_multipart", "1");
+        property_override("ro.cdma.home.operator.alpha", "C Spire");
+        property_override("ro.cdma.home.operator.numeric", "311230");
     } else if (bootloader.find("L720") == 0) {
         /* jfltespr */
         cdma_properties(1);
@@ -184,11 +185,11 @@ void vendor_load_properties()
         property_override("ro.build.description", "jfltespr-user 5.0.1 LRX22C L720VPSGPL1 release-keys");
         property_override("ro.build.product", "jfltespr");
 
-        android::init::property_set("ro.cdma.home.operator.numeric", "310120");
-        android::init::property_set("ro.cdma.home.operator.alpha", "Sprint");
-        android::init::property_set("ro.telephony.default_network", "8");
-        android::init::property_set("ro.telephony.get_imsi_from_sim", "true");
-        android::init::property_set("telephony.sms.pseudo_multipart", "1");
+        property_override("ro.cdma.home.operator.numeric", "310120");
+        property_override("ro.cdma.home.operator.alpha", "Sprint");
+        property_override("ro.telephony.default_network", "8");
+        property_override("ro.telephony.get_imsi_from_sim", "true");
+        property_override("telephony.sms.pseudo_multipart", "1");
      } else if (bootloader.find("L720T") == 0) {
         /* jflterefreshspr */
         cdma_properties(1);
@@ -201,11 +202,11 @@ void vendor_load_properties()
         property_override("ro.build.description", "jfltespr-user 5.0.1 LRX22C L720VPSGPL1 release-keys");
         property_override("ro.build.product", "jflterefreshspr");
 
-        android::init::property_set("ro.cdma.home.operator.numeric", "310120");
-        android::init::property_set("ro.cdma.home.operator.alpha", "Sprint");
-        android::init::property_set("ro.telephony.default_network", "8");
-        android::init::property_set("ro.telephony.get_imsi_from_sim", "true");
-        android::init::property_set("telephony.sms.pseudo_multipart", "1");
+        property_override("ro.cdma.home.operator.numeric", "310120");
+        property_override("ro.cdma.home.operator.alpha", "Sprint");
+        property_override("ro.telephony.default_network", "8");
+        property_override("ro.telephony.get_imsi_from_sim", "true");
+        property_override("telephony.sms.pseudo_multipart", "1");
     } else if (bootloader.find("M919") == 0) {
         /* jfltetmo */
         gsm_properties();
@@ -229,8 +230,8 @@ void vendor_load_properties()
         property_override("ro.build.description", "jfltetmo-user 4.4.4 KTU84P M919UVSFQA1 release-keys");
         property_override("ro.build.product", "jfltetfntmo");
 
-        android::init::property_set("ril.subscription.types", "NV,RUIM");
-        android::init::property_set("DEVICE_PROVISIONED", "1");
+        property_override("ril.subscription.types", "NV,RUIM");
+        property_override("DEVICE_PROVISIONED", "1");
     } else if (bootloader.find("S975") == 0) {
 		/* jfltetfnatt */
 		gsm_properties();
@@ -243,8 +244,8 @@ void vendor_load_properties()
         property_override("ro.build.description", "jflteuc-user 4.4.2 KOT49H I337UCUFNB1 release-keys");
         property_override("ro.build.product", "jfltetfnatt");
 
-        android::init::property_set("ril.subscription.types", "NV,RUIM");
-        android::init::property_set("DEVICE_PROVISIONED", "1");
+        property_override("ril.subscription.types", "NV,RUIM");
+        property_override("DEVICE_PROVISIONED", "1");
     } else if (bootloader.find("R970") == 0) {
         /* jflteusc */
         cdma_properties(0);
@@ -258,8 +259,8 @@ void vendor_load_properties()
         property_override("ro.build.description", "jflteusc-user 5.0.1 LRX22C R970TYUGPD5 release-keys");
         property_override("ro.build.product", "jflteusc");
 
-        android::init::property_set("ro.cdma.home.operator.alpha", "U.S.Cellular");
-        android::init::property_set("ro.cdma.home.operator.numeric", "311580");
+        property_override("ro.cdma.home.operator.alpha", "U.S.Cellular");
+        property_override("ro.cdma.home.operator.numeric", "311580");
     } else if (bootloader.find("I545") == 0) {
         /* jfltevzw */
         cdma_properties(0);
@@ -272,15 +273,15 @@ void vendor_load_properties()
         property_override("ro.build.description", "jfltevzw-user 5.0.1 LRX22C I545VRSGPL1 release-keys");
         property_override("ro.build.product", "jfltevzw");
 
-        android::init::property_set("ro.cdma.home.operator.alpha", "Verizon");
-        android::init::property_set("ro.cdma.home.operator.numeric", "311480");
-        android::init::property_set("ro.telephony.default_network", "10");
-        android::init::property_set("ro.telephony.get_imsi_from_sim", "true");
-        android::init::property_set("ro.config.multimode_cdma", "1");
-        android::init::property_set("ro.config.combined_signal", "true");
-        android::init::property_set("ro.gsm.data_retry_config", "max_retries=infinite,5000,5000,60000,120000,480000,900000");
-        android::init::property_set("DEVICE_PROVISIONED", "1");
-        android::init::property_set("ro.com.google.clientidbase", "android-verizon");
+        property_override("ro.cdma.home.operator.alpha", "Verizon");
+        property_override("ro.cdma.home.operator.numeric", "311480");
+        property_override("ro.telephony.default_network", "10");
+        property_override("ro.telephony.get_imsi_from_sim", "true");
+        property_override("ro.config.multimode_cdma", "1");
+        property_override("ro.config.combined_signal", "true");
+        property_override("ro.gsm.data_retry_config", "max_retries=infinite,5000,5000,60000,120000,480000,900000");
+        property_override("DEVICE_PROVISIONED", "1");
+        property_override("ro.com.google.clientidbase", "android-verizon");
     } else if (bootloader.find("I9505G") == 0) {
         /* jgedlte */
         gsm_properties();
@@ -293,8 +294,8 @@ void vendor_load_properties()
         property_override("ro.build.description", "jgedlteue-user 4.4.3 KTU84L.S003 140503 release-keys");
         property_override("ro.build.product", "jgedlte");
 
-        android::init::property_set("ril.subscription.types", "NV,RUIM");
-        android::init::property_set("DEVICE_PROVISIONED", "1");
+        property_override("ril.subscription.types", "NV,RUIM");
+        property_override("DEVICE_PROVISIONED", "1");
     } else if (bootloader.find("I9505") == 0) {
         /* jfltexx */
         gsm_properties();
