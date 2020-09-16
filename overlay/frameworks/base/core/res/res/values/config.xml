@@ -297,4 +297,7 @@
           of min between top and bottom radius-->
     <bool name="config_useDefaultRoundedCornerRadius">true</bool>
 
+    <!-- Pocket Lock -->
+    <bool name="config_pocketModeSupported">false</bool>
+
 </resources>
