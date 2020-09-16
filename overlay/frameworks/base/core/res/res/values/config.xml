@@ -341,4 +341,7 @@
     <integer name="config_sysBatteryTempMultiplier">10</integer>
     -->
 
+    <!-- Pocket Lock -->
+    <bool name="config_pocketModeSupported">false</bool>
+
 </resources>
