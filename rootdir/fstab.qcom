@@ -10,7 +10,7 @@
 /dev/block/platform/msm_sdcc.1/by-name/system    /system        ext4    ro,barrier=1                                                                                  wait,first_stage_mount
 /dev/block/platform/msm_sdcc.1/by-name/userdata  /data          ext4    rw,nosuid,nodev,noatime,noauto_da_alloc,journal_async_commit                                  wait,check,formattable,encryptable=footer,length=-16384
 /dev/block/platform/msm_sdcc.1/by-name/cache     /cache         ext4    rw,nosuid,nodev,noatime,noauto_da_alloc,journal_async_commit                                  wait,check,formattable
-/dev/block/platform/msm_sdcc.1/by-name/efs       /efs           ext4    rw,nosuid,nodev,noatime,noauto_da_alloc,journal_async_commit                                  wait,check,notrim,first_stage_mount
+/dev/block/platform/msm_sdcc.1/by-name/efs       /efs           ext4    rw,nosuid,nodev,noatime,noauto_da_alloc,journal_async_commit,no_sehash_xattr                  wait,check,notrim,first_stage_mount
 /dev/block/platform/msm_sdcc.1/by-name/apnhlos   /firmware      vfat    ro,uid=1000,gid=1000,dmask=227,fmask=337                                                      wait
 /dev/block/platform/msm_sdcc.1/by-name/mdm       /firmware-mdm  vfat    ro,uid=1000,gid=1000,dmask=227,fmask=337                                                      wait
 /dev/block/platform/msm_sdcc.1/by-name/boot      /boot          emmc    defaults                                                                                      recoveryonly
