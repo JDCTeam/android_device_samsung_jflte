@@ -71,6 +71,9 @@ include $(DEVICE_PATH)/props/*.mk
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# HIDL
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
