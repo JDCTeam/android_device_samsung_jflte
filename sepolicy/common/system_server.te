@@ -8,5 +8,7 @@ allow system_server mdm_device:chr_file r_file_perms;
 allow system_server mediaserver:process sigkill;
 allow system_server persist_file:dir rw_file_perms;
 allow system_server sysfs_thermal:file r_file_perms;
+allow system_server vendor_init:fd use;
+allow system_server vendor_init:fifo_file rw_file_perms;
 
 binder_call(system_server, init)
