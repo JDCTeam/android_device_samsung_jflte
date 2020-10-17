@@ -40,6 +40,9 @@ TARGET_CPU_VARIANT_RUNTIME := krait
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
+# Memfd
+TARGET_HAS_MEMFD_BACKPORT := true
+
 # Dedupe VNDK libraries with identical core variants.
 TARGET_VNDK_USE_CORE_VARIANT := true
 
