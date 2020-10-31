@@ -279,9 +279,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
+ifeq ($(findstring jactivelte,$(TARGET_PRODUCT)),)
 # Touch
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.jf
+endif
 
 # USB
 PRODUCT_PACKAGES += \
