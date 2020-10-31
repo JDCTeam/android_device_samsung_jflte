@@ -1,5 +1,6 @@
 cc_binary {
     name: "vendor.lineage.livedisplay@2.0-service.jf",
+    vintf_fragments: ["vendor.lineage.livedisplay@2.0-service.jf.xml"],
     defaults: ["hidl_defaults"],
     vendor: true,
     relative_install_path: "hw",

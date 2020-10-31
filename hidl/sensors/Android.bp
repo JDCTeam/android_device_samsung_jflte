@@ -52,6 +52,7 @@ cc_library_shared {
 
 cc_binary {
     name: "android.hardware.sensors@1.0-service.jf",
+    vintf_fragments: ["android.hardware.sensors@1.0-service.jf.xml"],
     defaults: ["hidl_defaults"],
     vendor: true,
     relative_install_path: "hw",
