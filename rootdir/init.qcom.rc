@@ -445,7 +445,20 @@ on property:persist.sys.camera.preview=1
 
 on property:persist.sys.camera.preview=0
     write /sys/class/leds/led_b/brightness 0  
-    
+   
+
+service vendor.wifi_hal_legacy /vendor/bin/hw/android.hardware.wifi@1.0-service.legacy
+    override
+    interface android.hardware.wifi@1.0::IWifi default
+    interface android.hardware.wifi@1.1::IWifi default
+    interface android.hardware.wifi@1.2::IWifi default
+    interface android.hardware.wifi@1.3::IWifi default
+    interface android.hardware.wifi@1.4::IWifi default
+    class hal
+    capabilities NET_ADMIN NET_RAW SYS_MODULE
+    user root
+    group wifi gps
+
 on property:sys.boot_completed=1
     setprop sys.io.scheduler cfq
     rm /data/system/perfd/default_values
