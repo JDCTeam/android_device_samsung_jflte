@@ -12,3 +12,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.fastbootd.available=true
+
+# Recovery
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.recovery.skip_ev_rel_input=true
