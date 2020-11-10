@@ -247,8 +247,6 @@ on boot
     chown system radio /sys/class/sec/sec_touchkey/touch_sensitivity
     chown system radio /sys/class/sec/sec_touchkey/flip_mode
     chown system radio /sys/class/sec/sec_touchkey/glove_mode
-    chown system system /sys/class/sec/sec_touchkey/keypad_enable
-    chmod 0664 /sys/class/sec/sec_touchkey/keypad_enable
 
     # TCP
     chown system system /sys/kernel/ipv4/tcp_wmem_min
