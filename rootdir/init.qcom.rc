@@ -70,7 +70,6 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
     # Create directories for tombstone
-    mkdir /data/tombstones 0771 system system
     mkdir /tombstones/modem 0771 system system
     mkdir /tombstones/lpass 0771 system system
     mkdir /tombstones/wcnss 0771 system system
