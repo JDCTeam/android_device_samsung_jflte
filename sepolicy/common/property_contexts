@@ -3,3 +3,7 @@ ro.wcnss.serialno             u:object_r:vendor_wifi_prop:s0
 user.language                 u:object_r:default_prop:s0
 user.region                   u:object_r:default_prop:s0
 wifi.active.interface         u:object_r:exported_wifi_prop:s0
+
+# public_vendor_system_prop
+# They are public_vendor_system_props for vendor-specific extension.
+sys.all.modules.ready         u:object_r:public_vendor_system_prop:s0
