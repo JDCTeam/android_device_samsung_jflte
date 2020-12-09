@@ -12,3 +12,8 @@ allow system_server vendor_init:fd use;
 allow system_server vendor_init:fifo_file rw_file_perms;
 
 binder_call(system_server, init)
+
+get_prop(system_server, exported_camera_prop);
+get_prop(system_server, userspace_reboot_config_prop);
+get_prop(system_server, userspace_reboot_exported_prop);
+get_prop(system_server, vendor_security_patch_level_prop);
