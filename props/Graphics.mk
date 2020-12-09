@@ -5,7 +5,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.hwui.use_buffer_age=false \
     debug.sf.enable_gl_backpressure=1 \
     ro.hwui.text_large_cache_height=2048 \
-    debug.sf.latch_unsignaled=1
+    debug.sf.latch_unsignaled=1 \
+    ro.sf.lcd_density=480
 
 # Experimental
 #PRODUCT_PROPERTY_OVERRIDES += \
