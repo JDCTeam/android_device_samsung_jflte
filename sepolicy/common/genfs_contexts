@@ -1,5 +1,6 @@
 # proc labels
 genfscon proc /bluetooth/sleep                u:object_r:proc_bt_sleep:s0
+genfscon proc /last_kmsg                      u:object_r:proc_last_kmsg:s0
 
 # sysfs labels
 genfscon sysfs /devices/system/soc/soc0/id    u:object_r:sysfs_soc_id:s0
