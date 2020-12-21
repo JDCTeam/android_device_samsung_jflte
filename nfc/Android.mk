@@ -15,6 +15,7 @@ LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_VENDOR_MODULE := true
 
 LOCAL_MODULE := nfc_nci.$(TARGET_BOARD_PLATFORM)
+LOCAL_VINTF_FRAGMENTS := android.hardware.nfc@1.0-service.xml
 
 LOCAL_SRC_FILES := \
     $(call all-c-files-under, .) \
