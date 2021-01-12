@@ -37,6 +37,10 @@ TARGET_BOARD_PLATFORM := msm8960
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := krait
 
+# Kernel
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
