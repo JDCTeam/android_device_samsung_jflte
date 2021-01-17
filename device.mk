@@ -128,9 +128,6 @@ PRODUCT_PACKAGES += \
     camera.msm8960 \
     Snap
 
-# Dalvik
-$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
