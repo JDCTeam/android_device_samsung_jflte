@@ -60,6 +60,4 @@
     -->
     <integer name="config_deviceSupportsButtonBrightnessControl">1</integer>
 
-    <dimen name="config_buttonBrightnessSettingDefaultFloat">0.0</dimen>
-
 </resources>
