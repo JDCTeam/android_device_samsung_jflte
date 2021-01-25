@@ -6,9 +6,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
-# Dex
+# Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-swap=false \
+    dalvik.vm.dex2oat-swap=false
 
 # fastbootd
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -26,10 +26,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.sf.enable_gl_backpressure=1 \
 	debug.sf.latch_unsignaled=1 \
  	ro.opengles.version=196608 \
-  	ro.sf.lcd_density=460 \
+  	ro.sf.lcd_density=480 \
     ro.hwui.text_large_cache_height=2048
 
-# Audio
+# Media
 PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.disable=1 \
     debug.stagefright.ccodec=0 \
