@@ -26,7 +26,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.sf.enable_gl_backpressure=1 \
 	debug.sf.latch_unsignaled=1 \
  	ro.opengles.version=196608 \
-  	ro.sf.lcd_density=480 \
+  	ro.sf.lcd_density=460 \
     ro.hwui.text_large_cache_height=2048
 
 # Audio
@@ -64,15 +64,22 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.charger.enable_suspend=true
 
 # Dalvik
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PRODUCT_PROPERTIES += \
 	dalvik.vm.heapstartsize=8m \
-    dalvik.vm.heapgrowthlimit=128m \
-    dalvik.vm.heapsize=512m \
+    dalvik.vm.heapgrowthlimit=256m \
+    dalvik.vm.heapsize=768m \
     dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.heapminfree=2m \
     dalvik.vm.heapmaxfree=8m
 
 ##### Optlos
+
+# UI tests
+PRODUCT_PROPERTY_OVERRIDES += \
+	windowsmgr.max_events_per_sec=150 \
+	ro.min_pointer_dur=8 ro.max.fling_velocity=12000 \
+	ro.min.fling_velocity=8000 \
+	sys.use_fifo_ui=1
 
 # Volume
 PRODUCT_PROPERTY_OVERRIDES += \
