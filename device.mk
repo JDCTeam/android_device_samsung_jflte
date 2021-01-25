@@ -287,6 +287,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
 
+# System Properties
+$(call inherit-product, $(DEVICE_PATH)/system_prop.mk)
+
 # Thermal
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/thermal-engine-8064ab.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-8064ab.conf
