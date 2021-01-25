@@ -78,4 +78,4 @@
 /(vendor|system/vendor)/etc/init\.insmod\.cfg                                   u:object_r:init-insmod-sh_exec:s0
 
 # LEDify file context
-/(vendor|system/vendor)/bin/ledify						u:object_r:system_file:s0
+/system/vendor/bin/ledify						        u:object_r:system_file:s0
