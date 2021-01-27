@@ -6,3 +6,4 @@ recvfrom: 1
 sysinfo: 1
 getcwd: 1
 getsockopt: 1
+socket: 1
