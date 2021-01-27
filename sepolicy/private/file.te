@@ -1,0 +1,1 @@
+type sysfs_disk_rev, fs_type, sysfs_type;
