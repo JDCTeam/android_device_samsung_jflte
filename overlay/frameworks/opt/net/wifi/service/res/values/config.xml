@@ -6,6 +6,9 @@
          capability can provide power savings when wifi needs to be always kept on. -->
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
+    <!-- Boolean indicating that wifi only link configuratios that have exact same credentials (i.e PSK) -->
+    <bool translatable="false" name="config_wifi_only_link_same_credential_configurations">false</bool>
+
     <!-- Enable WPA2 to WPA3 auto-upgrade -->
     <bool translatable="false" name="config_wifiSaeUpgradeEnabled">false</bool>
 </resources>
