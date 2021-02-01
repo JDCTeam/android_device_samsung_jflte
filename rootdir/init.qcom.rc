@@ -52,13 +52,16 @@ on init
     mkdir /dev/bus/usb 0755 root root
 
 on fs
-    mount_all /vendor/etc/fstab.qcom
+    mount_all /vendor/etc/fstab.qcom --early
     mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
 
     restorecon_recursive /efs
 
     chown system radio /dev/block/platform/msm_sdcc.1/by-name
     chmod 0775 /dev/block/platform/msm_sdcc.1/by-name
+
+on late-fs
+    mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs
     # Allow writing to the kernel trace log.
