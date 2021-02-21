@@ -112,7 +112,11 @@ void vendor_load_properties()
 
 	if (ReadFileToString(serial_number_file, &serial_number)) {
         serial_number = Trim(serial_number);
-        property_override("ro.serialno", serial_number.c_str());
+        int serial_check;
+        serial_check = atoi(serial_number.c_str());
+        if (serial_check != 0) {
+        	property_override("ro.serialno", serial_number.c_str());
+        }
 	}
 
  	const auto set_ro_product_prop = [](const std::string &source,
