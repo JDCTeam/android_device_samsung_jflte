@@ -1,1 +1,2 @@
+type sysfs_disk_pre_eol_info, fs_type, sysfs_type;
 type sysfs_disk_rev, fs_type, sysfs_type;
