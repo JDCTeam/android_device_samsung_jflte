@@ -1,3 +1,4 @@
 allow fsck efs_block_device:blk_file rw_file_perms;
+allow fsck efs_file:dir getattr;
 allow fsck self:capability dac_override;
 allow fsck tmpfs:blk_file getattr;
