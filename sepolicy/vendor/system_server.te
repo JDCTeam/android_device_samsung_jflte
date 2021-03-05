@@ -14,8 +14,6 @@ allow system_server vendor_init:fifo_file rw_file_perms;
 
 binder_call(system_server, init)
 
-dontaudit system_server default_android_hwservice:hwservice_manager find;
-
 get_prop(system_server, exported_camera_prop);
 get_prop(system_server, userspace_reboot_config_prop);
 get_prop(system_server, userspace_reboot_exported_prop);
