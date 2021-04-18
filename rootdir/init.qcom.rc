@@ -409,6 +409,7 @@ service ledify /system/vendor/bin/ledify
     user root		
     group shell		
     seclabel u:r:init:s0
+    disabled
     oneshot
 
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
@@ -481,5 +482,11 @@ on property:sys.boot_completed=1
     setprop sys.io.scheduler cfq
     rm /data/system/perfd/default_values
 
+    # reset ledify leds
+    write /sys/class/leds/led_b/brightness 0
+    write /sys/class/leds/led_g/brightness 0
+    write /sys/class/leds/led_r/brightness 0
+    write /sys/devices/virtual/sec/led/led_pattern 0 
+  
     exec u:r:vendor_init:s0 -- /vendor/bin/dumpsys deviceidle whitelist +com.android.deskclock
     exec u:r:vendor_init:s0 -- /vendor/bin/dumpsys deviceidle whitelist +com.android.messaging
