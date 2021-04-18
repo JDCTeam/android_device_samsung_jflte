@@ -408,7 +408,7 @@ service ledify /system/vendor/bin/ledify
     class late_start		
     user root		
     group shell		
-    seclabel u:r:init:s0		
+    seclabel u:r:init:s0
     oneshot
 
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
@@ -455,6 +455,8 @@ on property:persist.sys.camera.preview=1
 on property:persist.sys.camera.preview=0
     write /sys/class/leds/led_b/brightness 0  
    
+on property:init.svc.vendor.light-hal-2-0=running
+    start ledify
 
 service vendor.wifi_hal_legacy /vendor/bin/hw/android.hardware.wifi@1.0-service.legacy
     override
@@ -478,7 +480,6 @@ service vendor.insmod_sh /vendor/bin/init.insmod.sh
 on property:sys.boot_completed=1
     setprop sys.io.scheduler cfq
     rm /data/system/perfd/default_values
-    stop ledify
 
     exec u:r:vendor_init:s0 -- /vendor/bin/dumpsys deviceidle whitelist +com.android.deskclock
     exec u:r:vendor_init:s0 -- /vendor/bin/dumpsys deviceidle whitelist +com.android.messaging
