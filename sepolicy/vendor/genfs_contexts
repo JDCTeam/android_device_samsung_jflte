@@ -1,6 +1,8 @@
 # proc labels
-genfscon proc /bluetooth/sleep                u:object_r:proc_bt_sleep:s0
-genfscon proc /last_kmsg                      u:object_r:proc_last_kmsg:s0
+genfscon proc /bluetooth/sleep                            u:object_r:proc_bt_sleep:s0
+genfscon proc /last_kmsg                                  u:object_r:proc_last_kmsg:s0
+genfscon proc /sys/kernel/sched_cfs_bandwidth_slice_us    u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_wake_to_idle              u:object_r:proc_sched:s0
 
 # sysfs labels
 genfscon sysfs /devices/system/soc/soc0/id    u:object_r:sysfs_soc_id:s0
