@@ -87,6 +87,9 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 384000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 384000
 
+    # Disable scheduler wake to idle
+    write /proc/sys/kernel/sched_wake_to_idle 0
+
     write /sys/devices/platform/msm_sdcc.3/idle_timeout 10
 
     # write /sys/block/mmcblk0/queue/iostats 1
