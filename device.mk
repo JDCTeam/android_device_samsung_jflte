@@ -36,6 +36,9 @@ PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 # System Server
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 
+# The target has no boot jars to check
+SKIP_BOOT_JARS_CHECK := true
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
