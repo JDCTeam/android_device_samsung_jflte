@@ -1,0 +1,4 @@
+allow rild self:capability dac_override;
+allow rild proc_net:file write;
+allow rild ril_efs_file:file { getattr open read };
+allow rild system_app_data_file:dir search;

@@ -1,3 +1,0 @@
-allow bluetooth bluetooth_device:chr_file rw_file_perms;
-allow bluetooth proc_bt_sleep:dir search;
-allow bluetooth proc_bt_sleep:file w_file_perms;

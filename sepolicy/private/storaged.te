@@ -1,2 +1,0 @@
-r_dir_file(storaged, sysfs_disk_pre_eol_info)
-r_dir_file(storaged, sysfs_disk_rev)

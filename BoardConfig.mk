@@ -57,19 +57,19 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
-TARGET_KERNEL_CONFIG := jdc_jf_defconfig
+TARGET_KERNEL_CONFIG := twrp_defconfig
 BOARD_RAMDISK_USE_XZ := true
 TARGET_KERNEL_SOURCE := kernel/samsung/jf
 TARGET_KERNEL_VARIANT_CONFIG := jf_eur_defconfig
 
 # Toolchain
-KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc/linux-x86/arm/arm-linux-7.1.x-gnueabi/bin
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-Samsung-linux-gnueabi-
+#KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc/linux-x86/arm/arm-linux-7.1.x-gnueabi/bin
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-Samsung-linux-gnueabi-
 
 # Audio
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
@@ -169,17 +169,18 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # SELinux
 #BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy_tmp
-#include device/qcom/sepolicy-legacy/sepolicy.mk
-#BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-#PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+#include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+
+#include device/qcom/sepolicy/sepolicy.mk
 
 # Sensors
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/hw/android.hardware.sensors@1.0-service.jf=22
 
 # Vendor Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_jflte
-TARGET_RECOVERY_DEVICE_MODULES := libinit_jflte
+TARGET_INIT_VENDOR_LIB := libinit_jf
+TARGET_RECOVERY_DEVICE_MODULES := libinit_jf
 
 # Wifi module
 ifneq ($(findstring jfvelte,$(TARGET_PRODUCT)),)

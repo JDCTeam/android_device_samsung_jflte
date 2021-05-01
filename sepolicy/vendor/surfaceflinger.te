@@ -1,2 +1,0 @@
-allow surfaceflinger sysfs_soc_id:file r_file_perms;
-allow surfaceflinger sysfs_thermal:file r_file_perms;
