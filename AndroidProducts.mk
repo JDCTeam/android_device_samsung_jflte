@@ -13,8 +13,8 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_jflte.mk
+    $(LOCAL_DIR)/omni_jflte.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_jflte-userdebug \
-    lineage_jflte-eng
+    omni_jflte-userdebug \
+    omni_jflte-eng

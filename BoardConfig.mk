@@ -169,9 +169,9 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # SELinux
 #BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy_tmp
-include device/qcom/sepolicy-legacy/sepolicy.mk
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+#include device/qcom/sepolicy-legacy/sepolicy.mk
+#BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+#PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 
 # Sensors
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
@@ -217,6 +217,5 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 endif
 
 # TWRP (optional)
-ifeq ($(WITH_TWRP),true)
 -include $(DEVICE_PATH)/twrp.mk
-endif
+

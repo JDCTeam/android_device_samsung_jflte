@@ -18,7 +18,7 @@
 DEVICE_PATH := device/samsung/jflte
 
 # Shipping API level
-$(call inherit-product, vendor/lineage/build/target/product/product_launched_with_j_mr2.mk)
+#$(call inherit-product, vendor/lineage/build/target/product/product_launched_with_j_mr2.mk)
 
 # Get non-open-source specific aspects if available
 $(call inherit-product-if-exists, vendor/samsung/jf-common/jf-common-vendor-blobs.mk)
