@@ -17,16 +17,16 @@
 TARGET_OTA_ASSERT_DEVICE := jflte,jfltexx,i9505,GT-I9505,jgedlte,i9505g,GT-I9505G,9505G,i9505G,GT-9505G,9507,GT-9507,i9507,jfltevzw,jfltespr,jflterefreshspr,jfltetmo,jfltecri,jfltecsp,jflteatt,jfltecan,jfltetfnatt,jfltetfntmo,jflteusc,jfltezm
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from jflte
-$(call inherit-product, device/samsung/jflte/device.mk)
+#$(call inherit-product, device/samsung/jflte/device.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common.mk)
 
 # Inherit some JDCTeam stuff.
-$(call inherit-product, vendor/jdc/config/common.mk)
+#$(call inherit-product, vendor/jdc/config/common.mk)
 
 PRODUCT_NAME := lineage_jflte
 PRODUCT_DEVICE := jflte
