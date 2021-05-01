@@ -1,3 +1,0 @@
-type sensors_efs_file, file_type;
-type ril_efs_file, file_type;
-type wifi_efs_file, file_type;
