@@ -2,21 +2,18 @@
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-# TODO: Add 'check' as fs_mgr_flags with data partition.
-# Currently we dont have e2fsck compiled. So fs check would failed.
-# NOTE: fstab.aosp_common is used for aosp. Make changes there as well.
-
 #<src>                                           <mnt_point>    <type>  <mnt_flags and options>                                                                       <fs_mgr_flags>
-/dev/block/platform/msm_sdcc.1/by-name/system    /system        ext4    ro,barrier=1                                                                                  wait
-/dev/block/platform/msm_sdcc.1/by-name/userdata  /data          ext4    rw,nosuid,nodev,noatime,noauto_da_alloc,journal_async_commit                                  wait,latemount,check,formattable,encryptable=footer,length=-16384
-/dev/block/platform/msm_sdcc.1/by-name/cache     /cache         ext4    rw,nosuid,nodev,noatime,noauto_da_alloc,journal_async_commit                                  wait,formattable
-/dev/block/platform/msm_sdcc.1/by-name/efs       /efs           ext4    rw,nosuid,nodev,noatime,noauto_da_alloc,journal_async_commit,no_sehash_xattr                  wait,notrim
-/dev/block/platform/msm_sdcc.1/by-name/apnhlos   /firmware      vfat    ro,uid=1000,gid=1000,dmask=227,fmask=337                                                      wait
-/dev/block/platform/msm_sdcc.1/by-name/mdm       /firmware-mdm  vfat    ro,uid=1000,gid=1000,dmask=227,fmask=337                                                      wait
 /dev/block/platform/msm_sdcc.1/by-name/boot      /boot          emmc    defaults                                                                                      recoveryonly
 /dev/block/platform/msm_sdcc.1/by-name/recovery  /recovery      emmc    defaults                                                                                      recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/system    /system        ext4    ro,barrier=1                                                                                  wait
+/dev/block/platform/msm_sdcc.1/by-name/apnhlos   /firmware      vfat    ro,uid=1000,gid=1000,dmask=227,fmask=337                                                      wait
+/dev/block/platform/msm_sdcc.1/by-name/mdm       /firmware-mdm  vfat    ro,uid=1000,gid=1000,dmask=227,fmask=337                                                      wait
+/dev/block/platform/msm_sdcc.1/by-name/efs       /efs           ext4    rw,nosuid,nodev,noatime,noauto_da_alloc,journal_async_commit                                  wait,check,notrim
+/dev/block/platform/msm_sdcc.1/by-name/cache     /cache         f2fs    rw,nosuid,nodev,noatime,rw,inline_xattr                                                       wait,check,formattable
+/dev/block/platform/msm_sdcc.1/by-name/cache     /cache         ext4    rw,nosuid,nodev,noatime,noauto_da_alloc,journal_async_commit                                  wait,check,formattable
+/dev/block/platform/msm_sdcc.1/by-name/userdata  /data          f2fs    rw,nosuid,nodev,noatime,rw,inline_xattr                                                       wait,check,formattable,encryptable=footer,length=-16384
+/dev/block/platform/msm_sdcc.1/by-name/userdata  /data          ext4    rw,nosuid,nodev,noatime,noauto_da_alloc,journal_async_commit                                  wait,check,formattable,encryptable=footer,length=-16384
 /dev/block/platform/msm_sdcc.1/by-name/fota      /misc          emmc    defaults                                                                                      defaults
 
 /devices/platform/msm_sdcc.2/mmc_host/mmc2*      auto           auto    defaults                                                                                      voldmanaged=sdcard1:auto,encryptable=userdata
-/devices/platform/msm_sdcc.3/mmc_host/mmc1*      auto           auto    defaults                                                                                      voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/platform/msm_hsusb_host/usb*            auto           auto    defaults                                                                                      voldmanaged=usb:auto
