@@ -1,2 +1,2 @@
-add_lunch_combo lineage_jfltetmo-eng
-add_lunch_combo lineage_jfltetmo-userdebug
+add_lunch_combo lineage_jflte-eng
+add_lunch_combo lineage_jflte-userdebug
