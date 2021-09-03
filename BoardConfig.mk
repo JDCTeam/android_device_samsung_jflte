@@ -64,6 +64,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 TARGET_KERNEL_CONFIG := jdc_jf_defconfig
 BOARD_RAMDISK_USE_XZ := true
+TARGET_KERNEL_RECOVERY_CONFIG := lineageos_jf_recovery_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/jf
 TARGET_KERNEL_VARIANT_CONFIG := jf_eur_defconfig
 
