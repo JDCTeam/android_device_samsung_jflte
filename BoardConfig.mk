@@ -107,13 +107,6 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/bin/mediaserver=22 \
     /system/vendor/bin/mm-qcamera-daemon=22
 
-# Checks
-ANDROID_NO_TEST_CHECK := true
-
-# Dex
-WITH_DEXPREOPT := true
-WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
-
 # Display
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x02000000U
 TARGET_DISABLE_POSTRENDER_CLEANUP := true
@@ -132,9 +125,6 @@ TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 # Manifests
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/vendor_interface/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/vendor_interface/compatibility_matrix.xml
-
-# DexPreopt debug info
-WITH_DEXPREOPT_DEBUG_INFO := false
 
 # Legacy
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
