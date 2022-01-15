@@ -66,6 +66,7 @@ TARGET_KERNEL_CONFIG := lineageos_jf_defconfig
 BOARD_RAMDISK_USE_XZ := true
 TARGET_KERNEL_SOURCE := kernel/samsung/jf
 TARGET_KERNEL_VARIANT_CONFIG := jf_eur_defconfig
+TARGET_KERNEL_RECOVERY_CONFIG := lineageos_jf_recovery_defconfig
 
 # Toolchain
 #KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc/linux-x86/arm/arm-linux-7.1.x-gnueabi/bin
