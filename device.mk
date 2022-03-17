@@ -126,6 +126,10 @@ PRODUCT_PACKAGES += \
     camera.msm8960 \
     Snap
 
+# ConfigStore
+PRODUCT_PACKAGES += \
+    disable_configstore
+    
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
