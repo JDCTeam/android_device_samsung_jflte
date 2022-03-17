@@ -51,6 +51,7 @@ on init
     mkdir /dev/bus 0755 root root
     mkdir /dev/bus/usb 0755 root root
 
+     setprop ro.kernel.ebpf.supported false
 on fs
     mount_all /vendor/etc/fstab.qcom --early
     mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
@@ -61,6 +62,13 @@ on fs
     chmod 0775 /dev/block/platform/msm_sdcc.1/by-name
 
 on late-fs
+    start hwservicemanager
+    start servicemanager
+    start surfaceflinger
+    start bootanim
+    start vendor.configstore-hal
+    start vendor.gralloc-2-0
+    
     mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs
