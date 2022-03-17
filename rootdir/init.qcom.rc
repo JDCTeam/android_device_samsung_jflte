@@ -68,7 +68,7 @@ on late-fs
     start bootanim
     start vendor.configstore-hal
     start vendor.gralloc-2-0
-    
+
     mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs
@@ -499,3 +499,6 @@ on property:sys.boot_completed=1
   
     exec u:r:vendor_init:s0 -- /vendor/bin/dumpsys deviceidle whitelist +com.android.deskclock
     exec u:r:vendor_init:s0 -- /vendor/bin/dumpsys deviceidle whitelist +com.android.messaging
+
+on property:apexd.status=ready
+    mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
