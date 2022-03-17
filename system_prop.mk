@@ -101,6 +101,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.usb.config=adb \
     service.adb.root=1
 
+# VNDK
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vndk.version=current
+    
 # tmp
 # Dex
 # PRODUCT_PROPERTY_OVERRIDES += \
