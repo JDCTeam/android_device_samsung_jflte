@@ -59,5 +59,9 @@
             2 - Supported with variable brightness control
     -->
     <integer name="config_deviceSupportsButtonBrightnessControl">1</integer>
+    
+      <!--Disable LiveDisplay -->
+    <integer name="config_defaultLiveDisplayMode">0</integer>
+    <bool name="config_enableLiveDisplay">false</bool>
 
 </resources>

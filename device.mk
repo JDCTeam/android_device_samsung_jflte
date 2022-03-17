@@ -212,10 +212,6 @@ PRODUCT_PACKAGES += \
     loki.sh \
     loki_bootloaders \
     recovery-transform.sh
-    
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-legacymm
 
 # Media
 PRODUCT_COPY_FILES += \
