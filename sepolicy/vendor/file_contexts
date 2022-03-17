@@ -78,6 +78,3 @@
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.jf          u:object_r:hal_lineage_touch_default_exec:s0
 /(vendor|system/vendor)/bin/init\.insmod\.sh                                    u:object_r:init-insmod-sh_exec:s0
 /(vendor|system/vendor)/etc/init\.insmod\.cfg                                   u:object_r:init-insmod-sh_exec:s0
-
-# LEDify file context
-/system/vendor/bin/ledify						        u:object_r:system_file:s0

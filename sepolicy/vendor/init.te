@@ -33,7 +33,6 @@ allow init sysfs_thermal:file w_file_perms;
 allow init sysfs_wifi_writeable:file { rw_file_perms setattr };
 allow init vendor_file:file execute_no_trans;
 allow init vendor_toolbox_exec:file execute_no_trans;
-allow init system_file:file execute_no_trans;
 
 binder_call(init, system_server)
 

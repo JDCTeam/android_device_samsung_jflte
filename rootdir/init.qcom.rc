@@ -55,7 +55,7 @@ on fs
     mount_all /vendor/etc/fstab.qcom --early
     mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
 
-    restorecon_recursive /efs
+#    restorecon_recursive /efs
 
     chown system radio /dev/block/platform/msm_sdcc.1/by-name
     chmod 0775 /dev/block/platform/msm_sdcc.1/by-name
@@ -128,7 +128,7 @@ on post-fs-data
     write /data/.wifiver.info 0
     chown root system /data/.wifiver.info
     chmod 0664 /data/.wifiver.info
-    restorecon /data/.wifiver.info
+#   restorecon /data/.wifiver.info
 
     # WiFi MAC address
     mkdir /efs/wifi 0775 radio system
@@ -438,13 +438,13 @@ service vendor.macloader /vendor/bin/macloader
     user system
     group system wifi
     oneshot
-    seclabel u:r:macloader:s0
+#    seclabel u:r:macloader:s0
 
 service charger /system/bin/charger
     class charger
     critical
     group system
-    seclabel u:r:charger:s0
+#    seclabel u:r:charger:s0
 
 service vendor.thermal-engine /vendor/bin/thermal-engine
    class main
