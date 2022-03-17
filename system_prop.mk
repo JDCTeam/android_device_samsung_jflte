@@ -104,7 +104,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # VNDK
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vndk.version=current
-    
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.binary_xml=false
 # tmp
 # Dex
 # PRODUCT_PROPERTY_OVERRIDES += \
