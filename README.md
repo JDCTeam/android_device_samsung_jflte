@@ -9,13 +9,6 @@ https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/320545
 https://review.lineageos.org/c/LineageOS/android_frameworks_native/+/321934
 
 
-https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/318458
-
-
-https://review.lineageos.org/c/LineageOS/android_device_motorola_msm8916-common/+/324270/4
-
-
-
 # Common device configuration for Samsung Galaxy S4 (Snapdragon variants)
 
 ## Spec Sheet
