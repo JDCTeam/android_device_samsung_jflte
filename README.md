@@ -15,6 +15,18 @@ https://review.lineageos.org/c/LineageOS/android_frameworks_native/+/321934
 https://review.lineageos.org/c/LineageOS/android_packages_modules_adb/+/326385
 
 
+https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/318816
+
+
+https://review.lineageos.org/c/LineageOS/android_frameworks_av/+/320527
+
+
+https://review.lineageos.org/c/LineageOS/android_frameworks_av/+/318815
+
+
+https://review.lineageos.org/c/LineageOS/android_frameworks_av/+/318814
+
+
 # Common device configuration for Samsung Galaxy S4 (Snapdragon variants)
 
 ## Spec Sheet
