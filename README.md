@@ -3,15 +3,6 @@
 https://review.lineageos.org/c/LineageOS/android_external_perfetto/+/287706
 
 
-https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/320545 
-
-
-https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/320526
-
-
-https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/318816
-
-
 # Common device configuration for Samsung Galaxy S4 (Snapdragon variants)
 
 ## Spec Sheet
