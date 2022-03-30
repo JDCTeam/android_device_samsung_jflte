@@ -1,8 +1,3 @@
-# Picks for android 12
-
-https://review.lineageos.org/c/LineageOS/android_external_perfetto/+/287706
-
-
 # Common device configuration for Samsung Galaxy S4 (Snapdragon variants)
 
 ## Spec Sheet
