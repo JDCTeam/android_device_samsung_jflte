@@ -32,6 +32,7 @@ DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 # Always preopt extracted APKs to prevent extracting out of the APK
 # for gms modules.
 PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
+PRODUCT_DISABLE_SCUDO := true
 
 # System Server
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
@@ -178,6 +179,12 @@ PRODUCT_PACKAGES += \
 # Filesystem tools
 PRODUCT_PACKAGES += \
     resize2fs_static
+
+# low end devices
+PRODUCT_PACKAGES += InProcessNetworkStack
+PRODUCT_PACKAGES += com.android.tethering.inprocess
+PRODUCT_PACKAGES += CellBroadcastAppPlatform
+PRODUCT_PACKAGES += CellBroadcastServiceModulePlatform
 
 ifeq ($(findstring jactivelte,$(TARGET_PRODUCT)),)
 # FlipFlap
