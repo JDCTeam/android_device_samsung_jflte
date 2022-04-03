@@ -108,6 +108,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.binary_xml=false
+
+# Zygote
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.device_config.runtime_native.usap_pool_enabled=true
 # tmp
 # Dex
 # PRODUCT_PROPERTY_OVERRIDES += \
