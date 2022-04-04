@@ -31,7 +31,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
   	ro.sf.lcd_density=480 \
     ro.hwui.text_large_cache_height=2048 \
     debug.renderengine.backend=threaded \
-    debug.hwui.renderer=opengl \
     debug.sf.hw=1 \
     debug.mdpcomp.logs=0 \
     debug.sf.disable_backpressure=1
