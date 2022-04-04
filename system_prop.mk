@@ -29,11 +29,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.sf.latch_unsignaled=1 \
  	ro.opengles.version=196608 \
   	ro.sf.lcd_density=480 \
-    ro.hwui.text_large_cache_height=2048 \
     debug.renderengine.backend=threaded \
     debug.sf.hw=1 \
     debug.mdpcomp.logs=0 \
-    debug.sf.disable_backpressure=1
+    debug.sf.disable_backpressure=1 \
+    ro.zygote.disable_gl_preload=true
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
