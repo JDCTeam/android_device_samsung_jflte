@@ -33,7 +33,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.renderengine.backend=threaded \
     debug.hwui.renderer=opengl \
     debug.sf.hw=1 \
-    debug.mdpcomp.logs=0
+    debug.mdpcomp.logs=0 \
+    debug.sf.disable_backpressure=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
