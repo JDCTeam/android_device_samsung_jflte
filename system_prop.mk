@@ -28,7 +28,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.hwui.use_buffer_age=false \
 	debug.sf.latch_unsignaled=1 \
  	ro.opengles.version=196608 \
-  	ro.sf.lcd_density=480 \
     debug.renderengine.backend=threaded \
     debug.sf.hw=1 \
     debug.mdpcomp.logs=0 \
