@@ -33,7 +33,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.mdpcomp.logs=0 \
     debug.sf.disable_backpressure=1 \
     ro.zygote.disable_gl_preload=true \
-    qemu.sf.lcd_density=320
+    qemu.sf.lcd_density=400
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
