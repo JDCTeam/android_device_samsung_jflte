@@ -100,11 +100,11 @@ on enable-low-power
     
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel 0
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/min_pwrlevel 3
-    write /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor ondemand
+    write /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor performance
 
     write /sys/devices/platform/msm_sdcc.3/idle_timeout 10
 
-    setprop sys.io.scheduler row
+    setprop sys.io.scheduler cfq
 
     write /sys/class/timed_output/vibrator/pwm_value 37
 
