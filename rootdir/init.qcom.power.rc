@@ -104,8 +104,6 @@ on enable-low-power
 
     write /sys/devices/platform/msm_sdcc.3/idle_timeout 10
 
-    setprop sys.io.scheduler cfq
-
     write /sys/class/timed_output/vibrator/pwm_value 37
 
     write /sys/kernel/fast_charge/force_fast_charge 1		
