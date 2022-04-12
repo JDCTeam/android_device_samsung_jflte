@@ -72,8 +72,8 @@ on enable-low-power
     write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 79000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 20000
 
-    write /sys/module/cpu_boost/parameters/boost_ms 10
-    write /sys/module/cpu_boost/parameters/input_boost_ms 10
+    write /sys/module/cpu_boost/parameters/boost_ms 50
+    write /sys/module/cpu_boost/parameters/input_boost_ms 50
     write /sys/module/cpu_boost/parameters/sync_threshold 1242000
     write /sys/module/cpu_boost/parameters/input_boost_freq 1134000
     write /sys/module/cpu_boost/parameters/load_based_syncs 1
