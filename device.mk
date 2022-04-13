@@ -134,7 +134,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl.jf \
     camera.device@1.0-impl.jf \
     camera.msm8960 \
-    Snap
+    Camera2
 
 # configstore
 #PRODUCT_PACKAGES += \
