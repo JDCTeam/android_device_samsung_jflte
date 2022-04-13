@@ -212,6 +212,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-service.samsung
 
+# init 
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.power.rc \
+    init.qcom.rc \
+    init.qcom.usb.rc \
+    ueventd.qcom.rc \
+    ueventd.qcom.jf.rc
+ 	
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl \
@@ -277,15 +286,9 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/fstab.qcom:$(TARGET_OUT_VENDOR_ETC)/fstab.qcom \
-    $(DEVICE_PATH)/rootdir/fstab.ramdisk:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom \
-    $(DEVICE_PATH)/rootdir/init.qcom.power.rc:$(TARGET_OUT_VENDOR_ETC)/init/hw/init.qcom.power.rc \
     $(DEVICE_PATH)/rootdir/init.qcom.power.rc:recovery/root/init.recovery.qcom.rc \
-    $(DEVICE_PATH)/rootdir/init.qcom.rc:$(TARGET_OUT_VENDOR_ETC)/init/hw/init.qcom.rc \
-    $(DEVICE_PATH)/rootdir/init.qcom.usb.rc:$(TARGET_OUT_VENDOR_ETC)/init/hw/init.qcom.usb.rc \
-    $(DEVICE_PATH)/rootdir/ueventd.qcom.rc:$(TARGET_OUT_VENDOR_ETC)/ueventd.qcom.rc \
-    $(DEVICE_PATH)/rootdir/ueventd.qcom.rc:$(TARGET_OUT_VENDOR_ETC)/ueventd.rc
-
+    $(DEVICE_PATH)/rootdir/fstab.ramdisk:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom \
+    
 # Kernel Modules
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/init.insmod.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.insmod.sh \
