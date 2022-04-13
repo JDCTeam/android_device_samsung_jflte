@@ -24,16 +24,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-	debug.composition.type=c2d \
-	debug.hwui.use_buffer_age=false \
-	debug.sf.latch_unsignaled=1 \
- 	ro.opengles.version=196608 \
+    debug.composition.type=c2d \
+    debug.hwui.use_buffer_age=false \
+    debug.sf.latch_unsignaled=1 \
+    ro.opengles.version=196608 \
     debug.renderengine.backend=threaded \
     debug.sf.hw=1 \
     debug.mdpcomp.logs=0 \
     debug.sf.disable_backpressure=1 \
     ro.zygote.disable_gl_preload=true \
-    qemu.sf.lcd_density=400
+    qemu.sf.lcd_density=400 \
+    debug.cpurend.vsync=false
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
