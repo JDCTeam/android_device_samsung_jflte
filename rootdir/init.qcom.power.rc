@@ -62,6 +62,7 @@ on enable-low-power
     write /sys/module/pm_8x60/modes/cpu2/standalone_power_collapse/idle_enabled 1
     write /sys/module/pm_8x60/modes/cpu3/standalone_power_collapse/idle_enabled 1
 
+    # optimized lineage os
     write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay 20000
     write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 90
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1134000
@@ -91,7 +92,7 @@ on enable-low-power
     write /sys/module/cpu_boost/parameters/input_boost_ms 50
     write /sys/module/cpu_boost/parameters/sync_threshold 1242000
     write /sys/module/cpu_boost/parameters/input_boost_freq 1134000
-    write /sys/module/cpu_boost/parameters/load_based_syncs 1
+    write /sys/module/cpu_boost/parameters/load_based_syncs "Y"
 
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1890000
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1890000
@@ -134,6 +135,142 @@ on boot
 
     chown system system /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis
     chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis
+    
+    
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_slack
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/boost
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+
+    # Dorimanx autosmp
+    chown system system /sys/module/autosmp/parameters/autosmp_enabled
+    chown system system /sys/module/autosmp/parameters/hotplug_suspend
+
+    chown system system /sys/kernel/autosmp/conf/boost_lock_duration
+    chown system system /sys/kernel/autosmp/conf/cpufreq_down
+    chown system system /sys/kernel/autosmp/conf/cpufreq_up
+    chown system system /sys/kernel/autosmp/conf/cpus_boosted
+    chown system system /sys/kernel/autosmp/conf/cycle_down
+    chown system system /sys/kernel/autosmp/conf/cycle_up
+    chown system system /sys/kernel/autosmp/conf/delay
+    chown system system /sys/kernel/autosmp/conf/max_cpus
+    chown system system /sys/kernel/autosmp/conf/min_boost_freq
+    chown system system /sys/kernel/autosmp/conf/min_cpus
+    
+    chown system system /sys/module/cpu_boost/parameters/boost_ms
+    chown system system /sys/module/cpu_boost/parameters/input_boost_ms
+    chown system system /sys/module/cpu_boost/parameters/sync_threshold
+    chown system system /sys/module/cpu_boost/parameters/input_boost_freq
+    chown system system /sys/module/cpu_boost/parameters/load_based_syncs "Y"
+
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq
+
+    # Disable scheduler wake to idle
+    chown system system /proc/sys/kernel/sched_wake_to_idle
+
+    chown system system /sys/devices/platform/msm_sdcc.3/idle_timeout
+
+    chown system system /sys/block/mmcblk0/queue/iostats
+    chown system system /sys/block/mmcblk0/queue/add_random
+    chown system system /sys/block/mmcblk0/queue/read_ahead_kb
+    chown system system /sys/block/mmcblk0/queue/nr_requests
+    chown system system /sys/block/mmcblk0/queue/rq_affinity
+    
+    chown system system /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel
+    chown system system /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/min_pwrlevel
+    chown system system /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor
+
+    chown system system /sys/devices/platform/msm_sdcc.3/idle_timeout
+
+    chown system system /sys/class/timed_output/vibrator/pwm_value
+
+    chown system system /sys/kernel/fast_charge/force_fast_charge	
+    chown system system /sys/kernel/fast_charge/usb_charge_level	
+    chown system system /sys/kernel/fast_charge/ac_charge_level		
+    chown system system /sys/kernel/fast_charge/failsafe
+    chown system system /sys/kernel/fast_charge/screen_on_current_limit	
+    chown system system /sys/kernel/fast_charge/use_mtp_during_fast_charge	
+    
+    # ================================
+    
+    chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
+    chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
+    chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
+    chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/timer_slack
+    chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
+    chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
+    chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/boost
+    chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis
+    chmod 0664 /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+
+    # Dorimanx autosmp
+    chmod 0664 /sys/module/autosmp/parameters/autosmp_enabled
+    chmod 0664 /sys/module/autosmp/parameters/hotplug_suspend
+
+    chmod 0664 /sys/kernel/autosmp/conf/boost_lock_duration
+    chmod 0664 /sys/kernel/autosmp/conf/cpufreq_down
+    chmod 0664 /sys/kernel/autosmp/conf/cpufreq_up
+    chmod 0664 /sys/kernel/autosmp/conf/cpus_boosted
+    chmod 0664 /sys/kernel/autosmp/conf/cycle_down
+    chmod 0664 /sys/kernel/autosmp/conf/cycle_up
+    chmod 0664 /sys/kernel/autosmp/conf/delay
+    chmod 0664 /sys/kernel/autosmp/conf/max_cpus
+    chmod 0664 /sys/kernel/autosmp/conf/min_boost_freq
+    chmod 0664 /sys/kernel/autosmp/conf/min_cpus
+    
+    chmod 0664 /sys/module/cpu_boost/parameters/boost_ms
+    chmod 0664 /sys/module/cpu_boost/parameters/input_boost_ms
+    chmod 0664 /sys/module/cpu_boost/parameters/sync_threshold
+    chmod 0664 /sys/module/cpu_boost/parameters/input_boost_freq
+    chmod 0664 /sys/module/cpu_boost/parameters/load_based_syncs
+
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chmod 0664 /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
+    chmod 0664 /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
+    chmod 0664 /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq
+
+    # Disable scheduler wake to idle
+    chmod 0664 /proc/sys/kernel/sched_wake_to_idle
+
+    chmod 0664 /sys/devices/platform/msm_sdcc.3/idle_timeout
+
+    chmod 0664 /sys/block/mmcblk0/queue/iostats
+    chmod 0664 /sys/block/mmcblk0/queue/add_random
+    chmod 0664 /sys/block/mmcblk0/queue/read_ahead_kb
+    chmod 0664 /sys/block/mmcblk0/queue/nr_requests
+    chmod 0664 /sys/block/mmcblk0/queue/rq_affinity
+    
+    chmod 0664 /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/max_pwrlevel
+    chmod 0664 /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/min_pwrlevel
+    chmod 0664 /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor
+    
+    chmod 0664 /sys/devices/platform/msm_sdcc.3/idle_timeout
+
+    chmod 0664 /sys/class/timed_output/vibrator/pwm_value
+
+    chmod 0664 /sys/kernel/fast_charge/force_fast_charge	
+    chmod 0664 /sys/kernel/fast_charge/usb_charge_level
+    chmod 0664 /sys/kernel/fast_charge/ac_charge_level		
+    chmod 0664 /sys/kernel/fast_charge/failsafe	
+    chmod 0664 /sys/kernel/fast_charge/screen_on_current_limit		
+    chmod 0664 /sys/kernel/fast_charge/use_mtp_during_fast_charge
+    
 
     trigger enable-low-power
 
