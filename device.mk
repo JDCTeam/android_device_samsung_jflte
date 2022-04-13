@@ -277,7 +277,7 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/fstab.qcom:$$(TARGET_OUT_VENDOR_ETC)/fstab.qcom \
+    $(DEVICE_PATH)/rootdir/fstab.qcom:$(TARGET_OUT_VENDOR_ETC)/fstab.qcom \
     $(DEVICE_PATH)/rootdir/fstab.ramdisk:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom \
     $(DEVICE_PATH)/rootdir/init.qcom.power.rc:$(TARGET_OUT_VENDOR_ETC)/init/hw/init.qcom.power.rc \
     $(DEVICE_PATH)/rootdir/init.qcom.power.rc:recovery/root/init.recovery.qcom.rc \
