@@ -283,7 +283,6 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/init.qcom.power.rc:recovery/root/init.recovery.qcom.rc \
     $(DEVICE_PATH)/rootdir/init.qcom.rc:$(TARGET_OUT_VENDOR_ETC)/init/hw/init.qcom.rc \
     $(DEVICE_PATH)/rootdir/init.qcom.usb.rc:$(TARGET_OUT_VENDOR_ETC)/init/hw/init.qcom.usb.rc \
-    $(DEVICE_PATH)/rootdir/init.safailnet.rc:$(TARGET_OUT_VENDOR_ETC)/init/hw/init.safailnet.rc \
     $(DEVICE_PATH)/rootdir/ueventd.qcom.rc:$(TARGET_OUT_VENDOR_ETC)/ueventd.qcom.rc \
     $(DEVICE_PATH)/rootdir/ueventd.qcom.rc:$(TARGET_OUT_VENDOR_ETC)/ueventd.rc
 
