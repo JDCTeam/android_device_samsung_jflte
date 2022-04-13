@@ -89,7 +89,7 @@ on post-fs-data
     mkdir /tombstones/mdm2 0771 system system
 
     # Communicate with mpdecision and thermald/thermal-engine
-    #mkdir /dev/socket/mpdecision 2770 root system
+    mkdir /dev/socket/mpdecision 2770 root system
 
     # Create directories for audio
     mkdir /data/misc/audio 0770 audio audio
@@ -396,10 +396,10 @@ service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
     user camera
     group camera system inet input graphics
 
-#service vendor.mpdecision /vendor/bin/mpdecision --no_sleep --avg_comp
-#    class main
-#    user root
-#    group root system readproc wakelock
+service vendor.mpdecision /vendor/bin/mpdecision --no_sleep --avg_comp
+    class main
+    user root
+    group root system readproc wakelock
 
 service vendor.kickstart /vendor/bin/qcks -i /firmware-mdm/image/
     user root
