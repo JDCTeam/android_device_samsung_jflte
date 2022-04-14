@@ -29,18 +29,7 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 
-# Always preopt extracted APKs to prevent extracting out of the APK
-# for gms modules.
-PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 PRODUCT_DISABLE_SCUDO := true
-
-# Speed profile services and wifi-service to reduce RAM and storage.
-PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
-
-# Use a profile based boot image for this device. Note that this is currently a
-# generic profile and not Android Go optimized.
-PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
-PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
 
 # The target has no boot jars to check
 SKIP_BOOT_JARS_CHECK := true
@@ -184,12 +173,6 @@ PRODUCT_PACKAGES += \
 # Filesystem tools
 PRODUCT_PACKAGES += \
     resize2fs_static
-
-# low end devices
-PRODUCT_PACKAGES += InProcessNetworkStack
-PRODUCT_PACKAGES += com.android.tethering.inprocess
-PRODUCT_PACKAGES += CellBroadcastAppPlatform
-PRODUCT_PACKAGES += CellBroadcastServiceModulePlatform
 
 ifeq ($(findstring jactivelte,$(TARGET_PRODUCT)),)
 # FlipFlap
@@ -350,10 +333,6 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/nvram_net.txt:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/nvram_net.txt \
     $(DEVICE_PATH)/configs/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(DEVICE_PATH)/configs/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
-
-# Do not spin up a separate process for the network stack, use an in-process APK.
-PRODUCT_PACKAGES += InProcessNetworkStack
-PRODUCT_PACKAGES += com.android.tethering.inprocess
 
 # Common Qualcomm
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
