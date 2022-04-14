@@ -24,6 +24,7 @@ $(call inherit-product, device/samsung/jflte/device.mk)
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_go_phone.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults_common.mk)
 
 # Inherit some JDCTeam stuff.
 $(call inherit-product, vendor/jdc/config/common.mk)
