@@ -185,12 +185,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     resize2fs_static
 
-# low end devices
-PRODUCT_PACKAGES += InProcessNetworkStack
-PRODUCT_PACKAGES += com.android.tethering.inprocess
-PRODUCT_PACKAGES += CellBroadcastAppPlatform
-PRODUCT_PACKAGES += CellBroadcastServiceModulePlatform
-
 ifeq ($(findstring jactivelte,$(TARGET_PRODUCT)),)
 # FlipFlap
 PRODUCT_PACKAGES += \
@@ -286,6 +280,11 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.qcom.rc \
     $(DEVICE_PATH)/rootdir/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
+# RIL
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.1-service \
+    android.hardware.radio.deprecated@1.0.vendor
+    
 # Kernel Modules
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/init.insmod.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.insmod.sh \
