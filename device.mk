@@ -282,9 +282,15 @@ PRODUCT_COPY_FILES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.1-service \
-    android.hardware.radio.deprecated@1.0.vendor
+    android.hardware.radio@1.1 \
+    android.hardware.radio@1.1.vendor \
+    android.hardware.radio.config@1.1 \
     
+PRODUCT_PACKAGES += InProcessNetworkStack
+PRODUCT_PACKAGES += CellBroadcastAppPlatform
+PRODUCT_PACKAGES += CellBroadcastServiceModulePlatform
+PRODUCT_PACKAGES += com.android.tethering.inprocess
+
 # Kernel Modules
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/init.insmod.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.insmod.sh \
