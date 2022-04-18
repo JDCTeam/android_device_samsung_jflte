@@ -279,12 +279,6 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/init.qcom.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.usb.rc \
     $(DEVICE_PATH)/rootdir/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.qcom.rc \
     $(DEVICE_PATH)/rootdir/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
-
-# RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.1 \
-    android.hardware.radio@1.1.vendor \
-    android.hardware.radio.config@1.1 \
     
 PRODUCT_PACKAGES += InProcessNetworkStack
 PRODUCT_PACKAGES += CellBroadcastAppPlatform
