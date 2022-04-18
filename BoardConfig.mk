@@ -104,6 +104,10 @@ TARGET_PROVIDES_CAMERA_HAL := true
 TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := //$(DEVICE_PATH):camera_parameters_samsung_msm8960
 USE_DEVICE_SPECIFIC_CAMERA := true
 
+# legacy ril
+TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
+    /system/vendor/bin/hw/rild=27
+    
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/bin/mediaserver=22 \
     /system/vendor/bin/mm-qcamera-daemon=22
