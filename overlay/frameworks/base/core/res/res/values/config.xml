@@ -267,19 +267,4 @@
     <bool name="config_ui_enableFadingMarquee">true</bool>
 
 
-    <!-- The amount to scale reduced scale snapshots for Overview and snapshot starting windows.
-         Reduced scale snapshots are loaded before full screen snapshots to improve load times and
-         minimize the chance the user will see an empty task card. If set to 0, reduced scale
-         snapshots are disabled, and snapshots will only be stored at config_highResTaskSnapshotScale
-         -->
-    <item name="config_lowResTaskSnapshotScale" format="float" type="dimen">0.3</item>
-    
-      <!-- Whether to clip notification contents with a rounded rectangle. Might be expensive on
-         certain GPU's and thus can be turned off with only minimal visual impact. -->
-    <bool name="config_notifications_round_rect_clipping">false</bool>
-    
-    <!-- Feature flag to enable memory efficient task snapshots that are used in recents optimized
-         for low memory devices and replace the app transition starting window with the splash
-         screen. -->
-    <bool name="config_lowRamTaskSnapshotsAndRecents">true</bool>
 </resources>
