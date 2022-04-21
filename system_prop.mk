@@ -54,10 +54,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.recovery.skip_ev_rel_input=true
 
-# RAM
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.low_ram=true
-    
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so \
