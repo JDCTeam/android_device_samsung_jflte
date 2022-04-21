@@ -240,19 +240,8 @@
 
     <!-- Default interface to monitor data use -->
     <string name="config_datause_iface">rmnet_usb0</string>
-
-    <!-- If device supports corner radius on windows.
-         This should be turned off on low-end devices to improve animation performance. -->
-    <bool name="config_supportsRoundedCornersOnWindows">true</bool>
       
-
     <!-- AOSP WFD -->
     <bool name="config_enableWifiDisplay">true</bool>
-
-    <!-- The max scale for the wallpaper when it's zoomed in -->
-    <item name="config_wallpaperMaxScale" format="float" type="dimen">1.00</item>
-    
-        <!-- The amount to scale fullscreen snapshots for Overview and snapshot starting windows. -->
-    <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.8</item>
 
 </resources>
