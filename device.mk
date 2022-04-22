@@ -189,6 +189,12 @@ PRODUCT_PACKAGES += \
     FlipFlap
 endif
 
+# Privapp Whitelist
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/privapp-permissions-X2.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-X2.xml \
+    $(DEVICE_PATH)/configs/privapp-permissions-X2.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-X2.xml \
+    $(DEVICE_PATH)/configs/privapp-permissions-X2.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-X2.xml
+    
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl.legacy \
