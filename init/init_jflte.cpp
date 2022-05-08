@@ -321,7 +321,7 @@ void vendor_load_properties()
         }
         property_override("ro.build.description", "jftddxx-user 4.3 JSS15J I9507XXUENB5 release-keys");
         property_override("ro.build.product", "jftddxx");
-    } else if (bootloader.find("I9508") == 0)  {
+    } else if (bootloader.find("9508") == 0)  {
         /* jfltezm */
         gsm_properties();
         for (const auto &source : ro_product_props_default_source_order) {
