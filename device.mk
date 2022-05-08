@@ -165,6 +165,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service
 
+# Display
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/display_id_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_0.xml
+    
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
