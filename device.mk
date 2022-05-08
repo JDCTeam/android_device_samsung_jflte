@@ -223,6 +223,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service.software
 
+# Google Apps
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/google.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/google.xml
+    
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light-service.samsung
